@@ -1,0 +1,23 @@
+{
+  "task_id": "l2_store_observed",
+  "level": "L2",
+  "role": "guard",
+  "source_metrics": {
+    "instruction_count": 4,
+    "opcodes": {
+      "store": 2,
+      "load": 1,
+      "ret": 1
+    }
+  },
+  "syntax_valid": false,
+  "goal_met": false,
+  "effective_optimization": false,
+  "unchanged": false,
+  "status": "format_error",
+  "error": "Unbalanced or multiple code tags",
+  "key": "l2_store_observed__tool_feedback",
+  "arm": "tool_feedback",
+  "mode": "formal",
+  "backend": "gguf"
+}

@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "records": [
+    {
+      "original": "opt-v2",
+      "rechecked": "opt-v2-rechecked-ftd",
+      "n": 24,
+      "state_differences": [],
+      "raw_files_identical": true
+    },
+    {
+      "original": "identity-v2",
+      "rechecked": "identity-v2-rechecked-ftd",
+      "n": 24,
+      "state_differences": [],
+      "raw_files_identical": true
+    },
+    {
+      "original": "qwen-v2",
+      "rechecked": "qwen-v2-rechecked-ftd",
+      "n": 24,
+      "state_differences": [],
+      "raw_files_identical": true
+    },
+    {
+      "original": "qwen-feedback-v2",
+      "rechecked": "qwen-feedback-v2-rechecked-ftd",
+      "n": 24,
+      "state_differences": [],
+      "raw_files_identical": true
+    }
+  ],
+  "new_model_calls": 0
+}

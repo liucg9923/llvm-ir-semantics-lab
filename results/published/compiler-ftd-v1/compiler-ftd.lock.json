@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "parent_dataset_sha256": "12c07607aa754471f2cf49ce71919b62f38744e9f9ec7c1667bf92ec3776d7b8",
+  "files": {
+    "configs/compiler-ftd.json": "cfd5faeba9711752659d0ca8785a3c3e051ad4bdbe2f444fe6b7d5257d81812a",
+    "configs/llama-cpp.json": "394e88f60929619d36b0a677dc563b8c07f21b5a79333aea04aa630b8d1197ee"
+  },
+  "purpose": "Add a separately locked model/runtime without changing frozen v2 tasks, prompts, settings or model registry."
+}

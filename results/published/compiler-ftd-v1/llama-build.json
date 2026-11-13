@@ -1,0 +1,33 @@
+{
+  "spec": {
+    "repository": "https://github.com/ggml-org/llama.cpp.git",
+    "tag": "b4514",
+    "revision": "ec7f3ac9ab33e46b136eb5ab6a76c4d81f57c7f1",
+    "cuda_architectures": "89",
+    "cmake_options": [
+      "-DGGML_CUDA=ON",
+      "-DLLAMA_CURL=OFF",
+      "-DLLAMA_BUILD_TESTS=OFF",
+      "-DLLAMA_BUILD_EXAMPLES=ON",
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "context_size": 6144,
+    "parallel_slots": 1,
+    "batch_size": 512,
+    "ubatch_size": 128,
+    "threads": 8,
+    "gpu_layers": 99,
+    "cache_type_k": "f16",
+    "cache_type_v": "f16"
+  },
+  "binary_sha256": "48549e0fc48a115a41bf2d65f7e13a759da3109b5b9d036c906c59ef57d6ba83",
+  "libraries": {
+    ".build/llama.cpp/build/ggml/src/libggml-base.so": "28201ed93e4660401e2ac6cf385c31ff4f6c45422dde49d854f9eec0933fd3ad",
+    ".build/llama.cpp/build/ggml/src/libggml-cpu.so": "4914e8c546560d40dd367c7aa7ac10ea0e5731305f9935370f862bffa7ab1ec2",
+    ".build/llama.cpp/build/ggml/src/libggml.so": "7c300e5ea88117d118beac5ce2030e1c828881fbcacf63a107ab54be5a6775c5",
+    ".build/llama.cpp/build/ggml/src/ggml-cuda/libggml-cuda.so": "60fc2cbe256e8d1be0e85ee5ab0446cff286e458a4c7dad92708fae2ae117e94",
+    ".build/llama.cpp/build/src/libllama.so": "ea8a1ad427b5d8defbee61a3eb4f87f6fe31f154615efcb8b55a165c123f02d6"
+  },
+  "version": "ggml_cuda_init: GGML_CUDA_FORCE_MMQ:    no\nggml_cuda_init: GGML_CUDA_FORCE_CUBLAS: no\nggml_cuda_init: found 1 CUDA devices:\n  Device 0: NVIDIA GeForce RTX 4080 SUPER, compute capability 8.9, VMM: yes\nversion: 1 (ec7f3ac)\nbuilt with cc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0 for x86_64-linux-gnu\n",
+  "cuda_compiler": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Mon_Apr__3_17:16:06_PDT_2023\nCuda compilation tools, release 12.1, V12.1.105\nBuild cuda_12.1.r12.1/compiler.32688072_0\n"
+}

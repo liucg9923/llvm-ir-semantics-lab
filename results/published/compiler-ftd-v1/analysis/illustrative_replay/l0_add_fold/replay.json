@@ -1,0 +1,19 @@
+{
+  "kind": "posthoc_exact_candidate_native_diagnostic",
+  "formal_status_remains": "contract_violation",
+  "candidate_modified": false,
+  "note": "This is an isolated execution observation on valid concrete inputs, not a change to the formal pipeline or score. No target layout, attributes or metadata were removed.",
+  "result": {
+    "status": "mismatch",
+    "input_kind": "diagnostic",
+    "case_count": 17,
+    "mismatch_count": 16,
+    "counterexample": {
+      "input": [
+        0
+      ],
+      "source": "9",
+      "candidate": "11"
+    }
+  }
+}

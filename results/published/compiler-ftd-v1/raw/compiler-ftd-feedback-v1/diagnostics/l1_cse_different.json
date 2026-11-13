@@ -1,0 +1,20 @@
+{
+  "syntax": {
+    "command": [
+      "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+      "-passes=verify",
+      "-S",
+      "/tmp/irsem-verify-sao0vhiw/candidate.ll",
+      "-o",
+      "/tmp/irsem-verify-sao0vhiw/canonical.ll"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt: /tmp/irsem-verify-sao0vhiw/candidate.ll:13:22: error: invalid redefinition of function 'f'\ndefine dso_local i32 @f(i32 noundef %0, i32 noundef %1) #0 {\n                     ^\n",
+    "seconds": 0.017004825174808502,
+    "timed_out": false,
+    "truncated": false
+  },
+  "alive2": null,
+  "contract": null
+}

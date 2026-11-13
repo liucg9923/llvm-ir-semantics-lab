@@ -1,0 +1,22 @@
+{
+  "task_id": "l1_dead_value",
+  "level": "L1",
+  "role": "opportunity",
+  "source_metrics": {
+    "instruction_count": 2,
+    "opcodes": {
+      "mul": 1,
+      "ret": 1
+    }
+  },
+  "syntax_valid": false,
+  "goal_met": false,
+  "effective_optimization": false,
+  "unchanged": false,
+  "status": "format_error",
+  "error": "Unbalanced or multiple code tags",
+  "key": "l1_dead_value__self_review",
+  "arm": "self_review",
+  "mode": "formal",
+  "backend": "gguf"
+}

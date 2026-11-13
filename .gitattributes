@@ -5,3 +5,5 @@
 *.gz -text
 results/published/**/raw.txt -text
 results/published/**/prompt.txt -text
+# Preserve exact bytes of the archived CSV export.
+results/published/compiler-ftd-v1/analysis/browser_report/cases.csv -text

@@ -1,0 +1,1237 @@
+[
+  {
+    "task_id": "l0_add_fold",
+    "level": "L0",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "add": 2,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "icmp": 1,
+        "select": 1,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-_4mceapq/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-_4mceapq/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.03262640908360481,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-_4mceapq/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = icmp eq i32 %x, 0\n  %r = select i1 %c, i32 11, i32 11\n  ret i32 %r\n}\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "target datalayout changed or removed",
+      "target triple changed or removed",
+      "Additional metadata is outside v1"
+    ],
+    "key": "l0_add_fold",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l0_add_variable",
+    "level": "L0",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "add": 2,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "icmp": 1,
+        "select": 1,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-93snsksl/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-93snsksl/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.032866060733795166,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-93snsksl/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = icmp eq i32 %x, 0\n  %r = select i1 %c, i32 11, i32 11\n  ret i32 %r\n}\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "target datalayout changed or removed",
+      "target triple changed or removed",
+      "Additional metadata is outside v1"
+    ],
+    "key": "l0_add_variable",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l0_widened",
+    "level": "L0",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "trunc": 1,
+        "zext": 2,
+        "add": 1,
+        "icmp": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-2z24u32y/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-2z24u32y/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.033075980842113495,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-2z24u32y/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\n; Function Attrs: minsize nounwind optsize uwtable\ndefine dso_local i32 @f(i32 noundef %0) #0 {\nentry:\n  ret i32 0\n}\n\nattributes #0 = { minsize nounwind optsize uwtable \"min-legal-vector-width\"=\"0\" \"no-trapping-math\"=\"true\" \"stack-protector-buffer-size\"=\"8\" \"target-cpu\"=\"x86-64\" \"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\" \"tune-cpu\"=\"generic\" }\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "Function signature/attributes changed",
+      "target datalayout changed or removed",
+      "target triple changed or removed",
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ],
+    "key": "l0_widened",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l0_wrap",
+    "level": "L0",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 5,
+      "opcodes": {
+        "trunc": 1,
+        "add": 1,
+        "icmp": 1,
+        "zext": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-bpmb5j2l/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-bpmb5j2l/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.03303525224328041,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-bpmb5j2l/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\n; Function Attrs: minsize nounwind optsize uwtable\ndefine dso_local i32 @f(i32 noundef %0) #0 {\nentry:\n  ret i32 0\n}\n\nattributes #0 = { minsize nounwind optsize uwtable \"min-legal-vector-width\"=\"0\" \"no-trapping-math\"=\"true\" \"stack-protector-buffer-size\"=\"8\" \"target-cpu\"=\"x86-64\" \"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\" \"tune-cpu\"=\"generic\" }\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "Function signature/attributes changed",
+      "target datalayout changed or removed",
+      "target triple changed or removed",
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ],
+    "key": "l0_wrap",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l0_udiv",
+    "level": "L0",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "udiv": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-__ffzxts/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-__ffzxts/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.03306655213236809,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-__ffzxts/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\n; Function Attrs: minsize nounwind optsize uwtable\ndefine dso_local i32 @f(i32 noundef %0) #0 {\nentry:\n  ret i32 0\n}\n\nattributes #0 = { minsize nounwind optsize uwtable \"min-legal-vector-width\"=\"0\" \"no-trapping-math\"=\"true\" \"stack-protector-buffer-size\"=\"8\" \"target-cpu\"=\"x86-64\" \"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\" \"tune-cpu\"=\"generic\" }\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "Function signature/attributes changed",
+      "target datalayout changed or removed",
+      "target triple changed or removed",
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ],
+    "key": "l0_udiv",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l0_sdiv",
+    "level": "L0",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "sdiv": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-m7rlzao6/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-m7rlzao6/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.032962948083877563,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-m7rlzao6/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 0\n}\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "target datalayout changed or removed",
+      "target triple changed or removed",
+      "Additional metadata is outside v1"
+    ],
+    "key": "l0_sdiv",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l0_unsigned_cmp",
+    "level": "L0",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "icmp": 1,
+        "zext": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-ggb24wig/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-ggb24wig/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.033219821751117706,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-ggb24wig/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 1\n}\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "target datalayout changed or removed",
+      "target triple changed or removed",
+      "Additional metadata is outside v1"
+    ],
+    "key": "l0_unsigned_cmp",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l0_signed_cmp",
+    "level": "L0",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "icmp": 1,
+        "zext": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "icmp": 1,
+        "zext": 1,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-13phl102/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-13phl102/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.03306412696838379,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-13phl102/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = icmp sgt i32 %x, -1\n  %r = zext i1 %c to i32\n  ret i32 %r\n}\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "target datalayout changed or removed",
+      "target triple changed or removed",
+      "Additional metadata is outside v1"
+    ],
+    "key": "l0_signed_cmp",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l1_const_branch",
+    "level": "L1",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "icmp": 1,
+        "br": 1,
+        "add": 1,
+        "ret": 2,
+        "sub": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "add": 1,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-fww1t1_0/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-fww1t1_0/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.016969071701169014,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-fww1t1_0/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\n; Function Attrs: minsize nounwind optsize uwtable\ndefine dso_local i32 @f(i32 noundef %0) #0 {\n  %2 = add i32 %0, 1\n  ret i32 %2\n}\n\nattributes #0 = { minsize nounwind optsize uwtable \"min-legal-vector-width\"=\"0\" \"no-trapping-math\"=\"true\" \"stack-protector-buffer-size\"=\"8\" \"target-cpu\"=\"x86-64\" \"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\" \"tune-cpu\"=\"generic\" }\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "Function signature/attributes changed",
+      "target datalayout changed or removed",
+      "target triple changed or removed",
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ],
+    "key": "l1_const_branch",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l1_variable_branch",
+    "level": "L1",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "icmp": 1,
+        "br": 1,
+        "add": 1,
+        "ret": 2,
+        "sub": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 5,
+      "opcodes": {
+        "icmp": 1,
+        "add": 2,
+        "select": 1,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-kp3cagli/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-kp3cagli/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.017064696177840233,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-kp3cagli/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\n; Function Attrs: minsize nounwind optsize uwtable\ndefine dso_local i32 @f(i32 noundef %0) #0 {\nentry:\n  %c = icmp eq i32 %0, 0\n  %1 = add i32 %0, -1\n  %2 = add i32 %0, 1\n  %3 = select i1 %c, i32 %2, i32 %1\n  ret i32 %3\n}\n\nattributes #0 = { minsize nounwind optsize uwtable \"min-legal-vector-width\"=\"0\" \"no-trapping-math\"=\"true\" \"stack-protector-buffer-size\"=\"8\" \"target-cpu\"=\"x86-64\" \"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\" \"tune-cpu\"=\"generic\" }\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "Function signature/attributes changed",
+      "target datalayout changed or removed",
+      "target triple changed or removed",
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ],
+    "key": "l1_variable_branch",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l1_phi_equal",
+    "level": "L1",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "icmp": 1,
+        "br": 3,
+        "phi": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-mv0byn9a/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-mv0byn9a/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.03311687707901001,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-mv0byn9a/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\n; Function Attrs: minsize nounwind optsize uwtable\ndefine dso_local i32 @f(i32 noundef %0) #0 {\n  ret i32 11\n}\n\nattributes #0 = { minsize nounwind optsize uwtable \"min-legal-vector-width\"=\"0\" \"no-trapping-math\"=\"true\" \"stack-protector-buffer-size\"=\"8\" \"target-cpu\"=\"x86-64\" \"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\" \"tune-cpu\"=\"generic\" }\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "Function signature/attributes changed",
+      "target datalayout changed or removed",
+      "target triple changed or removed",
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ],
+    "key": "l1_phi_equal",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l1_phi_different",
+    "level": "L1",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "icmp": 1,
+        "br": 3,
+        "phi": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-fn0fo_zy/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-fn0fo_zy/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.033136751502752304,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-fn0fo_zy/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\n; Function Attrs: minsize nounwind optsize uwtable\ndefine dso_local i32 @f(i32 noundef %0) #0 {\n  ret i32 11\n}\n\nattributes #0 = { minsize nounwind optsize uwtable \"min-legal-vector-width\"=\"0\" \"no-trapping-math\"=\"true\" \"stack-protector-buffer-size\"=\"8\" \"target-cpu\"=\"x86-64\" \"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\" \"tune-cpu\"=\"generic\" }\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "Function signature/attributes changed",
+      "target datalayout changed or removed",
+      "target triple changed or removed",
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ],
+    "key": "l1_phi_different",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l1_dead_value",
+    "level": "L1",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "mul": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-ydcgrrp_/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-ydcgrrp_/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.03306310810148716,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-ydcgrrp_/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\n; Function Attrs: minsize nounwind optsize uwtable\ndefine dso_local i32 @f(i32 noundef %0) #0 {\nentry:\n  ret i32 0\n}\n\nattributes #0 = { minsize nounwind optsize uwtable \"min-legal-vector-width\"=\"0\" \"no-trapping-math\"=\"true\" \"stack-protector-buffer-size\"=\"8\" \"target-cpu\"=\"x86-64\" \"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\" \"tune-cpu\"=\"generic\" }\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "Function signature/attributes changed",
+      "target datalayout changed or removed",
+      "target triple changed or removed",
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ],
+    "key": "l1_dead_value",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l1_live_on_path",
+    "level": "L1",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 5,
+      "opcodes": {
+        "mul": 1,
+        "icmp": 1,
+        "br": 1,
+        "ret": 2
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-72fhdqqo/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-72fhdqqo/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.016930220648646355,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-72fhdqqo/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\n; Function Attrs: minsize nounwind optsize uwtable\ndefine dso_local i32 @f(i32 noundef %0) #0 {\n  ret i32 11\n}\n\nattributes #0 = { minsize nounwind optsize uwtable \"min-legal-vector-width\"=\"0\" \"no-trapping-math\"=\"true\" \"stack-protector-buffer-size\"=\"8\" \"target-cpu\"=\"x86-64\" \"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\" \"tune-cpu\"=\"generic\" }\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "Function signature/attributes changed",
+      "target datalayout changed or removed",
+      "target triple changed or removed",
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ],
+    "key": "l1_live_on_path",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l1_cse_equal",
+    "level": "L1",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 4,
+      "opcodes": {
+        "add": 3,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "ret": 2
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-sp6rmgdj/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-sp6rmgdj/canonical.ll"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt: /tmp/irsem-verify-sp6rmgdj/candidate.ll:13:22: error: invalid redefinition of function 'f'\ndefine dso_local i32 @f(i32 noundef %0, i32 noundef %1) #0 {\n                     ^\n",
+      "seconds": 0.016873762011528015,
+      "timed_out": false,
+      "truncated": false
+    },
+    "status": "invalid_ir",
+    "key": "l1_cse_equal",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l1_cse_different",
+    "level": "L1",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 4,
+      "opcodes": {
+        "add": 3,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "ret": 2
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-sao0vhiw/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-sao0vhiw/canonical.ll"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt: /tmp/irsem-verify-sao0vhiw/candidate.ll:13:22: error: invalid redefinition of function 'f'\ndefine dso_local i32 @f(i32 noundef %0, i32 noundef %1) #0 {\n                     ^\n",
+      "seconds": 0.017004825174808502,
+      "timed_out": false,
+      "truncated": false
+    },
+    "status": "invalid_ir",
+    "key": "l1_cse_different",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l2_disjoint",
+    "level": "L2",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "getelementptr": 1,
+        "load": 2,
+        "store": 1,
+        "add": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 7,
+      "opcodes": {
+        "ret": 2,
+        "getelementptr": 1,
+        "load": 2,
+        "store": 1,
+        "add": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-6ri3ba75/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-6ri3ba75/canonical.ll"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt: /tmp/irsem-verify-6ri3ba75/candidate.ll:13:22: error: invalid redefinition of function 'f'\ndefine dso_local i32 @f(ptr noundef %0, ptr noundef %1) #0 {\n                     ^\n",
+      "seconds": 0.03310293145477772,
+      "timed_out": false,
+      "truncated": false
+    },
+    "status": "invalid_ir",
+    "key": "l2_disjoint",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l2_mayalias",
+    "level": "L2",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 5,
+      "opcodes": {
+        "load": 2,
+        "store": 1,
+        "add": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 5,
+      "opcodes": {
+        "load": 2,
+        "store": 1,
+        "add": 1,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-je9q623a/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-je9q623a/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.033024949952960014,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-je9q623a/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\n; Function Attrs: minsize nounwind optsize uwtable\ndefine dso_local i32 @f(ptr noundef %0, ptr noundef %1) #0 {\nentry:\n  %a = load i32, ptr %0, align 4\n  store i32 7, ptr %1, align 4\n  %b = load i32, ptr %0, align 4\n  %r = add i32 %a, %b\n  ret i32 %r\n}\n\nattributes #0 = { minsize nounwind optsize uwtable \"min-legal-vector-width\"=\"0\" \"no-trapping-math\"=\"true\" \"stack-protector-buffer-size\"=\"8\" \"target-cpu\"=\"x86-64\" \"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\" \"tune-cpu\"=\"generic\" }\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "Function signature/attributes changed",
+      "target datalayout changed or removed",
+      "target triple changed or removed",
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ],
+    "key": "l2_mayalias",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l2_store_overwritten",
+    "level": "L2",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "store": 2,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-wynuzgoi/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-wynuzgoi/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.033118993043899536,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-wynuzgoi/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\n; Function Attrs: minsize nounwind optsize uwtable\ndefine dso_local i32 @f(ptr noundef %0, ptr noundef %1) #0 {\nentry:\n  ret i32 0\n}\n\nattributes #0 = { minsize nounwind optsize uwtable \"min-legal-vector-width\"=\"0\" \"no-trapping-math\"=\"true\" \"stack-protector-buffer-size\"=\"8\" \"target-cpu\"=\"x86-64\" \"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\" \"tune-cpu\"=\"generic\" }\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "Function signature/attributes changed",
+      "target datalayout changed or removed",
+      "target triple changed or removed",
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ],
+    "key": "l2_store_overwritten",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l2_store_observed",
+    "level": "L2",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 4,
+      "opcodes": {
+        "store": 2,
+        "load": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-m9ncb03a/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-m9ncb03a/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.033136213198304176,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-m9ncb03a/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\n; Function Attrs: minsize nounwind optsize uwtable\ndefine dso_local i32 @f(i32 noundef %0) #0 {\nentry:\n  ret i32 0\n}\n\n; Function Attrs: nocallback nofree nosync nounwind willreturn memory(argmem: readwrite)\ndeclare void @llvm.lifetime.start.p0(i64 immarg, ptr nocapture) #1\n\n; Function Attrs: nocallback nofree nosync nounwind willreturn memory(argmem: readwrite)\ndeclare void @llvm.lifetime.end.p0(i64 immarg, ptr nocapture) #1\n\nattributes #0 = { minsize nounwind optsize uwtable \"min-legal-vector-width\"=\"0\" \"no-trapping-math\"=\"true\" \"stack-protector-buffer-size\"=\"8\" \"target-cpu\"=\"x86-64\" \"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\" \"tune-cpu\"=\"generic\" }\nattributes #1 = { nocallback nofree nosync nounwind willreturn memory(argmem: readwrite) }\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "Function signature/attributes changed",
+      "target datalayout changed or removed",
+      "target triple changed or removed",
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ],
+    "key": "l2_store_observed",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l2_local_store",
+    "level": "L2",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "alloca": 1,
+        "store": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-vcy6awm_/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-vcy6awm_/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.03312927484512329,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-vcy6awm_/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\n; Function Attrs: minsize nounwind optsize uwtable\ndefine dso_local i32 @f(ptr noundef %0, ptr noundef %1) #0 {\nentry:\n  ret i32 0\n}\n\nattributes #0 = { minsize nounwind optsize uwtable \"min-legal-vector-width\"=\"0\" \"no-trapping-math\"=\"true\" \"stack-protector-buffer-size\"=\"8\" \"target-cpu\"=\"x86-64\" \"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\" \"tune-cpu\"=\"generic\" }\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "Function signature/attributes changed",
+      "target datalayout changed or removed",
+      "target triple changed or removed",
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ],
+    "key": "l2_local_store",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l2_escaped_store",
+    "level": "L2",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "store": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-4__qdize/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-4__qdize/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.03302674740552902,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-4__qdize/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\n; Function Attrs: minsize nounwind optsize uwtable\ndefine dso_local i32 @f(ptr noundef %0, ptr noundef %1) #0 {\nentry:\n  ret i32 0\n}\n\nattributes #0 = { minsize nounwind optsize uwtable \"min-legal-vector-width\"=\"0\" \"no-trapping-math\"=\"true\" \"stack-protector-buffer-size\"=\"8\" \"target-cpu\"=\"x86-64\" \"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\" \"tune-cpu\"=\"generic\" }\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "Function signature/attributes changed",
+      "target datalayout changed or removed",
+      "target triple changed or removed",
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ],
+    "key": "l2_escaped_store",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l2_duplicate_store",
+    "level": "L2",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "store": 2,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-vb_nyimx/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-vb_nyimx/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.03297332488000393,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-vb_nyimx/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\n; Function Attrs: minsize nounwind optsize uwtable\ndefine dso_local i32 @f(ptr noundef %0, ptr noundef %1) #0 {\nentry:\n  ret i32 0\n}\n\nattributes #0 = { minsize nounwind optsize uwtable \"min-legal-vector-width\"=\"0\" \"no-trapping-math\"=\"true\" \"stack-protector-buffer-size\"=\"8\" \"target-cpu\"=\"x86-64\" \"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\" \"tune-cpu\"=\"generic\" }\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "Function signature/attributes changed",
+      "target datalayout changed or removed",
+      "target triple changed or removed",
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ],
+    "key": "l2_duplicate_store",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l2_distinct_store",
+    "level": "L2",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "store": 2,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "store": 2,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-cgosfdm5/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-cgosfdm5/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.016849331557750702,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-cgosfdm5/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\n; Function Attrs: minsize nounwind optsize uwtable\ndefine dso_local i32 @f(ptr noundef %0, ptr noundef %1) #0 {\nentry:\n  store i32 7, ptr %0, align 4, !tbaa !5\n  store i32 7, ptr %1, align 4, !tbaa !5\n  ret i32 0\n}\n\nattributes #0 = { minsize nounwind optsize uwtable \"min-legal-vector-width\"=\"0\" \"no-trapping-math\"=\"true\" \"stack-protector-buffer-size\"=\"8\" \"target-cpu\"=\"x86-64\" \"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\" \"tune-cpu\"=\"generic\" }\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n!5 = !{!6, !6, i64 0}\n!6 = !{!\"int\", !7, i64 0}\n!7 = !{!\"omnipotent char\", !8, i64 0}\n!8 = !{!\"Simple C/C++ TBAA\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "Function signature/attributes changed",
+      "target datalayout changed or removed",
+      "target triple changed or removed",
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ],
+    "key": "l2_distinct_store",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "gguf"
+  }
+]

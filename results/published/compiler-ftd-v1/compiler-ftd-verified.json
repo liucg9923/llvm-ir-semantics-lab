@@ -1,0 +1,45 @@
+{
+  "status": "complete",
+  "model": {
+    "id": "second-state/llm-compiler-7b-ftd-GGUF",
+    "revision": "3255d79430715ef149898cbb88cfeb7cb3b061a1",
+    "filename": "llm-compiler-7b-ftd-f16.gguf",
+    "sha256": "b1f75d4f55656dbc7b2052f06d1eb1eaf99ed5d7aaf306f520e72136bd98f829",
+    "size": 13478104960,
+    "upstream_model": "facebook/llm-compiler-7b-ftd",
+    "upstream_identity": "Community model card attribution; bitwise equality to the gated upstream checkpoint is not independently verified.",
+    "template": "llama_inst",
+    "backend": "llama.cpp",
+    "dtype": "float16",
+    "quantization": null,
+    "license": "LLM Compiler License Agreement",
+    "gated": false
+  },
+  "endpoint": "https://hf-mirror.com",
+  "finished_utc": "2026-11-13T06:45:27.324043+00:00",
+  "seconds": 21.61548189818859,
+  "files": [
+    {
+      "path": "README.md",
+      "size": 4365,
+      "lfs_sha256": null,
+      "git_blob_id": "e0ffe27b8ca9fa952315201e151fab62da5ad463",
+      "verified_hash": "e0ffe27b8ca9fa952315201e151fab62da5ad463"
+    },
+    {
+      "path": "config.json",
+      "size": 641,
+      "lfs_sha256": null,
+      "git_blob_id": "e07f7f1cce0f81303f19ef91ed75232970e831b4",
+      "verified_hash": "e07f7f1cce0f81303f19ef91ed75232970e831b4"
+    },
+    {
+      "path": "llm-compiler-7b-ftd-f16.gguf",
+      "size": 13478104960,
+      "lfs_sha256": "b1f75d4f55656dbc7b2052f06d1eb1eaf99ed5d7aaf306f520e72136bd98f829",
+      "git_blob_id": "84a26ca4fd1c4f9aaa14e8fd0629334a1a01318e",
+      "verified_hash": "b1f75d4f55656dbc7b2052f06d1eb1eaf99ed5d7aaf306f520e72136bd98f829"
+    }
+  ],
+  "weights_uploaded_to_git": false
+}

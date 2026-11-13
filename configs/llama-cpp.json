@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/ggml-org/llama.cpp.git",
+  "tag": "b4514",
+  "revision": "ec7f3ac9ab33e46b136eb5ab6a76c4d81f57c7f1",
+  "cuda_architectures": "89",
+  "cmake_options": ["-DGGML_CUDA=ON", "-DLLAMA_CURL=OFF", "-DLLAMA_BUILD_TESTS=OFF", "-DLLAMA_BUILD_EXAMPLES=ON", "-DCMAKE_BUILD_TYPE=Release"],
+  "context_size": 6144,
+  "parallel_slots": 1,
+  "batch_size": 512,
+  "ubatch_size": 128,
+  "threads": 8,
+  "gpu_layers": 99,
+  "cache_type_k": "f16",
+  "cache_type_v": "f16"
+}

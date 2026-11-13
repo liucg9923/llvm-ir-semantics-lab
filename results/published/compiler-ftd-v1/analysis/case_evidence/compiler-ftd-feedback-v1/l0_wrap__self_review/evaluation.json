@@ -1,0 +1,25 @@
+{
+  "task_id": "l0_wrap",
+  "level": "L0",
+  "role": "guard",
+  "source_metrics": {
+    "instruction_count": 5,
+    "opcodes": {
+      "trunc": 1,
+      "add": 1,
+      "icmp": 1,
+      "zext": 1,
+      "ret": 1
+    }
+  },
+  "syntax_valid": false,
+  "goal_met": false,
+  "effective_optimization": false,
+  "unchanged": false,
+  "status": "format_error",
+  "error": "Unbalanced or multiple code tags",
+  "key": "l0_wrap__self_review",
+  "arm": "self_review",
+  "mode": "formal",
+  "backend": "gguf"
+}

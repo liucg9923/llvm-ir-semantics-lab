@@ -1,0 +1,23 @@
+{
+  "task_id": "l2_local_store",
+  "level": "L2",
+  "role": "opportunity",
+  "source_metrics": {
+    "instruction_count": 3,
+    "opcodes": {
+      "alloca": 1,
+      "store": 1,
+      "ret": 1
+    }
+  },
+  "syntax_valid": false,
+  "goal_met": false,
+  "effective_optimization": false,
+  "unchanged": false,
+  "status": "format_error",
+  "error": "Unbalanced or multiple code tags",
+  "key": "l2_local_store__tool_feedback",
+  "arm": "tool_feedback",
+  "mode": "formal",
+  "backend": "gguf"
+}

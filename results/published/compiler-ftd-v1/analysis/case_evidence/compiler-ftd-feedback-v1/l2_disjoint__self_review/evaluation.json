@@ -1,0 +1,25 @@
+{
+  "task_id": "l2_disjoint",
+  "level": "L2",
+  "role": "opportunity",
+  "source_metrics": {
+    "instruction_count": 6,
+    "opcodes": {
+      "getelementptr": 1,
+      "load": 2,
+      "store": 1,
+      "add": 1,
+      "ret": 1
+    }
+  },
+  "syntax_valid": false,
+  "goal_met": false,
+  "effective_optimization": false,
+  "unchanged": false,
+  "status": "format_error",
+  "error": "Unbalanced or multiple code tags",
+  "key": "l2_disjoint__self_review",
+  "arm": "self_review",
+  "mode": "formal",
+  "backend": "gguf"
+}

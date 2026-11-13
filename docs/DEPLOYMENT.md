@@ -14,7 +14,7 @@ Dockerfile.validator 是可选的独立 CPU 部署入口。AutoDL 等平台通�
 
 核心评测仅依赖 Python 标准库；pytest 是开发选项。setup_python.sh 使用 HTTPS PyPI，为避免镜像默认 HTTP 失败，不修改全局 pip 配置。测试也可以通过 PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v 运行。
 
-setup_inference.sh 建立独立 .venv-inference，安装锁定的 torch/transformers/accelerate/safetensors 版本并保存实际 pip freeze。GPU 驱动与 CUDA 可用性仍须通过预检。模型 revision 已锁定，首次下载需联网与足够空间；Meta 模型需用户在官方渠道取得访问权限。代码不会代替用户接受许可，不打印或保存访问 token。
+setup_inference.sh 建立独立 .venv-inference，安装锁定的 torch/transformers/accelerate/safetensors 版本并保存实际 pip freeze。GPU 驱动与 CUDA 可用性仍须通过预检。模型 revision 已锁定，首次下载需联网与足够空间；原始 facebook/ 模型需用户在官方渠道取得访问权限；公开的社区 FTD GGUF 入口见独立部署说明。代码不会代替用户接受许可，不打印或保存访问 token。
 
 建议先在 dev split 验证两个模型输入模板和生成长度，确认后保留冻结设置再跑 test。没有下载模型之前，不把模型推理模块的静态检查称为真实推理验证。
 
@@ -40,7 +40,7 @@ LLVM 镜像仍使用 LLVM 官方签名密钥验证软件包。AutoDL 的可选 G
 
 ## 当前实验与数据归档入口
 
-已验证模型下载入口为 scripts/download_checkpoint.py；Qwen 允许使用无凭据公共镜像，但文件必须匹配官方固定提交的哈希。Meta 模型只使用官方端点与已获批的账号权限。权重保存在忽略的缓存目录，不进入 Git。
+已验证模型下载入口为 scripts/download_checkpoint.py；Qwen 允许使用无凭据公共镜像，但文件必须匹配官方固定提交的哈希。原始 facebook/ 模型入口使用官方端点与已获批的账号权限；新增社区 FTD GGUF 入口及其完整校验流程见 [FTD 部署说明](FTD_DEPLOYMENT.md)。权重保存在忽略的缓存目录，不进入 Git。
 
 阶段执行使用 scripts/run_stage.py，保存状态、标准输出、耗时以及可选的 GPU 设备级采样。采集和配对分析使用 scripts/collect_campaign.py；它保留失败记录，并区分开发数据、正式题和配对题。
 

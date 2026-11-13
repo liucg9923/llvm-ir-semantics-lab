@@ -1,0 +1,22 @@
+{
+  "task_id": "l2_distinct_store",
+  "level": "L2",
+  "role": "guard",
+  "source_metrics": {
+    "instruction_count": 3,
+    "opcodes": {
+      "store": 2,
+      "ret": 1
+    }
+  },
+  "syntax_valid": false,
+  "goal_met": false,
+  "effective_optimization": false,
+  "unchanged": false,
+  "status": "format_error",
+  "error": "Unbalanced or multiple code tags",
+  "key": "l2_distinct_store__self_review",
+  "arm": "self_review",
+  "mode": "formal",
+  "backend": "gguf"
+}

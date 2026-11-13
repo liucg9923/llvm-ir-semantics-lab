@@ -1,0 +1,26 @@
+{
+  "syntax": {
+    "command": [
+      "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+      "-passes=verify",
+      "-S",
+      "/tmp/irsem-verify-fww1t1_0/candidate.ll",
+      "-o",
+      "/tmp/irsem-verify-fww1t1_0/canonical.ll"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "seconds": 0.016969071701169014,
+    "timed_out": false,
+    "truncated": false
+  },
+  "alive2": null,
+  "contract": [
+    "Function signature/attributes changed",
+    "target datalayout changed or removed",
+    "target triple changed or removed",
+    "Additional metadata is outside v1",
+    "Declarations, globals, inline asm or new attribute groups are outside v1"
+  ]
+}

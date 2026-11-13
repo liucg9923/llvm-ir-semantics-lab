@@ -1,0 +1,24 @@
+{
+  "syntax": {
+    "command": [
+      "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+      "-passes=verify",
+      "-S",
+      "/tmp/irsem-verify-13phl102/candidate.ll",
+      "-o",
+      "/tmp/irsem-verify-13phl102/canonical.ll"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "seconds": 0.03306412696838379,
+    "timed_out": false,
+    "truncated": false
+  },
+  "alive2": null,
+  "contract": [
+    "target datalayout changed or removed",
+    "target triple changed or removed",
+    "Additional metadata is outside v1"
+  ]
+}

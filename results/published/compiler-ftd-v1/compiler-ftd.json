@@ -1,0 +1,15 @@
+{
+  "id": "second-state/llm-compiler-7b-ftd-GGUF",
+  "revision": "3255d79430715ef149898cbb88cfeb7cb3b061a1",
+  "filename": "llm-compiler-7b-ftd-f16.gguf",
+  "sha256": "b1f75d4f55656dbc7b2052f06d1eb1eaf99ed5d7aaf306f520e72136bd98f829",
+  "size": 13478104960,
+  "upstream_model": "facebook/llm-compiler-7b-ftd",
+  "upstream_identity": "Community model card attribution; bitwise equality to the gated upstream checkpoint is not independently verified.",
+  "template": "llama_inst",
+  "backend": "llama.cpp",
+  "dtype": "float16",
+  "quantization": null,
+  "license": "LLM Compiler License Agreement",
+  "gated": false
+}

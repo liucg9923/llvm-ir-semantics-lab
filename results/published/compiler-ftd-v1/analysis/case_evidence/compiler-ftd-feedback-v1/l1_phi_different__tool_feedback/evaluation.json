@@ -1,0 +1,24 @@
+{
+  "task_id": "l1_phi_different",
+  "level": "L1",
+  "role": "guard",
+  "source_metrics": {
+    "instruction_count": 6,
+    "opcodes": {
+      "icmp": 1,
+      "br": 3,
+      "phi": 1,
+      "ret": 1
+    }
+  },
+  "syntax_valid": false,
+  "goal_met": false,
+  "effective_optimization": false,
+  "unchanged": false,
+  "status": "format_error",
+  "error": "Unbalanced or multiple code tags",
+  "key": "l1_phi_different__tool_feedback",
+  "arm": "tool_feedback",
+  "mode": "formal",
+  "backend": "gguf"
+}

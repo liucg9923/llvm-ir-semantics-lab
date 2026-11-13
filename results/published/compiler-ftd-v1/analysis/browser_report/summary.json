@@ -1,0 +1,425 @@
+{
+  "dataset_sha256": "12c07607aa754471f2cf49ce71919b62f38744e9f9ec7c1667bf92ec3776d7b8",
+  "groups": [
+    {
+      "level": "L0",
+      "arm": "initial",
+      "n": 8,
+      "statuses": {
+        "verified": 8
+      },
+      "syntax_valid": 8,
+      "verified": 8,
+      "refuted": 0,
+      "unchanged": 1,
+      "opportunities": 4,
+      "effective_optimizations": 4,
+      "run": "opt-v2-rechecked-ftd",
+      "label": "opt",
+      "mode": "formal"
+    },
+    {
+      "level": "L1",
+      "arm": "initial",
+      "n": 8,
+      "statuses": {
+        "verified": 8
+      },
+      "syntax_valid": 8,
+      "verified": 8,
+      "refuted": 0,
+      "unchanged": 2,
+      "opportunities": 4,
+      "effective_optimizations": 4,
+      "run": "opt-v2-rechecked-ftd",
+      "label": "opt",
+      "mode": "formal"
+    },
+    {
+      "level": "L2",
+      "arm": "initial",
+      "n": 8,
+      "statuses": {
+        "verified": 8
+      },
+      "syntax_valid": 8,
+      "verified": 8,
+      "refuted": 0,
+      "unchanged": 4,
+      "opportunities": 4,
+      "effective_optimizations": 4,
+      "run": "opt-v2-rechecked-ftd",
+      "label": "opt",
+      "mode": "formal"
+    },
+    {
+      "level": "L0",
+      "arm": "initial",
+      "n": 8,
+      "statuses": {
+        "contract_violation": 8
+      },
+      "syntax_valid": 8,
+      "verified": 0,
+      "refuted": 0,
+      "unchanged": 0,
+      "opportunities": 4,
+      "effective_optimizations": 0,
+      "run": "compiler-ftd-v1",
+      "label": "second-state/llm-compiler-7b-ftd-GGUF",
+      "mode": "formal"
+    },
+    {
+      "level": "L1",
+      "arm": "initial",
+      "n": 8,
+      "statuses": {
+        "contract_violation": 6,
+        "invalid_ir": 2
+      },
+      "syntax_valid": 6,
+      "verified": 0,
+      "refuted": 0,
+      "unchanged": 0,
+      "opportunities": 4,
+      "effective_optimizations": 0,
+      "run": "compiler-ftd-v1",
+      "label": "second-state/llm-compiler-7b-ftd-GGUF",
+      "mode": "formal"
+    },
+    {
+      "level": "L2",
+      "arm": "initial",
+      "n": 8,
+      "statuses": {
+        "invalid_ir": 1,
+        "contract_violation": 7
+      },
+      "syntax_valid": 7,
+      "verified": 0,
+      "refuted": 0,
+      "unchanged": 0,
+      "opportunities": 4,
+      "effective_optimizations": 0,
+      "run": "compiler-ftd-v1",
+      "label": "second-state/llm-compiler-7b-ftd-GGUF",
+      "mode": "formal"
+    },
+    {
+      "level": "L0",
+      "arm": "initial",
+      "n": 8,
+      "statuses": {
+        "verified": 6,
+        "invalid_ir": 2
+      },
+      "syntax_valid": 6,
+      "verified": 6,
+      "refuted": 0,
+      "unchanged": 4,
+      "opportunities": 4,
+      "effective_optimizations": 2,
+      "run": "qwen-v2-rechecked-ftd",
+      "label": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "mode": "formal"
+    },
+    {
+      "level": "L1",
+      "arm": "initial",
+      "n": 8,
+      "statuses": {
+        "refuted": 3,
+        "verified": 5
+      },
+      "syntax_valid": 8,
+      "verified": 5,
+      "refuted": 3,
+      "unchanged": 2,
+      "opportunities": 4,
+      "effective_optimizations": 2,
+      "run": "qwen-v2-rechecked-ftd",
+      "label": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "mode": "formal"
+    },
+    {
+      "level": "L2",
+      "arm": "initial",
+      "n": 8,
+      "statuses": {
+        "verified": 4,
+        "refuted": 4
+      },
+      "syntax_valid": 8,
+      "verified": 4,
+      "refuted": 4,
+      "unchanged": 0,
+      "opportunities": 4,
+      "effective_optimizations": 3,
+      "run": "qwen-v2-rechecked-ftd",
+      "label": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "mode": "formal"
+    },
+    {
+      "level": "L0",
+      "arm": "initial",
+      "n": 8,
+      "statuses": {
+        "verified": 8
+      },
+      "syntax_valid": 8,
+      "verified": 8,
+      "refuted": 0,
+      "unchanged": 8,
+      "opportunities": 4,
+      "effective_optimizations": 0,
+      "run": "identity-v2-rechecked-ftd",
+      "label": "identity",
+      "mode": "fixture"
+    },
+    {
+      "level": "L1",
+      "arm": "initial",
+      "n": 8,
+      "statuses": {
+        "verified": 8
+      },
+      "syntax_valid": 8,
+      "verified": 8,
+      "refuted": 0,
+      "unchanged": 8,
+      "opportunities": 4,
+      "effective_optimizations": 0,
+      "run": "identity-v2-rechecked-ftd",
+      "label": "identity",
+      "mode": "fixture"
+    },
+    {
+      "level": "L2",
+      "arm": "initial",
+      "n": 8,
+      "statuses": {
+        "verified": 8
+      },
+      "syntax_valid": 8,
+      "verified": 8,
+      "refuted": 0,
+      "unchanged": 8,
+      "opportunities": 4,
+      "effective_optimizations": 0,
+      "run": "identity-v2-rechecked-ftd",
+      "label": "identity",
+      "mode": "fixture"
+    },
+    {
+      "level": "L0",
+      "arm": "self_review",
+      "n": 4,
+      "statuses": {
+        "format_error": 4
+      },
+      "syntax_valid": 0,
+      "verified": 0,
+      "refuted": 0,
+      "unchanged": 0,
+      "opportunities": 2,
+      "effective_optimizations": 0,
+      "run": "compiler-ftd-feedback-v1",
+      "label": "second-state/llm-compiler-7b-ftd-GGUF",
+      "mode": "formal"
+    },
+    {
+      "level": "L0",
+      "arm": "tool_feedback",
+      "n": 4,
+      "statuses": {
+        "format_error": 4
+      },
+      "syntax_valid": 0,
+      "verified": 0,
+      "refuted": 0,
+      "unchanged": 0,
+      "opportunities": 2,
+      "effective_optimizations": 0,
+      "run": "compiler-ftd-feedback-v1",
+      "label": "second-state/llm-compiler-7b-ftd-GGUF",
+      "mode": "formal"
+    },
+    {
+      "level": "L1",
+      "arm": "self_review",
+      "n": 4,
+      "statuses": {
+        "contract_violation": 2,
+        "format_error": 2
+      },
+      "syntax_valid": 2,
+      "verified": 0,
+      "refuted": 0,
+      "unchanged": 0,
+      "opportunities": 2,
+      "effective_optimizations": 0,
+      "run": "compiler-ftd-feedback-v1",
+      "label": "second-state/llm-compiler-7b-ftd-GGUF",
+      "mode": "formal"
+    },
+    {
+      "level": "L1",
+      "arm": "tool_feedback",
+      "n": 4,
+      "statuses": {
+        "format_error": 4
+      },
+      "syntax_valid": 0,
+      "verified": 0,
+      "refuted": 0,
+      "unchanged": 0,
+      "opportunities": 2,
+      "effective_optimizations": 0,
+      "run": "compiler-ftd-feedback-v1",
+      "label": "second-state/llm-compiler-7b-ftd-GGUF",
+      "mode": "formal"
+    },
+    {
+      "level": "L2",
+      "arm": "self_review",
+      "n": 4,
+      "statuses": {
+        "format_error": 2,
+        "contract_violation": 2
+      },
+      "syntax_valid": 2,
+      "verified": 0,
+      "refuted": 0,
+      "unchanged": 0,
+      "opportunities": 2,
+      "effective_optimizations": 0,
+      "run": "compiler-ftd-feedback-v1",
+      "label": "second-state/llm-compiler-7b-ftd-GGUF",
+      "mode": "formal"
+    },
+    {
+      "level": "L2",
+      "arm": "tool_feedback",
+      "n": 4,
+      "statuses": {
+        "format_error": 4
+      },
+      "syntax_valid": 0,
+      "verified": 0,
+      "refuted": 0,
+      "unchanged": 0,
+      "opportunities": 2,
+      "effective_optimizations": 0,
+      "run": "compiler-ftd-feedback-v1",
+      "label": "second-state/llm-compiler-7b-ftd-GGUF",
+      "mode": "formal"
+    },
+    {
+      "level": "L0",
+      "arm": "self_review",
+      "n": 4,
+      "statuses": {
+        "verified": 3,
+        "invalid_ir": 1
+      },
+      "syntax_valid": 3,
+      "verified": 3,
+      "refuted": 0,
+      "unchanged": 2,
+      "opportunities": 2,
+      "effective_optimizations": 1,
+      "run": "qwen-feedback-v2-rechecked-ftd",
+      "label": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "mode": "formal"
+    },
+    {
+      "level": "L0",
+      "arm": "tool_feedback",
+      "n": 4,
+      "statuses": {
+        "verified": 4
+      },
+      "syntax_valid": 4,
+      "verified": 4,
+      "refuted": 0,
+      "unchanged": 4,
+      "opportunities": 2,
+      "effective_optimizations": 0,
+      "run": "qwen-feedback-v2-rechecked-ftd",
+      "label": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "mode": "formal"
+    },
+    {
+      "level": "L1",
+      "arm": "self_review",
+      "n": 4,
+      "statuses": {
+        "refuted": 2,
+        "verified": 2
+      },
+      "syntax_valid": 4,
+      "verified": 2,
+      "refuted": 2,
+      "unchanged": 1,
+      "opportunities": 2,
+      "effective_optimizations": 1,
+      "run": "qwen-feedback-v2-rechecked-ftd",
+      "label": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "mode": "formal"
+    },
+    {
+      "level": "L1",
+      "arm": "tool_feedback",
+      "n": 4,
+      "statuses": {
+        "refuted": 1,
+        "verified": 3
+      },
+      "syntax_valid": 4,
+      "verified": 3,
+      "refuted": 1,
+      "unchanged": 2,
+      "opportunities": 2,
+      "effective_optimizations": 1,
+      "run": "qwen-feedback-v2-rechecked-ftd",
+      "label": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "mode": "formal"
+    },
+    {
+      "level": "L2",
+      "arm": "self_review",
+      "n": 4,
+      "statuses": {
+        "refuted": 3,
+        "verified": 1
+      },
+      "syntax_valid": 4,
+      "verified": 1,
+      "refuted": 3,
+      "unchanged": 0,
+      "opportunities": 2,
+      "effective_optimizations": 1,
+      "run": "qwen-feedback-v2-rechecked-ftd",
+      "label": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "mode": "formal"
+    },
+    {
+      "level": "L2",
+      "arm": "tool_feedback",
+      "n": 4,
+      "statuses": {
+        "verified": 3,
+        "refuted": 1
+      },
+      "syntax_valid": 4,
+      "verified": 3,
+      "refuted": 1,
+      "unchanged": 1,
+      "opportunities": 2,
+      "effective_optimizations": 1,
+      "run": "qwen-feedback-v2-rechecked-ftd",
+      "label": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "mode": "formal"
+    }
+  ]
+}

@@ -1,0 +1,386 @@
+[
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l0_add_fold",
+    "key": "l0_add_fold",
+    "arm": "initial",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-v1/l0_add_fold"
+  },
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l0_add_variable",
+    "key": "l0_add_variable",
+    "arm": "initial",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-v1/l0_add_variable"
+  },
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l0_widened",
+    "key": "l0_widened",
+    "arm": "initial",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-v1/l0_widened"
+  },
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l0_wrap",
+    "key": "l0_wrap",
+    "arm": "initial",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-v1/l0_wrap"
+  },
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l0_udiv",
+    "key": "l0_udiv",
+    "arm": "initial",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-v1/l0_udiv"
+  },
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l0_sdiv",
+    "key": "l0_sdiv",
+    "arm": "initial",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-v1/l0_sdiv"
+  },
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l0_unsigned_cmp",
+    "key": "l0_unsigned_cmp",
+    "arm": "initial",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-v1/l0_unsigned_cmp"
+  },
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l0_signed_cmp",
+    "key": "l0_signed_cmp",
+    "arm": "initial",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-v1/l0_signed_cmp"
+  },
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l1_const_branch",
+    "key": "l1_const_branch",
+    "arm": "initial",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-v1/l1_const_branch"
+  },
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l1_variable_branch",
+    "key": "l1_variable_branch",
+    "arm": "initial",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-v1/l1_variable_branch"
+  },
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l1_phi_equal",
+    "key": "l1_phi_equal",
+    "arm": "initial",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-v1/l1_phi_equal"
+  },
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l1_phi_different",
+    "key": "l1_phi_different",
+    "arm": "initial",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-v1/l1_phi_different"
+  },
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l1_dead_value",
+    "key": "l1_dead_value",
+    "arm": "initial",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-v1/l1_dead_value"
+  },
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l1_live_on_path",
+    "key": "l1_live_on_path",
+    "arm": "initial",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-v1/l1_live_on_path"
+  },
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l1_cse_equal",
+    "key": "l1_cse_equal",
+    "arm": "initial",
+    "status": "invalid_ir",
+    "directory": "compiler-ftd-v1/l1_cse_equal"
+  },
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l1_cse_different",
+    "key": "l1_cse_different",
+    "arm": "initial",
+    "status": "invalid_ir",
+    "directory": "compiler-ftd-v1/l1_cse_different"
+  },
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l2_disjoint",
+    "key": "l2_disjoint",
+    "arm": "initial",
+    "status": "invalid_ir",
+    "directory": "compiler-ftd-v1/l2_disjoint"
+  },
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l2_mayalias",
+    "key": "l2_mayalias",
+    "arm": "initial",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-v1/l2_mayalias"
+  },
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l2_store_overwritten",
+    "key": "l2_store_overwritten",
+    "arm": "initial",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-v1/l2_store_overwritten"
+  },
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l2_store_observed",
+    "key": "l2_store_observed",
+    "arm": "initial",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-v1/l2_store_observed"
+  },
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l2_local_store",
+    "key": "l2_local_store",
+    "arm": "initial",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-v1/l2_local_store"
+  },
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l2_escaped_store",
+    "key": "l2_escaped_store",
+    "arm": "initial",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-v1/l2_escaped_store"
+  },
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l2_duplicate_store",
+    "key": "l2_duplicate_store",
+    "arm": "initial",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-v1/l2_duplicate_store"
+  },
+  {
+    "run": "compiler-ftd-v1",
+    "task_id": "l2_distinct_store",
+    "key": "l2_distinct_store",
+    "arm": "initial",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-v1/l2_distinct_store"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l0_add_fold",
+    "key": "l0_add_fold__self_review",
+    "arm": "self_review",
+    "status": "format_error",
+    "directory": "compiler-ftd-feedback-v1/l0_add_fold__self_review"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l0_add_fold",
+    "key": "l0_add_fold__tool_feedback",
+    "arm": "tool_feedback",
+    "status": "format_error",
+    "directory": "compiler-ftd-feedback-v1/l0_add_fold__tool_feedback"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l0_wrap",
+    "key": "l0_wrap__self_review",
+    "arm": "self_review",
+    "status": "format_error",
+    "directory": "compiler-ftd-feedback-v1/l0_wrap__self_review"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l0_wrap",
+    "key": "l0_wrap__tool_feedback",
+    "arm": "tool_feedback",
+    "status": "format_error",
+    "directory": "compiler-ftd-feedback-v1/l0_wrap__tool_feedback"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l0_udiv",
+    "key": "l0_udiv__self_review",
+    "arm": "self_review",
+    "status": "format_error",
+    "directory": "compiler-ftd-feedback-v1/l0_udiv__self_review"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l0_udiv",
+    "key": "l0_udiv__tool_feedback",
+    "arm": "tool_feedback",
+    "status": "format_error",
+    "directory": "compiler-ftd-feedback-v1/l0_udiv__tool_feedback"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l0_signed_cmp",
+    "key": "l0_signed_cmp__self_review",
+    "arm": "self_review",
+    "status": "format_error",
+    "directory": "compiler-ftd-feedback-v1/l0_signed_cmp__self_review"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l0_signed_cmp",
+    "key": "l0_signed_cmp__tool_feedback",
+    "arm": "tool_feedback",
+    "status": "format_error",
+    "directory": "compiler-ftd-feedback-v1/l0_signed_cmp__tool_feedback"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l1_const_branch",
+    "key": "l1_const_branch__self_review",
+    "arm": "self_review",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-feedback-v1/l1_const_branch__self_review"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l1_const_branch",
+    "key": "l1_const_branch__tool_feedback",
+    "arm": "tool_feedback",
+    "status": "format_error",
+    "directory": "compiler-ftd-feedback-v1/l1_const_branch__tool_feedback"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l1_phi_different",
+    "key": "l1_phi_different__self_review",
+    "arm": "self_review",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-feedback-v1/l1_phi_different__self_review"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l1_phi_different",
+    "key": "l1_phi_different__tool_feedback",
+    "arm": "tool_feedback",
+    "status": "format_error",
+    "directory": "compiler-ftd-feedback-v1/l1_phi_different__tool_feedback"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l1_dead_value",
+    "key": "l1_dead_value__self_review",
+    "arm": "self_review",
+    "status": "format_error",
+    "directory": "compiler-ftd-feedback-v1/l1_dead_value__self_review"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l1_dead_value",
+    "key": "l1_dead_value__tool_feedback",
+    "arm": "tool_feedback",
+    "status": "format_error",
+    "directory": "compiler-ftd-feedback-v1/l1_dead_value__tool_feedback"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l1_cse_different",
+    "key": "l1_cse_different__self_review",
+    "arm": "self_review",
+    "status": "format_error",
+    "directory": "compiler-ftd-feedback-v1/l1_cse_different__self_review"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l1_cse_different",
+    "key": "l1_cse_different__tool_feedback",
+    "arm": "tool_feedback",
+    "status": "format_error",
+    "directory": "compiler-ftd-feedback-v1/l1_cse_different__tool_feedback"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l2_disjoint",
+    "key": "l2_disjoint__self_review",
+    "arm": "self_review",
+    "status": "format_error",
+    "directory": "compiler-ftd-feedback-v1/l2_disjoint__self_review"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l2_disjoint",
+    "key": "l2_disjoint__tool_feedback",
+    "arm": "tool_feedback",
+    "status": "format_error",
+    "directory": "compiler-ftd-feedback-v1/l2_disjoint__tool_feedback"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l2_store_observed",
+    "key": "l2_store_observed__self_review",
+    "arm": "self_review",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-feedback-v1/l2_store_observed__self_review"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l2_store_observed",
+    "key": "l2_store_observed__tool_feedback",
+    "arm": "tool_feedback",
+    "status": "format_error",
+    "directory": "compiler-ftd-feedback-v1/l2_store_observed__tool_feedback"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l2_local_store",
+    "key": "l2_local_store__self_review",
+    "arm": "self_review",
+    "status": "contract_violation",
+    "directory": "compiler-ftd-feedback-v1/l2_local_store__self_review"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l2_local_store",
+    "key": "l2_local_store__tool_feedback",
+    "arm": "tool_feedback",
+    "status": "format_error",
+    "directory": "compiler-ftd-feedback-v1/l2_local_store__tool_feedback"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l2_distinct_store",
+    "key": "l2_distinct_store__self_review",
+    "arm": "self_review",
+    "status": "format_error",
+    "directory": "compiler-ftd-feedback-v1/l2_distinct_store__self_review"
+  },
+  {
+    "run": "compiler-ftd-feedback-v1",
+    "task_id": "l2_distinct_store",
+    "key": "l2_distinct_store__tool_feedback",
+    "arm": "tool_feedback",
+    "status": "format_error",
+    "directory": "compiler-ftd-feedback-v1/l2_distinct_store__tool_feedback"
+  }
+]

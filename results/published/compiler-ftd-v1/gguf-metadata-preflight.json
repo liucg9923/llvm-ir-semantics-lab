@@ -1,0 +1,37 @@
+{
+  "metadata_only_before_full_download_verification": true,
+  "fields": {
+    "general.architecture": "llama",
+    "general.name": "llm-compiler-7b-ftd",
+    "general.file_type": [
+      1
+    ],
+    "llama.context_length": [
+      16384
+    ],
+    "llama.block_count": [
+      32
+    ],
+    "llama.embedding_length": [
+      4096
+    ],
+    "tokenizer.ggml.model": "llama",
+    "tokenizer.ggml.bos_token_id": [
+      1
+    ],
+    "tokenizer.ggml.eos_token_id": [
+      2
+    ],
+    "tokenizer.ggml.add_bos_token": [
+      true
+    ],
+    "tokenizer.ggml.add_eos_token": [
+      false
+    ]
+  },
+  "tensor_types": {
+    "F16": 226,
+    "F32": 65
+  },
+  "tensor_count": 291
+}

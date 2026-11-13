@@ -7,6 +7,7 @@ from .tasks import load_tasks,check_lock
 from .ir import extract_ir
 from .prompts import make_prompt
 from .models import HFModel
+from .gguf import GGUFModel,check_supplement
 from .evaluate import evaluate,tool
 from .toolchain import configure,require_receipt,fingerprint
 from .differential import compare
@@ -49,15 +50,19 @@ def _save(out,key,prompt,result):
 def generate(root,out,backend,model=None,split='test',smoke=False):
     root=Path(root); out=Path(out).resolve(); configure(root)
     tasks=load_tasks(root,split)
-    spec=read_json(root/'configs/models.json').get(model) if model else None
+    spec=(read_json(root/'configs/compiler-ftd.json') if model=='compiler-ftd' else read_json(root/'configs/models.json').get(model)) if model else None
+    if backend=='gguf':
+        check_supplement(root)
+        if model!='compiler-ftd':raise ValueError('GGUF backend requires --model compiler-ftd')
+    if backend=='hf' and model=='compiler-ftd':raise ValueError('FTD GGUF requires --backend gguf')
     if backend=='hf' and not spec: raise ValueError('Choose --model compiler or qwen')
     items=[{'key':t.id,'task_id':t.id,'arm':'initial'} for t in tasks]
     meta=_start(root,out,backend,spec,split,smoke,items)
-    engine=HFModel(spec,meta['config']) if backend=='hf' else None
+    engine=(GGUFModel(spec,meta['config']) if backend=='gguf' else HFModel(spec,meta['config'])) if backend in {'hf','gguf'} else None
     if engine: meta['inference_environment']=engine.info
     for t in tasks:
         prompt=make_prompt(t,meta['config'])
-        if backend=='hf': result=_infer(engine,prompt)
+        if backend in {'hf','gguf'}: result=_infer(engine,prompt)
         elif backend=='opt':
             dest=out/(t.id+'.tmp.ll')
             p=run_process([tool('opt'),'-S','-verify-each','-passes='+t.spec['pipeline'],str(t.file('source')),'-o',str(dest)],meta['config']['tool_timeout_seconds'])
@@ -100,8 +105,8 @@ def evaluate_run(root,run):
 def feedback(root,parent,out):
     root=Path(root); parent=Path(parent); out=Path(out).resolve(); configure(root)
     pm=read_json(parent/'manifest.json')
-    if pm['backend']!='hf' or pm['mode']!='formal' or pm['status']!='evaluated':
-        raise ValueError('Feedback requires an evaluated formal HF initial run')
+    if pm['backend'] not in {'hf','gguf'} or pm['mode']!='formal' or pm['status']!='evaluated':
+        raise ValueError('Feedback requires an evaluated formal model initial run')
     require_receipt(root)
     if pm['dataset_sha256']!=check_lock(root)['sha256']: raise ValueError('Parent dataset mismatch')
     if any(i['arm']!='initial' for i in pm['items']): raise ValueError('Do not repair a repair')
@@ -109,7 +114,7 @@ def feedback(root,parent,out):
     if not set(cfg['feedback_ids']).issubset({i['task_id'] for i in pm['items']}):
         raise ValueError('Parent is missing predefined feedback tasks')
     items=[{'key':id+'__'+arm,'task_id':id,'arm':arm} for id in cfg['feedback_ids'] for arm in ['self_review','tool_feedback']]
-    meta=_start(root,out,'hf',pm['model'],'test',False,items,parent=parent.name)
+    meta=_start(root,out,pm['backend'],pm['model'],'test',False,items,parent=parent.name)
     prepared={}
     # Prepare CPU diagnostics before loading the GPU model; never expose holdout results.
     for id in cfg['feedback_ids']:
@@ -126,7 +131,7 @@ def feedback(root,parent,out):
         for arm in ['self_review','tool_feedback']:
             prepared[id+'__'+arm]=make_prompt(t,cfg,{'candidate':raw,'arm':arm,
                 'diagnostics':json.dumps(diagnostic,ensure_ascii=False)[:6000]})
-    engine=HFModel(pm['model'],cfg); meta['inference_environment']=engine.info
+    engine=(GGUFModel(pm['model'],cfg) if pm['backend']=='gguf' else HFModel(pm['model'],cfg)); meta['inference_environment']=engine.info
     for item in items:
         prompt=prepared[item['key']]; _save(out,item['key'],prompt,_infer(engine,prompt))
         print('generated',item['key'],flush=True)

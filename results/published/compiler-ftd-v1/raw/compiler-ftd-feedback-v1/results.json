@@ -1,0 +1,673 @@
+[
+  {
+    "task_id": "l0_add_fold",
+    "level": "L0",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "add": 2,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "status": "format_error",
+    "error": "Unbalanced or multiple code tags",
+    "key": "l0_add_fold__self_review",
+    "arm": "self_review",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l0_add_fold",
+    "level": "L0",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "add": 2,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "status": "format_error",
+    "error": "Unbalanced or multiple code tags",
+    "key": "l0_add_fold__tool_feedback",
+    "arm": "tool_feedback",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l0_wrap",
+    "level": "L0",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 5,
+      "opcodes": {
+        "trunc": 1,
+        "add": 1,
+        "icmp": 1,
+        "zext": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "status": "format_error",
+    "error": "Unbalanced or multiple code tags",
+    "key": "l0_wrap__self_review",
+    "arm": "self_review",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l0_wrap",
+    "level": "L0",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 5,
+      "opcodes": {
+        "trunc": 1,
+        "add": 1,
+        "icmp": 1,
+        "zext": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "status": "format_error",
+    "error": "Unbalanced or multiple code tags",
+    "key": "l0_wrap__tool_feedback",
+    "arm": "tool_feedback",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l0_udiv",
+    "level": "L0",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "udiv": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "status": "format_error",
+    "error": "Unbalanced or multiple code tags",
+    "key": "l0_udiv__self_review",
+    "arm": "self_review",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l0_udiv",
+    "level": "L0",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "udiv": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "status": "format_error",
+    "error": "Unbalanced or multiple code tags",
+    "key": "l0_udiv__tool_feedback",
+    "arm": "tool_feedback",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l0_signed_cmp",
+    "level": "L0",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "icmp": 1,
+        "zext": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "status": "format_error",
+    "error": "Unbalanced or multiple code tags",
+    "key": "l0_signed_cmp__self_review",
+    "arm": "self_review",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l0_signed_cmp",
+    "level": "L0",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "icmp": 1,
+        "zext": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "status": "format_error",
+    "error": "Unbalanced or multiple code tags",
+    "key": "l0_signed_cmp__tool_feedback",
+    "arm": "tool_feedback",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l1_const_branch",
+    "level": "L1",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "icmp": 1,
+        "br": 1,
+        "add": 1,
+        "ret": 2,
+        "sub": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "add": 1,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-ulgkdnag/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-ulgkdnag/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.03242037072777748,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-ulgkdnag/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\n; Function Attrs: minsize nounwind optsize uwtable\ndefine dso_local i32 @f(i32 noundef %0) #0 {\n  %2 = add i32 %0, 1\n  ret i32 %2\n}\n\nattributes #0 = { minsize nounwind optsize uwtable \"min-legal-vector-width\"=\"0\" \"no-trapping-math\"=\"true\" \"stack-protector-buffer-size\"=\"8\" \"target-cpu\"=\"x86-64\" \"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\" \"tune-cpu\"=\"generic\" }\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "Function signature/attributes changed",
+      "target datalayout changed or removed",
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ],
+    "key": "l1_const_branch__self_review",
+    "arm": "self_review",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l1_const_branch",
+    "level": "L1",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "icmp": 1,
+        "br": 1,
+        "add": 1,
+        "ret": 2,
+        "sub": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "status": "format_error",
+    "error": "Unbalanced or multiple code tags",
+    "key": "l1_const_branch__tool_feedback",
+    "arm": "tool_feedback",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l1_phi_different",
+    "level": "L1",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "icmp": 1,
+        "br": 3,
+        "phi": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-tcy9qefy/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-tcy9qefy/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.03273172490298748,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-tcy9qefy/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\n; Function Attrs: minsize nounwind optsize uwtable\ndefine dso_local i32 @f(i32 noundef %0) #0 {\n  ret i32 11\n}\n\nattributes #0 = { minsize nounwind optsize uwtable \"min-legal-vector-width\"=\"0\" \"no-trapping-math\"=\"true\" \"stack-protector-buffer-size\"=\"8\" \"target-cpu\"=\"x86-64\" \"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\" \"tune-cpu\"=\"generic\" }\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "Function signature/attributes changed",
+      "target datalayout changed or removed",
+      "target triple changed or removed",
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ],
+    "key": "l1_phi_different__self_review",
+    "arm": "self_review",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l1_phi_different",
+    "level": "L1",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "icmp": 1,
+        "br": 3,
+        "phi": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "status": "format_error",
+    "error": "Unbalanced or multiple code tags",
+    "key": "l1_phi_different__tool_feedback",
+    "arm": "tool_feedback",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l1_dead_value",
+    "level": "L1",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "mul": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "status": "format_error",
+    "error": "Unbalanced or multiple code tags",
+    "key": "l1_dead_value__self_review",
+    "arm": "self_review",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l1_dead_value",
+    "level": "L1",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "mul": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "status": "format_error",
+    "error": "Unbalanced or multiple code tags",
+    "key": "l1_dead_value__tool_feedback",
+    "arm": "tool_feedback",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l1_cse_different",
+    "level": "L1",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 4,
+      "opcodes": {
+        "add": 3,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "status": "format_error",
+    "error": "Unbalanced or multiple code tags",
+    "key": "l1_cse_different__self_review",
+    "arm": "self_review",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l1_cse_different",
+    "level": "L1",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 4,
+      "opcodes": {
+        "add": 3,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "status": "format_error",
+    "error": "Unbalanced or multiple code tags",
+    "key": "l1_cse_different__tool_feedback",
+    "arm": "tool_feedback",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l2_disjoint",
+    "level": "L2",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "getelementptr": 1,
+        "load": 2,
+        "store": 1,
+        "add": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "status": "format_error",
+    "error": "Unbalanced or multiple code tags",
+    "key": "l2_disjoint__self_review",
+    "arm": "self_review",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l2_disjoint",
+    "level": "L2",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "getelementptr": 1,
+        "load": 2,
+        "store": 1,
+        "add": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "status": "format_error",
+    "error": "Unbalanced or multiple code tags",
+    "key": "l2_disjoint__tool_feedback",
+    "arm": "tool_feedback",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l2_store_observed",
+    "level": "L2",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 4,
+      "opcodes": {
+        "store": 2,
+        "load": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-18rhi_d9/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-18rhi_d9/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.032862160354852676,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-18rhi_d9/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\n; Function Attrs: minsize nounwind optsize uwtable\ndefine dso_local i32 @f(i32 noundef %0) #0 {\nentry:\n  ret i32 0\n}\n\n; Function Attrs: nocallback nofree nosync nounwind willreturn memory(argmem: readwrite)\ndeclare void @llvm.lifetime.start.p0(i64 immarg, ptr nocapture) #1\n\n; Function Attrs: nocallback nofree nosync nounwind willreturn memory(argmem: readwrite)\ndeclare void @llvm.lifetime.end.p0(i64 immarg, ptr nocapture) #1\n\nattributes #0 = { minsize nounwind optsize uwtable \"min-legal-vector-width\"=\"0\" \"no-trapping-math\"=\"true\" \"stack-protector-buffer-size\"=\"8\" \"target-cpu\"=\"x86-64\" \"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\" \"tune-cpu\"=\"generic\" }\nattributes #1 = { nocallback nofree nosync nounwind willreturn memory(argmem: readwrite) }\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "Function signature/attributes changed",
+      "target datalayout changed or removed",
+      "target triple changed or removed",
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ],
+    "key": "l2_store_observed__self_review",
+    "arm": "self_review",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l2_store_observed",
+    "level": "L2",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 4,
+      "opcodes": {
+        "store": 2,
+        "load": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "status": "format_error",
+    "error": "Unbalanced or multiple code tags",
+    "key": "l2_store_observed__tool_feedback",
+    "arm": "tool_feedback",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l2_local_store",
+    "level": "L2",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "alloca": 1,
+        "store": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-hy_8t_37/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-hy_8t_37/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.03312590345740318,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-hy_8t_37/candidate.ll'\nsource_filename = \"-\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\n; Function Attrs: minsize nounwind optsize uwtable\ndefine dso_local i32 @f(ptr noundef %0, ptr noundef %1) #0 {\nentry:\n  ret i32 0\n}\n\nattributes #0 = { minsize nounwind optsize uwtable \"min-legal-vector-width\"=\"0\" \"no-trapping-math\"=\"true\" \"stack-protector-buffer-size\"=\"8\" \"target-cpu\"=\"x86-64\" \"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\" \"tune-cpu\"=\"generic\" }\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"clang version 17.0.6 (git@github.com:fairinternal/CodeGen.git b05db9bbf7a92019267416c1bb9996fe6134e3f1)\"}\n",
+    "status": "contract_violation",
+    "contract_errors": [
+      "Function signature/attributes changed",
+      "target datalayout changed or removed",
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ],
+    "key": "l2_local_store__self_review",
+    "arm": "self_review",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l2_local_store",
+    "level": "L2",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "alloca": 1,
+        "store": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "status": "format_error",
+    "error": "Unbalanced or multiple code tags",
+    "key": "l2_local_store__tool_feedback",
+    "arm": "tool_feedback",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l2_distinct_store",
+    "level": "L2",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "store": 2,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "status": "format_error",
+    "error": "Unbalanced or multiple code tags",
+    "key": "l2_distinct_store__self_review",
+    "arm": "self_review",
+    "mode": "formal",
+    "backend": "gguf"
+  },
+  {
+    "task_id": "l2_distinct_store",
+    "level": "L2",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "store": 2,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "status": "format_error",
+    "error": "Unbalanced or multiple code tags",
+    "key": "l2_distinct_store__tool_feedback",
+    "arm": "tool_feedback",
+    "mode": "formal",
+    "backend": "gguf"
+  }
+]

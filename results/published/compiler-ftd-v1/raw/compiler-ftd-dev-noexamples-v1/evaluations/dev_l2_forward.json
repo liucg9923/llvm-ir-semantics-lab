@@ -1,0 +1,45 @@
+{
+  "task_id": "dev_l2_forward",
+  "level": "L2",
+  "role": "opportunity",
+  "source_metrics": {
+    "instruction_count": 3,
+    "opcodes": {
+      "store": 1,
+      "load": 1,
+      "ret": 1
+    }
+  },
+  "syntax_valid": false,
+  "goal_met": false,
+  "effective_optimization": false,
+  "unchanged": false,
+  "candidate_metrics": {
+    "instruction_count": 2,
+    "opcodes": {
+      "store": 1,
+      "ret": 1
+    }
+  },
+  "syntax_log": {
+    "command": [
+      "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+      "-passes=verify",
+      "-S",
+      "/tmp/irsem-verify-rhb1xkog/candidate.ll",
+      "-o",
+      "/tmp/irsem-verify-rhb1xkog/canonical.ll"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt: /tmp/irsem-verify-rhb1xkog/candidate.ll:3:21: error: Missing alignment specification for pointer in datalayout string\ntarget datalayout = \"e-p:6-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\n                    ^\n",
+    "seconds": 0.03272838704288006,
+    "timed_out": false,
+    "truncated": false
+  },
+  "status": "invalid_ir",
+  "key": "dev_l2_forward",
+  "arm": "dev_noexamples",
+  "mode": "smoke",
+  "backend": "gguf"
+}

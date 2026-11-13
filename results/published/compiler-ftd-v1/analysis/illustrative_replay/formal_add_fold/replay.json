@@ -1,0 +1,23 @@
+{
+  "kind": "posthoc_exact_candidate_native_diagnostic",
+  "run": "compiler-ftd-v1",
+  "task_id": "l0_add_fold",
+  "candidate_modified": false,
+  "formal_score_changed": false,
+  "boundary": "Concrete diagnostic inputs only. Source/candidate attributes, metadata and targets are unmodified; output contract still fails. A finite match is not an all-input proof.",
+  "source_sha256": "5b08c9dd41ea626f85e687040c242126ae4041357686202347c89ea9beb34678",
+  "candidate_sha256": "01448fb43190fa9af3be146c0190ff1b4535c2a2b09edecf2ef41f57f77d4787",
+  "result": {
+    "status": "mismatch",
+    "input_kind": "diagnostic",
+    "case_count": 17,
+    "mismatch_count": 16,
+    "counterexample": {
+      "input": [
+        0
+      ],
+      "source": "9",
+      "candidate": "11"
+    }
+  }
+}

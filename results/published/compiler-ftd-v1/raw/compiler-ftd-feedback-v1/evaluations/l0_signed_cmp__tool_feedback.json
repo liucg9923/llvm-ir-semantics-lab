@@ -1,0 +1,23 @@
+{
+  "task_id": "l0_signed_cmp",
+  "level": "L0",
+  "role": "guard",
+  "source_metrics": {
+    "instruction_count": 3,
+    "opcodes": {
+      "icmp": 1,
+      "zext": 1,
+      "ret": 1
+    }
+  },
+  "syntax_valid": false,
+  "goal_met": false,
+  "effective_optimization": false,
+  "unchanged": false,
+  "status": "format_error",
+  "error": "Unbalanced or multiple code tags",
+  "key": "l0_signed_cmp__tool_feedback",
+  "arm": "tool_feedback",
+  "mode": "formal",
+  "backend": "gguf"
+}

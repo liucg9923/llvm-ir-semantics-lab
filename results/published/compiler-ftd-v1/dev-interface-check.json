@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "n": 6,
+  "all_eos": true,
+  "explicit_greedy_confirmed_from_server": true,
+  "single_bos_confirmed": true,
+  "max_input_tokens": 887,
+  "note": "All six dev outputs violate the frozen task contract. This is retained as an observed model/interface behavior, not an infrastructure failure; do not tune prompts or weaken the oracle based on the scores."
+}

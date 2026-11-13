@@ -1,0 +1,9 @@
+{
+  "status": "verified",
+  "sha256": "b1f75d4f55656dbc7b2052f06d1eb1eaf99ed5d7aaf306f520e72136bd98f829",
+  "bytes": 13478104960,
+  "workers": 16,
+  "endpoint": "https://hf-mirror.com",
+  "seconds": 35.36256983876228,
+  "resumed_prefix_bytes": 828375040
+}

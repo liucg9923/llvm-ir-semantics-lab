@@ -1,0 +1,45 @@
+{
+  "kind": "posthoc_development_only",
+  "all_six_dev_tasks_used": true,
+  "only_few_shot_sections_removed": true,
+  "formal_scores_unchanged": true,
+  "with_examples_statuses": {
+    "contract_violation": 6
+  },
+  "without_examples_statuses": {
+    "contract_violation": 5,
+    "invalid_ir": 1
+  },
+  "prompts": [
+    {
+      "task_id": "dev_l0_xor_self",
+      "with_examples_prompt_sha256": "c8ed87a1ae299549f15c9b68b33f7277f6ca94baf596e4c889d39fef7b6ab7bc",
+      "without_examples_prompt_sha256": "44072bb91d6c693aeeee78aac27757e2288af85edb1a5123cba94a9999a7d3c4"
+    },
+    {
+      "task_id": "dev_l0_and_all",
+      "with_examples_prompt_sha256": "8e6444e4ebddccfd88db4c8ee2c8e440094bef1bcdc8f1ba3874fbf0f5637253",
+      "without_examples_prompt_sha256": "8062b8e182841cc29e638665a603ba972b7ccc42d3c3436faa5c0bbcafe5cd5e"
+    },
+    {
+      "task_id": "dev_l1_select_equal",
+      "with_examples_prompt_sha256": "5aef81b1db20b822dea96914205e9382670ceafeb6673899ae42691f6571162a",
+      "without_examples_prompt_sha256": "94f7ba4f0318b4256d26bf9efbe222e6433aa79f98369b9e08a4f7bda09e4ff6"
+    },
+    {
+      "task_id": "dev_l1_unreachable",
+      "with_examples_prompt_sha256": "f46aa2da6d2f969e3089eddf30fbafc662d31e1ed6e50ba9dca3bfa53d7889c7",
+      "without_examples_prompt_sha256": "d765fcba9ef81c45bf35cc18b2cd3805f4255af0f154e9334a52771b93fb2fa8"
+    },
+    {
+      "task_id": "dev_l2_forward",
+      "with_examples_prompt_sha256": "942565b09a9713ed1f36bb29e9d178b947477f8aba947439344f0caff86af369",
+      "without_examples_prompt_sha256": "635272fe104f3e31cbd92923c91d1261943fb27fe0f8a5a4292dcd69280770ff"
+    },
+    {
+      "task_id": "dev_l2_alloca",
+      "with_examples_prompt_sha256": "c9a2e812acfe7a34fb9f07a2a164f0e0ccd29142b763a88d60a1359181b9cbb0",
+      "without_examples_prompt_sha256": "74414e3109dfe57e0dee8b118d613ace09736023ce588e04771b3158be596520"
+    }
+  ]
+}

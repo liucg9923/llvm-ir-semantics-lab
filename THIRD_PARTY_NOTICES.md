@@ -32,4 +32,12 @@ The classroom PPTX includes cited third-party research figures in its older back
 
 Report fonts are derived from Google Fonts Noto Sans SC, distributed under SIL Open Font License 1.1. Source revision and hashes are recorded in configs/report-fonts.json. Font software is not relicensed as Apache-2.0; documents generated using the fonts are not subject to the font-license inheritance requirement.
 
-The current published LLM records are Qwen outputs on the project's authored IR examples, with exact prompts and model revision retained for evaluation provenance. Qwen's upstream model license is Apache-2.0. No Meta model outputs or model weights are included in this release.
+The current published LLM records are Qwen outputs on the project's authored IR examples, with exact prompts and model revision retained for evaluation provenance. Qwen's upstream model license is Apache-2.0. The earlier experiment-v2 bundle contains no Meta outputs. The later compiler-ftd-v1 bundle includes evaluation outputs from the community F16 GGUF conversion, with its provenance and Meta terms retained; it contains no model weights.
+
+## Community FTD experiment
+
+Built with LLM Compiler. The community checkpoint `second-state/llm-compiler-7b-ftd-GGUF` attributes its source to `facebook/llm-compiler-7b-ftd`. Model materials and associated outputs/results are subject to the [Meta LLM Compiler License Agreement](https://huggingface.co/facebook/llm-compiler-7b-ftd), not an unrestricted training-data grant under this project's Apache-2.0 code license. The published records are for inspecting and reproducing this evaluation; do not use them to improve other large language models contrary to the Meta terms.
+
+LLM Compiler is licensed under the LLM Compiler License, Copyright © Meta Platforms, Inc. All Rights Reserved.
+
+The source file, community revision and exact hash are recorded in configs/compiler-ftd.json. No weights are redistributed, and the original gated checkpoint is not claimed to have been downloaded. llama.cpp is MIT licensed; its pinned source is linked in configs/llama-cpp.json.

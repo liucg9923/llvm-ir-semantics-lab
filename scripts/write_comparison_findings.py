@@ -1,0 +1,70 @@
+"""Write a count-checked Chinese reading guide from the complete comparison data."""
+from pathlib import Path
+import json
+root=Path(__file__).resolve().parents[1];out=root/'results/campaign-ftd-v1/analysis'
+d=json.loads((out/'summary.json').read_text())
+names={'opt':'LLVM opt 17.0.6','compiler_ftd':'LLM Compiler 7B-FTD（社区 F16）','qwen':'Qwen2.5-Coder-7B-Instruct（FP16）','identity':'原样返回控制'}
+initial={r['model']:r for r in d['summary'] if r['level']=='ALL'}
+lines=['# 同一批 IR 上的三方比较','',
+'本轮完成 LLVM opt、社区 LLM Compiler 7B-FTD F16 GGUF、Qwen2.5-Coder-7B-Instruct FP16 的固定任务比较。原样返回另作控制。专用组采用项目所有者指定的社区转换文件，不是此前等待官方权限的基础模型。','',
+'我们分别问三个问题：输出能否通过 LLVM 检查？是否保留原程序的定义行为？在正确的前提下，是否完成了预先指定的优化？','',
+'## 首轮结果','',
+'每组 24 题，分为 L0 局部计算、L1 控制与依赖、L2 内存与别名，每类 8 题。有效优化只在 12 道预定机会题上计分。每个候选只生成一次，不按结果重新挑选提示词或检查点。','',
+'| 对象 | 合法 IR | 语义验证通过 | 有效优化 | 已找到语义反例 | 其他状态 |','|---|---:|---:|---:|---:|---|']
+for model in ['opt','compiler_ftd','qwen','identity']:
+ r=initial[model];other=', '.join(f'{k}: {v}' for k,v in r['statuses'].items() if k not in {'verified','refuted'}) or '无'
+ lines.append(f"| {names[model]} | {r['syntax_valid']}/{r['n']} | {r['verified']}/{r['n']} | {r['effective']}/{r['opportunity_n']} | {r['refuted']} | {other} |")
+lines+=['','`verified` 要求 LLVM/约束检查通过、Alive2 对完整函数验证通过且独立保留输入测试一致；仍受工具支持范围限制。非法 IR、约束不符、截断和未知结果不等于已经证明的语义错误。原样返回保持语义，但没有完成机会题的优化目标。','',
+'## 同题反馈实验','',
+'两款 LLM 都使用同一批预选的 12 题，其中 6 个优化机会。自行复查和工具反馈分别从首次候选出发，各生成一次；工具只给诊断集，不给保留测试输入。','',
+'| 模型 | 条件 | 验证通过 | 有效优化 | 反例 |','|---|---|---:|---:|---:|']
+arm_names={'initial_matched':'首次回答（配对子集）','self_review':'自行复查一次','tool_feedback':'工具反馈一次'}
+for model in ['compiler_ftd','qwen']:
+ for arm in arm_names:
+  r=next(r for r in d['paired_feedback'] if r['model']==model and r['arm']==arm)
+  lines.append(f"| {names[model]} | {arm_names[arm]} | {r['verified']}/{r['n']} | {r['effective']}/{r['opportunity_n']} | {r['refuted']} |")
+lines+=['','完整逐题状态在 paired_feedback.csv 和配对图中，包括修复、回归、未改变。不能把这里的 12 题成绩直接与首轮 24 题总成绩当成同一分母。','',
+'## 验证、选择与回退的应用回放','',
+'这是事后应用性回放，不是新的一轮模型准确率。只根据合法性、契约、Alive2 证明及预定优化目标，在首次与工具反馈候选中选择；优先完成目标，再比较静态指令数，没有可接受候选则返回原程序。选择时不查看保留测试结果，选定后再完整验证。','',
+'| 模型候选来源 | 验证通过 | 保留有效优化 | 使用原程序回退 |','|---|---:|---:|---:|']
+for model in ['compiler_ftd','qwen']:
+ p=out/'application_replay'/model/'summary.json'
+ if not p.exists():raise RuntimeError('Application replay missing: '+model)
+ r=json.loads(p.read_text());lines.append(f"| {names[model]} | {r['verified']}/{r['task_n']} | {r['effective_optimizations']}/{r['opportunity_n']} | {r['original_fallbacks']} |")
+lines+=['','## 怎样用于课堂展示','',
+'先用编译器说明为什么变换有前提，再给模型相同的任务，最后让验证工具展示条件是否被破坏。仅看输出像不像代码，或只检查一个返回值，不能说明程序行为被保留。已有 Qwen 案例中，指针别名导致本应返回 7 的程序返回 0；另一个案例返回值都为 0，但模型删除了对调用者内存的写入。','',
+'本轮 FTD 所有未验证通过的候选都在 case_evidence 中保留，按真实状态分类，不把人工 mutant 当成模型错误。原始回答、输入、诊断及反例可以逐题追溯。','',
+'## 解释边界与复现','',
+'- 只有 24 个人工设计的小函数，不能推论所有模型或所有编译任务，也没有 L3/L4、循环、并发、浮点和跨函数结论。',
+'- 两款模型均用 F16/FP16 权重精度，但 FTD GGUF 含保留为 F32 的张量，且 llama.cpp 与 Transformers 的实现、模板和 tokenizer 不同。这不是只有训练是否专用这一项变量的因果消融。',
+'- FTD 下游训练目标包括 pass 选择和反汇编。本实验要求直接改写 IR，不能把本结果等同于原论文的 pass 选择或二进制大小结果。',
+'- 社区文件的版本与 SHA-256 已固定并校验；来源归属由转换者声明，没有与受门控的官方原始权重做逐位比对。',
+'- 首轮的任务提示文本、数据集、约束、目标、反馈子集及评分器保持一致。旧 Qwen/LLVM 原始输出经过同一新版评分器复核，全部评分不变，没有重新生成旧模型答案。',
+'- 静态 IR 指令数不是运行速度。生成延迟排除模型装载和验证，且跨后端计时边界不同；GPU 采样是设备级观测，不是精确的模型专属峰值。','',
+'更多细分计数见 REPORT.md / summary.json；逐题结果见 per_case.csv；原始候选见 ../raw；完整复核材料、代码与配置快照见 ../evidence。图表提供 PNG、SVG、PDF 及源数据。','',
+'来源：[社区模型](https://huggingface.co/second-state/llm-compiler-7b-ftd-GGUF)、[Meta 模型卡](https://huggingface.co/facebook/llm-compiler-7b-ftd)、[论文及提示模板](https://arxiv.org/html/2407.02524v1)。']
+
+ftd=initial['compiler_ftd']
+assert ftd['statuses']=={'contract_violation':21,'invalid_ir':3}, 'Update narrative for changed observations'
+assert json.loads((out/'prompt_diagnostic.json').read_text())['without_examples_statuses']=={'contract_violation':5,'invalid_ir':1}
+replays=json.loads((out/'illustrative_replay/summary.json').read_text())
+assert replays[0]['result']['counterexample']=={'input':[0],'source':'9','candidate':'11'}
+assert replays[1]['result']['counterexample']=={'input':[1],'source':'1','candidate':'0'}
+assert replays[2]['result']['status']=='match' and replays[2]['result']['case_count']==17
+position=lines.index('## 同题反馈实验')
+lines[position:position]=[
+ '## FTD 的零分应该怎样解释','',
+ f"FTD 的 {ftd['syntax_valid']}/24 个合法 IR 中，没有候选通过输出契约：本轮实际进入 Alive2/差分验证的 FTD 候选数是 {ftd['semantic_checks_attempted']}。因此 0/24 是固定接口下的完整验收通过数，不是一个能单独估计其纯语义保持能力的成绩。",'',
+ '21 个契约失败均改变了目标数据布局/target triple 并增加元数据，其中 16 个还改变函数签名或属性。另 3 个非法 IR 重复定义 @f：l1_cse_equal、l1_cse_different、l2_disjoint。原始输出显示它会把示例内容混入当前任务。', '',
+ '不能把这些结果表述成“24 个答案都已被证明语义错误”或“专用模型没有编译能力”。它说明当前统一提示与接口要求没有被这款社区 FTD 模型可靠遵守。也不能仅凭本表得出 Qwen 的纯语义推理能力一定更强。', '']
+position=lines.index('## 怎样用于课堂展示')
+lines[position:position]=[
+ '## 独立反例与开发集提示诊断（不并入正式分母）','',
+ '对首轮 l0_add_fold 的原始答案，不删除元数据、不恢复 target、不修改函数体，直接在相同沙箱中重放：输入 x=0，原程序 x+9 返回 9，FTD 候选返回 11。这是一个具体执行反例。该候选在主表仍保留 contract_violation；独立重放不能偷偷增加主表的 refuted 数。', '',
+ '为了检查示例混入问题，另用全部 6 个开发题做事后诊断：只删去 few-shot 示例，其余规则、任务、模型、运行时和解码保持不变。结果是 5 个契约不符、1 个非法 IR，仍没有完整验收通过。它没有替换任何正式提示或成绩。', '',
+ '但 dev_l0_and_all 的函数体发生了有意义的变化：带示例时错误返回 0，去掉示例后返回输入 x。对两份未经修改的原始候选进行独立执行，前者在 x=1 时把 1 算成 0，后者在 17 个诊断输入上与原程序一致。有限测试一致不是全输入证明，且两者仍未满足完整输出契约。', '',
+ '这个诊断支持在本例中存在提示敏感性，不能推广成“去掉示例总是更好”。若继续研究，宜另行预注册适合 FTD 的原生 pass 选择任务或提示适配组，并与现有统一接口结果分开报告。', '',
+ '完整记录见 prompt_diagnostic.json 和 illustrative_replay/。没有对原始候选做手工修复，也没有用补充诊断挑选或替换正式模型答案。', '']
+
+(out/'FINDINGS.md').write_text('\n'.join(lines)+'\n')
+print('Wrote complete findings from verified counts')

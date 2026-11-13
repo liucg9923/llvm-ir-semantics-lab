@@ -1,0 +1,535 @@
+{
+  "created_utc": "2026-11-13T06:59:15.729949+00:00",
+  "dataset_sha256": "12c07607aa754471f2cf49ce71919b62f38744e9f9ec7c1667bf92ec3776d7b8",
+  "evaluation_code_sha256": "ebcab0af2fad611e79844d5a670d568ce3116bc3c2dcfb612d706d440d5bb39f",
+  "initial_runs": {
+    "opt": "opt-v2-rechecked-ftd",
+    "identity": "identity-v2-rechecked-ftd",
+    "qwen": "qwen-v2-rechecked-ftd",
+    "compiler_ftd": "compiler-ftd-v1"
+  },
+  "feedback_runs": {
+    "qwen": "qwen-feedback-v2-rechecked-ftd",
+    "compiler_ftd": "compiler-ftd-feedback-v1"
+  },
+  "summary": [
+    {
+      "model": "opt",
+      "run": "opt-v2-rechecked-ftd",
+      "arm": "initial",
+      "level": "ALL",
+      "n": 24,
+      "opportunity_n": 12,
+      "syntax_valid": 24,
+      "semantic_checks_attempted": 24,
+      "verified": 24,
+      "effective": 12,
+      "refuted": 0,
+      "unchanged": 7,
+      "statuses": {
+        "verified": 24
+      }
+    },
+    {
+      "model": "opt",
+      "run": "opt-v2-rechecked-ftd",
+      "arm": "initial",
+      "level": "L0",
+      "n": 8,
+      "opportunity_n": 4,
+      "syntax_valid": 8,
+      "semantic_checks_attempted": 8,
+      "verified": 8,
+      "effective": 4,
+      "refuted": 0,
+      "unchanged": 1,
+      "statuses": {
+        "verified": 8
+      }
+    },
+    {
+      "model": "opt",
+      "run": "opt-v2-rechecked-ftd",
+      "arm": "initial",
+      "level": "L1",
+      "n": 8,
+      "opportunity_n": 4,
+      "syntax_valid": 8,
+      "semantic_checks_attempted": 8,
+      "verified": 8,
+      "effective": 4,
+      "refuted": 0,
+      "unchanged": 2,
+      "statuses": {
+        "verified": 8
+      }
+    },
+    {
+      "model": "opt",
+      "run": "opt-v2-rechecked-ftd",
+      "arm": "initial",
+      "level": "L2",
+      "n": 8,
+      "opportunity_n": 4,
+      "syntax_valid": 8,
+      "semantic_checks_attempted": 8,
+      "verified": 8,
+      "effective": 4,
+      "refuted": 0,
+      "unchanged": 4,
+      "statuses": {
+        "verified": 8
+      }
+    },
+    {
+      "model": "identity",
+      "run": "identity-v2-rechecked-ftd",
+      "arm": "initial",
+      "level": "ALL",
+      "n": 24,
+      "opportunity_n": 12,
+      "syntax_valid": 24,
+      "semantic_checks_attempted": 24,
+      "verified": 24,
+      "effective": 0,
+      "refuted": 0,
+      "unchanged": 24,
+      "statuses": {
+        "verified": 24
+      }
+    },
+    {
+      "model": "identity",
+      "run": "identity-v2-rechecked-ftd",
+      "arm": "initial",
+      "level": "L0",
+      "n": 8,
+      "opportunity_n": 4,
+      "syntax_valid": 8,
+      "semantic_checks_attempted": 8,
+      "verified": 8,
+      "effective": 0,
+      "refuted": 0,
+      "unchanged": 8,
+      "statuses": {
+        "verified": 8
+      }
+    },
+    {
+      "model": "identity",
+      "run": "identity-v2-rechecked-ftd",
+      "arm": "initial",
+      "level": "L1",
+      "n": 8,
+      "opportunity_n": 4,
+      "syntax_valid": 8,
+      "semantic_checks_attempted": 8,
+      "verified": 8,
+      "effective": 0,
+      "refuted": 0,
+      "unchanged": 8,
+      "statuses": {
+        "verified": 8
+      }
+    },
+    {
+      "model": "identity",
+      "run": "identity-v2-rechecked-ftd",
+      "arm": "initial",
+      "level": "L2",
+      "n": 8,
+      "opportunity_n": 4,
+      "syntax_valid": 8,
+      "semantic_checks_attempted": 8,
+      "verified": 8,
+      "effective": 0,
+      "refuted": 0,
+      "unchanged": 8,
+      "statuses": {
+        "verified": 8
+      }
+    },
+    {
+      "model": "qwen",
+      "run": "qwen-v2-rechecked-ftd",
+      "arm": "initial",
+      "level": "ALL",
+      "n": 24,
+      "opportunity_n": 12,
+      "syntax_valid": 22,
+      "semantic_checks_attempted": 22,
+      "verified": 15,
+      "effective": 7,
+      "refuted": 7,
+      "unchanged": 6,
+      "statuses": {
+        "verified": 15,
+        "invalid_ir": 2,
+        "refuted": 7
+      }
+    },
+    {
+      "model": "qwen",
+      "run": "qwen-v2-rechecked-ftd",
+      "arm": "initial",
+      "level": "L0",
+      "n": 8,
+      "opportunity_n": 4,
+      "syntax_valid": 6,
+      "semantic_checks_attempted": 6,
+      "verified": 6,
+      "effective": 2,
+      "refuted": 0,
+      "unchanged": 4,
+      "statuses": {
+        "verified": 6,
+        "invalid_ir": 2
+      }
+    },
+    {
+      "model": "qwen",
+      "run": "qwen-v2-rechecked-ftd",
+      "arm": "initial",
+      "level": "L1",
+      "n": 8,
+      "opportunity_n": 4,
+      "syntax_valid": 8,
+      "semantic_checks_attempted": 8,
+      "verified": 5,
+      "effective": 2,
+      "refuted": 3,
+      "unchanged": 2,
+      "statuses": {
+        "refuted": 3,
+        "verified": 5
+      }
+    },
+    {
+      "model": "qwen",
+      "run": "qwen-v2-rechecked-ftd",
+      "arm": "initial",
+      "level": "L2",
+      "n": 8,
+      "opportunity_n": 4,
+      "syntax_valid": 8,
+      "semantic_checks_attempted": 8,
+      "verified": 4,
+      "effective": 3,
+      "refuted": 4,
+      "unchanged": 0,
+      "statuses": {
+        "verified": 4,
+        "refuted": 4
+      }
+    },
+    {
+      "model": "compiler_ftd",
+      "run": "compiler-ftd-v1",
+      "arm": "initial",
+      "level": "ALL",
+      "n": 24,
+      "opportunity_n": 12,
+      "syntax_valid": 21,
+      "semantic_checks_attempted": 0,
+      "verified": 0,
+      "effective": 0,
+      "refuted": 0,
+      "unchanged": 0,
+      "statuses": {
+        "contract_violation": 21,
+        "invalid_ir": 3
+      }
+    },
+    {
+      "model": "compiler_ftd",
+      "run": "compiler-ftd-v1",
+      "arm": "initial",
+      "level": "L0",
+      "n": 8,
+      "opportunity_n": 4,
+      "syntax_valid": 8,
+      "semantic_checks_attempted": 0,
+      "verified": 0,
+      "effective": 0,
+      "refuted": 0,
+      "unchanged": 0,
+      "statuses": {
+        "contract_violation": 8
+      }
+    },
+    {
+      "model": "compiler_ftd",
+      "run": "compiler-ftd-v1",
+      "arm": "initial",
+      "level": "L1",
+      "n": 8,
+      "opportunity_n": 4,
+      "syntax_valid": 6,
+      "semantic_checks_attempted": 0,
+      "verified": 0,
+      "effective": 0,
+      "refuted": 0,
+      "unchanged": 0,
+      "statuses": {
+        "contract_violation": 6,
+        "invalid_ir": 2
+      }
+    },
+    {
+      "model": "compiler_ftd",
+      "run": "compiler-ftd-v1",
+      "arm": "initial",
+      "level": "L2",
+      "n": 8,
+      "opportunity_n": 4,
+      "syntax_valid": 7,
+      "semantic_checks_attempted": 0,
+      "verified": 0,
+      "effective": 0,
+      "refuted": 0,
+      "unchanged": 0,
+      "statuses": {
+        "invalid_ir": 1,
+        "contract_violation": 7
+      }
+    }
+  ],
+  "paired_feedback": [
+    {
+      "model": "qwen",
+      "arm": "initial_matched",
+      "n": 12,
+      "opportunity_n": 6,
+      "syntax_valid": 11,
+      "semantic_checks_attempted": 11,
+      "verified": 7,
+      "effective": 4,
+      "refuted": 4,
+      "unchanged": 2,
+      "statuses": {
+        "verified": 7,
+        "invalid_ir": 1,
+        "refuted": 4
+      }
+    },
+    {
+      "model": "qwen",
+      "arm": "self_review",
+      "n": 12,
+      "opportunity_n": 6,
+      "syntax_valid": 11,
+      "semantic_checks_attempted": 11,
+      "verified": 6,
+      "effective": 3,
+      "refuted": 5,
+      "unchanged": 3,
+      "statuses": {
+        "verified": 6,
+        "invalid_ir": 1,
+        "refuted": 5
+      },
+      "gained_verification": 0,
+      "lost_verification": 1,
+      "new_proven_error": 1
+    },
+    {
+      "model": "qwen",
+      "arm": "tool_feedback",
+      "n": 12,
+      "opportunity_n": 6,
+      "syntax_valid": 12,
+      "semantic_checks_attempted": 12,
+      "verified": 10,
+      "effective": 2,
+      "refuted": 2,
+      "unchanged": 7,
+      "statuses": {
+        "verified": 10,
+        "refuted": 2
+      },
+      "gained_verification": 3,
+      "lost_verification": 0,
+      "new_proven_error": 0
+    },
+    {
+      "model": "compiler_ftd",
+      "arm": "initial_matched",
+      "n": 12,
+      "opportunity_n": 6,
+      "syntax_valid": 10,
+      "semantic_checks_attempted": 0,
+      "verified": 0,
+      "effective": 0,
+      "refuted": 0,
+      "unchanged": 0,
+      "statuses": {
+        "contract_violation": 10,
+        "invalid_ir": 2
+      }
+    },
+    {
+      "model": "compiler_ftd",
+      "arm": "self_review",
+      "n": 12,
+      "opportunity_n": 6,
+      "syntax_valid": 4,
+      "semantic_checks_attempted": 0,
+      "verified": 0,
+      "effective": 0,
+      "refuted": 0,
+      "unchanged": 0,
+      "statuses": {
+        "format_error": 8,
+        "contract_violation": 4
+      },
+      "gained_verification": 0,
+      "lost_verification": 0,
+      "new_proven_error": 0
+    },
+    {
+      "model": "compiler_ftd",
+      "arm": "tool_feedback",
+      "n": 12,
+      "opportunity_n": 6,
+      "syntax_valid": 0,
+      "semantic_checks_attempted": 0,
+      "verified": 0,
+      "effective": 0,
+      "refuted": 0,
+      "unchanged": 0,
+      "statuses": {
+        "format_error": 12
+      },
+      "gained_verification": 0,
+      "lost_verification": 0,
+      "new_proven_error": 0
+    }
+  ],
+  "timing": [
+    {
+      "model": "opt",
+      "arm": "initial",
+      "n": 24,
+      "timed_n": 24,
+      "median_generation_seconds": 0.03262204211205244,
+      "total_generation_seconds": 0.7830688394606113,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "model": "identity",
+      "arm": "initial",
+      "n": 24,
+      "timed_n": 0,
+      "median_generation_seconds": null,
+      "total_generation_seconds": 0,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "model": "qwen",
+      "arm": "initial",
+      "n": 24,
+      "timed_n": 24,
+      "median_generation_seconds": 4.833885904401541,
+      "total_generation_seconds": 119.67889113165438,
+      "input_tokens": 18712,
+      "output_tokens": 2780
+    },
+    {
+      "model": "compiler_ftd",
+      "arm": "initial",
+      "n": 24,
+      "timed_n": 24,
+      "median_generation_seconds": 11.682660057209432,
+      "total_generation_seconds": 279.6087249647826,
+      "input_tokens": 21210,
+      "output_tokens": 12292
+    },
+    {
+      "model": "qwen",
+      "arm": "self_review",
+      "n": 12,
+      "timed_n": 12,
+      "median_generation_seconds": 4.511881695128977,
+      "total_generation_seconds": 58.674096789211035,
+      "input_tokens": 11073,
+      "output_tokens": 1359
+    },
+    {
+      "model": "qwen",
+      "arm": "tool_feedback",
+      "n": 12,
+      "timed_n": 12,
+      "median_generation_seconds": 4.851996995508671,
+      "total_generation_seconds": 63.04348681867123,
+      "input_tokens": 17999,
+      "output_tokens": 1442
+    },
+    {
+      "model": "compiler_ftd",
+      "arm": "self_review",
+      "n": 12,
+      "timed_n": 12,
+      "median_generation_seconds": 15.561206322163343,
+      "total_generation_seconds": 175.1197956688702,
+      "input_tokens": 17461,
+      "output_tokens": 7446
+    },
+    {
+      "model": "compiler_ftd",
+      "arm": "tool_feedback",
+      "n": 12,
+      "timed_n": 12,
+      "median_generation_seconds": 15.737363316118717,
+      "total_generation_seconds": 189.28296732529998,
+      "input_tokens": 20212,
+      "output_tokens": 7963
+    }
+  ],
+  "compiler_model": {
+    "id": "second-state/llm-compiler-7b-ftd-GGUF",
+    "revision": "3255d79430715ef149898cbb88cfeb7cb3b061a1",
+    "filename": "llm-compiler-7b-ftd-f16.gguf",
+    "sha256": "b1f75d4f55656dbc7b2052f06d1eb1eaf99ed5d7aaf306f520e72136bd98f829",
+    "size": 13478104960,
+    "upstream_model": "facebook/llm-compiler-7b-ftd",
+    "upstream_identity": "Community model card attribution; bitwise equality to the gated upstream checkpoint is not independently verified.",
+    "template": "llama_inst",
+    "backend": "llama.cpp",
+    "dtype": "float16",
+    "quantization": null,
+    "license": "LLM Compiler License Agreement",
+    "gated": false
+  },
+  "runtime": {
+    "repository": "https://github.com/ggml-org/llama.cpp.git",
+    "tag": "b4514",
+    "revision": "ec7f3ac9ab33e46b136eb5ab6a76c4d81f57c7f1",
+    "cuda_architectures": "89",
+    "cmake_options": [
+      "-DGGML_CUDA=ON",
+      "-DLLAMA_CURL=OFF",
+      "-DLLAMA_BUILD_TESTS=OFF",
+      "-DLLAMA_BUILD_EXAMPLES=ON",
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "context_size": 6144,
+    "parallel_slots": 1,
+    "batch_size": 512,
+    "ubatch_size": 128,
+    "threads": 8,
+    "gpu_layers": 99,
+    "cache_type_k": "f16",
+    "cache_type_v": "f16"
+  },
+  "limits": [
+    "24 authored no-loop single-function cases; not a broad leaderboard.",
+    "FTD community F16 conversion and Qwen HF FP16 use different inference implementations.",
+    "Upstream conversion identity is attributed by the publisher, not independently bitwise verified.",
+    "Direct-IR task transfer, not the FTD paper pass-selection benchmark.",
+    "Feedback compares the same 12 predeclared tasks, not 24 initial versus 12 repaired.",
+    "Identity is a control, not a fourth competitor.",
+    "Original v2 outputs were revalidated, not regenerated."
+  ]
+}

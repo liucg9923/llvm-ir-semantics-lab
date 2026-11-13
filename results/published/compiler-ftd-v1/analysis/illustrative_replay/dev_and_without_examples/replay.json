@@ -1,0 +1,16 @@
+{
+  "kind": "posthoc_exact_candidate_native_diagnostic",
+  "run": "compiler-ftd-dev-noexamples-v1",
+  "task_id": "dev_l0_and_all",
+  "candidate_modified": false,
+  "formal_score_changed": false,
+  "boundary": "Concrete diagnostic inputs only. Source/candidate attributes, metadata and targets are unmodified; output contract still fails. A finite match is not an all-input proof.",
+  "source_sha256": "5c698fe9a0dbe5033a43656871de12e0f35a1fc1d538a89089fedc009c870d63",
+  "candidate_sha256": "ecf1246f9b403b882027be01e17040f6db6b9d0b08ad4d097cd1e0bfb2efd2ed",
+  "result": {
+    "status": "match",
+    "input_kind": "diagnostic",
+    "case_count": 17,
+    "mismatch_count": 0
+  }
+}

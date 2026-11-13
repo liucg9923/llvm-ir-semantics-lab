@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "same_dataset_and_config": true,
+  "same_evaluator_hash": true,
+  "same_initial_prompt_text_for_both_llms": true,
+  "all_24_initial_cases_per_group": true,
+  "all_12_matched_feedback_cases_per_model": true,
+  "all_raw_hashes_match": true,
+  "prior_output_revalidation": {
+    "passed": true,
+    "records": [
+      {
+        "original": "opt-v2",
+        "rechecked": "opt-v2-rechecked-ftd",
+        "n": 24,
+        "state_differences": [],
+        "raw_files_identical": true
+      },
+      {
+        "original": "identity-v2",
+        "rechecked": "identity-v2-rechecked-ftd",
+        "n": 24,
+        "state_differences": [],
+        "raw_files_identical": true
+      },
+      {
+        "original": "qwen-v2",
+        "rechecked": "qwen-v2-rechecked-ftd",
+        "n": 24,
+        "state_differences": [],
+        "raw_files_identical": true
+      },
+      {
+        "original": "qwen-feedback-v2",
+        "rechecked": "qwen-feedback-v2-rechecked-ftd",
+        "n": 24,
+        "state_differences": [],
+        "raw_files_identical": true
+      }
+    ],
+    "new_model_calls": 0
+  }
+}
