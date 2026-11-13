@@ -1,0 +1,265 @@
+{
+  "created_utc": "2026-11-13T13:44:59.458293+00:00",
+  "files": {
+    "configs/compiler-ftd.json": "cfd5faeba9711752659d0ca8785a3c3e051ad4bdbe2f444fe6b7d5257d81812a",
+    "configs/experiment-v3.json": "3ec3909505187dfe67bb4e0fa960d2f9c2743baf7981934ae74d9496557cd038",
+    "configs/experiment.json": "8d84ab828f98212cf141ccbe5d2c91b09f5fed629a50f133a5453a8b3b6a0feb",
+    "configs/llama-cpp.json": "394e88f60929619d36b0a677dc563b8c07f21b5a79333aea04aa630b8d1197ee",
+    "configs/models.json": "dadc9d3b791e686bffd252c4a88b8b66d340518d066a2c532d7f745abcf31c14",
+    "docs/REDESIGN_V3.md": "322931f5b77f7ec1d92ba31571b6637dca9926959d7c51706b8d088b935dc0af",
+    "results/campaign-v3/hints.json": "b2613a9589671740bdabb889f21be6594cf738e6bd4f9b25f66d45a6537416c1",
+    "scripts/accept_v3.py": "7d7eebc22d2ae838cc49ed75bd733363af2bd00c7cd96d87d3b0b5a57d3c3f25",
+    "scripts/build_v3_hints.py": "1bd843424552c00f4f97bd5a646df2e99dfc1c0c3f6d1e61f4467efde6d30e07",
+    "scripts/build_v3_tasks.py": "201c7c69d30104cbd088ef4c7b8e48f03ddce20d22f474bd5cef1abef28f1948",
+    "src/irsem/common.py": "54288e0efd2479b8f8ca3b372aa05af9c09eff64c4d17e748ed684bdab1fb59c",
+    "src/irsem/differential.py": "bb516e73dcebd97ba2acc5d8e9ec13af8e0772a56f90278341b75e9d5a8e881e",
+    "src/irsem/evaluate.py": "17bdb0346a6e7642e15b49ca6cac31d7e001ff372dcfd3fcce9976af3b5d1c56",
+    "src/irsem/gguf.py": "159f3940a914b93b99ac3c3c8e53772a2f44c9f071a03e115afaece1131bf96c",
+    "src/irsem/ir.py": "73fb898c943f97d0bb2c0f30c0232120be345c6725a0de0915ec2fdedadc9328",
+    "src/irsem/models.py": "1af370616509a5fbfead349166a1ffdf0552ba271309fc02f2ae70e7b90ecf52",
+    "src/irsem/prompts.py": "d04a962eea21c1a43d43821f2eff1eddc5cbca4599920e458a17c26ce215dee7",
+    "src/irsem/sandbox.py": "80f99445ba4215f185ef7250e1986a525b685c6a897492c99cb724947db231e8",
+    "src/irsem/tasks.py": "042deac39869847d096dcbf9e89b0a8b8bf9a5a775e8def835c5f1641e5069aa",
+    "src/irsem/toolchain.py": "58cd9e684589c02c7fd0b950d576123e1dd6a463a2fd2f9937c9a5b7030b2ec8",
+    "src/irsem/v3/__init__.py": "b28001470404defb9745b9d9995df3411ae594022dcb324d67be553b0059adbc",
+    "src/irsem/v3/control.py": "636437013f6781f8d135c5897e051d4621e552aa09f97c8e2e47f433ed7c5b33",
+    "src/irsem/v3/dataset.py": "910bf6606dd4fde56dee98be0d80523a3792bae8fd994b403a81bb26ed2150e3",
+    "src/irsem/v3/evaluate.py": "a618003ed26df1c886547d8b7975f1dd4ed3f03349276c93a27bae2647a755d5",
+    "src/irsem/v3/extract.py": "f223d104054df1a43c78e910864c4fa893f0e9e849152b198356c896eca02b3c",
+    "src/irsem/v3/policy.py": "60437893e0749916248144d5b9412a73b5c1bb34e0c401d4402b3937dc9e62c8",
+    "src/irsem/v3/prompts.py": "cb0c89d56ebaf083f2dc8172c4254ed8d8c9f40923b9beb8c66b2a59fbf5a5b8",
+    "src/irsem/v3/runner.py": "4e3881c2520d474c44d383d047c3f43a601b57a78c13dbccc01bb07e0271079a",
+    "src/irsem/v3/selection.py": "39f7226792cb8c94b95dd0a0e3f9da3720b36a961995c53c3f0dcc39e63f40c0",
+    "tasks/dev/dev_l0_and_all/mutant.ll": "9bab299596878894e26b8567d71f7d6beab5399397f2ba790f4422747b840e0b",
+    "tasks/dev/dev_l0_and_all/reference.ll": "a39752b90a5860d8fc6a174bbf420ed2c534e6812239ecdcc76b1a21dc031d78",
+    "tasks/dev/dev_l0_and_all/source.ll": "5c698fe9a0dbe5033a43656871de12e0f35a1fc1d538a89089fedc009c870d63",
+    "tasks/dev/dev_l0_xor_self/mutant.ll": "a39752b90a5860d8fc6a174bbf420ed2c534e6812239ecdcc76b1a21dc031d78",
+    "tasks/dev/dev_l0_xor_self/reference.ll": "9bab299596878894e26b8567d71f7d6beab5399397f2ba790f4422747b840e0b",
+    "tasks/dev/dev_l0_xor_self/source.ll": "3046abf8afe3c5f54a68735fc1e90f7885dc41a6468a574ca3e93621ceae5ed9",
+    "tasks/dev/dev_l1_select_equal/mutant.ll": "8f225101bcfd4f46e5db738cd43290e2caa858759c82c254fc8b2c69a5da68ea",
+    "tasks/dev/dev_l1_select_equal/reference.ll": "137c4fee1254bb7cf0bbd62ccf1514287655cb70e82934c893862b0751586352",
+    "tasks/dev/dev_l1_select_equal/source.ll": "dc4bfa3aba9f02e5e3c80c83eb0a580480d08a63f5b53195d267f47aa34ecd5d",
+    "tasks/dev/dev_l1_unreachable/mutant.ll": "a8952689be53789dde89848fd2de326d6e57d61b20719df85c390ff7124a93e0",
+    "tasks/dev/dev_l1_unreachable/reference.ll": "a39752b90a5860d8fc6a174bbf420ed2c534e6812239ecdcc76b1a21dc031d78",
+    "tasks/dev/dev_l1_unreachable/source.ll": "fb899e1670352c103450436543553e3861ef9e24f5f354dafaa4c0f041cbb809",
+    "tasks/dev/dev_l2_alloca/mutant.ll": "8f225101bcfd4f46e5db738cd43290e2caa858759c82c254fc8b2c69a5da68ea",
+    "tasks/dev/dev_l2_alloca/reference.ll": "0614656af27be65f39e93934a511f4b8a5e0e406ac4642bc3d3ac67802e82ba7",
+    "tasks/dev/dev_l2_alloca/source.ll": "8ed38f3b33ca66c0c8e290c04accfd242b007ead269b5059a5ecd2d51153e5fa",
+    "tasks/dev/dev_l2_forward/mutant.ll": "27dfc423f6a6f5cc26666d03439666a50d2214e85049df5eaaf2bda1fedcd5b3",
+    "tasks/dev/dev_l2_forward/reference.ll": "dd41f69894bc30a18ba9f39b4747d6aafbb0a62e468ea1a8206fd05ce41281b5",
+    "tasks/dev/dev_l2_forward/source.ll": "0a24a18beb45f3f686aa660a8f42ccd602e620597b550b328bcd31a05ef5df6a",
+    "tasks/manifest.json": "4ad117487a7a11e634592aba020f5b1aa2b069b94b8c3812796af195bf8f063e",
+    "tasks/v3/manifest.json": "9cf98a0f3d719d006faccc00275627c0298d01ae93dca3ea299e9e29d0f24ccc",
+    "tasks/v3/test/v3_branch_fact/mutant.ll": "aac2c73aa8d860e3102469cc1f6878df7a0ee9ef2b60c21ccabdc3da7126e530",
+    "tasks/v3/test/v3_branch_fact/reference.ll": "a577fbb6d36651ca6c436947147dc3593726c69bd5262e7a33d531af64868218",
+    "tasks/v3/test/v3_branch_fact/source.ll": "b81c3b5ee9a160326b5e48ad506511d5ff9ef77b8ac5799d83d0a34dcb1b97ee",
+    "tasks/v3/test/v3_branch_stricter/mutant.ll": "a577fbb6d36651ca6c436947147dc3593726c69bd5262e7a33d531af64868218",
+    "tasks/v3/test/v3_branch_stricter/reference.ll": "57c0c5174dff5d06854dcde638ffbfdca8f953e87accb7404e62ed67ebc26899",
+    "tasks/v3/test/v3_branch_stricter/source.ll": "57c0c5174dff5d06854dcde638ffbfdca8f953e87accb7404e62ed67ebc26899",
+    "tasks/v3/test/v3_mask_bound/mutant.ll": "92baa122dd4bdd7b0f9dc0de2368cb900cbcb7471d4ce28daa6ab52b85cf12c9",
+    "tasks/v3/test/v3_mask_bound/reference.ll": "aac2c73aa8d860e3102469cc1f6878df7a0ee9ef2b60c21ccabdc3da7126e530",
+    "tasks/v3/test/v3_mask_bound/source.ll": "e75b3642292254464f2d6d55d499a41388a861c44023106e82d8af08d31f6abe",
+    "tasks/v3/test/v3_mask_boundary/mutant.ll": "aac2c73aa8d860e3102469cc1f6878df7a0ee9ef2b60c21ccabdc3da7126e530",
+    "tasks/v3/test/v3_mask_boundary/reference.ll": "dd38734ec50b979aaa9735cd0d66f460fdfe1ee808dbeee8a8d4b314bdd22989",
+    "tasks/v3/test/v3_mask_boundary/source.ll": "dd38734ec50b979aaa9735cd0d66f460fdfe1ee808dbeee8a8d4b314bdd22989",
+    "tasks/v3/test/v3_mask_gap/mutant.ll": "0bfff0355e5975d199d562b8175d22b860727f6fdbd4b8b8034c591bb611e29e",
+    "tasks/v3/test/v3_mask_gap/reference.ll": "500de5e2a3987209a4fbef4b94d6d10a7ce8a13bc5f82f5be18e0cb61d547290",
+    "tasks/v3/test/v3_mask_gap/source.ll": "500de5e2a3987209a4fbef4b94d6d10a7ce8a13bc5f82f5be18e0cb61d547290",
+    "tasks/v3/test/v3_mask_partition/mutant.ll": "e1f9f908345fd262df1f9eb8173206705de7cc432007f1681eb148508f43f17e",
+    "tasks/v3/test/v3_mask_partition/reference.ll": "0bfff0355e5975d199d562b8175d22b860727f6fdbd4b8b8034c591bb611e29e",
+    "tasks/v3/test/v3_mask_partition/source.ll": "2d94731fcf1b36441ca864b680c0807189a44428257746bc525e5ae892d000de",
+    "tasks/v3/test/v3_narrow_alias/mutant.ll": "6da18c4a9ff887cd0b7c13a16c31d7ed8a7e58547ee411ba7024c7f1bcf1b568",
+    "tasks/v3/test/v3_narrow_alias/reference.ll": "8e1d4c4c96a701d28ffca932da4b78c84c8e75614133663b0768bf973a5748a5",
+    "tasks/v3/test/v3_narrow_alias/source.ll": "8e1d4c4c96a701d28ffca932da4b78c84c8e75614133663b0768bf973a5748a5",
+    "tasks/v3/test/v3_narrow_forward/mutant.ll": "a3fabbcc8505099667c5f2e0a1cee7ebbc54aa80794a924cc348264d3ee23b14",
+    "tasks/v3/test/v3_narrow_forward/reference.ll": "6da18c4a9ff887cd0b7c13a16c31d7ed8a7e58547ee411ba7024c7f1bcf1b568",
+    "tasks/v3/test/v3_narrow_forward/source.ll": "eb0637a20159a76435b46a597a62f69b67ab964f32bd9a188d9b4e7f5800ea32",
+    "tasks/v3/test/v3_phi_arithmetic/mutant.ll": "0bfff0355e5975d199d562b8175d22b860727f6fdbd4b8b8034c591bb611e29e",
+    "tasks/v3/test/v3_phi_arithmetic/reference.ll": "0b1ca994771f692818b944782c08f93f953db686cfb73897913eabd4555681ab",
+    "tasks/v3/test/v3_phi_arithmetic/source.ll": "6e35d6b155173a627e2440fd973a539ec77556e695295ada265c860a31ef8475",
+    "tasks/v3/test/v3_phi_changed/mutant.ll": "0b1ca994771f692818b944782c08f93f953db686cfb73897913eabd4555681ab",
+    "tasks/v3/test/v3_phi_changed/reference.ll": "b4d25858f14eac52d2ea74601460ad3a29493e54dbb076d5a21793adec6003dd",
+    "tasks/v3/test/v3_phi_changed/source.ll": "b4d25858f14eac52d2ea74601460ad3a29493e54dbb076d5a21793adec6003dd",
+    "tasks/v3/test/v3_select_changed/mutant.ll": "92baa122dd4bdd7b0f9dc0de2368cb900cbcb7471d4ce28daa6ab52b85cf12c9",
+    "tasks/v3/test/v3_select_changed/reference.ll": "db259bd61dabbb0837dd8e098ed304fad3503f89d8550dafdcb02ea57d4838c0",
+    "tasks/v3/test/v3_select_changed/source.ll": "db259bd61dabbb0837dd8e098ed304fad3503f89d8550dafdcb02ea57d4838c0",
+    "tasks/v3/test/v3_select_correlated/mutant.ll": "0bfff0355e5975d199d562b8175d22b860727f6fdbd4b8b8034c591bb611e29e",
+    "tasks/v3/test/v3_select_correlated/reference.ll": "92baa122dd4bdd7b0f9dc0de2368cb900cbcb7471d4ce28daa6ab52b85cf12c9",
+    "tasks/v3/test/v3_select_correlated/source.ll": "cd5d2d3908731df2f23fec50a071b4e9ebe49afa3020ef00e897a9e2b08927f5",
+    "tasks/v3/test/v3_store_back/mutant.ll": "9b59791880285fd1ebe46837fd8367a2febfca8305e4ddb932284e5ec1c82291",
+    "tasks/v3/test/v3_store_back/reference.ll": "ccf341b518503ec679b870a84fc2696bfbfde5077a5203c20181593a3685238a",
+    "tasks/v3/test/v3_store_back/source.ll": "0aa674fd464cbf37e17e054c1c92d45dea955af3b81953d8cc703ff7e90a8f34",
+    "tasks/v3/test/v3_store_copy/mutant.ll": "ccf341b518503ec679b870a84fc2696bfbfde5077a5203c20181593a3685238a",
+    "tasks/v3/test/v3_store_copy/reference.ll": "219e556391ecd1cd6e0d0194d5fe4633ba39dca9f7fd46b300c26f4c32ab46ad",
+    "tasks/v3/test/v3_store_copy/source.ll": "219e556391ecd1cd6e0d0194d5fe4633ba39dca9f7fd46b300c26f4c32ab46ad",
+    "tasks/v3/test/v3_write_alias/mutant.ll": "5a2fca80b82c900428e3d5015a0218372495e735e0792f99e50f1d913b6c70ff",
+    "tasks/v3/test/v3_write_alias/reference.ll": "5249f1f2ba47d794a2bae0a6d8f9df289bf27bd245ad558eeab883dfe64e5c69",
+    "tasks/v3/test/v3_write_alias/source.ll": "5249f1f2ba47d794a2bae0a6d8f9df289bf27bd245ad558eeab883dfe64e5c69",
+    "tasks/v3/test/v3_write_forward/mutant.ll": "cd304621eb68738243d14f1f06198b5d4771c4d51694ff3b3e38380d1b5695e5",
+    "tasks/v3/test/v3_write_forward/reference.ll": "b7da479740ffc9b81ad63e621edcd5b6404fcbbe1095bd164d5d926bef08fcc2",
+    "tasks/v3/test/v3_write_forward/source.ll": "39b60ca6063038a4843f1e7c2ca9e35e81302f2383d6849b4e121d646ff7aba9",
+    "tasks/v3/test/v3_xor_cancel/mutant.ll": "b45af13808c7ed7a8ed50ddc5f62f9678fd6243879eac649daf2dff2c28df2cf",
+    "tasks/v3/test/v3_xor_cancel/reference.ll": "a1946cefa202ac63cd52bec3cd2ea13dcb81420936622cad8d33552410f06eaf",
+    "tasks/v3/test/v3_xor_cancel/source.ll": "7b430e4e314cbcba03b837f4c17a5f97a8327faf62a18afb3ada5f69b193138b",
+    "tasks/v3/test/v3_xor_changed/mutant.ll": "a1946cefa202ac63cd52bec3cd2ea13dcb81420936622cad8d33552410f06eaf",
+    "tasks/v3/test/v3_xor_changed/reference.ll": "c227be95f6963937ed400457fb0aa1c0b360c25461d05684d5d982e6cccfc825",
+    "tasks/v3/test/v3_xor_changed/source.ll": "c227be95f6963937ed400457fb0aa1c0b360c25461d05684d5d982e6cccfc825",
+    "tools/v3_ir_inspect.cpp": "b30f2e51c07f99f2fb713e00d1aef89abe379d65c5efc817ea07f4443db7c0a3"
+  },
+  "sha256": "7a89f5f48349479be93ec0044b3730b9fe26ffe9c678d93ada37d8367083b8e0",
+  "toolchain": {
+    "system": "Linux",
+    "machine": "x86_64",
+    "tools": {
+      "opt": {
+        "available": true,
+        "sha256": "c1b372254c06e620ea7fc5e39d05338d01a73441383fdd7d343b815fc6565045",
+        "version": "LLVM (http://llvm.org/):\n  LLVM version 17.0.6\n  Optimized build with assertions.\n  Default target: x86_64-unknown-linux-gnu\n  Host CPU: sapphirerapids",
+        "path": "/root/autodl-tmp/llvm-ir-semantics-lab/.build/llvm17-build/bin/opt"
+      },
+      "clang": {
+        "available": true,
+        "sha256": "6f673bb8b459659cdefed06f2348b3ad47a13fc84e5736df38a83ffc62532e70",
+        "version": "Ubuntu clang version 17.0.6 (++20231209124227+6009708b4367-1~exp1~20231209124336.77)\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin",
+        "path": "/usr/lib/llvm-17/bin/clang"
+      },
+      "alive-tv": {
+        "available": true,
+        "sha256": "0bccc12de46d34f3f21155d43371ca3132d7a48d6a284c48e0fe804d177c9dba",
+        "version": "LLVM (http://llvm.org/):\n  LLVM version 17.0.6\n  Optimized build with assertions.",
+        "path": "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv"
+      }
+    },
+    "libraries": {
+      "opt::libz.so.1": {
+        "path": "/usr/lib/x86_64-linux-gnu/libz.so.1.2.11",
+        "sha256": "64c206f0146cc58bbddc4f22054436f4ff278f5a554aa3ce6921ddf7e9133370"
+      },
+      "opt::libzstd.so.1": {
+        "path": "/usr/lib/x86_64-linux-gnu/libzstd.so.1.4.8",
+        "sha256": "5df4f4df42d76270bb6981fabc7c1fdccd8ad28a23d84d67f73203fb3f537667"
+      },
+      "opt::libtinfo.so.6": {
+        "path": "/usr/lib/x86_64-linux-gnu/libtinfo.so.6.3",
+        "sha256": "1594d475b771bf8cbb547f0e9b0c842ec37628d42c6747960b4d7c12a4cf4427"
+      },
+      "opt::libstdc++.so.6": {
+        "path": "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30",
+        "sha256": "ff0825e113603c3866680d5d52216bc6d8eedf3a59f52a0aef67ff01994db128"
+      },
+      "opt::libm.so.6": {
+        "path": "/usr/lib/x86_64-linux-gnu/libm.so.6",
+        "sha256": "ec93672ba45de8a12ff774c9bcd993fa5c00155f0a64dfe1c4e984282eaf236e"
+      },
+      "opt::libgcc_s.so.1": {
+        "path": "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1",
+        "sha256": "fc9d43b2f6c20e53b009238f767c5b949d202389e20de9e202ea684b4ba3729a"
+      },
+      "opt::libc.so.6": {
+        "path": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+        "sha256": "2e15e345ccba1e1e8bf3bc58938d13eb7ccc17044942f0376cd5bc771f429b79"
+      },
+      "clang::libclang-cpp.so.17": {
+        "path": "/usr/lib/llvm-17/lib/libclang-cpp.so.17",
+        "sha256": "32d430ebff126fa3e5b65021e33516d5d23afd8809f05faa6b9bd030e0298cda"
+      },
+      "clang::libLLVM-17.so.1": {
+        "path": "/usr/lib/x86_64-linux-gnu/libLLVM-17.so.1",
+        "sha256": "ea4b74072fdd895a63c3356e034f21f22e2fe7858545f2c5aaa22f05683f4657"
+      },
+      "clang::libstdc++.so.6": {
+        "path": "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30",
+        "sha256": "ff0825e113603c3866680d5d52216bc6d8eedf3a59f52a0aef67ff01994db128"
+      },
+      "clang::libm.so.6": {
+        "path": "/usr/lib/x86_64-linux-gnu/libm.so.6",
+        "sha256": "ec93672ba45de8a12ff774c9bcd993fa5c00155f0a64dfe1c4e984282eaf236e"
+      },
+      "clang::libgcc_s.so.1": {
+        "path": "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1",
+        "sha256": "fc9d43b2f6c20e53b009238f767c5b949d202389e20de9e202ea684b4ba3729a"
+      },
+      "clang::libc.so.6": {
+        "path": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+        "sha256": "2e15e345ccba1e1e8bf3bc58938d13eb7ccc17044942f0376cd5bc771f429b79"
+      },
+      "clang::libffi.so.8": {
+        "path": "/usr/lib/x86_64-linux-gnu/libffi.so.8.1.0",
+        "sha256": "247da4d5d34a91cadcdd6282be4c4644fcb8af001334d2b8a82ecda435418cbf"
+      },
+      "clang::libedit.so.2": {
+        "path": "/usr/lib/x86_64-linux-gnu/libedit.so.2.0.68",
+        "sha256": "81dbdf431b1d828bad9e2511b562310bd3f0bdb1bad998775406d2784426fd66"
+      },
+      "clang::libz.so.1": {
+        "path": "/usr/lib/x86_64-linux-gnu/libz.so.1.2.11",
+        "sha256": "64c206f0146cc58bbddc4f22054436f4ff278f5a554aa3ce6921ddf7e9133370"
+      },
+      "clang::libzstd.so.1": {
+        "path": "/usr/lib/x86_64-linux-gnu/libzstd.so.1.4.8",
+        "sha256": "5df4f4df42d76270bb6981fabc7c1fdccd8ad28a23d84d67f73203fb3f537667"
+      },
+      "clang::libtinfo.so.6": {
+        "path": "/usr/lib/x86_64-linux-gnu/libtinfo.so.6.3",
+        "sha256": "1594d475b771bf8cbb547f0e9b0c842ec37628d42c6747960b4d7c12a4cf4427"
+      },
+      "clang::libxml2.so.2": {
+        "path": "/usr/lib/x86_64-linux-gnu/libxml2.so.2.9.13",
+        "sha256": "8c2a993fe42a16e94f9054f1b9cbeccea50b6ed377359e9d3da04cbb2470f225"
+      },
+      "clang::libbsd.so.0": {
+        "path": "/usr/lib/x86_64-linux-gnu/libbsd.so.0.11.5",
+        "sha256": "e4ad21c203d8e8b9b7f49071311339af6b438026e1ad236403e3b379b022f23d"
+      },
+      "clang::libicuuc.so.70": {
+        "path": "/usr/lib/x86_64-linux-gnu/libicuuc.so.70.1",
+        "sha256": "b62ce27b7f7036d6bee15086f569271239fe5d46ef5da7535acf32e5e5e80b7b"
+      },
+      "clang::liblzma.so.5": {
+        "path": "/usr/lib/x86_64-linux-gnu/liblzma.so.5.2.5",
+        "sha256": "493cb401ab4aa3bba611ca464d12996afb3b327940d29476f535f999e167439b"
+      },
+      "clang::libmd.so.0": {
+        "path": "/usr/lib/x86_64-linux-gnu/libmd.so.0.0.5",
+        "sha256": "bb376813876bb214535bbbdac70f2c0c4b00baecb81557dab78a79518248df06"
+      },
+      "clang::libicudata.so.70": {
+        "path": "/usr/lib/x86_64-linux-gnu/libicudata.so.70.1",
+        "sha256": "68b1442c7bc043896934153e81b40f3b9154628f441739b3590eeae1654495ae"
+      },
+      "alive-tv::libz3.so.4": {
+        "path": "/usr/lib/x86_64-linux-gnu/libz3.so.4",
+        "sha256": "110399eb5b056236772889505fce7a9e862a81653f941e20da2d213d2a02d8a5"
+      },
+      "alive-tv::libz.so.1": {
+        "path": "/usr/lib/x86_64-linux-gnu/libz.so.1.2.11",
+        "sha256": "64c206f0146cc58bbddc4f22054436f4ff278f5a554aa3ce6921ddf7e9133370"
+      },
+      "alive-tv::libzstd.so.1": {
+        "path": "/usr/lib/x86_64-linux-gnu/libzstd.so.1.4.8",
+        "sha256": "5df4f4df42d76270bb6981fabc7c1fdccd8ad28a23d84d67f73203fb3f537667"
+      },
+      "alive-tv::libtinfo.so.6": {
+        "path": "/usr/lib/x86_64-linux-gnu/libtinfo.so.6.3",
+        "sha256": "1594d475b771bf8cbb547f0e9b0c842ec37628d42c6747960b4d7c12a4cf4427"
+      },
+      "alive-tv::libstdc++.so.6": {
+        "path": "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30",
+        "sha256": "ff0825e113603c3866680d5d52216bc6d8eedf3a59f52a0aef67ff01994db128"
+      },
+      "alive-tv::libm.so.6": {
+        "path": "/usr/lib/x86_64-linux-gnu/libm.so.6",
+        "sha256": "ec93672ba45de8a12ff774c9bcd993fa5c00155f0a64dfe1c4e984282eaf236e"
+      },
+      "alive-tv::libgcc_s.so.1": {
+        "path": "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1",
+        "sha256": "fc9d43b2f6c20e53b009238f767c5b949d202389e20de9e202ea684b4ba3729a"
+      },
+      "alive-tv::libc.so.6": {
+        "path": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+        "sha256": "2e15e345ccba1e1e8bf3bc58938d13eb7ccc17044942f0376cd5bc771f429b79"
+      }
+    }
+  },
+  "inspector_sha256": "7d1b4819c6ee4a3f3053d02dfb0a21969afe2c0a42f09039b0b947587d5498ce"
+}

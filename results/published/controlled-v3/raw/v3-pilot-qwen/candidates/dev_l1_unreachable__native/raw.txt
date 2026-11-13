@@ -1,0 +1,17 @@
+After applying the `opt -p 'function(simplifycfg)'` optimization to the provided LLVM-IR code, the resulting code remains unchanged. The `simplifycfg` pass does not change the structure of the function in this case because there are no complex control flow structures or redundant instructions that can be simplified.
+
+Here is the original LLVM-IR code:
+
+```llvm
+target datalayout = "e-p:64:64-i64:64-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+define i32 @f(i32 noundef %x) {
+entry:
+  ret i32 %x
+dead:
+  ret i32 99
+}
+```
+
+Since the `simplifycfg` pass does not make any changes, the output remains the same.

@@ -1,0 +1,75 @@
+Return exactly one complete LLVM 17.0.6 IR module enclosed in <code>...</code>.
+Preserve the function f, its signature, argument attributes, target triple and data layout.
+Preserve defined observable behavior including stores to caller-visible memory. Do not add
+new input assumptions, declarations, calls, globals, metadata, volatile/atomic operations or loops.
+Use ordinary unquoted block and local identifiers.
+The input is a small single-function module. A different equivalent textual representation
+is acceptable. If the requested transformation is not applicable, retain the relevant code.
+Do not provide explanations or hidden reasoning; provide only the resulting IR module.
+
+Example input:
+Give the LLVM-IR for the following code when optimized using opt -passes='function(instcombine)':
+<code>
+target datalayout = "e-p:64:64-i64:64-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+define i32 @f(i32 noundef %x) {
+entry:
+  %r = xor i32 %x, %x
+  ret i32 %r
+}
+</code>
+Input instruction count: 2.
+
+Example answer:
+<code>
+target datalayout = "e-p:64:64-i64:64-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+define i32 @f(i32 noundef %x) {
+entry:
+  ret i32 0
+}
+</code>
+
+Example input:
+Give the LLVM-IR for the following code when optimized using opt -passes='function(instcombine)':
+<code>
+target datalayout = "e-p:64:64-i64:64-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+define i32 @f(i32 noundef %x) {
+entry:
+  %c = icmp eq i32 %x, 0
+  %r = select i1 %c, i32 11, i32 11
+  ret i32 %r
+}
+</code>
+Input instruction count: 3.
+
+Example answer:
+<code>
+target datalayout = "e-p:64:64-i64:64-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+define i32 @f(i32 noundef %x) {
+entry:
+  ret i32 11
+}
+</code>
+
+Current task:
+Give the LLVM-IR for the following code when optimized using opt -passes='function(sroa,instcombine)':
+<code>
+target datalayout = "e-p:64:64-i64:64-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+define i32 @f(i32 noundef %x) {
+entry:
+  %a = alloca i32, align 4
+  store i32 13, ptr %a, align 4
+  %r = load i32, ptr %a, align 4
+  ret i32 %r
+}
+</code>
+Input instruction count: 4.

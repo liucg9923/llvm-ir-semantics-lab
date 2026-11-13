@@ -1,0 +1,20 @@
+When the provided LLVM IR code is optimized using the `opt -p 'function(instcombine)'` command, the `instcombine` pass will simplify the code. The original code is:
+
+```llvm
+define i32 @f(i32 noundef %x) {
+entry:
+  %r = xor i32 %x, %x
+  ret i32 %r
+}
+```
+
+The `xor` instruction with the same operand twice results in zero. Therefore, the `instcombine` pass will simplify the code to:
+
+```llvm
+define i32 @f(i32 noundef %x) {
+entry:
+  ret i32 0
+}
+```
+
+This optimized code has an instruction count of 1 and a binary size of 4 bytes.

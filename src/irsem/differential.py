@@ -51,7 +51,7 @@ int main(void) { uint32_t a; while(scanf("%" SCNu32,&a)==1)
 '''
 
 
-def compare(task,candidate,clang,kind='holdout',timeout=5,random_count=256,allow_execution=False):
+def compare(task,candidate,clang,kind='holdout',timeout=5,random_count=256,allow_execution=False,retain_cases=False,optimization='-O0'):
     if not allow_execution:
         return {'status':'not_run','reason':'Native candidate execution requires the isolated evaluation workflow.'}
     cases=input_cases(task,kind,random_count)
@@ -64,7 +64,7 @@ def compare(task,candidate,clang,kind='holdout',timeout=5,random_count=256,allow
         outcomes=[]; logs={}
         for name,ir in [('source',task.text()),('candidate',candidate)]:
             (p/f'{name}.ll').write_text(ir)
-            build=run_process([clang,'-O0','-Wno-override-module',str(p/f'{name}.ll'),str(p/'driver.c'),'-lseccomp','-o',str(p/name)],60)
+            build=run_process([clang,optimization,'-Wno-override-module',str(p/f'{name}.ll'),str(p/'driver.c'),'-lseccomp','-o',str(p/name)],60)
             logs[name+'_compile']=build.as_dict()
             if build.returncode!=0 or build.timed_out:
                 return {'status':'tool_error' if name=='source' else 'compile_error','stage':name,'logs':logs}
@@ -84,4 +84,6 @@ def compare(task,candidate,clang,kind='holdout',timeout=5,random_count=256,allow
         if differences:
             i=differences[0]
             result['counterexample']={'input':list(cases[i]),'source':outcomes[0][i],'candidate':outcomes[1][i]}
+        if retain_cases:
+            result.update(inputs=[list(x) for x in cases],source_outputs=outcomes[0],candidate_outputs=outcomes[1],logs=logs,optimization=optimization)
         return result

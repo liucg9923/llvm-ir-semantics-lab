@@ -1,0 +1,170 @@
+[
+  {
+    "model": "compiler-ftd",
+    "task_id": "v3_mask_partition",
+    "condition": 0,
+    "status": "invalid_ir",
+    "effective": false
+  },
+  {
+    "model": "compiler-ftd",
+    "task_id": "v3_mask_partition",
+    "condition": 1,
+    "status": "verified",
+    "effective": true
+  },
+  {
+    "model": "compiler-ftd",
+    "task_id": "v3_mask_gap",
+    "condition": 0,
+    "status": "invalid_ir",
+    "effective": false
+  },
+  {
+    "model": "compiler-ftd",
+    "task_id": "v3_mask_gap",
+    "condition": 1,
+    "status": "refuted",
+    "effective": false
+  },
+  {
+    "model": "compiler-ftd",
+    "task_id": "v3_select_correlated",
+    "condition": 0,
+    "status": "verified",
+    "effective": true
+  },
+  {
+    "model": "compiler-ftd",
+    "task_id": "v3_select_correlated",
+    "condition": 1,
+    "status": "verified",
+    "effective": true
+  },
+  {
+    "model": "compiler-ftd",
+    "task_id": "v3_select_changed",
+    "condition": 0,
+    "status": "verified",
+    "effective": false
+  },
+  {
+    "model": "compiler-ftd",
+    "task_id": "v3_select_changed",
+    "condition": 1,
+    "status": "invalid_ir",
+    "effective": false
+  },
+  {
+    "model": "compiler-ftd",
+    "task_id": "v3_narrow_forward",
+    "condition": 0,
+    "status": "refuted",
+    "effective": false
+  },
+  {
+    "model": "compiler-ftd",
+    "task_id": "v3_narrow_forward",
+    "condition": 1,
+    "status": "refuted",
+    "effective": false
+  },
+  {
+    "model": "compiler-ftd",
+    "task_id": "v3_narrow_alias",
+    "condition": 0,
+    "status": "verified",
+    "effective": false
+  },
+  {
+    "model": "compiler-ftd",
+    "task_id": "v3_narrow_alias",
+    "condition": 1,
+    "status": "verified",
+    "effective": false
+  },
+  {
+    "model": "qwen",
+    "task_id": "v3_mask_partition",
+    "condition": 0,
+    "status": "verified",
+    "effective": true
+  },
+  {
+    "model": "qwen",
+    "task_id": "v3_mask_partition",
+    "condition": 1,
+    "status": "verified",
+    "effective": true
+  },
+  {
+    "model": "qwen",
+    "task_id": "v3_mask_gap",
+    "condition": 0,
+    "status": "refuted",
+    "effective": false
+  },
+  {
+    "model": "qwen",
+    "task_id": "v3_mask_gap",
+    "condition": 1,
+    "status": "verified",
+    "effective": false
+  },
+  {
+    "model": "qwen",
+    "task_id": "v3_select_correlated",
+    "condition": 0,
+    "status": "refuted",
+    "effective": false
+  },
+  {
+    "model": "qwen",
+    "task_id": "v3_select_correlated",
+    "condition": 1,
+    "status": "refuted",
+    "effective": false
+  },
+  {
+    "model": "qwen",
+    "task_id": "v3_select_changed",
+    "condition": 0,
+    "status": "refuted",
+    "effective": false
+  },
+  {
+    "model": "qwen",
+    "task_id": "v3_select_changed",
+    "condition": 1,
+    "status": "refuted",
+    "effective": false
+  },
+  {
+    "model": "qwen",
+    "task_id": "v3_narrow_forward",
+    "condition": 0,
+    "status": "verified",
+    "effective": false
+  },
+  {
+    "model": "qwen",
+    "task_id": "v3_narrow_forward",
+    "condition": 1,
+    "status": "verified",
+    "effective": false
+  },
+  {
+    "model": "qwen",
+    "task_id": "v3_narrow_alias",
+    "condition": 0,
+    "status": "verified",
+    "effective": false
+  },
+  {
+    "model": "qwen",
+    "task_id": "v3_narrow_alias",
+    "condition": 1,
+    "status": "verified",
+    "effective": false
+  }
+]

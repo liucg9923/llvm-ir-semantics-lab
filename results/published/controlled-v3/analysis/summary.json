@@ -1,0 +1,668 @@
+{
+  "created_utc": "2026-11-13T13:59:50.271009+00:00",
+  "protocol_sha256": "7a89f5f48349479be93ec0044b3730b9fe26ffe9c678d93ada37d8367083b8e0",
+  "primary_runs": {
+    "opt": "v3b-formal-opt",
+    "identity": "v3b-formal-identity",
+    "compiler-ftd": "v3b-formal-compiler-ftd",
+    "qwen": "v3b-formal-qwen"
+  },
+  "pilot_runs": {
+    "compiler-ftd": "v3b-pilot-compiler-ftd",
+    "qwen": "v3b-pilot-qwen-native"
+  },
+  "selected_pilot_runs": {
+    "compiler-ftd": "v3b-pilot-compiler-ftd",
+    "qwen": "v3b-pilot-qwen"
+  },
+  "selected_arm_by_model": {
+    "compiler-ftd": "native",
+    "qwen": "bounded"
+  },
+  "hint_runs": {
+    "compiler-ftd": "v3b-hint-compiler-ftd",
+    "qwen": "v3b-hint-qwen"
+  },
+  "summary": [
+    {
+      "model": "opt",
+      "level": "ALL",
+      "n": 18,
+      "opportunity_n": 9,
+      "syntax_valid": 18,
+      "semantic_attempted": 18,
+      "determinate": 18,
+      "verified": 18,
+      "refuted": 0,
+      "effective": 9,
+      "statuses": {
+        "verified": 18
+      },
+      "verified_fraction_of_determinate": 1.0,
+      "legacy_admission": 0
+    },
+    {
+      "model": "opt",
+      "level": "L0",
+      "n": 6,
+      "opportunity_n": 3,
+      "syntax_valid": 6,
+      "semantic_attempted": 6,
+      "determinate": 6,
+      "verified": 6,
+      "refuted": 0,
+      "effective": 3,
+      "statuses": {
+        "verified": 6
+      },
+      "verified_fraction_of_determinate": 1.0,
+      "legacy_admission": 0
+    },
+    {
+      "model": "opt",
+      "level": "L1",
+      "n": 6,
+      "opportunity_n": 3,
+      "syntax_valid": 6,
+      "semantic_attempted": 6,
+      "determinate": 6,
+      "verified": 6,
+      "refuted": 0,
+      "effective": 3,
+      "statuses": {
+        "verified": 6
+      },
+      "verified_fraction_of_determinate": 1.0,
+      "legacy_admission": 0
+    },
+    {
+      "model": "opt",
+      "level": "L2",
+      "n": 6,
+      "opportunity_n": 3,
+      "syntax_valid": 6,
+      "semantic_attempted": 6,
+      "determinate": 6,
+      "verified": 6,
+      "refuted": 0,
+      "effective": 3,
+      "statuses": {
+        "verified": 6
+      },
+      "verified_fraction_of_determinate": 1.0,
+      "legacy_admission": 0
+    },
+    {
+      "model": "identity",
+      "level": "ALL",
+      "n": 18,
+      "opportunity_n": 9,
+      "syntax_valid": 18,
+      "semantic_attempted": 18,
+      "determinate": 18,
+      "verified": 18,
+      "refuted": 0,
+      "effective": 0,
+      "statuses": {
+        "verified": 18
+      },
+      "verified_fraction_of_determinate": 1.0,
+      "legacy_admission": 0
+    },
+    {
+      "model": "identity",
+      "level": "L0",
+      "n": 6,
+      "opportunity_n": 3,
+      "syntax_valid": 6,
+      "semantic_attempted": 6,
+      "determinate": 6,
+      "verified": 6,
+      "refuted": 0,
+      "effective": 0,
+      "statuses": {
+        "verified": 6
+      },
+      "verified_fraction_of_determinate": 1.0,
+      "legacy_admission": 0
+    },
+    {
+      "model": "identity",
+      "level": "L1",
+      "n": 6,
+      "opportunity_n": 3,
+      "syntax_valid": 6,
+      "semantic_attempted": 6,
+      "determinate": 6,
+      "verified": 6,
+      "refuted": 0,
+      "effective": 0,
+      "statuses": {
+        "verified": 6
+      },
+      "verified_fraction_of_determinate": 1.0,
+      "legacy_admission": 0
+    },
+    {
+      "model": "identity",
+      "level": "L2",
+      "n": 6,
+      "opportunity_n": 3,
+      "syntax_valid": 6,
+      "semantic_attempted": 6,
+      "determinate": 6,
+      "verified": 6,
+      "refuted": 0,
+      "effective": 0,
+      "statuses": {
+        "verified": 6
+      },
+      "verified_fraction_of_determinate": 1.0,
+      "legacy_admission": 0
+    },
+    {
+      "model": "compiler-ftd",
+      "level": "ALL",
+      "n": 18,
+      "opportunity_n": 9,
+      "syntax_valid": 14,
+      "semantic_attempted": 14,
+      "determinate": 14,
+      "verified": 11,
+      "refuted": 3,
+      "effective": 5,
+      "statuses": {
+        "invalid_ir": 4,
+        "verified": 11,
+        "refuted": 3
+      },
+      "verified_fraction_of_determinate": 0.7857142857142857,
+      "legacy_admission": 0
+    },
+    {
+      "model": "compiler-ftd",
+      "level": "L0",
+      "n": 6,
+      "opportunity_n": 3,
+      "syntax_valid": 3,
+      "semantic_attempted": 3,
+      "determinate": 3,
+      "verified": 3,
+      "refuted": 0,
+      "effective": 1,
+      "statuses": {
+        "invalid_ir": 3,
+        "verified": 3
+      },
+      "verified_fraction_of_determinate": 1.0,
+      "legacy_admission": 0
+    },
+    {
+      "model": "compiler-ftd",
+      "level": "L1",
+      "n": 6,
+      "opportunity_n": 3,
+      "syntax_valid": 6,
+      "semantic_attempted": 6,
+      "determinate": 6,
+      "verified": 5,
+      "refuted": 1,
+      "effective": 2,
+      "statuses": {
+        "verified": 5,
+        "refuted": 1
+      },
+      "verified_fraction_of_determinate": 0.8333333333333334,
+      "legacy_admission": 0
+    },
+    {
+      "model": "compiler-ftd",
+      "level": "L2",
+      "n": 6,
+      "opportunity_n": 3,
+      "syntax_valid": 5,
+      "semantic_attempted": 5,
+      "determinate": 5,
+      "verified": 3,
+      "refuted": 2,
+      "effective": 2,
+      "statuses": {
+        "verified": 3,
+        "refuted": 2,
+        "invalid_ir": 1
+      },
+      "verified_fraction_of_determinate": 0.6,
+      "legacy_admission": 0
+    },
+    {
+      "model": "qwen",
+      "level": "ALL",
+      "n": 18,
+      "opportunity_n": 9,
+      "syntax_valid": 18,
+      "semantic_attempted": 18,
+      "determinate": 18,
+      "verified": 11,
+      "refuted": 7,
+      "effective": 3,
+      "statuses": {
+        "verified": 11,
+        "refuted": 7
+      },
+      "verified_fraction_of_determinate": 0.6111111111111112,
+      "legacy_admission": 0
+    },
+    {
+      "model": "qwen",
+      "level": "L0",
+      "n": 6,
+      "opportunity_n": 3,
+      "syntax_valid": 6,
+      "semantic_attempted": 6,
+      "determinate": 6,
+      "verified": 4,
+      "refuted": 2,
+      "effective": 3,
+      "statuses": {
+        "verified": 4,
+        "refuted": 2
+      },
+      "verified_fraction_of_determinate": 0.6666666666666666,
+      "legacy_admission": 0
+    },
+    {
+      "model": "qwen",
+      "level": "L1",
+      "n": 6,
+      "opportunity_n": 3,
+      "syntax_valid": 6,
+      "semantic_attempted": 6,
+      "determinate": 6,
+      "verified": 4,
+      "refuted": 2,
+      "effective": 0,
+      "statuses": {
+        "refuted": 2,
+        "verified": 4
+      },
+      "verified_fraction_of_determinate": 0.6666666666666666,
+      "legacy_admission": 0
+    },
+    {
+      "model": "qwen",
+      "level": "L2",
+      "n": 6,
+      "opportunity_n": 3,
+      "syntax_valid": 6,
+      "semantic_attempted": 6,
+      "determinate": 6,
+      "verified": 3,
+      "refuted": 3,
+      "effective": 0,
+      "statuses": {
+        "verified": 3,
+        "refuted": 3
+      },
+      "verified_fraction_of_determinate": 0.5,
+      "legacy_admission": 0
+    }
+  ],
+  "development_contrasts": [
+    {
+      "model": "compiler-ftd",
+      "arm": "legacy",
+      "n": 6,
+      "opportunity_n": 6,
+      "syntax_valid": 6,
+      "semantic_attempted": 6,
+      "determinate": 6,
+      "verified": 3,
+      "refuted": 3,
+      "effective": 3,
+      "statuses": {
+        "verified": 3,
+        "refuted": 3
+      },
+      "verified_fraction_of_determinate": 0.5,
+      "legacy_admission": 0
+    },
+    {
+      "model": "compiler-ftd",
+      "arm": "native",
+      "n": 6,
+      "opportunity_n": 6,
+      "syntax_valid": 6,
+      "semantic_attempted": 6,
+      "determinate": 6,
+      "verified": 6,
+      "refuted": 0,
+      "effective": 5,
+      "statuses": {
+        "verified": 6
+      },
+      "verified_fraction_of_determinate": 1.0,
+      "legacy_admission": 0
+    },
+    {
+      "model": "qwen",
+      "arm": "legacy",
+      "n": 6,
+      "opportunity_n": 6,
+      "syntax_valid": 6,
+      "semantic_attempted": 6,
+      "determinate": 6,
+      "verified": 6,
+      "refuted": 0,
+      "effective": 6,
+      "statuses": {
+        "verified": 6
+      },
+      "verified_fraction_of_determinate": 1.0,
+      "legacy_admission": 6
+    },
+    {
+      "model": "qwen",
+      "arm": "native",
+      "n": 6,
+      "opportunity_n": 6,
+      "syntax_valid": 4,
+      "semantic_attempted": 4,
+      "determinate": 4,
+      "verified": 4,
+      "refuted": 0,
+      "effective": 3,
+      "statuses": {
+        "format_error": 2,
+        "verified": 4
+      },
+      "verified_fraction_of_determinate": 1.0,
+      "legacy_admission": 4
+    },
+    {
+      "model": "qwen",
+      "arm": "bounded",
+      "n": 6,
+      "opportunity_n": 6,
+      "syntax_valid": 6,
+      "semantic_attempted": 6,
+      "determinate": 6,
+      "verified": 6,
+      "refuted": 0,
+      "effective": 6,
+      "statuses": {
+        "verified": 6
+      },
+      "verified_fraction_of_determinate": 1.0,
+      "legacy_admission": 6
+    }
+  ],
+  "shared_hint_comparison": [
+    {
+      "model": "compiler-ftd",
+      "arm": "initial_matched",
+      "n": 6,
+      "opportunity_n": 3,
+      "syntax_valid": 4,
+      "semantic_attempted": 4,
+      "determinate": 4,
+      "verified": 3,
+      "refuted": 1,
+      "effective": 1,
+      "statuses": {
+        "invalid_ir": 2,
+        "verified": 3,
+        "refuted": 1
+      },
+      "verified_fraction_of_determinate": 0.75,
+      "legacy_admission": 0
+    },
+    {
+      "model": "compiler-ftd",
+      "arm": "shared_semantic_hint",
+      "n": 6,
+      "opportunity_n": 3,
+      "syntax_valid": 5,
+      "semantic_attempted": 5,
+      "determinate": 5,
+      "verified": 3,
+      "refuted": 2,
+      "effective": 2,
+      "statuses": {
+        "verified": 3,
+        "refuted": 2,
+        "invalid_ir": 1
+      },
+      "verified_fraction_of_determinate": 0.6,
+      "legacy_admission": 0
+    },
+    {
+      "model": "qwen",
+      "arm": "initial_matched",
+      "n": 6,
+      "opportunity_n": 3,
+      "syntax_valid": 6,
+      "semantic_attempted": 6,
+      "determinate": 6,
+      "verified": 3,
+      "refuted": 3,
+      "effective": 1,
+      "statuses": {
+        "verified": 3,
+        "refuted": 3
+      },
+      "verified_fraction_of_determinate": 0.5,
+      "legacy_admission": 0
+    },
+    {
+      "model": "qwen",
+      "arm": "shared_semantic_hint",
+      "n": 6,
+      "opportunity_n": 3,
+      "syntax_valid": 6,
+      "semantic_attempted": 6,
+      "determinate": 6,
+      "verified": 4,
+      "refuted": 2,
+      "effective": 1,
+      "statuses": {
+        "verified": 4,
+        "refuted": 2
+      },
+      "verified_fraction_of_determinate": 0.6666666666666666,
+      "legacy_admission": 0
+    }
+  ],
+  "timing": [
+    {
+      "model": "opt",
+      "n": 18,
+      "median_generation_seconds": 0.01632179506123066,
+      "generation_seconds": 0.30831679701805115,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "model": "identity",
+      "n": 18,
+      "median_generation_seconds": 0.0,
+      "generation_seconds": 0,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "model": "compiler-ftd",
+      "n": 18,
+      "median_generation_seconds": 8.426987137645483,
+      "generation_seconds": 154.92528399452567,
+      "input_tokens": 9923,
+      "output_tokens": 9096
+    },
+    {
+      "model": "qwen",
+      "n": 18,
+      "median_generation_seconds": 11.542170811444521,
+      "generation_seconds": 220.5863266326487,
+      "input_tokens": 9157,
+      "output_tokens": 6966
+    }
+  ],
+  "selection": {
+    "created_utc": "2026-11-13T13:47:43.181046+00:00",
+    "protocol_sha256": "7a89f5f48349479be93ec0044b3730b9fe26ffe9c678d93ada37d8367083b8e0",
+    "profile": "native_bounded_v1",
+    "primary_passed": true,
+    "hint_passed": true,
+    "primary_evidence": [
+      {
+        "model": "compiler-ftd",
+        "run": "v3b-pilot-compiler-ftd",
+        "gate": {
+          "passed": true,
+          "checks": {
+            "six_records": true,
+            "transport_complete": true,
+            "determinate_coverage": true,
+            "all_levels": true,
+            "memory_abi_covered": true
+          },
+          "determinate": 6,
+          "verified": 6,
+          "by_level": {
+            "L0": 2,
+            "L1": 2,
+            "L2": 2
+          },
+          "criterion": "Coverage/interpretability, not model correctness. A refuted answer satisfies the determinate-coverage gate."
+        },
+        "files": {
+          "results/v3b-pilot-compiler-ftd/manifest.json": "992d8ab98b2da49405644026967e7b18419d301969875c45a612d4b80aacc142",
+          "results/v3b-pilot-compiler-ftd/results.json": "c1fd539c25520681fb9755e43dae314746ac8e9e3b80273ae5856a3d680de5af",
+          "results/v3b-pilot-compiler-ftd/candidates/dev_l0_xor_self__native/generation.json": "645cf83b985dfab29ebcf7dae6883b9aac0ade3e8b12d190a33ab69ff8d0a65b",
+          "results/v3b-pilot-compiler-ftd/candidates/dev_l0_xor_self__native/raw.txt": "bde4d870f55623888d6f5c25d7b03d47ef232f7a73fe25b60d7889ad4213bf65",
+          "results/v3b-pilot-compiler-ftd/candidates/dev_l0_xor_self__native/prompt.txt": "f02472b6a1c6ec747906b7e3c847550c072bcbc585b6be3ef93b2f5ac216db3d",
+          "results/v3b-pilot-compiler-ftd/candidates/dev_l0_and_all__native/generation.json": "9edb89a243658da1381a224361c19def8c3f9eab0d6503374bf7d84a06aa36d9",
+          "results/v3b-pilot-compiler-ftd/candidates/dev_l0_and_all__native/raw.txt": "aaf5ea1a4b1901a45c833aa5db0c81890da627ceb81f828b37bae6d45c032a6a",
+          "results/v3b-pilot-compiler-ftd/candidates/dev_l0_and_all__native/prompt.txt": "c68b278f3d87f7cbb37cd0efa813def315ca97cdbee2bfeace1985bb148736cc",
+          "results/v3b-pilot-compiler-ftd/candidates/dev_l1_select_equal__native/generation.json": "df6b95d2d0676ac19fed3974e7b46c784f060d170bb080ea657c33617a3d4c4c",
+          "results/v3b-pilot-compiler-ftd/candidates/dev_l1_select_equal__native/raw.txt": "2b47fbf08b883918f525ec29c149bd6d6e8c71a636aef125d1f3a223559ca57e",
+          "results/v3b-pilot-compiler-ftd/candidates/dev_l1_select_equal__native/prompt.txt": "5ba37362343d128fdf05aef6ab3834f140589ef581b4877fd3718eafb801754f",
+          "results/v3b-pilot-compiler-ftd/candidates/dev_l1_unreachable__native/generation.json": "2e80ebdbc2a2064b2b985a2c4fbf8ee816a7dbc43ef9f43b9541ec11c7c4a730",
+          "results/v3b-pilot-compiler-ftd/candidates/dev_l1_unreachable__native/raw.txt": "68ccb7a2a0298252899522d5e12b46cd320edd812a053a0ec92de6383398f036",
+          "results/v3b-pilot-compiler-ftd/candidates/dev_l1_unreachable__native/prompt.txt": "a65c3b8e309b2d7dee007ddb5080cb11aa3469c62140c5cb4ba640c884183559",
+          "results/v3b-pilot-compiler-ftd/candidates/dev_l2_forward__native/generation.json": "2aa2a75514814a59d8ce0686c7221fad803ca3efd5991e213b9936fdc4fc1b6a",
+          "results/v3b-pilot-compiler-ftd/candidates/dev_l2_forward__native/raw.txt": "cec458ae73cf1eb1f0d151fde2c9d77c5ceecc9dc37e3ec399af63b2c397b9a8",
+          "results/v3b-pilot-compiler-ftd/candidates/dev_l2_forward__native/prompt.txt": "a2fc2721848f196b6ac75b58607172b23c53d61f498b69f7ad3d090347e0568b",
+          "results/v3b-pilot-compiler-ftd/candidates/dev_l2_alloca__native/generation.json": "5c3aafd59e900e0575e04bd37c682b0e1cfe724a1c003336d0a26686ef22770c",
+          "results/v3b-pilot-compiler-ftd/candidates/dev_l2_alloca__native/raw.txt": "a0d5ffad91ba829fc2ead926f66eccfa85aad2f6121061624cef1cd83a0c6c9c",
+          "results/v3b-pilot-compiler-ftd/candidates/dev_l2_alloca__native/prompt.txt": "c4eee0b0aac6f119a3ff335d7bb980321e624a1f932eea1234a6d88ef9667b8a"
+        }
+      },
+      {
+        "model": "qwen",
+        "run": "v3b-pilot-qwen",
+        "gate": {
+          "passed": true,
+          "checks": {
+            "six_records": true,
+            "transport_complete": true,
+            "determinate_coverage": true,
+            "all_levels": true,
+            "memory_abi_covered": true
+          },
+          "determinate": 6,
+          "verified": 6,
+          "by_level": {
+            "L0": 2,
+            "L1": 2,
+            "L2": 2
+          },
+          "criterion": "Coverage/interpretability, not model correctness. A refuted answer satisfies the determinate-coverage gate."
+        },
+        "files": {
+          "results/v3b-pilot-qwen/manifest.json": "f2ff87c903a449d23638b9878e2e058589d8c7e62342835ce30c2cf37e904ba9",
+          "results/v3b-pilot-qwen/results.json": "216709ed470dedaa6bc73162d97b6f449b2288eff4bae4fe5524862bdee5561c",
+          "results/v3b-pilot-qwen/candidates/dev_l0_xor_self__native/generation.json": "a668feb137084456b26b3da9e29cd18ce0fb8225ac24811791441ce1c1adc414",
+          "results/v3b-pilot-qwen/candidates/dev_l0_xor_self__native/raw.txt": "b45827394140ff71e0bf6919b005d310984feb1a13c58e9b320aa38af7cd3b4f",
+          "results/v3b-pilot-qwen/candidates/dev_l0_xor_self__native/prompt.txt": "f02472b6a1c6ec747906b7e3c847550c072bcbc585b6be3ef93b2f5ac216db3d",
+          "results/v3b-pilot-qwen/candidates/dev_l0_and_all__native/generation.json": "b652452e4ac7aedb8fd00ae903cdb5e595036089bfd52b3673475ea8b6186a74",
+          "results/v3b-pilot-qwen/candidates/dev_l0_and_all__native/raw.txt": "922efed059bd22bb78d4abe3dd55016718984ef0a0ada8aa870b4a22c05208cb",
+          "results/v3b-pilot-qwen/candidates/dev_l0_and_all__native/prompt.txt": "c68b278f3d87f7cbb37cd0efa813def315ca97cdbee2bfeace1985bb148736cc",
+          "results/v3b-pilot-qwen/candidates/dev_l1_select_equal__native/generation.json": "253670df35de2e0ec385b6ca91849dcf46e16ba271a1858f0e44be67cbc2337c",
+          "results/v3b-pilot-qwen/candidates/dev_l1_select_equal__native/raw.txt": "d294a589e25474484c2dc6d5c2f61b98cce75a596aacc0418a44872019ec81e5",
+          "results/v3b-pilot-qwen/candidates/dev_l1_select_equal__native/prompt.txt": "5ba37362343d128fdf05aef6ab3834f140589ef581b4877fd3718eafb801754f",
+          "results/v3b-pilot-qwen/candidates/dev_l1_unreachable__native/generation.json": "dfd91fab803b764d30276fe1b2cfb012200d005ef25b5a61741299b61cc9e8c1",
+          "results/v3b-pilot-qwen/candidates/dev_l1_unreachable__native/raw.txt": "922efed059bd22bb78d4abe3dd55016718984ef0a0ada8aa870b4a22c05208cb",
+          "results/v3b-pilot-qwen/candidates/dev_l1_unreachable__native/prompt.txt": "a65c3b8e309b2d7dee007ddb5080cb11aa3469c62140c5cb4ba640c884183559",
+          "results/v3b-pilot-qwen/candidates/dev_l2_forward__native/generation.json": "05bba4f97e5707778be0f857c64b710c53bc8dca18e85ce0f13cfdb487105be8",
+          "results/v3b-pilot-qwen/candidates/dev_l2_forward__native/raw.txt": "4f57912533e6db55a31a87ec3f745e52cf4ad1d0e8bbb7ff4f7a65cdb12cf62f",
+          "results/v3b-pilot-qwen/candidates/dev_l2_forward__native/prompt.txt": "a2fc2721848f196b6ac75b58607172b23c53d61f498b69f7ad3d090347e0568b",
+          "results/v3b-pilot-qwen/candidates/dev_l2_alloca__native/generation.json": "69f06b09e9d71550363040b6bfaf24fe35d995cca60f6aa0f7ddd64024e412c8",
+          "results/v3b-pilot-qwen/candidates/dev_l2_alloca__native/raw.txt": "a0ae36a8ac5ccfdfddf86812aa4cbf5b14a473309f685219b8f60f80a391dd47",
+          "results/v3b-pilot-qwen/candidates/dev_l2_alloca__native/prompt.txt": "c4eee0b0aac6f119a3ff335d7bb980321e624a1f932eea1234a6d88ef9667b8a"
+        }
+      }
+    ],
+    "hint_evidence": [
+      {
+        "model": "compiler-ftd",
+        "run": "v3b-hintpilot-compiler-ftd",
+        "gate": {
+          "passed": true,
+          "checks": {
+            "three_records": true,
+            "complete_generation": true,
+            "determinate_coverage": true
+          },
+          "determinate": 3,
+          "verified": 3,
+          "criterion": "At least 2/3 determinate; correctness is not an acceptance criterion."
+        },
+        "files": {
+          "results/v3b-hintpilot-compiler-ftd/manifest.json": "00959354f2185c6bcc953c00cb3b4cccc16cb78d555ef7e49e368f85c24379f8",
+          "results/v3b-hintpilot-compiler-ftd/results.json": "ed86400ae488f47b59b30b934037b9beeb3dda1552f3460e159f6b0f276ff30c",
+          "results/v3b-hintpilot-compiler-ftd/candidates/dev_l0_and_all__hint/generation.json": "055b8a191e1aec1d0cf221303c56d4354032cfa3ff624bbc9b0a6b179767f2fd",
+          "results/v3b-hintpilot-compiler-ftd/candidates/dev_l0_and_all__hint/raw.txt": "2467c6b9dc79f63a5cdfc063a4b503d0dfe28a6c05943c94eae89b9bef46fdcd",
+          "results/v3b-hintpilot-compiler-ftd/candidates/dev_l0_and_all__hint/prompt.txt": "7a0ed1ed146eb8f293ce607b6b3b01a082e8c539a5668b67508526ee54d0eb14",
+          "results/v3b-hintpilot-compiler-ftd/candidates/dev_l1_select_equal__hint/generation.json": "7f71180666896f0bdf86a7e0e70f6f74f8b3ddd5370b55dcd4cfcb747d0d0f87",
+          "results/v3b-hintpilot-compiler-ftd/candidates/dev_l1_select_equal__hint/raw.txt": "2b47fbf08b883918f525ec29c149bd6d6e8c71a636aef125d1f3a223559ca57e",
+          "results/v3b-hintpilot-compiler-ftd/candidates/dev_l1_select_equal__hint/prompt.txt": "21a963e2e197fda288fc99736568a399f5fe45a16a7c4de9b3b7196c388635ee",
+          "results/v3b-hintpilot-compiler-ftd/candidates/dev_l2_forward__hint/generation.json": "9ff87a4512b18b41c520af6fa2e44a484bf4c202236784ea307a933a90376222",
+          "results/v3b-hintpilot-compiler-ftd/candidates/dev_l2_forward__hint/raw.txt": "d7b01e372df4c35817d14ffbcf11c1828cd7aaf890ff0f716cf464ce8d66581d",
+          "results/v3b-hintpilot-compiler-ftd/candidates/dev_l2_forward__hint/prompt.txt": "c0701145839b4b6d3b13fdf3240ba8783a44a8ed2bdbc447cd5ad3ee163d9619"
+        }
+      },
+      {
+        "model": "qwen",
+        "run": "v3b-hintpilot-qwen",
+        "gate": {
+          "passed": true,
+          "checks": {
+            "three_records": true,
+            "complete_generation": true,
+            "determinate_coverage": true
+          },
+          "determinate": 3,
+          "verified": 3,
+          "criterion": "At least 2/3 determinate; correctness is not an acceptance criterion."
+        },
+        "files": {
+          "results/v3b-hintpilot-qwen/manifest.json": "ebdc588ab7642258a0e10b135ae49b38f30c3115f29f4b82008549fb3eba2bb6",
+          "results/v3b-hintpilot-qwen/results.json": "82d14766715e3639d21c808fd4ca1a18d0317187412ea27898e716e769f505cc",
+          "results/v3b-hintpilot-qwen/candidates/dev_l0_and_all__hint/generation.json": "4f3f390ec74c72a87dc29c6d0d21b2503da535309ce0f21502910d689c74e451",
+          "results/v3b-hintpilot-qwen/candidates/dev_l0_and_all__hint/raw.txt": "922efed059bd22bb78d4abe3dd55016718984ef0a0ada8aa870b4a22c05208cb",
+          "results/v3b-hintpilot-qwen/candidates/dev_l0_and_all__hint/prompt.txt": "7a0ed1ed146eb8f293ce607b6b3b01a082e8c539a5668b67508526ee54d0eb14",
+          "results/v3b-hintpilot-qwen/candidates/dev_l1_select_equal__hint/generation.json": "a4551cab33bfb8986f076b1b52e3c77cc64a7830affb1d09bc84fc9f9e1abea8",
+          "results/v3b-hintpilot-qwen/candidates/dev_l1_select_equal__hint/raw.txt": "47051f73ebb7009bc02cbe4449c7d4eb3ee5b7ba3c1c53b505533b569bd567ab",
+          "results/v3b-hintpilot-qwen/candidates/dev_l1_select_equal__hint/prompt.txt": "21a963e2e197fda288fc99736568a399f5fe45a16a7c4de9b3b7196c388635ee",
+          "results/v3b-hintpilot-qwen/candidates/dev_l2_forward__hint/generation.json": "5973b2b95b27671d4d661935b7c71c662f889a4f09d70f2d8333e0c5c30ef703",
+          "results/v3b-hintpilot-qwen/candidates/dev_l2_forward__hint/raw.txt": "dabf5220b28728b3695881a3b3231aea92e4260328bc9a758d0b3e9adc7a50ce",
+          "results/v3b-hintpilot-qwen/candidates/dev_l2_forward__hint/prompt.txt": "c0701145839b4b6d3b13fdf3240ba8783a44a8ed2bdbc447cd5ad3ee163d9619"
+        }
+      }
+    ],
+    "hint_data_sha256": "b2613a9589671740bdabb889f21be6594cf738e6bd4f9b25f66d45a6537416c1"
+  },
+  "scope": "18 newly authored tasks; fixed community FTD checkpoint and Qwen checkpoint. Coverage/verification/useful optimization are separate. No claim of a causal specialization effect or a population-wide ranking.",
+  "hint_interpretation": "Identical semantic hints are generated from authored mutants; this is not self-review or repair of each model own prior output.",
+  "normalization": "Context-only inheritance/equivalence conversion is logged; no instruction, flag or attribute repair is performed."
+}

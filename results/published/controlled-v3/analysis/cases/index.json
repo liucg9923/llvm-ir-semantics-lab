@@ -1,0 +1,368 @@
+[
+  {
+    "model": "compiler-ftd",
+    "phase": "formal",
+    "task_id": "v3_mask_partition",
+    "status": "invalid_ir",
+    "role": "opportunity",
+    "path": "compiler-ftd/formal/v3_mask_partition"
+  },
+  {
+    "model": "compiler-ftd",
+    "phase": "formal",
+    "task_id": "v3_mask_gap",
+    "status": "invalid_ir",
+    "role": "guard",
+    "path": "compiler-ftd/formal/v3_mask_gap"
+  },
+  {
+    "model": "compiler-ftd",
+    "phase": "formal",
+    "task_id": "v3_mask_bound",
+    "status": "invalid_ir",
+    "role": "opportunity",
+    "path": "compiler-ftd/formal/v3_mask_bound"
+  },
+  {
+    "model": "compiler-ftd",
+    "phase": "formal",
+    "task_id": "v3_phi_arithmetic",
+    "status": "refuted",
+    "role": "opportunity",
+    "path": "compiler-ftd/formal/v3_phi_arithmetic",
+    "diagnostic_counterexample": {
+      "input": [
+        1
+      ],
+      "source": "2",
+      "candidate": "0"
+    },
+    "holdout_counterexample": {
+      "input": [
+        31
+      ],
+      "source": "32",
+      "candidate": "30"
+    }
+  },
+  {
+    "model": "compiler-ftd",
+    "phase": "formal",
+    "task_id": "v3_write_alias",
+    "status": "refuted",
+    "role": "guard",
+    "path": "compiler-ftd/formal/v3_write_alias",
+    "diagnostic_counterexample": {
+      "input": [
+        0,
+        0,
+        1
+      ],
+      "source": "29 29 0",
+      "candidate": "13 29 0"
+    },
+    "holdout_counterexample": {
+      "input": [
+        4102338869,
+        596454776,
+        1
+      ],
+      "source": "29 29 596454776",
+      "candidate": "13 29 596454776"
+    }
+  },
+  {
+    "model": "compiler-ftd",
+    "phase": "formal",
+    "task_id": "v3_narrow_forward",
+    "status": "refuted",
+    "role": "opportunity",
+    "path": "compiler-ftd/formal/v3_narrow_forward",
+    "diagnostic_counterexample": {
+      "input": [
+        0,
+        0,
+        0
+      ],
+      "source": "86 305397846 0",
+      "candidate": "22715 305397846 0"
+    },
+    "holdout_counterexample": {
+      "input": [
+        2503232064,
+        3466617618,
+        0
+      ],
+      "source": "86 305397846 3466617618",
+      "candidate": "22715 305397846 3466617618"
+    }
+  },
+  {
+    "model": "compiler-ftd",
+    "phase": "formal",
+    "task_id": "v3_store_copy",
+    "status": "invalid_ir",
+    "role": "guard",
+    "path": "compiler-ftd/formal/v3_store_copy"
+  },
+  {
+    "model": "compiler-ftd",
+    "phase": "hint",
+    "task_id": "v3_mask_gap",
+    "status": "refuted",
+    "role": "guard",
+    "path": "compiler-ftd/hint/v3_mask_gap",
+    "diagnostic_counterexample": {
+      "input": [
+        2749954994
+      ],
+      "source": "2749954738",
+      "candidate": "2749954994"
+    },
+    "holdout_counterexample": {
+      "input": [
+        256
+      ],
+      "source": "0",
+      "candidate": "256"
+    }
+  },
+  {
+    "model": "compiler-ftd",
+    "phase": "hint",
+    "task_id": "v3_select_changed",
+    "status": "invalid_ir",
+    "role": "guard",
+    "path": "compiler-ftd/hint/v3_select_changed"
+  },
+  {
+    "model": "compiler-ftd",
+    "phase": "hint",
+    "task_id": "v3_narrow_forward",
+    "status": "refuted",
+    "role": "opportunity",
+    "path": "compiler-ftd/hint/v3_narrow_forward",
+    "diagnostic_counterexample": {
+      "input": [
+        0,
+        0,
+        0
+      ],
+      "source": "86 305397846 0",
+      "candidate": "305397846 305397846 0"
+    },
+    "holdout_counterexample": {
+      "input": [
+        2503232064,
+        3466617618,
+        0
+      ],
+      "source": "86 305397846 3466617618",
+      "candidate": "305397846 305397846 3466617618"
+    }
+  },
+  {
+    "model": "qwen",
+    "phase": "formal",
+    "task_id": "v3_mask_gap",
+    "status": "refuted",
+    "role": "guard",
+    "path": "qwen/formal/v3_mask_gap",
+    "diagnostic_counterexample": {
+      "input": [
+        2749954994
+      ],
+      "source": "2749954738",
+      "candidate": "2749954994"
+    },
+    "holdout_counterexample": {
+      "input": [
+        256
+      ],
+      "source": "0",
+      "candidate": "256"
+    }
+  },
+  {
+    "model": "qwen",
+    "phase": "formal",
+    "task_id": "v3_mask_boundary",
+    "status": "refuted",
+    "role": "guard",
+    "path": "qwen/formal/v3_mask_boundary",
+    "diagnostic_counterexample": null,
+    "holdout_counterexample": {
+      "input": [
+        31
+      ],
+      "source": "0",
+      "candidate": "1"
+    }
+  },
+  {
+    "model": "qwen",
+    "phase": "formal",
+    "task_id": "v3_select_correlated",
+    "status": "refuted",
+    "role": "opportunity",
+    "path": "qwen/formal/v3_select_correlated",
+    "diagnostic_counterexample": {
+      "input": [
+        1
+      ],
+      "source": "0",
+      "candidate": "1"
+    },
+    "holdout_counterexample": {
+      "input": [
+        31
+      ],
+      "source": "0",
+      "candidate": "31"
+    }
+  },
+  {
+    "model": "qwen",
+    "phase": "formal",
+    "task_id": "v3_select_changed",
+    "status": "refuted",
+    "role": "guard",
+    "path": "qwen/formal/v3_select_changed",
+    "diagnostic_counterexample": {
+      "input": [
+        2
+      ],
+      "source": "1",
+      "candidate": "2"
+    },
+    "holdout_counterexample": {
+      "input": [
+        31
+      ],
+      "source": "1",
+      "candidate": "31"
+    }
+  },
+  {
+    "model": "qwen",
+    "phase": "formal",
+    "task_id": "v3_write_alias",
+    "status": "refuted",
+    "role": "guard",
+    "path": "qwen/formal/v3_write_alias",
+    "diagnostic_counterexample": {
+      "input": [
+        0,
+        0,
+        1
+      ],
+      "source": "29 29 0",
+      "candidate": "13 29 0"
+    },
+    "holdout_counterexample": {
+      "input": [
+        4102338869,
+        596454776,
+        1
+      ],
+      "source": "29 29 596454776",
+      "candidate": "13 29 596454776"
+    }
+  },
+  {
+    "model": "qwen",
+    "phase": "formal",
+    "task_id": "v3_store_back",
+    "status": "refuted",
+    "role": "opportunity",
+    "path": "qwen/formal/v3_store_back",
+    "diagnostic_counterexample": {
+      "input": [
+        1,
+        0,
+        0
+      ],
+      "source": "1 1 0",
+      "candidate": "0 1 0"
+    },
+    "holdout_counterexample": {
+      "input": [
+        3242503769,
+        4020729782,
+        1
+      ],
+      "source": "3242503769 3242503769 4020729782",
+      "candidate": "0 3242503769 4020729782"
+    }
+  },
+  {
+    "model": "qwen",
+    "phase": "formal",
+    "task_id": "v3_store_copy",
+    "status": "refuted",
+    "role": "guard",
+    "path": "qwen/formal/v3_store_copy",
+    "diagnostic_counterexample": {
+      "input": [
+        0,
+        1,
+        0
+      ],
+      "source": "0 0 0",
+      "candidate": "0 0 1"
+    },
+    "holdout_counterexample": {
+      "input": [
+        3189560444,
+        4105343568,
+        1
+      ],
+      "source": "3189560444 3189560444 4105343568",
+      "candidate": "0 3189560444 4105343568"
+    }
+  },
+  {
+    "model": "qwen",
+    "phase": "hint",
+    "task_id": "v3_select_correlated",
+    "status": "refuted",
+    "role": "opportunity",
+    "path": "qwen/hint/v3_select_correlated",
+    "diagnostic_counterexample": {
+      "input": [
+        1
+      ],
+      "source": "0",
+      "candidate": "1"
+    },
+    "holdout_counterexample": {
+      "input": [
+        31
+      ],
+      "source": "0",
+      "candidate": "31"
+    }
+  },
+  {
+    "model": "qwen",
+    "phase": "hint",
+    "task_id": "v3_select_changed",
+    "status": "refuted",
+    "role": "guard",
+    "path": "qwen/hint/v3_select_changed",
+    "diagnostic_counterexample": {
+      "input": [
+        2
+      ],
+      "source": "1",
+      "candidate": "2"
+    },
+    "holdout_counterexample": {
+      "input": [
+        31
+      ],
+      "source": "1",
+      "candidate": "31"
+    }
+  }
+]

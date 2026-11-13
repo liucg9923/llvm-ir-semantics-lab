@@ -1,0 +1,41 @@
+{
+  "projection": "Full native arrays/logs are in the evidence archive.",
+  "full_path_in_archive": "results/campaign-v3/analysis/cases/compiler-ftd/formal/v3_mask_partition/evaluation.json",
+  "full_sha256": "ac129c4adabcbfe0af1fec63798066d8d22fc5c7782d352a2b35beeed3650346",
+  "evaluation": {
+    "task_id": "v3_mask_partition",
+    "level": "L0",
+    "role": "opportunity",
+    "syntax_valid": false,
+    "semantic_attempted": false,
+    "determinate": false,
+    "verified": false,
+    "effective_optimization": false,
+    "goal_met": false,
+    "extraction": [
+      "code_tag"
+    ],
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/irsem-inspect",
+        "/tmp/irsem-v3-hqg5eqlm/candidate.ll",
+        "/tmp/irsem-v3-hqg5eqlm/candidate.canonical.ll",
+        "/tmp/irsem-v3-hqg5eqlm/source.ll"
+      ],
+      "returncode": 1,
+      "stderr": "irsem-v3: /tmp/irsem-v3-hqg5eqlm/candidate.ll:9:3: error: instruction expected to be numbered '%1'\n  %2 = and i32 %0, -256\n  ^\n",
+      "seconds": 0.016266968101263046,
+      "timed_out": false,
+      "truncated": false
+    },
+    "status": "invalid_ir",
+    "key": "v3_mask_partition__native",
+    "arm": "native",
+    "model": "compiler-ftd",
+    "phase": "formal",
+    "legacy_contract_errors": [
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ]
+  }
+}

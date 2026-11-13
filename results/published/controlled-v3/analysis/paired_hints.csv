@@ -1,0 +1,13 @@
+model,task_id,role,initial_status,hint_status,initial_effective,hint_effective
+compiler-ftd,v3_mask_partition,opportunity,invalid_ir,verified,False,True
+compiler-ftd,v3_mask_gap,guard,invalid_ir,refuted,False,False
+compiler-ftd,v3_select_correlated,opportunity,verified,verified,True,True
+compiler-ftd,v3_select_changed,guard,verified,invalid_ir,False,False
+compiler-ftd,v3_narrow_forward,opportunity,refuted,refuted,False,False
+compiler-ftd,v3_narrow_alias,guard,verified,verified,False,False
+qwen,v3_mask_partition,opportunity,verified,verified,True,True
+qwen,v3_mask_gap,guard,refuted,verified,False,False
+qwen,v3_select_correlated,opportunity,refuted,refuted,False,False
+qwen,v3_select_changed,guard,refuted,refuted,False,False
+qwen,v3_narrow_forward,opportunity,verified,verified,False,False
+qwen,v3_narrow_alias,guard,verified,verified,False,False

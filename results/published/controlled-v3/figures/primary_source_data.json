@@ -1,0 +1,338 @@
+[
+  {
+    "panel": "a",
+    "model": "opt",
+    "level": "L0",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "a",
+    "model": "opt",
+    "level": "L1",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "a",
+    "model": "opt",
+    "level": "L2",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "a",
+    "model": "compiler-ftd",
+    "level": "L0",
+    "numerator": 3,
+    "denominator": 6
+  },
+  {
+    "panel": "a",
+    "model": "compiler-ftd",
+    "level": "L1",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "a",
+    "model": "compiler-ftd",
+    "level": "L2",
+    "numerator": 5,
+    "denominator": 6
+  },
+  {
+    "panel": "a",
+    "model": "qwen",
+    "level": "L0",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "a",
+    "model": "qwen",
+    "level": "L1",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "a",
+    "model": "qwen",
+    "level": "L2",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "a",
+    "model": "identity",
+    "level": "L0",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "a",
+    "model": "identity",
+    "level": "L1",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "a",
+    "model": "identity",
+    "level": "L2",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "b",
+    "model": "opt",
+    "level": "L0",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "b",
+    "model": "opt",
+    "level": "L1",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "b",
+    "model": "opt",
+    "level": "L2",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "b",
+    "model": "compiler-ftd",
+    "level": "L0",
+    "numerator": 3,
+    "denominator": 6
+  },
+  {
+    "panel": "b",
+    "model": "compiler-ftd",
+    "level": "L1",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "b",
+    "model": "compiler-ftd",
+    "level": "L2",
+    "numerator": 5,
+    "denominator": 6
+  },
+  {
+    "panel": "b",
+    "model": "qwen",
+    "level": "L0",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "b",
+    "model": "qwen",
+    "level": "L1",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "b",
+    "model": "qwen",
+    "level": "L2",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "b",
+    "model": "identity",
+    "level": "L0",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "b",
+    "model": "identity",
+    "level": "L1",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "b",
+    "model": "identity",
+    "level": "L2",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "c",
+    "model": "opt",
+    "level": "L0",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "c",
+    "model": "opt",
+    "level": "L1",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "c",
+    "model": "opt",
+    "level": "L2",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "c",
+    "model": "compiler-ftd",
+    "level": "L0",
+    "numerator": 3,
+    "denominator": 6
+  },
+  {
+    "panel": "c",
+    "model": "compiler-ftd",
+    "level": "L1",
+    "numerator": 5,
+    "denominator": 6
+  },
+  {
+    "panel": "c",
+    "model": "compiler-ftd",
+    "level": "L2",
+    "numerator": 3,
+    "denominator": 6
+  },
+  {
+    "panel": "c",
+    "model": "qwen",
+    "level": "L0",
+    "numerator": 4,
+    "denominator": 6
+  },
+  {
+    "panel": "c",
+    "model": "qwen",
+    "level": "L1",
+    "numerator": 4,
+    "denominator": 6
+  },
+  {
+    "panel": "c",
+    "model": "qwen",
+    "level": "L2",
+    "numerator": 3,
+    "denominator": 6
+  },
+  {
+    "panel": "c",
+    "model": "identity",
+    "level": "L0",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "c",
+    "model": "identity",
+    "level": "L1",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "c",
+    "model": "identity",
+    "level": "L2",
+    "numerator": 6,
+    "denominator": 6
+  },
+  {
+    "panel": "d",
+    "model": "opt",
+    "level": "L0",
+    "numerator": 3,
+    "denominator": 3
+  },
+  {
+    "panel": "d",
+    "model": "opt",
+    "level": "L1",
+    "numerator": 3,
+    "denominator": 3
+  },
+  {
+    "panel": "d",
+    "model": "opt",
+    "level": "L2",
+    "numerator": 3,
+    "denominator": 3
+  },
+  {
+    "panel": "d",
+    "model": "compiler-ftd",
+    "level": "L0",
+    "numerator": 1,
+    "denominator": 3
+  },
+  {
+    "panel": "d",
+    "model": "compiler-ftd",
+    "level": "L1",
+    "numerator": 2,
+    "denominator": 3
+  },
+  {
+    "panel": "d",
+    "model": "compiler-ftd",
+    "level": "L2",
+    "numerator": 2,
+    "denominator": 3
+  },
+  {
+    "panel": "d",
+    "model": "qwen",
+    "level": "L0",
+    "numerator": 3,
+    "denominator": 3
+  },
+  {
+    "panel": "d",
+    "model": "qwen",
+    "level": "L1",
+    "numerator": 0,
+    "denominator": 3
+  },
+  {
+    "panel": "d",
+    "model": "qwen",
+    "level": "L2",
+    "numerator": 0,
+    "denominator": 3
+  },
+  {
+    "panel": "d",
+    "model": "identity",
+    "level": "L0",
+    "numerator": 0,
+    "denominator": 3
+  },
+  {
+    "panel": "d",
+    "model": "identity",
+    "level": "L1",
+    "numerator": 0,
+    "denominator": 3
+  },
+  {
+    "panel": "d",
+    "model": "identity",
+    "level": "L2",
+    "numerator": 0,
+    "denominator": 3
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "projection": "Full native arrays/logs are in the evidence archive.",
+  "full_path_in_archive": "results/campaign-v3/analysis/cases/compiler-ftd/formal/v3_mask_bound/evaluation.json",
+  "full_sha256": "c1b9cec904c121509a2cddd181a8acf9d77685861e2a5fcabe95f3642d708179",
+  "evaluation": {
+    "task_id": "v3_mask_bound",
+    "level": "L0",
+    "role": "opportunity",
+    "syntax_valid": false,
+    "semantic_attempted": false,
+    "determinate": false,
+    "verified": false,
+    "effective_optimization": false,
+    "goal_met": false,
+    "extraction": [
+      "code_tag"
+    ],
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/irsem-inspect",
+        "/tmp/irsem-v3-in6fy56l/candidate.ll",
+        "/tmp/irsem-v3-in6fy56l/candidate.canonical.ll",
+        "/tmp/irsem-v3-in6fy56l/source.ll"
+      ],
+      "returncode": 1,
+      "stderr": "irsem-v3: /tmp/irsem-v3-in6fy56l/candidate.ll:23:12: error: use of undefined value '@llvm.embedded.object'\n!5 = !{ptr @llvm.embedded.object, !\".llvm.lto\"}\n           ^\n",
+      "seconds": 0.016379598528146744,
+      "timed_out": false,
+      "truncated": false
+    },
+    "status": "invalid_ir",
+    "key": "v3_mask_bound__native",
+    "arm": "native",
+    "model": "compiler-ftd",
+    "phase": "formal",
+    "legacy_contract_errors": [
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ]
+  }
+}

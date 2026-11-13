@@ -1,0 +1,54 @@
+{
+  "schema_version": 3,
+  "seed": 20261113,
+  "dtype": "float16",
+  "do_sample": false,
+  "num_beams": 1,
+  "repetition_penalty": 1.0,
+  "no_repeat_ngram_size": 0,
+  "max_input_tokens": 4096,
+  "max_new_tokens": 2048,
+  "max_generation_seconds": 120,
+  "tool_timeout_seconds": 60,
+  "execution_timeout_seconds": 5,
+  "random_inputs": 256,
+  "alive2_args": [
+    "-always-verify",
+    "-smt-to=10000",
+    "-smt-max-mem=1024",
+    "-smt-random-seed=20261113"
+  ],
+  "primary_prompt": "native_single_v1",
+  "fallback_prompt": "native_bounded_v1",
+  "max_prompt_profiles": 2,
+  "development_ids": [
+    "dev_l0_xor_self",
+    "dev_l0_and_all",
+    "dev_l1_select_equal",
+    "dev_l1_unreachable",
+    "dev_l2_forward",
+    "dev_l2_alloca"
+  ],
+  "pilot_gate": {
+    "all_transport_complete": true,
+    "min_determinate": 4,
+    "min_per_level": 1,
+    "require_memory_abi_determinate": true,
+    "min_verified": 0
+  },
+  "source_context_policy": "Task provides target context. Omitted target fields inherit it; explicit conflicts are never repaired. Vendor pc/unknown equivalence is limited to matching architecture, OS, environment and object format. Data layouts must agree on used supported types and AS0 pointer representation.",
+  "semantic_policy": "Keep instructions, semantic flags, attributes and metadata in the candidate; prove/refute with Alive2 and independently execute. No body optimization or repair before scoring.",
+  "feedback_policy": "No free-form self-review in primary comparison. A separate preregistered diagnostic-hint condition uses identical semantic counterexamples from authored mutants for both models, only if its pilot is interpretable. It is not repair of model-specific prior outputs.",
+  "formal_count": 18,
+  "opportunity_count": 9,
+  "hint_ids": [
+    "v3_mask_partition",
+    "v3_mask_gap",
+    "v3_select_correlated",
+    "v3_select_changed",
+    "v3_narrow_forward",
+    "v3_narrow_alias"
+  ],
+  "calibration_revision": "B",
+  "qwen_system_prompt": "Return exactly one complete LLVM IR module enclosed in a single <code>...</code> block. Do not repeat the original input or include any other code block."
+}

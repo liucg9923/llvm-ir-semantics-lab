@@ -1,0 +1,2134 @@
+{
+  "projection": "Per-case fields and full Alive2 logs; complete native input/output arrays and execution logs are in the evidence archive.",
+  "full_results_path_in_archive": "results/v3b-pilot-qwen-native/results.json",
+  "full_results_sha256": "0ef4498453c9d79a0585c05cda1bf8797525dd2983287e91d007693f57d318c8",
+  "generation_origin_run": "v3-pilot-qwen",
+  "rows": [
+    {
+      "task_id": "dev_l0_xor_self",
+      "level": "L0",
+      "role": "opportunity",
+      "syntax_valid": true,
+      "semantic_attempted": true,
+      "determinate": true,
+      "verified": true,
+      "effective_optimization": true,
+      "goal_met": true,
+      "extraction": [
+        "code_tag"
+      ],
+      "syntax_log": {
+        "command": [
+          "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/irsem-inspect",
+          "/tmp/irsem-v3-0ffar3d9/candidate.ll",
+          "/tmp/irsem-v3-0ffar3d9/candidate.canonical.ll",
+          "/tmp/irsem-v3-0ffar3d9/source.ll"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "seconds": 0.01593818888068199,
+        "timed_out": false,
+        "truncated": false
+      },
+      "source_structure": {
+        "abi_target_key": "x86_64/linux/gnu/3",
+        "aliases": 0,
+        "cycles": false,
+        "data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "declarations": 0,
+        "definitions": 1,
+        "functions": [
+          {
+            "address_space": 0,
+            "address_taken": false,
+            "calling_convention": 0,
+            "dso_local": false,
+            "function_attrs": [],
+            "gc": false,
+            "linkage": 0,
+            "name": "f",
+            "params": [
+              {
+                "attrs": [
+                  "noundef"
+                ],
+                "type": "i32"
+              }
+            ],
+            "personality": false,
+            "prefix_data": false,
+            "prologue_data": false,
+            "return_attrs": [],
+            "return_type": "i32",
+            "unnamed_addr": 0,
+            "vararg": false,
+            "visibility": 0
+          }
+        ],
+        "globals": 0,
+        "ifuncs": 0,
+        "inherited_data_layout": false,
+        "inherited_target_triple": false,
+        "instruction_metadata": [],
+        "instructions": 2,
+        "layout_equivalent_for_used_types": true,
+        "memory_accesses": [],
+        "module_asm": false,
+        "module_flags": [],
+        "named_metadata": [],
+        "opcodes": {
+          "ret": 1,
+          "xor": 1
+        },
+        "pointer_compare": false,
+        "raw_data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "raw_target_triple": "x86_64-pc-linux-gnu",
+        "scope_errors": [],
+        "target_triple": "x86_64-pc-linux-gnu",
+        "target_vendor": "pc",
+        "used_types": [
+          "void",
+          "i32"
+        ]
+      },
+      "candidate_structure": {
+        "abi_target_key": "x86_64/linux/gnu/3",
+        "aliases": 0,
+        "cycles": false,
+        "data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "declarations": 0,
+        "definitions": 1,
+        "functions": [
+          {
+            "address_space": 0,
+            "address_taken": false,
+            "calling_convention": 0,
+            "dso_local": false,
+            "function_attrs": [],
+            "gc": false,
+            "linkage": 0,
+            "name": "f",
+            "params": [
+              {
+                "attrs": [
+                  "noundef"
+                ],
+                "type": "i32"
+              }
+            ],
+            "personality": false,
+            "prefix_data": false,
+            "prologue_data": false,
+            "return_attrs": [],
+            "return_type": "i32",
+            "unnamed_addr": 0,
+            "vararg": false,
+            "visibility": 0
+          }
+        ],
+        "globals": 0,
+        "ifuncs": 0,
+        "inherited_data_layout": false,
+        "inherited_target_triple": false,
+        "instruction_metadata": [],
+        "instructions": 1,
+        "layout_equivalent_for_used_types": true,
+        "memory_accesses": [],
+        "module_asm": false,
+        "module_flags": [],
+        "named_metadata": [],
+        "opcodes": {
+          "ret": 1
+        },
+        "pointer_compare": false,
+        "raw_data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "raw_target_triple": "x86_64-pc-linux-gnu",
+        "scope_errors": [],
+        "target_triple": "x86_64-pc-linux-gnu",
+        "target_vendor": "pc",
+        "used_types": [
+          "void",
+          "i32"
+        ]
+      },
+      "canonical_ir": "; ModuleID = '/tmp/irsem-v3-0ffar3d9/candidate.ll'\nsource_filename = \"/tmp/irsem-v3-0ffar3d9/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 0\n}\n",
+      "admission": {
+        "interface": [],
+        "unsupported": [],
+        "assumptions": []
+      },
+      "context_inheritance": {
+        "inherited_target_triple": false,
+        "inherited_data_layout": false
+      },
+      "canonical_ir_before_context_normalization": "; ModuleID = '/tmp/irsem-v3-0ffar3d9/candidate.ll'\nsource_filename = \"/tmp/irsem-v3-0ffar3d9/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 0\n}\n",
+      "evaluation_ir": "; ModuleID = '/tmp/irsem-v3-0ffar3d9/candidate.canonical.ll'\nsource_filename = \"/tmp/irsem-v3-0ffar3d9/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 0\n}\n",
+      "context_normalization": {
+        "equivalent_triple_canonicalized": false,
+        "equivalent_layout_canonicalized": false
+      },
+      "alive2_log": {
+        "command": [
+          "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+          "-always-verify",
+          "-smt-to=10000",
+          "-smt-max-mem=1024",
+          "-smt-random-seed=20261113",
+          "/tmp/irsem-v3-0ffar3d9/source.canonical.ll",
+          "/tmp/irsem-v3-0ffar3d9/candidate.proof.ll"
+        ],
+        "returncode": 0,
+        "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %r = xor i32 noundef %x, noundef %x\n  ret i32 %r\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 0\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+        "stderr": "",
+        "seconds": 0.03196168318390846,
+        "timed_out": false,
+        "truncated": false
+      },
+      "differential": {
+        "-O0": {
+          "status": "match",
+          "input_kind": "holdout",
+          "case_count": 270,
+          "mismatch_count": 0,
+          "optimization": "-O0"
+        },
+        "-O2": {
+          "status": "match",
+          "input_kind": "holdout",
+          "case_count": 270,
+          "mismatch_count": 0,
+          "optimization": "-O2"
+        }
+      },
+      "status": "verified",
+      "key": "dev_l0_xor_self__legacy",
+      "arm": "legacy",
+      "model": "qwen",
+      "phase": "pilot",
+      "legacy_contract_errors": []
+    },
+    {
+      "task_id": "dev_l0_xor_self",
+      "level": "L0",
+      "role": "opportunity",
+      "syntax_valid": false,
+      "semantic_attempted": false,
+      "determinate": false,
+      "verified": false,
+      "effective_optimization": false,
+      "goal_met": false,
+      "status": "format_error",
+      "error": "Multiple or unbalanced code fences",
+      "key": "dev_l0_xor_self__native",
+      "arm": "native",
+      "model": "qwen",
+      "phase": "pilot",
+      "legacy_contract_errors": [
+        "Unbalanced or multiple code fences"
+      ]
+    },
+    {
+      "task_id": "dev_l0_and_all",
+      "level": "L0",
+      "role": "opportunity",
+      "syntax_valid": true,
+      "semantic_attempted": true,
+      "determinate": true,
+      "verified": true,
+      "effective_optimization": true,
+      "goal_met": true,
+      "extraction": [
+        "code_tag"
+      ],
+      "syntax_log": {
+        "command": [
+          "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/irsem-inspect",
+          "/tmp/irsem-v3-3unij9cf/candidate.ll",
+          "/tmp/irsem-v3-3unij9cf/candidate.canonical.ll",
+          "/tmp/irsem-v3-3unij9cf/source.ll"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "seconds": 0.016057267785072327,
+        "timed_out": false,
+        "truncated": false
+      },
+      "source_structure": {
+        "abi_target_key": "x86_64/linux/gnu/3",
+        "aliases": 0,
+        "cycles": false,
+        "data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "declarations": 0,
+        "definitions": 1,
+        "functions": [
+          {
+            "address_space": 0,
+            "address_taken": false,
+            "calling_convention": 0,
+            "dso_local": false,
+            "function_attrs": [],
+            "gc": false,
+            "linkage": 0,
+            "name": "f",
+            "params": [
+              {
+                "attrs": [
+                  "noundef"
+                ],
+                "type": "i32"
+              }
+            ],
+            "personality": false,
+            "prefix_data": false,
+            "prologue_data": false,
+            "return_attrs": [],
+            "return_type": "i32",
+            "unnamed_addr": 0,
+            "vararg": false,
+            "visibility": 0
+          }
+        ],
+        "globals": 0,
+        "ifuncs": 0,
+        "inherited_data_layout": false,
+        "inherited_target_triple": false,
+        "instruction_metadata": [],
+        "instructions": 2,
+        "layout_equivalent_for_used_types": true,
+        "memory_accesses": [],
+        "module_asm": false,
+        "module_flags": [],
+        "named_metadata": [],
+        "opcodes": {
+          "and": 1,
+          "ret": 1
+        },
+        "pointer_compare": false,
+        "raw_data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "raw_target_triple": "x86_64-pc-linux-gnu",
+        "scope_errors": [],
+        "target_triple": "x86_64-pc-linux-gnu",
+        "target_vendor": "pc",
+        "used_types": [
+          "void",
+          "i32"
+        ]
+      },
+      "candidate_structure": {
+        "abi_target_key": "x86_64/linux/gnu/3",
+        "aliases": 0,
+        "cycles": false,
+        "data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "declarations": 0,
+        "definitions": 1,
+        "functions": [
+          {
+            "address_space": 0,
+            "address_taken": false,
+            "calling_convention": 0,
+            "dso_local": false,
+            "function_attrs": [],
+            "gc": false,
+            "linkage": 0,
+            "name": "f",
+            "params": [
+              {
+                "attrs": [
+                  "noundef"
+                ],
+                "type": "i32"
+              }
+            ],
+            "personality": false,
+            "prefix_data": false,
+            "prologue_data": false,
+            "return_attrs": [],
+            "return_type": "i32",
+            "unnamed_addr": 0,
+            "vararg": false,
+            "visibility": 0
+          }
+        ],
+        "globals": 0,
+        "ifuncs": 0,
+        "inherited_data_layout": false,
+        "inherited_target_triple": false,
+        "instruction_metadata": [],
+        "instructions": 1,
+        "layout_equivalent_for_used_types": true,
+        "memory_accesses": [],
+        "module_asm": false,
+        "module_flags": [],
+        "named_metadata": [],
+        "opcodes": {
+          "ret": 1
+        },
+        "pointer_compare": false,
+        "raw_data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "raw_target_triple": "x86_64-pc-linux-gnu",
+        "scope_errors": [],
+        "target_triple": "x86_64-pc-linux-gnu",
+        "target_vendor": "pc",
+        "used_types": [
+          "void",
+          "i32"
+        ]
+      },
+      "canonical_ir": "; ModuleID = '/tmp/irsem-v3-3unij9cf/candidate.ll'\nsource_filename = \"/tmp/irsem-v3-3unij9cf/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 %x\n}\n",
+      "admission": {
+        "interface": [],
+        "unsupported": [],
+        "assumptions": []
+      },
+      "context_inheritance": {
+        "inherited_target_triple": false,
+        "inherited_data_layout": false
+      },
+      "canonical_ir_before_context_normalization": "; ModuleID = '/tmp/irsem-v3-3unij9cf/candidate.ll'\nsource_filename = \"/tmp/irsem-v3-3unij9cf/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 %x\n}\n",
+      "evaluation_ir": "; ModuleID = '/tmp/irsem-v3-3unij9cf/candidate.canonical.ll'\nsource_filename = \"/tmp/irsem-v3-3unij9cf/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 %x\n}\n",
+      "context_normalization": {
+        "equivalent_triple_canonicalized": false,
+        "equivalent_layout_canonicalized": false
+      },
+      "alive2_log": {
+        "command": [
+          "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+          "-always-verify",
+          "-smt-to=10000",
+          "-smt-max-mem=1024",
+          "-smt-random-seed=20261113",
+          "/tmp/irsem-v3-3unij9cf/source.canonical.ll",
+          "/tmp/irsem-v3-3unij9cf/candidate.proof.ll"
+        ],
+        "returncode": 0,
+        "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %r = and i32 noundef %x, 4294967295\n  ret i32 %r\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 noundef %x\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+        "stderr": "",
+        "seconds": 0.06423386186361313,
+        "timed_out": false,
+        "truncated": false
+      },
+      "differential": {
+        "-O0": {
+          "status": "match",
+          "input_kind": "holdout",
+          "case_count": 270,
+          "mismatch_count": 0,
+          "optimization": "-O0"
+        },
+        "-O2": {
+          "status": "match",
+          "input_kind": "holdout",
+          "case_count": 270,
+          "mismatch_count": 0,
+          "optimization": "-O2"
+        }
+      },
+      "status": "verified",
+      "key": "dev_l0_and_all__legacy",
+      "arm": "legacy",
+      "model": "qwen",
+      "phase": "pilot",
+      "legacy_contract_errors": []
+    },
+    {
+      "task_id": "dev_l0_and_all",
+      "level": "L0",
+      "role": "opportunity",
+      "syntax_valid": true,
+      "semantic_attempted": true,
+      "determinate": true,
+      "verified": true,
+      "effective_optimization": true,
+      "goal_met": true,
+      "extraction": [
+        "fence"
+      ],
+      "syntax_log": {
+        "command": [
+          "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/irsem-inspect",
+          "/tmp/irsem-v3-9uz7b_8e/candidate.ll",
+          "/tmp/irsem-v3-9uz7b_8e/candidate.canonical.ll",
+          "/tmp/irsem-v3-9uz7b_8e/source.ll"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "seconds": 0.0322403684258461,
+        "timed_out": false,
+        "truncated": false
+      },
+      "source_structure": {
+        "abi_target_key": "x86_64/linux/gnu/3",
+        "aliases": 0,
+        "cycles": false,
+        "data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "declarations": 0,
+        "definitions": 1,
+        "functions": [
+          {
+            "address_space": 0,
+            "address_taken": false,
+            "calling_convention": 0,
+            "dso_local": false,
+            "function_attrs": [],
+            "gc": false,
+            "linkage": 0,
+            "name": "f",
+            "params": [
+              {
+                "attrs": [
+                  "noundef"
+                ],
+                "type": "i32"
+              }
+            ],
+            "personality": false,
+            "prefix_data": false,
+            "prologue_data": false,
+            "return_attrs": [],
+            "return_type": "i32",
+            "unnamed_addr": 0,
+            "vararg": false,
+            "visibility": 0
+          }
+        ],
+        "globals": 0,
+        "ifuncs": 0,
+        "inherited_data_layout": false,
+        "inherited_target_triple": false,
+        "instruction_metadata": [],
+        "instructions": 2,
+        "layout_equivalent_for_used_types": true,
+        "memory_accesses": [],
+        "module_asm": false,
+        "module_flags": [],
+        "named_metadata": [],
+        "opcodes": {
+          "and": 1,
+          "ret": 1
+        },
+        "pointer_compare": false,
+        "raw_data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "raw_target_triple": "x86_64-pc-linux-gnu",
+        "scope_errors": [],
+        "target_triple": "x86_64-pc-linux-gnu",
+        "target_vendor": "pc",
+        "used_types": [
+          "void",
+          "i32"
+        ]
+      },
+      "candidate_structure": {
+        "abi_target_key": "x86_64/linux/gnu/3",
+        "aliases": 0,
+        "cycles": false,
+        "data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "declarations": 0,
+        "definitions": 1,
+        "functions": [
+          {
+            "address_space": 0,
+            "address_taken": false,
+            "calling_convention": 0,
+            "dso_local": false,
+            "function_attrs": [],
+            "gc": false,
+            "linkage": 0,
+            "name": "f",
+            "params": [
+              {
+                "attrs": [
+                  "noundef"
+                ],
+                "type": "i32"
+              }
+            ],
+            "personality": false,
+            "prefix_data": false,
+            "prologue_data": false,
+            "return_attrs": [],
+            "return_type": "i32",
+            "unnamed_addr": 0,
+            "vararg": false,
+            "visibility": 0
+          }
+        ],
+        "globals": 0,
+        "ifuncs": 0,
+        "inherited_data_layout": false,
+        "inherited_target_triple": false,
+        "instruction_metadata": [],
+        "instructions": 1,
+        "layout_equivalent_for_used_types": true,
+        "memory_accesses": [],
+        "module_asm": false,
+        "module_flags": [],
+        "named_metadata": [],
+        "opcodes": {
+          "ret": 1
+        },
+        "pointer_compare": false,
+        "raw_data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "raw_target_triple": "x86_64-pc-linux-gnu",
+        "scope_errors": [],
+        "target_triple": "x86_64-pc-linux-gnu",
+        "target_vendor": "pc",
+        "used_types": [
+          "void",
+          "i32"
+        ]
+      },
+      "canonical_ir": "; ModuleID = '/tmp/irsem-v3-9uz7b_8e/candidate.ll'\nsource_filename = \"/tmp/irsem-v3-9uz7b_8e/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 %x\n}\n",
+      "admission": {
+        "interface": [],
+        "unsupported": [],
+        "assumptions": []
+      },
+      "context_inheritance": {
+        "inherited_target_triple": false,
+        "inherited_data_layout": false
+      },
+      "canonical_ir_before_context_normalization": "; ModuleID = '/tmp/irsem-v3-9uz7b_8e/candidate.ll'\nsource_filename = \"/tmp/irsem-v3-9uz7b_8e/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 %x\n}\n",
+      "evaluation_ir": "; ModuleID = '/tmp/irsem-v3-9uz7b_8e/candidate.canonical.ll'\nsource_filename = \"/tmp/irsem-v3-9uz7b_8e/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 %x\n}\n",
+      "context_normalization": {
+        "equivalent_triple_canonicalized": false,
+        "equivalent_layout_canonicalized": false
+      },
+      "alive2_log": {
+        "command": [
+          "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+          "-always-verify",
+          "-smt-to=10000",
+          "-smt-max-mem=1024",
+          "-smt-random-seed=20261113",
+          "/tmp/irsem-v3-9uz7b_8e/source.canonical.ll",
+          "/tmp/irsem-v3-9uz7b_8e/candidate.proof.ll"
+        ],
+        "returncode": 0,
+        "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %r = and i32 noundef %x, 4294967295\n  ret i32 %r\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 noundef %x\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+        "stderr": "",
+        "seconds": 0.06465000286698341,
+        "timed_out": false,
+        "truncated": false
+      },
+      "differential": {
+        "-O0": {
+          "status": "match",
+          "input_kind": "holdout",
+          "case_count": 270,
+          "mismatch_count": 0,
+          "optimization": "-O0"
+        },
+        "-O2": {
+          "status": "match",
+          "input_kind": "holdout",
+          "case_count": 270,
+          "mismatch_count": 0,
+          "optimization": "-O2"
+        }
+      },
+      "status": "verified",
+      "key": "dev_l0_and_all__native",
+      "arm": "native",
+      "model": "qwen",
+      "phase": "pilot",
+      "legacy_contract_errors": []
+    },
+    {
+      "task_id": "dev_l1_select_equal",
+      "level": "L1",
+      "role": "opportunity",
+      "syntax_valid": true,
+      "semantic_attempted": true,
+      "determinate": true,
+      "verified": true,
+      "effective_optimization": true,
+      "goal_met": true,
+      "extraction": [
+        "code_tag"
+      ],
+      "syntax_log": {
+        "command": [
+          "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/irsem-inspect",
+          "/tmp/irsem-v3-h4sl3vi2/candidate.ll",
+          "/tmp/irsem-v3-h4sl3vi2/candidate.canonical.ll",
+          "/tmp/irsem-v3-h4sl3vi2/source.ll"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "seconds": 0.016384046524763107,
+        "timed_out": false,
+        "truncated": false
+      },
+      "source_structure": {
+        "abi_target_key": "x86_64/linux/gnu/3",
+        "aliases": 0,
+        "cycles": false,
+        "data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "declarations": 0,
+        "definitions": 1,
+        "functions": [
+          {
+            "address_space": 0,
+            "address_taken": false,
+            "calling_convention": 0,
+            "dso_local": false,
+            "function_attrs": [],
+            "gc": false,
+            "linkage": 0,
+            "name": "f",
+            "params": [
+              {
+                "attrs": [
+                  "noundef"
+                ],
+                "type": "i32"
+              }
+            ],
+            "personality": false,
+            "prefix_data": false,
+            "prologue_data": false,
+            "return_attrs": [],
+            "return_type": "i32",
+            "unnamed_addr": 0,
+            "vararg": false,
+            "visibility": 0
+          }
+        ],
+        "globals": 0,
+        "ifuncs": 0,
+        "inherited_data_layout": false,
+        "inherited_target_triple": false,
+        "instruction_metadata": [],
+        "instructions": 3,
+        "layout_equivalent_for_used_types": true,
+        "memory_accesses": [],
+        "module_asm": false,
+        "module_flags": [],
+        "named_metadata": [],
+        "opcodes": {
+          "icmp": 1,
+          "ret": 1,
+          "select": 1
+        },
+        "pointer_compare": false,
+        "raw_data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "raw_target_triple": "x86_64-pc-linux-gnu",
+        "scope_errors": [],
+        "target_triple": "x86_64-pc-linux-gnu",
+        "target_vendor": "pc",
+        "used_types": [
+          "void",
+          "i1",
+          "i32"
+        ]
+      },
+      "candidate_structure": {
+        "abi_target_key": "x86_64/linux/gnu/3",
+        "aliases": 0,
+        "cycles": false,
+        "data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "declarations": 0,
+        "definitions": 1,
+        "functions": [
+          {
+            "address_space": 0,
+            "address_taken": false,
+            "calling_convention": 0,
+            "dso_local": false,
+            "function_attrs": [],
+            "gc": false,
+            "linkage": 0,
+            "name": "f",
+            "params": [
+              {
+                "attrs": [
+                  "noundef"
+                ],
+                "type": "i32"
+              }
+            ],
+            "personality": false,
+            "prefix_data": false,
+            "prologue_data": false,
+            "return_attrs": [],
+            "return_type": "i32",
+            "unnamed_addr": 0,
+            "vararg": false,
+            "visibility": 0
+          }
+        ],
+        "globals": 0,
+        "ifuncs": 0,
+        "inherited_data_layout": false,
+        "inherited_target_triple": false,
+        "instruction_metadata": [],
+        "instructions": 1,
+        "layout_equivalent_for_used_types": true,
+        "memory_accesses": [],
+        "module_asm": false,
+        "module_flags": [],
+        "named_metadata": [],
+        "opcodes": {
+          "ret": 1
+        },
+        "pointer_compare": false,
+        "raw_data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "raw_target_triple": "x86_64-pc-linux-gnu",
+        "scope_errors": [],
+        "target_triple": "x86_64-pc-linux-gnu",
+        "target_vendor": "pc",
+        "used_types": [
+          "void",
+          "i32"
+        ]
+      },
+      "canonical_ir": "; ModuleID = '/tmp/irsem-v3-h4sl3vi2/candidate.ll'\nsource_filename = \"/tmp/irsem-v3-h4sl3vi2/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 11\n}\n",
+      "admission": {
+        "interface": [],
+        "unsupported": [],
+        "assumptions": []
+      },
+      "context_inheritance": {
+        "inherited_target_triple": false,
+        "inherited_data_layout": false
+      },
+      "canonical_ir_before_context_normalization": "; ModuleID = '/tmp/irsem-v3-h4sl3vi2/candidate.ll'\nsource_filename = \"/tmp/irsem-v3-h4sl3vi2/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 11\n}\n",
+      "evaluation_ir": "; ModuleID = '/tmp/irsem-v3-h4sl3vi2/candidate.canonical.ll'\nsource_filename = \"/tmp/irsem-v3-h4sl3vi2/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 11\n}\n",
+      "context_normalization": {
+        "equivalent_triple_canonicalized": false,
+        "equivalent_layout_canonicalized": false
+      },
+      "alive2_log": {
+        "command": [
+          "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+          "-always-verify",
+          "-smt-to=10000",
+          "-smt-max-mem=1024",
+          "-smt-random-seed=20261113",
+          "/tmp/irsem-v3-h4sl3vi2/source.canonical.ll",
+          "/tmp/irsem-v3-h4sl3vi2/candidate.proof.ll"
+        ],
+        "returncode": 0,
+        "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = icmp eq i32 noundef %x, 0\n  %r = select i1 %c, i32 11, i32 11\n  ret i32 %r\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 11\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+        "stderr": "",
+        "seconds": 0.06467296183109283,
+        "timed_out": false,
+        "truncated": false
+      },
+      "differential": {
+        "-O0": {
+          "status": "match",
+          "input_kind": "holdout",
+          "case_count": 270,
+          "mismatch_count": 0,
+          "optimization": "-O0"
+        },
+        "-O2": {
+          "status": "match",
+          "input_kind": "holdout",
+          "case_count": 270,
+          "mismatch_count": 0,
+          "optimization": "-O2"
+        }
+      },
+      "status": "verified",
+      "key": "dev_l1_select_equal__legacy",
+      "arm": "legacy",
+      "model": "qwen",
+      "phase": "pilot",
+      "legacy_contract_errors": []
+    },
+    {
+      "task_id": "dev_l1_select_equal",
+      "level": "L1",
+      "role": "opportunity",
+      "syntax_valid": true,
+      "semantic_attempted": true,
+      "determinate": true,
+      "verified": true,
+      "effective_optimization": true,
+      "goal_met": true,
+      "extraction": [
+        "fence"
+      ],
+      "syntax_log": {
+        "command": [
+          "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/irsem-inspect",
+          "/tmp/irsem-v3-aupl64ex/candidate.ll",
+          "/tmp/irsem-v3-aupl64ex/candidate.canonical.ll",
+          "/tmp/irsem-v3-aupl64ex/source.ll"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "seconds": 0.01638234406709671,
+        "timed_out": false,
+        "truncated": false
+      },
+      "source_structure": {
+        "abi_target_key": "x86_64/linux/gnu/3",
+        "aliases": 0,
+        "cycles": false,
+        "data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "declarations": 0,
+        "definitions": 1,
+        "functions": [
+          {
+            "address_space": 0,
+            "address_taken": false,
+            "calling_convention": 0,
+            "dso_local": false,
+            "function_attrs": [],
+            "gc": false,
+            "linkage": 0,
+            "name": "f",
+            "params": [
+              {
+                "attrs": [
+                  "noundef"
+                ],
+                "type": "i32"
+              }
+            ],
+            "personality": false,
+            "prefix_data": false,
+            "prologue_data": false,
+            "return_attrs": [],
+            "return_type": "i32",
+            "unnamed_addr": 0,
+            "vararg": false,
+            "visibility": 0
+          }
+        ],
+        "globals": 0,
+        "ifuncs": 0,
+        "inherited_data_layout": false,
+        "inherited_target_triple": false,
+        "instruction_metadata": [],
+        "instructions": 3,
+        "layout_equivalent_for_used_types": true,
+        "memory_accesses": [],
+        "module_asm": false,
+        "module_flags": [],
+        "named_metadata": [],
+        "opcodes": {
+          "icmp": 1,
+          "ret": 1,
+          "select": 1
+        },
+        "pointer_compare": false,
+        "raw_data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "raw_target_triple": "x86_64-pc-linux-gnu",
+        "scope_errors": [],
+        "target_triple": "x86_64-pc-linux-gnu",
+        "target_vendor": "pc",
+        "used_types": [
+          "void",
+          "i1",
+          "i32"
+        ]
+      },
+      "candidate_structure": {
+        "abi_target_key": "x86_64/linux/gnu/3",
+        "aliases": 0,
+        "cycles": false,
+        "data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "declarations": 0,
+        "definitions": 1,
+        "functions": [
+          {
+            "address_space": 0,
+            "address_taken": false,
+            "calling_convention": 0,
+            "dso_local": false,
+            "function_attrs": [],
+            "gc": false,
+            "linkage": 0,
+            "name": "f",
+            "params": [
+              {
+                "attrs": [
+                  "noundef"
+                ],
+                "type": "i32"
+              }
+            ],
+            "personality": false,
+            "prefix_data": false,
+            "prologue_data": false,
+            "return_attrs": [],
+            "return_type": "i32",
+            "unnamed_addr": 0,
+            "vararg": false,
+            "visibility": 0
+          }
+        ],
+        "globals": 0,
+        "ifuncs": 0,
+        "inherited_data_layout": false,
+        "inherited_target_triple": false,
+        "instruction_metadata": [],
+        "instructions": 1,
+        "layout_equivalent_for_used_types": true,
+        "memory_accesses": [],
+        "module_asm": false,
+        "module_flags": [],
+        "named_metadata": [],
+        "opcodes": {
+          "ret": 1
+        },
+        "pointer_compare": false,
+        "raw_data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "raw_target_triple": "x86_64-pc-linux-gnu",
+        "scope_errors": [],
+        "target_triple": "x86_64-pc-linux-gnu",
+        "target_vendor": "pc",
+        "used_types": [
+          "void",
+          "i32"
+        ]
+      },
+      "canonical_ir": "; ModuleID = '/tmp/irsem-v3-aupl64ex/candidate.ll'\nsource_filename = \"/tmp/irsem-v3-aupl64ex/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 11\n}\n",
+      "admission": {
+        "interface": [],
+        "unsupported": [],
+        "assumptions": []
+      },
+      "context_inheritance": {
+        "inherited_target_triple": false,
+        "inherited_data_layout": false
+      },
+      "canonical_ir_before_context_normalization": "; ModuleID = '/tmp/irsem-v3-aupl64ex/candidate.ll'\nsource_filename = \"/tmp/irsem-v3-aupl64ex/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 11\n}\n",
+      "evaluation_ir": "; ModuleID = '/tmp/irsem-v3-aupl64ex/candidate.canonical.ll'\nsource_filename = \"/tmp/irsem-v3-aupl64ex/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 11\n}\n",
+      "context_normalization": {
+        "equivalent_triple_canonicalized": false,
+        "equivalent_layout_canonicalized": false
+      },
+      "alive2_log": {
+        "command": [
+          "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+          "-always-verify",
+          "-smt-to=10000",
+          "-smt-max-mem=1024",
+          "-smt-random-seed=20261113",
+          "/tmp/irsem-v3-aupl64ex/source.canonical.ll",
+          "/tmp/irsem-v3-aupl64ex/candidate.proof.ll"
+        ],
+        "returncode": 0,
+        "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = icmp eq i32 noundef %x, 0\n  %r = select i1 %c, i32 11, i32 11\n  ret i32 %r\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 11\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+        "stderr": "",
+        "seconds": 0.032343391329050064,
+        "timed_out": false,
+        "truncated": false
+      },
+      "differential": {
+        "-O0": {
+          "status": "match",
+          "input_kind": "holdout",
+          "case_count": 270,
+          "mismatch_count": 0,
+          "optimization": "-O0"
+        },
+        "-O2": {
+          "status": "match",
+          "input_kind": "holdout",
+          "case_count": 270,
+          "mismatch_count": 0,
+          "optimization": "-O2"
+        }
+      },
+      "status": "verified",
+      "key": "dev_l1_select_equal__native",
+      "arm": "native",
+      "model": "qwen",
+      "phase": "pilot",
+      "legacy_contract_errors": []
+    },
+    {
+      "task_id": "dev_l1_unreachable",
+      "level": "L1",
+      "role": "opportunity",
+      "syntax_valid": true,
+      "semantic_attempted": true,
+      "determinate": true,
+      "verified": true,
+      "effective_optimization": true,
+      "goal_met": true,
+      "extraction": [
+        "code_tag"
+      ],
+      "syntax_log": {
+        "command": [
+          "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/irsem-inspect",
+          "/tmp/irsem-v3-3s5unzhz/candidate.ll",
+          "/tmp/irsem-v3-3s5unzhz/candidate.canonical.ll",
+          "/tmp/irsem-v3-3s5unzhz/source.ll"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "seconds": 0.016383040696382523,
+        "timed_out": false,
+        "truncated": false
+      },
+      "source_structure": {
+        "abi_target_key": "x86_64/linux/gnu/3",
+        "aliases": 0,
+        "cycles": false,
+        "data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "declarations": 0,
+        "definitions": 1,
+        "functions": [
+          {
+            "address_space": 0,
+            "address_taken": false,
+            "calling_convention": 0,
+            "dso_local": false,
+            "function_attrs": [],
+            "gc": false,
+            "linkage": 0,
+            "name": "f",
+            "params": [
+              {
+                "attrs": [
+                  "noundef"
+                ],
+                "type": "i32"
+              }
+            ],
+            "personality": false,
+            "prefix_data": false,
+            "prologue_data": false,
+            "return_attrs": [],
+            "return_type": "i32",
+            "unnamed_addr": 0,
+            "vararg": false,
+            "visibility": 0
+          }
+        ],
+        "globals": 0,
+        "ifuncs": 0,
+        "inherited_data_layout": false,
+        "inherited_target_triple": false,
+        "instruction_metadata": [],
+        "instructions": 2,
+        "layout_equivalent_for_used_types": true,
+        "memory_accesses": [],
+        "module_asm": false,
+        "module_flags": [],
+        "named_metadata": [],
+        "opcodes": {
+          "ret": 2
+        },
+        "pointer_compare": false,
+        "raw_data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "raw_target_triple": "x86_64-pc-linux-gnu",
+        "scope_errors": [],
+        "target_triple": "x86_64-pc-linux-gnu",
+        "target_vendor": "pc",
+        "used_types": [
+          "void",
+          "i32"
+        ]
+      },
+      "candidate_structure": {
+        "abi_target_key": "x86_64/linux/gnu/3",
+        "aliases": 0,
+        "cycles": false,
+        "data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "declarations": 0,
+        "definitions": 1,
+        "functions": [
+          {
+            "address_space": 0,
+            "address_taken": false,
+            "calling_convention": 0,
+            "dso_local": false,
+            "function_attrs": [],
+            "gc": false,
+            "linkage": 0,
+            "name": "f",
+            "params": [
+              {
+                "attrs": [
+                  "noundef"
+                ],
+                "type": "i32"
+              }
+            ],
+            "personality": false,
+            "prefix_data": false,
+            "prologue_data": false,
+            "return_attrs": [],
+            "return_type": "i32",
+            "unnamed_addr": 0,
+            "vararg": false,
+            "visibility": 0
+          }
+        ],
+        "globals": 0,
+        "ifuncs": 0,
+        "inherited_data_layout": false,
+        "inherited_target_triple": false,
+        "instruction_metadata": [],
+        "instructions": 1,
+        "layout_equivalent_for_used_types": true,
+        "memory_accesses": [],
+        "module_asm": false,
+        "module_flags": [],
+        "named_metadata": [],
+        "opcodes": {
+          "ret": 1
+        },
+        "pointer_compare": false,
+        "raw_data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "raw_target_triple": "x86_64-pc-linux-gnu",
+        "scope_errors": [],
+        "target_triple": "x86_64-pc-linux-gnu",
+        "target_vendor": "pc",
+        "used_types": [
+          "void",
+          "i32"
+        ]
+      },
+      "canonical_ir": "; ModuleID = '/tmp/irsem-v3-3s5unzhz/candidate.ll'\nsource_filename = \"/tmp/irsem-v3-3s5unzhz/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 %x\n}\n",
+      "admission": {
+        "interface": [],
+        "unsupported": [],
+        "assumptions": []
+      },
+      "context_inheritance": {
+        "inherited_target_triple": false,
+        "inherited_data_layout": false
+      },
+      "canonical_ir_before_context_normalization": "; ModuleID = '/tmp/irsem-v3-3s5unzhz/candidate.ll'\nsource_filename = \"/tmp/irsem-v3-3s5unzhz/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 %x\n}\n",
+      "evaluation_ir": "; ModuleID = '/tmp/irsem-v3-3s5unzhz/candidate.canonical.ll'\nsource_filename = \"/tmp/irsem-v3-3s5unzhz/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 %x\n}\n",
+      "context_normalization": {
+        "equivalent_triple_canonicalized": false,
+        "equivalent_layout_canonicalized": false
+      },
+      "alive2_log": {
+        "command": [
+          "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+          "-always-verify",
+          "-smt-to=10000",
+          "-smt-max-mem=1024",
+          "-smt-random-seed=20261113",
+          "/tmp/irsem-v3-3s5unzhz/source.canonical.ll",
+          "/tmp/irsem-v3-3s5unzhz/candidate.proof.ll"
+        ],
+        "returncode": 0,
+        "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 noundef %x\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 noundef %x\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+        "stderr": "",
+        "seconds": 0.032449785619974136,
+        "timed_out": false,
+        "truncated": false
+      },
+      "differential": {
+        "-O0": {
+          "status": "match",
+          "input_kind": "holdout",
+          "case_count": 270,
+          "mismatch_count": 0,
+          "optimization": "-O0"
+        },
+        "-O2": {
+          "status": "match",
+          "input_kind": "holdout",
+          "case_count": 270,
+          "mismatch_count": 0,
+          "optimization": "-O2"
+        }
+      },
+      "status": "verified",
+      "key": "dev_l1_unreachable__legacy",
+      "arm": "legacy",
+      "model": "qwen",
+      "phase": "pilot",
+      "legacy_contract_errors": []
+    },
+    {
+      "task_id": "dev_l1_unreachable",
+      "level": "L1",
+      "role": "opportunity",
+      "syntax_valid": true,
+      "semantic_attempted": true,
+      "determinate": true,
+      "verified": true,
+      "effective_optimization": false,
+      "goal_met": false,
+      "extraction": [
+        "fence"
+      ],
+      "syntax_log": {
+        "command": [
+          "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/irsem-inspect",
+          "/tmp/irsem-v3-hbpakt4l/candidate.ll",
+          "/tmp/irsem-v3-hbpakt4l/candidate.canonical.ll",
+          "/tmp/irsem-v3-hbpakt4l/source.ll"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "seconds": 0.03250403329730034,
+        "timed_out": false,
+        "truncated": false
+      },
+      "source_structure": {
+        "abi_target_key": "x86_64/linux/gnu/3",
+        "aliases": 0,
+        "cycles": false,
+        "data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "declarations": 0,
+        "definitions": 1,
+        "functions": [
+          {
+            "address_space": 0,
+            "address_taken": false,
+            "calling_convention": 0,
+            "dso_local": false,
+            "function_attrs": [],
+            "gc": false,
+            "linkage": 0,
+            "name": "f",
+            "params": [
+              {
+                "attrs": [
+                  "noundef"
+                ],
+                "type": "i32"
+              }
+            ],
+            "personality": false,
+            "prefix_data": false,
+            "prologue_data": false,
+            "return_attrs": [],
+            "return_type": "i32",
+            "unnamed_addr": 0,
+            "vararg": false,
+            "visibility": 0
+          }
+        ],
+        "globals": 0,
+        "ifuncs": 0,
+        "inherited_data_layout": false,
+        "inherited_target_triple": false,
+        "instruction_metadata": [],
+        "instructions": 2,
+        "layout_equivalent_for_used_types": true,
+        "memory_accesses": [],
+        "module_asm": false,
+        "module_flags": [],
+        "named_metadata": [],
+        "opcodes": {
+          "ret": 2
+        },
+        "pointer_compare": false,
+        "raw_data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "raw_target_triple": "x86_64-pc-linux-gnu",
+        "scope_errors": [],
+        "target_triple": "x86_64-pc-linux-gnu",
+        "target_vendor": "pc",
+        "used_types": [
+          "void",
+          "i32"
+        ]
+      },
+      "candidate_structure": {
+        "abi_target_key": "x86_64/linux/gnu/3",
+        "aliases": 0,
+        "cycles": false,
+        "data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "declarations": 0,
+        "definitions": 1,
+        "functions": [
+          {
+            "address_space": 0,
+            "address_taken": false,
+            "calling_convention": 0,
+            "dso_local": false,
+            "function_attrs": [],
+            "gc": false,
+            "linkage": 0,
+            "name": "f",
+            "params": [
+              {
+                "attrs": [
+                  "noundef"
+                ],
+                "type": "i32"
+              }
+            ],
+            "personality": false,
+            "prefix_data": false,
+            "prologue_data": false,
+            "return_attrs": [],
+            "return_type": "i32",
+            "unnamed_addr": 0,
+            "vararg": false,
+            "visibility": 0
+          }
+        ],
+        "globals": 0,
+        "ifuncs": 0,
+        "inherited_data_layout": false,
+        "inherited_target_triple": false,
+        "instruction_metadata": [],
+        "instructions": 2,
+        "layout_equivalent_for_used_types": true,
+        "memory_accesses": [],
+        "module_asm": false,
+        "module_flags": [],
+        "named_metadata": [],
+        "opcodes": {
+          "ret": 2
+        },
+        "pointer_compare": false,
+        "raw_data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "raw_target_triple": "x86_64-pc-linux-gnu",
+        "scope_errors": [],
+        "target_triple": "x86_64-pc-linux-gnu",
+        "target_vendor": "pc",
+        "used_types": [
+          "void",
+          "i32"
+        ]
+      },
+      "canonical_ir": "; ModuleID = '/tmp/irsem-v3-hbpakt4l/candidate.ll'\nsource_filename = \"/tmp/irsem-v3-hbpakt4l/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 %x\n\ndead:                                             ; No predecessors!\n  ret i32 99\n}\n",
+      "admission": {
+        "interface": [],
+        "unsupported": [],
+        "assumptions": []
+      },
+      "context_inheritance": {
+        "inherited_target_triple": false,
+        "inherited_data_layout": false
+      },
+      "canonical_ir_before_context_normalization": "; ModuleID = '/tmp/irsem-v3-hbpakt4l/candidate.ll'\nsource_filename = \"/tmp/irsem-v3-hbpakt4l/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 %x\n\ndead:                                             ; No predecessors!\n  ret i32 99\n}\n",
+      "evaluation_ir": "; ModuleID = '/tmp/irsem-v3-hbpakt4l/candidate.canonical.ll'\nsource_filename = \"/tmp/irsem-v3-hbpakt4l/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 %x\n\ndead:                                             ; No predecessors!\n  ret i32 99\n}\n",
+      "context_normalization": {
+        "equivalent_triple_canonicalized": false,
+        "equivalent_layout_canonicalized": false
+      },
+      "alive2_log": {
+        "command": [
+          "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+          "-always-verify",
+          "-smt-to=10000",
+          "-smt-max-mem=1024",
+          "-smt-random-seed=20261113",
+          "/tmp/irsem-v3-hbpakt4l/source.canonical.ll",
+          "/tmp/irsem-v3-hbpakt4l/candidate.proof.ll"
+        ],
+        "returncode": 0,
+        "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 noundef %x\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 noundef %x\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+        "stderr": "",
+        "seconds": 0.06431275233626366,
+        "timed_out": false,
+        "truncated": false
+      },
+      "differential": {
+        "-O0": {
+          "status": "match",
+          "input_kind": "holdout",
+          "case_count": 270,
+          "mismatch_count": 0,
+          "optimization": "-O0"
+        },
+        "-O2": {
+          "status": "match",
+          "input_kind": "holdout",
+          "case_count": 270,
+          "mismatch_count": 0,
+          "optimization": "-O2"
+        }
+      },
+      "status": "verified",
+      "key": "dev_l1_unreachable__native",
+      "arm": "native",
+      "model": "qwen",
+      "phase": "pilot",
+      "legacy_contract_errors": []
+    },
+    {
+      "task_id": "dev_l2_forward",
+      "level": "L2",
+      "role": "opportunity",
+      "syntax_valid": true,
+      "semantic_attempted": true,
+      "determinate": true,
+      "verified": true,
+      "effective_optimization": true,
+      "goal_met": true,
+      "extraction": [
+        "code_tag"
+      ],
+      "syntax_log": {
+        "command": [
+          "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/irsem-inspect",
+          "/tmp/irsem-v3-_90jh60a/candidate.ll",
+          "/tmp/irsem-v3-_90jh60a/candidate.canonical.ll",
+          "/tmp/irsem-v3-_90jh60a/source.ll"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "seconds": 0.016333285719156265,
+        "timed_out": false,
+        "truncated": false
+      },
+      "source_structure": {
+        "abi_target_key": "x86_64/linux/gnu/3",
+        "aliases": 0,
+        "cycles": false,
+        "data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "declarations": 0,
+        "definitions": 1,
+        "functions": [
+          {
+            "address_space": 0,
+            "address_taken": false,
+            "calling_convention": 0,
+            "dso_local": false,
+            "function_attrs": [],
+            "gc": false,
+            "linkage": 0,
+            "name": "f",
+            "params": [
+              {
+                "attrs": [
+                  "noundef"
+                ],
+                "type": "ptr"
+              },
+              {
+                "attrs": [
+                  "noundef"
+                ],
+                "type": "ptr"
+              }
+            ],
+            "personality": false,
+            "prefix_data": false,
+            "prologue_data": false,
+            "return_attrs": [],
+            "return_type": "i32",
+            "unnamed_addr": 0,
+            "vararg": false,
+            "visibility": 0
+          }
+        ],
+        "globals": 0,
+        "ifuncs": 0,
+        "inherited_data_layout": false,
+        "inherited_target_triple": false,
+        "instruction_metadata": [],
+        "instructions": 3,
+        "layout_equivalent_for_used_types": true,
+        "memory_accesses": [
+          {
+            "op": "store",
+            "roots": 1
+          },
+          {
+            "op": "load",
+            "roots": 1
+          }
+        ],
+        "module_asm": false,
+        "module_flags": [],
+        "named_metadata": [],
+        "opcodes": {
+          "load": 1,
+          "ret": 1,
+          "store": 1
+        },
+        "pointer_compare": false,
+        "raw_data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "raw_target_triple": "x86_64-pc-linux-gnu",
+        "scope_errors": [],
+        "target_triple": "x86_64-pc-linux-gnu",
+        "target_vendor": "pc",
+        "used_types": [
+          "void",
+          "i32",
+          "ptr"
+        ]
+      },
+      "candidate_structure": {
+        "abi_target_key": "x86_64/linux/gnu/3",
+        "aliases": 0,
+        "cycles": false,
+        "data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "declarations": 0,
+        "definitions": 1,
+        "functions": [
+          {
+            "address_space": 0,
+            "address_taken": false,
+            "calling_convention": 0,
+            "dso_local": false,
+            "function_attrs": [],
+            "gc": false,
+            "linkage": 0,
+            "name": "f",
+            "params": [
+              {
+                "attrs": [
+                  "noundef"
+                ],
+                "type": "ptr"
+              },
+              {
+                "attrs": [
+                  "noundef"
+                ],
+                "type": "ptr"
+              }
+            ],
+            "personality": false,
+            "prefix_data": false,
+            "prologue_data": false,
+            "return_attrs": [],
+            "return_type": "i32",
+            "unnamed_addr": 0,
+            "vararg": false,
+            "visibility": 0
+          }
+        ],
+        "globals": 0,
+        "ifuncs": 0,
+        "inherited_data_layout": false,
+        "inherited_target_triple": false,
+        "instruction_metadata": [],
+        "instructions": 2,
+        "layout_equivalent_for_used_types": true,
+        "memory_accesses": [
+          {
+            "op": "store",
+            "roots": 1
+          }
+        ],
+        "module_asm": false,
+        "module_flags": [],
+        "named_metadata": [],
+        "opcodes": {
+          "ret": 1,
+          "store": 1
+        },
+        "pointer_compare": false,
+        "raw_data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "raw_target_triple": "x86_64-pc-linux-gnu",
+        "scope_errors": [],
+        "target_triple": "x86_64-pc-linux-gnu",
+        "target_vendor": "pc",
+        "used_types": [
+          "void",
+          "i32",
+          "ptr"
+        ]
+      },
+      "canonical_ir": "; ModuleID = '/tmp/irsem-v3-_90jh60a/candidate.ll'\nsource_filename = \"/tmp/irsem-v3-_90jh60a/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  store i32 11, ptr %p, align 4\n  ret i32 11\n}\n",
+      "admission": {
+        "interface": [],
+        "unsupported": [],
+        "assumptions": []
+      },
+      "context_inheritance": {
+        "inherited_target_triple": false,
+        "inherited_data_layout": false
+      },
+      "canonical_ir_before_context_normalization": "; ModuleID = '/tmp/irsem-v3-_90jh60a/candidate.ll'\nsource_filename = \"/tmp/irsem-v3-_90jh60a/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  store i32 11, ptr %p, align 4\n  ret i32 11\n}\n",
+      "evaluation_ir": "; ModuleID = '/tmp/irsem-v3-_90jh60a/candidate.canonical.ll'\nsource_filename = \"/tmp/irsem-v3-_90jh60a/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  store i32 11, ptr %p, align 4\n  ret i32 11\n}\n",
+      "context_normalization": {
+        "equivalent_triple_canonicalized": false,
+        "equivalent_layout_canonicalized": false
+      },
+      "alive2_log": {
+        "command": [
+          "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+          "-always-verify",
+          "-smt-to=10000",
+          "-smt-max-mem=1024",
+          "-smt-random-seed=20261113",
+          "/tmp/irsem-v3-_90jh60a/source.canonical.ll",
+          "/tmp/irsem-v3-_90jh60a/candidate.proof.ll"
+        ],
+        "returncode": 0,
+        "stdout": "\n----------------------------------------\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  store i32 11, ptr noundef %p, align 4\n  %r = load i32, ptr noundef %p, align 4\n  ret i32 %r\n}\n=>\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  store i32 11, ptr noundef %p, align 4\n  ret i32 11\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+        "stderr": "",
+        "seconds": 0.06444935128092766,
+        "timed_out": false,
+        "truncated": false
+      },
+      "differential": {
+        "-O0": {
+          "status": "match",
+          "input_kind": "holdout",
+          "case_count": 256,
+          "mismatch_count": 0,
+          "optimization": "-O0"
+        },
+        "-O2": {
+          "status": "match",
+          "input_kind": "holdout",
+          "case_count": 256,
+          "mismatch_count": 0,
+          "optimization": "-O2"
+        }
+      },
+      "status": "verified",
+      "key": "dev_l2_forward__legacy",
+      "arm": "legacy",
+      "model": "qwen",
+      "phase": "pilot",
+      "legacy_contract_errors": []
+    },
+    {
+      "task_id": "dev_l2_forward",
+      "level": "L2",
+      "role": "opportunity",
+      "syntax_valid": false,
+      "semantic_attempted": false,
+      "determinate": false,
+      "verified": false,
+      "effective_optimization": false,
+      "goal_met": false,
+      "status": "format_error",
+      "error": "Multiple or unbalanced code fences",
+      "key": "dev_l2_forward__native",
+      "arm": "native",
+      "model": "qwen",
+      "phase": "pilot",
+      "legacy_contract_errors": [
+        "Unbalanced or multiple code fences"
+      ]
+    },
+    {
+      "task_id": "dev_l2_alloca",
+      "level": "L2",
+      "role": "opportunity",
+      "syntax_valid": true,
+      "semantic_attempted": true,
+      "determinate": true,
+      "verified": true,
+      "effective_optimization": true,
+      "goal_met": true,
+      "extraction": [
+        "code_tag"
+      ],
+      "syntax_log": {
+        "command": [
+          "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/irsem-inspect",
+          "/tmp/irsem-v3-hpul7g9u/candidate.ll",
+          "/tmp/irsem-v3-hpul7g9u/candidate.canonical.ll",
+          "/tmp/irsem-v3-hpul7g9u/source.ll"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "seconds": 0.0323263481259346,
+        "timed_out": false,
+        "truncated": false
+      },
+      "source_structure": {
+        "abi_target_key": "x86_64/linux/gnu/3",
+        "aliases": 0,
+        "cycles": false,
+        "data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "declarations": 0,
+        "definitions": 1,
+        "functions": [
+          {
+            "address_space": 0,
+            "address_taken": false,
+            "calling_convention": 0,
+            "dso_local": false,
+            "function_attrs": [],
+            "gc": false,
+            "linkage": 0,
+            "name": "f",
+            "params": [
+              {
+                "attrs": [
+                  "noundef"
+                ],
+                "type": "i32"
+              }
+            ],
+            "personality": false,
+            "prefix_data": false,
+            "prologue_data": false,
+            "return_attrs": [],
+            "return_type": "i32",
+            "unnamed_addr": 0,
+            "vararg": false,
+            "visibility": 0
+          }
+        ],
+        "globals": 0,
+        "ifuncs": 0,
+        "inherited_data_layout": false,
+        "inherited_target_triple": false,
+        "instruction_metadata": [],
+        "instructions": 4,
+        "layout_equivalent_for_used_types": true,
+        "memory_accesses": [
+          {
+            "op": "store",
+            "roots": 65536
+          },
+          {
+            "op": "load",
+            "roots": 65536
+          }
+        ],
+        "module_asm": false,
+        "module_flags": [],
+        "named_metadata": [],
+        "opcodes": {
+          "alloca": 1,
+          "load": 1,
+          "ret": 1,
+          "store": 1
+        },
+        "pointer_compare": false,
+        "raw_data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "raw_target_triple": "x86_64-pc-linux-gnu",
+        "scope_errors": [],
+        "target_triple": "x86_64-pc-linux-gnu",
+        "target_vendor": "pc",
+        "used_types": [
+          "void",
+          "i32",
+          "ptr"
+        ]
+      },
+      "candidate_structure": {
+        "abi_target_key": "x86_64/linux/gnu/3",
+        "aliases": 0,
+        "cycles": false,
+        "data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "declarations": 0,
+        "definitions": 1,
+        "functions": [
+          {
+            "address_space": 0,
+            "address_taken": false,
+            "calling_convention": 0,
+            "dso_local": false,
+            "function_attrs": [],
+            "gc": false,
+            "linkage": 0,
+            "name": "f",
+            "params": [
+              {
+                "attrs": [
+                  "noundef"
+                ],
+                "type": "i32"
+              }
+            ],
+            "personality": false,
+            "prefix_data": false,
+            "prologue_data": false,
+            "return_attrs": [],
+            "return_type": "i32",
+            "unnamed_addr": 0,
+            "vararg": false,
+            "visibility": 0
+          }
+        ],
+        "globals": 0,
+        "ifuncs": 0,
+        "inherited_data_layout": false,
+        "inherited_target_triple": false,
+        "instruction_metadata": [],
+        "instructions": 1,
+        "layout_equivalent_for_used_types": true,
+        "memory_accesses": [],
+        "module_asm": false,
+        "module_flags": [],
+        "named_metadata": [],
+        "opcodes": {
+          "ret": 1
+        },
+        "pointer_compare": false,
+        "raw_data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "raw_target_triple": "x86_64-pc-linux-gnu",
+        "scope_errors": [],
+        "target_triple": "x86_64-pc-linux-gnu",
+        "target_vendor": "pc",
+        "used_types": [
+          "void",
+          "i32"
+        ]
+      },
+      "canonical_ir": "; ModuleID = '/tmp/irsem-v3-hpul7g9u/candidate.ll'\nsource_filename = \"/tmp/irsem-v3-hpul7g9u/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 13\n}\n",
+      "admission": {
+        "interface": [],
+        "unsupported": [],
+        "assumptions": []
+      },
+      "context_inheritance": {
+        "inherited_target_triple": false,
+        "inherited_data_layout": false
+      },
+      "canonical_ir_before_context_normalization": "; ModuleID = '/tmp/irsem-v3-hpul7g9u/candidate.ll'\nsource_filename = \"/tmp/irsem-v3-hpul7g9u/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 13\n}\n",
+      "evaluation_ir": "; ModuleID = '/tmp/irsem-v3-hpul7g9u/candidate.canonical.ll'\nsource_filename = \"/tmp/irsem-v3-hpul7g9u/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 13\n}\n",
+      "context_normalization": {
+        "equivalent_triple_canonicalized": false,
+        "equivalent_layout_canonicalized": false
+      },
+      "alive2_log": {
+        "command": [
+          "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+          "-always-verify",
+          "-smt-to=10000",
+          "-smt-max-mem=1024",
+          "-smt-random-seed=20261113",
+          "/tmp/irsem-v3-hpul7g9u/source.canonical.ll",
+          "/tmp/irsem-v3-hpul7g9u/candidate.proof.ll"
+        ],
+        "returncode": 0,
+        "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %a = alloca i64 4, align 4\n  store i32 13, ptr %a, align 4\n  %r = load i32, ptr %a, align 4\n  ret i32 %r\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 13\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+        "stderr": "",
+        "seconds": 0.06432819738984108,
+        "timed_out": false,
+        "truncated": false
+      },
+      "differential": {
+        "-O0": {
+          "status": "match",
+          "input_kind": "holdout",
+          "case_count": 270,
+          "mismatch_count": 0,
+          "optimization": "-O0"
+        },
+        "-O2": {
+          "status": "match",
+          "input_kind": "holdout",
+          "case_count": 270,
+          "mismatch_count": 0,
+          "optimization": "-O2"
+        }
+      },
+      "status": "verified",
+      "key": "dev_l2_alloca__legacy",
+      "arm": "legacy",
+      "model": "qwen",
+      "phase": "pilot",
+      "legacy_contract_errors": []
+    },
+    {
+      "task_id": "dev_l2_alloca",
+      "level": "L2",
+      "role": "opportunity",
+      "syntax_valid": true,
+      "semantic_attempted": true,
+      "determinate": true,
+      "verified": true,
+      "effective_optimization": true,
+      "goal_met": true,
+      "extraction": [
+        "fence"
+      ],
+      "syntax_log": {
+        "command": [
+          "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/irsem-inspect",
+          "/tmp/irsem-v3-smmsyax_/candidate.ll",
+          "/tmp/irsem-v3-smmsyax_/candidate.canonical.ll",
+          "/tmp/irsem-v3-smmsyax_/source.ll"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "seconds": 0.0163700133562088,
+        "timed_out": false,
+        "truncated": false
+      },
+      "source_structure": {
+        "abi_target_key": "x86_64/linux/gnu/3",
+        "aliases": 0,
+        "cycles": false,
+        "data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "declarations": 0,
+        "definitions": 1,
+        "functions": [
+          {
+            "address_space": 0,
+            "address_taken": false,
+            "calling_convention": 0,
+            "dso_local": false,
+            "function_attrs": [],
+            "gc": false,
+            "linkage": 0,
+            "name": "f",
+            "params": [
+              {
+                "attrs": [
+                  "noundef"
+                ],
+                "type": "i32"
+              }
+            ],
+            "personality": false,
+            "prefix_data": false,
+            "prologue_data": false,
+            "return_attrs": [],
+            "return_type": "i32",
+            "unnamed_addr": 0,
+            "vararg": false,
+            "visibility": 0
+          }
+        ],
+        "globals": 0,
+        "ifuncs": 0,
+        "inherited_data_layout": false,
+        "inherited_target_triple": false,
+        "instruction_metadata": [],
+        "instructions": 4,
+        "layout_equivalent_for_used_types": true,
+        "memory_accesses": [
+          {
+            "op": "store",
+            "roots": 65536
+          },
+          {
+            "op": "load",
+            "roots": 65536
+          }
+        ],
+        "module_asm": false,
+        "module_flags": [],
+        "named_metadata": [],
+        "opcodes": {
+          "alloca": 1,
+          "load": 1,
+          "ret": 1,
+          "store": 1
+        },
+        "pointer_compare": false,
+        "raw_data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "raw_target_triple": "x86_64-pc-linux-gnu",
+        "scope_errors": [],
+        "target_triple": "x86_64-pc-linux-gnu",
+        "target_vendor": "pc",
+        "used_types": [
+          "void",
+          "i32",
+          "ptr"
+        ]
+      },
+      "candidate_structure": {
+        "abi_target_key": "x86_64/linux/gnu/3",
+        "aliases": 0,
+        "cycles": false,
+        "data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "declarations": 0,
+        "definitions": 1,
+        "functions": [
+          {
+            "address_space": 0,
+            "address_taken": false,
+            "calling_convention": 0,
+            "dso_local": false,
+            "function_attrs": [],
+            "gc": false,
+            "linkage": 0,
+            "name": "f",
+            "params": [
+              {
+                "attrs": [
+                  "noundef"
+                ],
+                "type": "i32"
+              }
+            ],
+            "personality": false,
+            "prefix_data": false,
+            "prologue_data": false,
+            "return_attrs": [],
+            "return_type": "i32",
+            "unnamed_addr": 0,
+            "vararg": false,
+            "visibility": 0
+          }
+        ],
+        "globals": 0,
+        "ifuncs": 0,
+        "inherited_data_layout": false,
+        "inherited_target_triple": false,
+        "instruction_metadata": [],
+        "instructions": 1,
+        "layout_equivalent_for_used_types": true,
+        "memory_accesses": [],
+        "module_asm": false,
+        "module_flags": [],
+        "named_metadata": [],
+        "opcodes": {
+          "ret": 1
+        },
+        "pointer_compare": false,
+        "raw_data_layout": "e-p:64:64-i64:64-n8:16:32:64-S128",
+        "raw_target_triple": "x86_64-pc-linux-gnu",
+        "scope_errors": [],
+        "target_triple": "x86_64-pc-linux-gnu",
+        "target_vendor": "pc",
+        "used_types": [
+          "void",
+          "i32"
+        ]
+      },
+      "canonical_ir": "; ModuleID = '/tmp/irsem-v3-smmsyax_/candidate.ll'\nsource_filename = \"/tmp/irsem-v3-smmsyax_/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 13\n}\n",
+      "admission": {
+        "interface": [],
+        "unsupported": [],
+        "assumptions": []
+      },
+      "context_inheritance": {
+        "inherited_target_triple": false,
+        "inherited_data_layout": false
+      },
+      "canonical_ir_before_context_normalization": "; ModuleID = '/tmp/irsem-v3-smmsyax_/candidate.ll'\nsource_filename = \"/tmp/irsem-v3-smmsyax_/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 13\n}\n",
+      "evaluation_ir": "; ModuleID = '/tmp/irsem-v3-smmsyax_/candidate.canonical.ll'\nsource_filename = \"/tmp/irsem-v3-smmsyax_/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 13\n}\n",
+      "context_normalization": {
+        "equivalent_triple_canonicalized": false,
+        "equivalent_layout_canonicalized": false
+      },
+      "alive2_log": {
+        "command": [
+          "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+          "-always-verify",
+          "-smt-to=10000",
+          "-smt-max-mem=1024",
+          "-smt-random-seed=20261113",
+          "/tmp/irsem-v3-smmsyax_/source.canonical.ll",
+          "/tmp/irsem-v3-smmsyax_/candidate.proof.ll"
+        ],
+        "returncode": 0,
+        "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %a = alloca i64 4, align 4\n  store i32 13, ptr %a, align 4\n  %r = load i32, ptr %a, align 4\n  ret i32 %r\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 13\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+        "stderr": "",
+        "seconds": 0.0644238218665123,
+        "timed_out": false,
+        "truncated": false
+      },
+      "differential": {
+        "-O0": {
+          "status": "match",
+          "input_kind": "holdout",
+          "case_count": 270,
+          "mismatch_count": 0,
+          "optimization": "-O0"
+        },
+        "-O2": {
+          "status": "match",
+          "input_kind": "holdout",
+          "case_count": 270,
+          "mismatch_count": 0,
+          "optimization": "-O2"
+        }
+      },
+      "status": "verified",
+      "key": "dev_l2_alloca__native",
+      "arm": "native",
+      "model": "qwen",
+      "phase": "pilot",
+      "legacy_contract_errors": []
+    }
+  ]
+}

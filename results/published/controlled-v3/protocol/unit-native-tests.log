@@ -1,0 +1,39 @@
+test_alive2_requires_exact_coverage_not_exit_zero (test_core.CoreTests) ... ok
+test_all_authored_sources_references_and_mutants_follow_contract (test_core.CoreTests) ... ok
+test_calls_and_loops_are_out_of_scope (test_core.CoreTests) ... ok
+test_formal_counterexample_survives_native_execution_failure (test_core.CoreTests) ... ok
+test_identity_never_meets_an_opportunity_goal (test_core.CoreTests) ... ok
+test_input_contract_cannot_be_strengthened (test_core.CoreTests) ... ok
+test_inputs_obey_noalias_and_holdout_is_disjoint (test_core.CoreTests) ... ok
+test_lock_detects_case_and_config_changes (test_core.CoreTests) ... ok
+test_output_extraction_is_unambiguous (test_core.CoreTests) ... ok
+test_report_denominators_include_failures_and_unknowns (test_core.CoreTests) ... ok
+test_timeout_is_not_success (test_core.CoreTests) ... ok
+test_sampler_is_explicit_greedy_and_no_hidden_penalties (test_gguf.GGUFProtocolTests) ... ok
+test_supplement_rejects_mutation (test_gguf.GGUFProtocolTests) ... ok
+test_known_references_match_and_mutants_have_observable_counterexamples (test_native.NativeTests) ... ok
+test_seccomp_blocks_network_creation (test_native.NativeTests) ... ok
+test_missing_generation_is_in_denominator_and_fixture_stays_labeled (test_runs.RunIntegrationTests) ... generated dev_l0_xor_self
+generated dev_l0_and_all
+generated dev_l1_select_equal
+generated dev_l1_unreachable
+generated dev_l2_forward
+generated dev_l2_alloca
+evaluated dev_l0_xor_self generation_error
+evaluated dev_l0_and_all verified
+evaluated dev_l1_select_equal verified
+evaluated dev_l1_unreachable verified
+evaluated dev_l2_forward verified
+evaluated dev_l2_alloca verified
+ok
+test_bare_passed_flag_is_not_evidence (test_v3.V3Controls) ... ok
+test_multiple_candidates_are_never_selected_by_quality (test_v3.V3Controls) ... ok
+test_nested_single_container_is_formatting_only (test_v3.V3Controls) ... ok
+test_refutations_can_pass_interface_gate (test_v3.V3Controls) ... ok
+test_scalar_l2_does_not_substitute_for_pointer_coverage (test_v3.V3Controls) ... ok
+test_zero_coverage_blocks_formal_comparison (test_v3.V3Controls) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 24.225s
+
+OK

@@ -1,0 +1,248 @@
+{
+  "dev_l0_xor_self": {
+    "instruction_count": 2,
+    "binary_size_bytes": 5,
+    "sections": {
+      ".text": 5,
+      ".note.GNU-stack": 0,
+      ".eh_frame": 48,
+      ".llvm_addrsig": 0
+    },
+    "measurement": "clang -c default optimization; sum .text + .data only",
+    "clang_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/clang",
+        "-Wno-override-module",
+        "-c",
+        "/root/autodl-tmp/llvm-ir-semantics-lab/tasks/dev/dev_l0_xor_self/source.ll",
+        "-o",
+        "/tmp/irsem-v3-size-hzz4b1tj/source.o"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.03205468878149986,
+      "timed_out": false,
+      "truncated": false
+    },
+    "size_log": {
+      "command": [
+        "/usr/lib/llvm-17/bin/llvm-size",
+        "--format=sysv",
+        "--radix=10",
+        "/tmp/irsem-v3-size-hzz4b1tj/source.o"
+      ],
+      "returncode": 0,
+      "stdout": "/tmp/irsem-v3-size-hzz4b1tj/source.o  :\nsection             size   addr\n.text                  5      0\n.note.GNU-stack        0      0\n.eh_frame             48      0\n.llvm_addrsig          0      0\nTotal                 53\n\n\n",
+      "stderr": "",
+      "seconds": 0.015933223068714142,
+      "timed_out": false,
+      "truncated": false
+    }
+  },
+  "dev_l0_and_all": {
+    "instruction_count": 2,
+    "binary_size_bytes": 6,
+    "sections": {
+      ".text": 6,
+      ".note.GNU-stack": 0,
+      ".eh_frame": 48,
+      ".llvm_addrsig": 0
+    },
+    "measurement": "clang -c default optimization; sum .text + .data only",
+    "clang_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/clang",
+        "-Wno-override-module",
+        "-c",
+        "/root/autodl-tmp/llvm-ir-semantics-lab/tasks/dev/dev_l0_and_all/source.ll",
+        "-o",
+        "/tmp/irsem-v3-size-uknxute7/source.o"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.032049525529146194,
+      "timed_out": false,
+      "truncated": false
+    },
+    "size_log": {
+      "command": [
+        "/usr/lib/llvm-17/bin/llvm-size",
+        "--format=sysv",
+        "--radix=10",
+        "/tmp/irsem-v3-size-uknxute7/source.o"
+      ],
+      "returncode": 0,
+      "stdout": "/tmp/irsem-v3-size-uknxute7/source.o  :\nsection             size   addr\n.text                  6      0\n.note.GNU-stack        0      0\n.eh_frame             48      0\n.llvm_addrsig          0      0\nTotal                 54\n\n\n",
+      "stderr": "",
+      "seconds": 0.01607436314225197,
+      "timed_out": false,
+      "truncated": false
+    }
+  },
+  "dev_l1_select_equal": {
+    "instruction_count": 3,
+    "binary_size_bytes": 12,
+    "sections": {
+      ".text": 12,
+      ".note.GNU-stack": 0,
+      ".eh_frame": 48,
+      ".llvm_addrsig": 0
+    },
+    "measurement": "clang -c default optimization; sum .text + .data only",
+    "clang_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/clang",
+        "-Wno-override-module",
+        "-c",
+        "/root/autodl-tmp/llvm-ir-semantics-lab/tasks/dev/dev_l1_select_equal/source.ll",
+        "-o",
+        "/tmp/irsem-v3-size-usbg630d/source.o"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.03239472955465317,
+      "timed_out": false,
+      "truncated": false
+    },
+    "size_log": {
+      "command": [
+        "/usr/lib/llvm-17/bin/llvm-size",
+        "--format=sysv",
+        "--radix=10",
+        "/tmp/irsem-v3-size-usbg630d/source.o"
+      ],
+      "returncode": 0,
+      "stdout": "/tmp/irsem-v3-size-usbg630d/source.o  :\nsection             size   addr\n.text                 12      0\n.note.GNU-stack        0      0\n.eh_frame             48      0\n.llvm_addrsig          0      0\nTotal                 60\n\n\n",
+      "stderr": "",
+      "seconds": 0.016001343727111816,
+      "timed_out": false,
+      "truncated": false
+    }
+  },
+  "dev_l1_unreachable": {
+    "instruction_count": 2,
+    "binary_size_bytes": 3,
+    "sections": {
+      ".text": 3,
+      ".note.GNU-stack": 0,
+      ".eh_frame": 48,
+      ".llvm_addrsig": 0
+    },
+    "measurement": "clang -c default optimization; sum .text + .data only",
+    "clang_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/clang",
+        "-Wno-override-module",
+        "-c",
+        "/root/autodl-tmp/llvm-ir-semantics-lab/tasks/dev/dev_l1_unreachable/source.ll",
+        "-o",
+        "/tmp/irsem-v3-size-fk1f5qx6/source.o"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.03220633417367935,
+      "timed_out": false,
+      "truncated": false
+    },
+    "size_log": {
+      "command": [
+        "/usr/lib/llvm-17/bin/llvm-size",
+        "--format=sysv",
+        "--radix=10",
+        "/tmp/irsem-v3-size-fk1f5qx6/source.o"
+      ],
+      "returncode": 0,
+      "stdout": "/tmp/irsem-v3-size-fk1f5qx6/source.o  :\nsection             size   addr\n.text                  3      0\n.note.GNU-stack        0      0\n.eh_frame             48      0\n.llvm_addrsig          0      0\nTotal                 51\n\n\n",
+      "stderr": "",
+      "seconds": 0.015924889594316483,
+      "timed_out": false,
+      "truncated": false
+    }
+  },
+  "dev_l2_forward": {
+    "instruction_count": 3,
+    "binary_size_bytes": 9,
+    "sections": {
+      ".text": 9,
+      ".note.GNU-stack": 0,
+      ".eh_frame": 48,
+      ".llvm_addrsig": 0
+    },
+    "measurement": "clang -c default optimization; sum .text + .data only",
+    "clang_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/clang",
+        "-Wno-override-module",
+        "-c",
+        "/root/autodl-tmp/llvm-ir-semantics-lab/tasks/dev/dev_l2_forward/source.ll",
+        "-o",
+        "/tmp/irsem-v3-size-phzr4xu1/source.o"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.031967535614967346,
+      "timed_out": false,
+      "truncated": false
+    },
+    "size_log": {
+      "command": [
+        "/usr/lib/llvm-17/bin/llvm-size",
+        "--format=sysv",
+        "--radix=10",
+        "/tmp/irsem-v3-size-phzr4xu1/source.o"
+      ],
+      "returncode": 0,
+      "stdout": "/tmp/irsem-v3-size-phzr4xu1/source.o  :\nsection             size   addr\n.text                  9      0\n.note.GNU-stack        0      0\n.eh_frame             48      0\n.llvm_addrsig          0      0\nTotal                 57\n\n\n",
+      "stderr": "",
+      "seconds": 0.015901725739240646,
+      "timed_out": false,
+      "truncated": false
+    }
+  },
+  "dev_l2_alloca": {
+    "instruction_count": 4,
+    "binary_size_bytes": 13,
+    "sections": {
+      ".text": 13,
+      ".note.GNU-stack": 0,
+      ".eh_frame": 48,
+      ".llvm_addrsig": 0
+    },
+    "measurement": "clang -c default optimization; sum .text + .data only",
+    "clang_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/clang",
+        "-Wno-override-module",
+        "-c",
+        "/root/autodl-tmp/llvm-ir-semantics-lab/tasks/dev/dev_l2_alloca/source.ll",
+        "-o",
+        "/tmp/irsem-v3-size-yi6vf5bw/source.o"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.031934723258018494,
+      "timed_out": false,
+      "truncated": false
+    },
+    "size_log": {
+      "command": [
+        "/usr/lib/llvm-17/bin/llvm-size",
+        "--format=sysv",
+        "--radix=10",
+        "/tmp/irsem-v3-size-yi6vf5bw/source.o"
+      ],
+      "returncode": 0,
+      "stdout": "/tmp/irsem-v3-size-yi6vf5bw/source.o  :\nsection             size   addr\n.text                 13      0\n.note.GNU-stack        0      0\n.eh_frame             48      0\n.llvm_addrsig          0      0\nTotal                 61\n\n\n",
+      "stderr": "",
+      "seconds": 0.016081620007753372,
+      "timed_out": false,
+      "truncated": false
+    }
+  }
+}

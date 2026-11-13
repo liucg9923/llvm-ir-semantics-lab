@@ -7,3 +7,5 @@ results/published/**/raw.txt -text
 results/published/**/prompt.txt -text
 # Preserve exact bytes of the archived CSV export.
 results/published/compiler-ftd-v1/analysis/browser_report/cases.csv -text
+# Preserve exact bytes of the complete V3 publication and hash-referenced records.
+results/published/controlled-v3/** -text

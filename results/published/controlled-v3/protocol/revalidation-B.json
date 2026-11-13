@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "unchanged_scoring_and_tasks": true,
+  "unchanged_numeric_generation_settings": true,
+  "records": [
+    {
+      "source": "v3-pilot-compiler-ftd",
+      "destination": "v3b-pilot-compiler-ftd",
+      "n": 12,
+      "all_outcomes_unchanged": true,
+      "new_model_calls": 0
+    },
+    {
+      "source": "v3-pilot-qwen",
+      "destination": "v3b-pilot-qwen-native",
+      "n": 12,
+      "all_outcomes_unchanged": true,
+      "new_model_calls": 0
+    },
+    {
+      "source": "v3-formal-opt",
+      "destination": "v3b-formal-opt",
+      "n": 18,
+      "all_outcomes_unchanged": true,
+      "new_model_calls": 0
+    },
+    {
+      "source": "v3-formal-identity",
+      "destination": "v3b-formal-identity",
+      "n": 18,
+      "all_outcomes_unchanged": true,
+      "new_model_calls": 0
+    }
+  ],
+  "new_model_calls": 0
+}

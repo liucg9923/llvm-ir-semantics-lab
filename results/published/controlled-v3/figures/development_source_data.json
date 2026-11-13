@@ -1,0 +1,71 @@
+[
+  {
+    "model": "compiler-ftd",
+    "arm": "legacy",
+    "n": 6,
+    "opportunity_n": 6,
+    "syntax_valid": 6,
+    "semantic_attempted": 6,
+    "determinate": 6,
+    "verified": 3,
+    "refuted": 3,
+    "effective": 3,
+    "statuses": {
+      "verified": 3,
+      "refuted": 3
+    },
+    "verified_fraction_of_determinate": 0.5,
+    "legacy_admission": 0
+  },
+  {
+    "model": "compiler-ftd",
+    "arm": "native",
+    "n": 6,
+    "opportunity_n": 6,
+    "syntax_valid": 6,
+    "semantic_attempted": 6,
+    "determinate": 6,
+    "verified": 6,
+    "refuted": 0,
+    "effective": 5,
+    "statuses": {
+      "verified": 6
+    },
+    "verified_fraction_of_determinate": 1.0,
+    "legacy_admission": 0
+  },
+  {
+    "model": "qwen",
+    "arm": "legacy",
+    "n": 6,
+    "opportunity_n": 6,
+    "syntax_valid": 6,
+    "semantic_attempted": 6,
+    "determinate": 6,
+    "verified": 6,
+    "refuted": 0,
+    "effective": 6,
+    "statuses": {
+      "verified": 6
+    },
+    "verified_fraction_of_determinate": 1.0,
+    "legacy_admission": 6
+  },
+  {
+    "model": "qwen",
+    "arm": "bounded",
+    "n": 6,
+    "opportunity_n": 6,
+    "syntax_valid": 6,
+    "semantic_attempted": 6,
+    "determinate": 6,
+    "verified": 6,
+    "refuted": 0,
+    "effective": 6,
+    "statuses": {
+      "verified": 6
+    },
+    "verified_fraction_of_determinate": 1.0,
+    "legacy_admission": 6
+  }
+]

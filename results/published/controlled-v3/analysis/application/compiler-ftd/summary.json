@@ -1,0 +1,140 @@
+{
+  "model": "compiler-ftd",
+  "kind": "application_replay_not_model_accuracy",
+  "selection_uses_holdout_results": false,
+  "policy": "Accept only supported candidates with an Alive2 proof; otherwise use original. Selection does not read holdout outcomes. Validate the selected result afterwards.",
+  "n": 18,
+  "accepted_model_candidates": 11,
+  "original_fallbacks": 7,
+  "verified": 18,
+  "effective": 5,
+  "opportunity_n": 9,
+  "rows": [
+    {
+      "task_id": "v3_mask_partition",
+      "role": "opportunity",
+      "selected_from": "original_fallback",
+      "status": "verified",
+      "effective": false
+    },
+    {
+      "task_id": "v3_mask_gap",
+      "role": "guard",
+      "selected_from": "original_fallback",
+      "status": "verified",
+      "effective": false
+    },
+    {
+      "task_id": "v3_xor_cancel",
+      "role": "opportunity",
+      "selected_from": "model_candidate",
+      "status": "verified",
+      "effective": true
+    },
+    {
+      "task_id": "v3_xor_changed",
+      "role": "guard",
+      "selected_from": "model_candidate",
+      "status": "verified",
+      "effective": false
+    },
+    {
+      "task_id": "v3_mask_bound",
+      "role": "opportunity",
+      "selected_from": "original_fallback",
+      "status": "verified",
+      "effective": false
+    },
+    {
+      "task_id": "v3_mask_boundary",
+      "role": "guard",
+      "selected_from": "model_candidate",
+      "status": "verified",
+      "effective": false
+    },
+    {
+      "task_id": "v3_select_correlated",
+      "role": "opportunity",
+      "selected_from": "model_candidate",
+      "status": "verified",
+      "effective": true
+    },
+    {
+      "task_id": "v3_select_changed",
+      "role": "guard",
+      "selected_from": "model_candidate",
+      "status": "verified",
+      "effective": false
+    },
+    {
+      "task_id": "v3_branch_fact",
+      "role": "opportunity",
+      "selected_from": "model_candidate",
+      "status": "verified",
+      "effective": true
+    },
+    {
+      "task_id": "v3_branch_stricter",
+      "role": "guard",
+      "selected_from": "model_candidate",
+      "status": "verified",
+      "effective": false
+    },
+    {
+      "task_id": "v3_phi_arithmetic",
+      "role": "opportunity",
+      "selected_from": "original_fallback",
+      "status": "verified",
+      "effective": false
+    },
+    {
+      "task_id": "v3_phi_changed",
+      "role": "guard",
+      "selected_from": "model_candidate",
+      "status": "verified",
+      "effective": false
+    },
+    {
+      "task_id": "v3_write_forward",
+      "role": "opportunity",
+      "selected_from": "model_candidate",
+      "status": "verified",
+      "effective": true
+    },
+    {
+      "task_id": "v3_write_alias",
+      "role": "guard",
+      "selected_from": "original_fallback",
+      "status": "verified",
+      "effective": false
+    },
+    {
+      "task_id": "v3_narrow_forward",
+      "role": "opportunity",
+      "selected_from": "original_fallback",
+      "status": "verified",
+      "effective": false
+    },
+    {
+      "task_id": "v3_narrow_alias",
+      "role": "guard",
+      "selected_from": "model_candidate",
+      "status": "verified",
+      "effective": false
+    },
+    {
+      "task_id": "v3_store_back",
+      "role": "opportunity",
+      "selected_from": "model_candidate",
+      "status": "verified",
+      "effective": true
+    },
+    {
+      "task_id": "v3_store_copy",
+      "role": "guard",
+      "selected_from": "original_fallback",
+      "status": "verified",
+      "effective": false
+    }
+  ]
+}

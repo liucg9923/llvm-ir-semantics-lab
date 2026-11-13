@@ -1,0 +1,9 @@
+{
+  "bytes_requested": 362057600,
+  "request_count": 349,
+  "failed_requests": [],
+  "sha256": "b1f75d4f55656dbc7b2052f06d1eb1eaf99ed5d7aaf306f520e72136bd98f829",
+  "expected_sha256": "b1f75d4f55656dbc7b2052f06d1eb1eaf99ed5d7aaf306f520e72136bd98f829",
+  "seconds": 473.8652957081795,
+  "method": "Missing sparse extents plus 64KiB boundary margins; full-file hash is mandatory."
+}

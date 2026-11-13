@@ -1,0 +1,25 @@
+{
+  "status": "completed",
+  "finished_utc": "2026-11-13T14:18:33.045520+00:00",
+  "formal_models": {
+    "compiler-ftd": 18,
+    "qwen": 18
+  },
+  "shared_hint_models": {
+    "compiler-ftd": 6,
+    "qwen": 6
+  },
+  "new_model_calls": 84,
+  "pilot_and_hint_pilot_calls": 36,
+  "formal_and_hint_calls": 48,
+  "new_formal_tasks": 18,
+  "opportunities": 9,
+  "oracle_fixture_checks": 105,
+  "unit_tests": 22,
+  "notes": [
+    "Native-only Qwen failed the pointer-coverage gate; no formal model task was run under that failed configuration.",
+    "Revision B adds only a Qwen system serialization constraint; FTD wire input remains unchanged.",
+    "No generated function body was repaired.",
+    "Revalidations and application/illustrative replays are not new model calls."
+  ]
+}

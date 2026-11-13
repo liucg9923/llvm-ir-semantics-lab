@@ -1,0 +1,41 @@
+{
+  "projection": "Full native arrays/logs are in the evidence archive.",
+  "full_path_in_archive": "results/campaign-v3/analysis/cases/compiler-ftd/hint/v3_select_changed/evaluation.json",
+  "full_sha256": "5c19745f02733e46cfee3eae0542b833d8e96fa65d4276075891722535d50ae9",
+  "evaluation": {
+    "task_id": "v3_select_changed",
+    "level": "L1",
+    "role": "guard",
+    "syntax_valid": false,
+    "semantic_attempted": false,
+    "determinate": false,
+    "verified": false,
+    "effective_optimization": false,
+    "goal_met": false,
+    "extraction": [
+      "code_tag"
+    ],
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/irsem-inspect",
+        "/tmp/irsem-v3-pbgmasw6/candidate.ll",
+        "/tmp/irsem-v3-pbgmasw6/candidate.canonical.ll",
+        "/tmp/irsem-v3-pbgmasw6/source.ll"
+      ],
+      "returncode": 1,
+      "stderr": "irsem-v3: /tmp/irsem-v3-pbgmasw6/candidate.ll:23:12: error: use of undefined value '@llvm.embedded.object'\n!5 = !{ptr @llvm.embedded.object, !\".llvm.lto\"}\n           ^\n",
+      "seconds": 0.01637844741344452,
+      "timed_out": false,
+      "truncated": false
+    },
+    "status": "invalid_ir",
+    "key": "v3_select_changed__hint",
+    "arm": "hint",
+    "model": "compiler-ftd",
+    "phase": "hint",
+    "legacy_contract_errors": [
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ]
+  }
+}

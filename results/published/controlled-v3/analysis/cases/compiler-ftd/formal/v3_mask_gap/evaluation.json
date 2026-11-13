@@ -1,0 +1,41 @@
+{
+  "projection": "Full native arrays/logs are in the evidence archive.",
+  "full_path_in_archive": "results/campaign-v3/analysis/cases/compiler-ftd/formal/v3_mask_gap/evaluation.json",
+  "full_sha256": "21f3300059abe8030239c0c5a530faf97ece86925dfeda73e805ecd2e63c4f66",
+  "evaluation": {
+    "task_id": "v3_mask_gap",
+    "level": "L0",
+    "role": "guard",
+    "syntax_valid": false,
+    "semantic_attempted": false,
+    "determinate": false,
+    "verified": false,
+    "effective_optimization": false,
+    "goal_met": false,
+    "extraction": [
+      "code_tag"
+    ],
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/irsem-inspect",
+        "/tmp/irsem-v3-zoubd3zi/candidate.ll",
+        "/tmp/irsem-v3-zoubd3zi/candidate.canonical.ll",
+        "/tmp/irsem-v3-zoubd3zi/source.ll"
+      ],
+      "returncode": 1,
+      "stderr": "irsem-v3: /tmp/irsem-v3-zoubd3zi/candidate.ll:9:3: error: instruction expected to be numbered '%1'\n  %2 = and i32 %0, -512\n  ^\n",
+      "seconds": 0.01630895957350731,
+      "timed_out": false,
+      "truncated": false
+    },
+    "status": "invalid_ir",
+    "key": "v3_mask_gap__native",
+    "arm": "native",
+    "model": "compiler-ftd",
+    "phase": "formal",
+    "legacy_contract_errors": [
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ]
+  }
+}

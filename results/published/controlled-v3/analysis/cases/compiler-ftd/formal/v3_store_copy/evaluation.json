@@ -1,0 +1,41 @@
+{
+  "projection": "Full native arrays/logs are in the evidence archive.",
+  "full_path_in_archive": "results/campaign-v3/analysis/cases/compiler-ftd/formal/v3_store_copy/evaluation.json",
+  "full_sha256": "78375d018f1d292482b28fea6f9b1b3f4b24612b925e74e50de10feb9ce95ac6",
+  "evaluation": {
+    "task_id": "v3_store_copy",
+    "level": "L2",
+    "role": "guard",
+    "syntax_valid": false,
+    "semantic_attempted": false,
+    "determinate": false,
+    "verified": false,
+    "effective_optimization": false,
+    "goal_met": false,
+    "extraction": [
+      "code_tag"
+    ],
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/irsem-inspect",
+        "/tmp/irsem-v3-hvwitttt/candidate.ll",
+        "/tmp/irsem-v3-hvwitttt/candidate.canonical.ll",
+        "/tmp/irsem-v3-hvwitttt/source.ll"
+      ],
+      "returncode": 1,
+      "stderr": "irsem-v3: /tmp/irsem-v3-hvwitttt/candidate.ll:9:3: error: instruction expected to be numbered '%2'\n  %3 = load i32, ptr %0, align 4\n  ^\n",
+      "seconds": 0.01636946201324463,
+      "timed_out": false,
+      "truncated": false
+    },
+    "status": "invalid_ir",
+    "key": "v3_store_copy__native",
+    "arm": "native",
+    "model": "compiler-ftd",
+    "phase": "formal",
+    "legacy_contract_errors": [
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ]
+  }
+}

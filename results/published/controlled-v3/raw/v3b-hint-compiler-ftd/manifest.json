@@ -1,0 +1,286 @@
+{
+  "schema_version": 3,
+  "model": "compiler-ftd",
+  "phase": "hint",
+  "created_utc": "2026-11-13T13:50:58.966720+00:00",
+  "protocol_sha256": "7a89f5f48349479be93ec0044b3730b9fe26ffe9c678d93ada37d8367083b8e0",
+  "config": {
+    "schema_version": 3,
+    "seed": 20261113,
+    "dtype": "float16",
+    "do_sample": false,
+    "num_beams": 1,
+    "repetition_penalty": 1.0,
+    "no_repeat_ngram_size": 0,
+    "max_input_tokens": 4096,
+    "max_new_tokens": 2048,
+    "max_generation_seconds": 120,
+    "tool_timeout_seconds": 60,
+    "execution_timeout_seconds": 5,
+    "random_inputs": 256,
+    "alive2_args": [
+      "-always-verify",
+      "-smt-to=10000",
+      "-smt-max-mem=1024",
+      "-smt-random-seed=20261113"
+    ],
+    "primary_prompt": "native_single_v1",
+    "fallback_prompt": "native_bounded_v1",
+    "max_prompt_profiles": 2,
+    "development_ids": [
+      "dev_l0_xor_self",
+      "dev_l0_and_all",
+      "dev_l1_select_equal",
+      "dev_l1_unreachable",
+      "dev_l2_forward",
+      "dev_l2_alloca"
+    ],
+    "pilot_gate": {
+      "all_transport_complete": true,
+      "min_determinate": 4,
+      "min_per_level": 1,
+      "require_memory_abi_determinate": true,
+      "min_verified": 0
+    },
+    "source_context_policy": "Task provides target context. Omitted target fields inherit it; explicit conflicts are never repaired. Vendor pc/unknown equivalence is limited to matching architecture, OS, environment and object format. Data layouts must agree on used supported types and AS0 pointer representation.",
+    "semantic_policy": "Keep instructions, semantic flags, attributes and metadata in the candidate; prove/refute with Alive2 and independently execute. No body optimization or repair before scoring.",
+    "feedback_policy": "No free-form self-review in primary comparison. A separate preregistered diagnostic-hint condition uses identical semantic counterexamples from authored mutants for both models, only if its pilot is interpretable. It is not repair of model-specific prior outputs.",
+    "formal_count": 18,
+    "opportunity_count": 9,
+    "hint_ids": [
+      "v3_mask_partition",
+      "v3_mask_gap",
+      "v3_select_correlated",
+      "v3_select_changed",
+      "v3_narrow_forward",
+      "v3_narrow_alias"
+    ],
+    "calibration_revision": "B",
+    "qwen_system_prompt": "Return exactly one complete LLVM IR module enclosed in a single <code>...</code> block. Do not repeat the original input or include any other code block."
+  },
+  "items": [
+    {
+      "key": "v3_mask_partition__hint",
+      "task_id": "v3_mask_partition",
+      "arm": "hint"
+    },
+    {
+      "key": "v3_mask_gap__hint",
+      "task_id": "v3_mask_gap",
+      "arm": "hint"
+    },
+    {
+      "key": "v3_select_correlated__hint",
+      "task_id": "v3_select_correlated",
+      "arm": "hint"
+    },
+    {
+      "key": "v3_select_changed__hint",
+      "task_id": "v3_select_changed",
+      "arm": "hint"
+    },
+    {
+      "key": "v3_narrow_forward__hint",
+      "task_id": "v3_narrow_forward",
+      "arm": "hint"
+    },
+    {
+      "key": "v3_narrow_alias__hint",
+      "task_id": "v3_narrow_alias",
+      "arm": "hint"
+    }
+  ],
+  "status": "evaluated",
+  "parent_git_commit": "affb885403e255b14e020598e48c2b34bacd8da9",
+  "profile": "native_bounded_v1",
+  "inference_environment": {
+    "model": {
+      "id": "second-state/llm-compiler-7b-ftd-GGUF",
+      "revision": "3255d79430715ef149898cbb88cfeb7cb3b061a1",
+      "filename": "llm-compiler-7b-ftd-f16.gguf",
+      "sha256": "b1f75d4f55656dbc7b2052f06d1eb1eaf99ed5d7aaf306f520e72136bd98f829",
+      "size": 13478104960,
+      "upstream_model": "facebook/llm-compiler-7b-ftd",
+      "upstream_identity": "Community model card attribution; bitwise equality to the gated upstream checkpoint is not independently verified.",
+      "template": "llama_inst",
+      "backend": "llama.cpp",
+      "dtype": "float16",
+      "quantization": null,
+      "license": "LLM Compiler License Agreement",
+      "gated": false
+    },
+    "dtype": "float16",
+    "quantization": null,
+    "backend": "llama.cpp",
+    "runtime": {
+      "repository": "https://github.com/ggml-org/llama.cpp.git",
+      "tag": "b4514",
+      "revision": "ec7f3ac9ab33e46b136eb5ab6a76c4d81f57c7f1",
+      "cuda_architectures": "89",
+      "cmake_options": [
+        "-DGGML_CUDA=ON",
+        "-DLLAMA_CURL=OFF",
+        "-DLLAMA_BUILD_TESTS=OFF",
+        "-DLLAMA_BUILD_EXAMPLES=ON",
+        "-DCMAKE_BUILD_TYPE=Release"
+      ],
+      "context_size": 6144,
+      "parallel_slots": 1,
+      "batch_size": 512,
+      "ubatch_size": 128,
+      "threads": 8,
+      "gpu_layers": 99,
+      "cache_type_k": "f16",
+      "cache_type_v": "f16"
+    },
+    "runtime_build": {
+      "spec": {
+        "repository": "https://github.com/ggml-org/llama.cpp.git",
+        "tag": "b4514",
+        "revision": "ec7f3ac9ab33e46b136eb5ab6a76c4d81f57c7f1",
+        "cuda_architectures": "89",
+        "cmake_options": [
+          "-DGGML_CUDA=ON",
+          "-DLLAMA_CURL=OFF",
+          "-DLLAMA_BUILD_TESTS=OFF",
+          "-DLLAMA_BUILD_EXAMPLES=ON",
+          "-DCMAKE_BUILD_TYPE=Release"
+        ],
+        "context_size": 6144,
+        "parallel_slots": 1,
+        "batch_size": 512,
+        "ubatch_size": 128,
+        "threads": 8,
+        "gpu_layers": 99,
+        "cache_type_k": "f16",
+        "cache_type_v": "f16"
+      },
+      "binary_sha256": "48549e0fc48a115a41bf2d65f7e13a759da3109b5b9d036c906c59ef57d6ba83",
+      "libraries": {
+        ".build/llama.cpp/build/ggml/src/libggml-base.so": "28201ed93e4660401e2ac6cf385c31ff4f6c45422dde49d854f9eec0933fd3ad",
+        ".build/llama.cpp/build/ggml/src/libggml-cpu.so": "cf290cfe13c142dff1a48f87b426b2f2212813d43843daf472f9a875482bc979",
+        ".build/llama.cpp/build/ggml/src/libggml.so": "7c300e5ea88117d118beac5ce2030e1c828881fbcacf63a107ab54be5a6775c5",
+        ".build/llama.cpp/build/ggml/src/ggml-cuda/libggml-cuda.so": "3e0457b43c29852648ea85f9de3ab378f51e341be5378bab07c7ea3d7ddf3504",
+        ".build/llama.cpp/build/src/libllama.so": "ea8a1ad427b5d8defbee61a3eb4f87f6fe31f154615efcb8b55a165c123f02d6"
+      },
+      "version": "ggml_cuda_init: GGML_CUDA_FORCE_MMQ:    no\nggml_cuda_init: GGML_CUDA_FORCE_CUBLAS: no\nggml_cuda_init: found 1 CUDA devices:\n  Device 0: NVIDIA GeForce RTX 4090, compute capability 8.9, VMM: yes\nversion: 1 (ec7f3ac)\nbuilt with cc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0 for x86_64-linux-gnu\n",
+      "cuda_compiler": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Mon_Apr__3_17:16:06_PDT_2023\nCuda compilation tools, release 12.1, V12.1.105\nBuild cuda_12.1.r12.1/compiler.32688072_0\n"
+    },
+    "supplement_lock": {
+      "schema_version": 1,
+      "parent_dataset_sha256": "12c07607aa754471f2cf49ce71919b62f38744e9f9ec7c1667bf92ec3776d7b8",
+      "files": {
+        "configs/compiler-ftd.json": "cfd5faeba9711752659d0ca8785a3c3e051ad4bdbe2f444fe6b7d5257d81812a",
+        "configs/llama-cpp.json": "394e88f60929619d36b0a677dc563b8c07f21b5a79333aea04aa630b8d1197ee"
+      },
+      "purpose": "Add a separately locked model/runtime without changing frozen v2 tasks, prompts, settings or model registry."
+    },
+    "server_properties": {
+      "default_generation_settings": {
+        "id": 0,
+        "id_task": -1,
+        "n_ctx": 6144,
+        "speculative": false,
+        "is_processing": false,
+        "non_causal": false,
+        "params": {
+          "n_predict": -1,
+          "seed": 4294967295,
+          "temperature": 0.800000011920929,
+          "dynatemp_range": 0.0,
+          "dynatemp_exponent": 1.0,
+          "top_k": 40,
+          "top_p": 0.949999988079071,
+          "min_p": 0.05000000074505806,
+          "xtc_probability": 0.0,
+          "xtc_threshold": 0.10000000149011612,
+          "typical_p": 1.0,
+          "repeat_last_n": 64,
+          "repeat_penalty": 1.0,
+          "presence_penalty": 0.0,
+          "frequency_penalty": 0.0,
+          "dry_multiplier": 0.0,
+          "dry_base": 1.75,
+          "dry_allowed_length": 2,
+          "dry_penalty_last_n": 6144,
+          "dry_sequence_breakers": [
+            "\n",
+            ":",
+            "\"",
+            "*"
+          ],
+          "mirostat": 0,
+          "mirostat_tau": 5.0,
+          "mirostat_eta": 0.10000000149011612,
+          "stop": [],
+          "max_tokens": -1,
+          "n_keep": 0,
+          "n_discard": 0,
+          "ignore_eos": false,
+          "stream": true,
+          "logit_bias": [],
+          "n_probs": 0,
+          "min_keep": 0,
+          "grammar": "",
+          "samplers": [
+            "penalties",
+            "dry",
+            "top_k",
+            "typ_p",
+            "top_p",
+            "min_p",
+            "xtc",
+            "temperature"
+          ],
+          "speculative.n_max": 16,
+          "speculative.n_min": 5,
+          "speculative.p_min": 0.8999999761581421,
+          "timings_per_token": false,
+          "post_sampling_probs": false,
+          "lora": []
+        },
+        "prompt": "",
+        "next_token": {
+          "has_next_token": true,
+          "has_new_line": false,
+          "n_remain": -1,
+          "n_decoded": 0,
+          "stopping_word": ""
+        }
+      },
+      "total_slots": 1,
+      "model_path": "/root/autodl-tmp/llvm-ir-semantics-lab/.cache/huggingface/hub/models--second-state--llm-compiler-7b-ftd-GGUF/snapshots/3255d79430715ef149898cbb88cfeb7cb3b061a1/llm-compiler-7b-ftd-f16.gguf",
+      "chat_template": "",
+      "build_info": "b1-ec7f3ac"
+    },
+    "checkpoint_sha256": "b1f75d4f55656dbc7b2052f06d1eb1eaf99ed5d7aaf306f520e72136bd98f829",
+    "gpu": "NVIDIA GeForce RTX 4090, 580.105.08",
+    "input_template": "<s>[INST] {prompt} [/INST]",
+    "effective_generation_settings": {
+      "prompt": [],
+      "n_predict": 2048,
+      "temperature": 0.0,
+      "seed": 20261113,
+      "top_k": 1,
+      "top_p": 1.0,
+      "min_p": 0.0,
+      "typical_p": 1.0,
+      "repeat_penalty": 1.0,
+      "repeat_last_n": 0,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "dry_multiplier": 0.0,
+      "mirostat": 0,
+      "samplers": [
+        "temperature"
+      ],
+      "stop": [],
+      "ignore_eos": false,
+      "cache_prompt": false,
+      "stream": false,
+      "return_tokens": true,
+      "t_max_predict_ms": 120000
+    },
+    "time_limit_note": "llama.cpp prediction-phase soft limit after first newline; HTTP guard adds 30s. Not identical timing semantics to HF max_time."
+  }
+}

@@ -1,0 +1,15 @@
+When the provided LLVM IR code is optimized using the `opt -p 'function(instcombine)'` command, the `instcombine` pass will attempt to simplify the instructions. In this case, the `and` instruction with the constant `-1` will be simplified to the identity operation, which is simply returning the original value of `%x`.
+
+Here is the optimized LLVM IR:
+
+```llvm
+target datalayout = "e-p:64:64-i64:64-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+define i32 @f(i32 noundef %x) {
+entry:
+  ret i32 %x
+}
+```
+
+The optimized code has an instruction count of 1 and a binary size of 5 bytes.

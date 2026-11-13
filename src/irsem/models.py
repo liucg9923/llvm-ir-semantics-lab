@@ -32,14 +32,15 @@ class HFModel:
             repetition_penalty=config['repetition_penalty'],no_repeat_ngram_size=config['no_repeat_ngram_size'],
             max_new_tokens=config['max_new_tokens'],bos_token_id=self.model.generation_config.bos_token_id,
             eos_token_id=eos,pad_token_id=pad,use_cache=True)
-        self.info={'effective_generation_config':self.generation_config.to_dict(),'model':spec,'dtype':'float16','quantization':None,'torch':torch.__version__,
+        self.info={'system_prompt':config.get('system_prompt'),'effective_generation_config':self.generation_config.to_dict(),'model':spec,'dtype':'float16','quantization':None,'torch':torch.__version__,
                    'transformers':version('transformers'),'cuda':torch.version.cuda,
                    'gpu':torch.cuda.get_device_name(0),'driver':driver,'resolved_revision':resolved,'python':platform.python_version()}
 
     def generate(self,prompt):
         torch=self.torch; tok=self.tokenizer; cfg=self.config
         if self.spec['template']=='chat':
-            wire=tok.apply_chat_template([{'role':'user','content':prompt}],tokenize=False,add_generation_prompt=True)
+            messages=([{'role':'system','content':cfg['system_prompt']}] if cfg.get('system_prompt') else [])+[{'role':'user','content':prompt}]
+            wire=tok.apply_chat_template(messages,tokenize=False,add_generation_prompt=True)
         else: wire='<s>[INST] '+prompt+' [/INST]'
         inputs=tok(wire,return_tensors='pt',add_special_tokens=False).to('cuda:0')
         n=inputs['input_ids'].shape[1]
@@ -55,4 +56,5 @@ class HFModel:
         ended=bool(ids and (ids[-1] in eos if isinstance(eos,list) else ids[-1]==eos))
         return {'raw':text,'prompt_tokens':n,'output_tokens':len(ids),'seconds':elapsed,
                 'error':None if ended else 'generation_stopped_without_eos',
+                'wire_prompt':wire,'input_token_ids':inputs['input_ids'][0].tolist(),'output_token_ids':ids,
                 'note':'Generation max_time is a soft per-step limit; token limit is also enforced.'}

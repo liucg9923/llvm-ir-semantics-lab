@@ -17,5 +17,7 @@ jobs:
       - run: python scripts/verify_evidence.py results/published/experiment-v2/evidence/experiment-evidence.tar.gz
       - run: python scripts/verify_evidence.py results/published/compiler-ftd-v1/evidence/experiment-evidence.tar.gz
       - run: python scripts/verify_comparison.py results/published/compiler-ftd-v1
+      - run: python scripts/verify_evidence.py results/published/controlled-v3/evidence/controlled-v3-evidence.tar.gz
+      - run: python scripts/verify_v3_publication.py results/published/controlled-v3
 # Native LLVM/Alive2 acceptance is intentionally a separate cloud deployment step.
 # This CPU-only workflow never downloads weights or uses model-access secrets.

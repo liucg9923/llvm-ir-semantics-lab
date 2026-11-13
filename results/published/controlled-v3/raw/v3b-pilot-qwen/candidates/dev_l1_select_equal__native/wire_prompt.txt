@@ -1,0 +1,17 @@
+<|im_start|>system
+Return exactly one complete LLVM IR module enclosed in a single <code>...</code> block. Do not repeat the original input or include any other code block.<|im_end|>
+<|im_start|>user
+Give the LLVM-IR for the following code when optimized using opt -p 'function(instcombine)':
+<code>
+target datalayout = "e-p:64:64-i64:64-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+define i32 @f(i32 noundef %x) {
+entry:
+  %c = icmp eq i32 %x, 0
+  %r = select i1 %c, i32 11, i32 11
+  ret i32 %r
+}
+</code>
+The input code has instruction count 3 and binary size 12 bytes.<|im_end|>
+<|im_start|>assistant

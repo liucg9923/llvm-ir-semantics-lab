@@ -1,108 +1,65 @@
 # LLVM IR Semantics Lab
 
-一个面向编译原理课堂的可复现实验：让 LLVM `opt`、LLM Compiler 7B-FTD 的社区 F16 GGUF 版本、Qwen2.5-Coder-7B-Instruct 在同一批 LLVM IR 任务上工作，分别检查**合法输出、语义保持和有效优化**。
+在同一批 LLVM IR 程序变换任务上比较 LLVM `opt`、社区 LLM Compiler 7B-FTD F16 与 Qwen2.5-Coder-7B-Instruct FP16，分别检查**可评估覆盖、语义保持与有效优化**。
 
-核心问题：各自能交付多少安全且有效的变换？真实工具反馈能否改善结果？“没有通过完整检查”究竟发生在格式、任务契约，还是程序行为这一层？
+## 当前版本：V3 受控重跑
 
-## 当前结果
+针对早期 FTD 实验的输入适配、粗糙准入和预检门槛问题，已完成重设计并重新运行。正式任务为 18 个新编写程序，L0/L1/L2 各 6 题，其中共 9 个预定优化机会。开发阶段、失败预检和旧结果全部保留。
 
-本轮三方组已完成。专用组按项目所有者要求采用 `second-state/llm-compiler-7b-ftd-GGUF` 中未量化的 **F16** 文件，不再等待官方基础模型权限。旧实验记录完整保留，新补充报告单独发布。
+| 对象 | 合法 IR | 进入语义验证 | 验证通过 | 已证反例 | 有效优化 |
+|---|---:|---:|---:|---:|---:|
+| LLVM opt 17.0.6 | 18/18 | 18/18 | 18/18 | 0 | 9/9 |
+| 社区 LLM Compiler 7B-FTD F16 | 14/18 | 14/18 | 11/18 | 3 | 5/9 |
+| Qwen2.5-Coder-7B-Instruct FP16 | 18/18 | 18/18 | 11/18 | 7 | 3/9 |
+| 原样返回控制 | 18/18 | 18/18 | 18/18 | 0 | 0/9 |
 
-| 对象 | 合法 IR | 实际进入语义检查 | 通过完整检查 | 有效优化 |
-|---|---:|---:|---:|---:|
-| LLVM opt 17.0.6 | 24/24 | 24 | 24/24 | 12/12 |
-| LLM Compiler 7B-FTD，社区 F16 | 21/24 | 0 | 0/24 | 0/12 |
-| Qwen2.5-Coder-7B-Instruct，FP16 | 22/24 | 22 | 15/24 | 7/12 |
-| 原样返回控制 | 24/24 | 24 | 24/24 | 0/12 |
+本轮所有合法候选均进入语义验证。FTD 另有 4 个真实 LLVM IR 错误，未被自动修复，也不计入语义反例。两模型的总体通过数相同，失败方式和优化收益不同；不能推广成所有模型、所有编译任务的排名。
 
-**FTD 的 0/24 不表示 24 个答案都已被证明语义错误。** 21 个合法 IR 因改变目标设置、接口或增加元数据等违反冻结契约，另外 3 个非法 IR 重复定义了函数。它们没有进入主流程的语义验证。本轮体现了固定提示/接口下的端到端表现，不能据此单独排名两款模型的纯语义能力，也不是“专用训练收益”的因果消融。
+- [完整中文发现与反例](results/published/controlled-v3/analysis/FINDINGS.md)
+- [结果、原始生成记录与完整证据包](results/published/controlled-v3/README.md)
+- [覆盖、语义和优化图](results/published/controlled-v3/figures/coverage_correctness_optimization.png)
+- [开发集提示对照图](results/published/controlled-v3/figures/development_prompt_contrast.png)
+- [共同语义提示的逐题对照](results/published/controlled-v3/figures/shared_semantic_hints.png)
 
-在同一批预选的 12 题中，FTD 的自行复查与工具反馈均未修复完整验收；Qwen 从首次 7/12，通过自行复查变为 6/12，工具反馈变为 10/12，但有效优化从 4/6 降至 2/6。逐题变化和所有失败状态均公开。
+## 怎样避免重复早期的问题
 
-独立执行重放另保存了一个 FTD 具体反例：原程序 `x+9` 在 `x=0` 时返回 `9`，未修改的模型候选返回 `11`。去示例的六题开发集诊断也单列，不替换正式成绩。人工 `mutant.ll` 是评分器验收材料，不是模型输出。
+**输入适配：** FTD 采用一个原程序、指定 pass 和实际输入代码大小的原生任务形式；Qwen 使用相同语义任务和官方 chat template，并增加仅约束唯一 IR 输出的 system 消息。不再用多个同名函数示例和自由式自查作为共同接口。
 
-- [完整中文解读](results/published/compiler-ftd-v1/analysis/FINDINGS.md)
-- [三方结果、原始回答、诊断与证据包](results/published/compiler-ftd-v1/README.md)
-- [分层比较图](results/published/compiler-ftd-v1/figures/correctness_and_optimization.png)与[逐题反馈图](results/published/compiler-ftd-v1/figures/paired_feedback.png)
-- [此前的 Qwen 实验版本](results/published/experiment-v2/README.md)，以及[最初 CPU 基线](results/published/baseline-v1/REPORT.md)
+**评分：** 使用 LLVM 解析器处理结构，保留候选的指令、标志和属性。上下文继承及等价表示规范化有明确、受限的规则与记录；不运行优化 pass 替模型修复。真实接口不符、未证明假设、不支持、未知和已证语义反例分别统计。
 
-## 研究与资料导航
+**启动门槛：** 从原始开发记录重新计算可判定覆盖与指针题覆盖，不要求模型必须答对。Qwen 原生输出曾因多代码块被门槛阻止，改进格式适配后才开启正式任务。最终两模型均为 6/6 开发验证通过，所有正式模型输出均在最终冻结与共同门槛通过后产生。
 
-- [研究主线与核心问题](docs/RESEARCH_FRAMEWORK.md)
-- [固定实验协议](docs/PROTOCOL.md)与[FTD 补充协议](results/published/compiler-ftd-v1/PROTOCOL_SUPPLEMENT.md)
-- [云端部署](docs/DEPLOYMENT.md)与[社区 FTD 部署](docs/FTD_DEPLOYMENT.md)
-- [实际验证记录](docs/VALIDATION.md)
-- [课堂展示 PPT 草稿](slides/README.md)
-- [参考文献与阅读用途](docs/REFERENCES.md)
+**工具信息对照：** 两模型获得相同的人工错误程序所对应的语义反例，诊断输入与保留输入分开。这是共同语义提示对重新生成的影响，不是各自模型错误的修复率。FTD 配对 6 题的验证通过为 3→3，有效优化 1→2；Qwen 为 3→4，有效优化 1→1。
 
-## 任务范围
+**应用回放：** 只依据支持范围和 Alive2 证明选择候选，否则回退原程序，选择时不读保留测试结果。两组最终均为 18/18 验证通过，各有 7 次原程序回退；系统结果不等于模型准确率。
 
-6 个开发题与 24 个正式题分属不同案例家族。正式题是 12 对案例，覆盖 L0 局部计算、L1 控制与依赖、L2 内存和别名，每层 8 题，其中 4 个预定优化机会、4 个约束案例。L0/L1/L2 是本项目分类，不是 LLVM 优化等级。
+## 复现与项目资料
 
-每题有输入、人工参考变换、人工错误变换、输入范围、pass 和可检查的优化目标。约束题不要求原样返回，安全的其他改写可以接受。首版无循环、浮点、外部调用、并发及跨函数优化；不把与 opt 文本完全一致当作语义 oracle。
+- [V3 实验协议和开发修订](docs/REDESIGN_V3.md)
+- [V3 云端部署与复现](docs/V3_DEPLOYMENT.md)
+- [验证记录](docs/VALIDATION.md)
+- [研究主线](docs/RESEARCH_FRAMEWORK.md)与[参考文献](docs/REFERENCES.md)
+- [课堂 PPT 草稿](slides/README.md)
+- [许可、模型来源与输出条款](THIRD_PARTY_NOTICES.md)
 
-## 云端复现入口
-
-Mac 只用于 SSH，不需要在本机启动 Docker、编译或下载权重。在 Ubuntu 22.04 x86_64 云端项目根目录准备环境：
-
-```bash
-bash scripts/setup_python.sh
-bash scripts/bootstrap_validator.sh
-bash scripts/run_cpu.sh check-dataset
-bash scripts/run_cpu.sh check-lock
-bash scripts/run_cpu.sh accept-toolchain
-bash scripts/setup_inference.sh
-```
-
-工具验收要求 90 个源程序/参考变换/人工错误变换达到预期，并绑定数据、代码、二进制及动态库哈希。详细的 LLVM EH/RTTI 构建说明见部署文档。
-
-FTD 入口使用独立模型与运行时 lock；原数据集、提示词和解码设置保持 v2 冻结状态：
+主要入口：
 
 ```bash
-bash scripts/setup_llama_cpp.sh
-HF_HUB_DISABLE_XET=1 .venv-inference/bin/python scripts/download_gguf.py
-bash scripts/run_ftd.sh dev
-bash scripts/run_ftd.sh formal
-bash scripts/run_ftd.sh feedback
+# 完成部署文档中的 LLVM/Alive2、GPU 环境及权重准备后，在云端运行：
+bash scripts/run_controlled_v3.sh
+.venv/bin/python scripts/collect_v3.py
+.venv/bin/python scripts/replay_v3_verified_selection.py
+.venv/bin/python scripts/v3_case_evidence.py
 ```
 
-Qwen 与 LLVM 的原始入口保留：
+代码与人工任务按 Apache-2.0 发布，模型和其输出保留各自条款。权重、账号凭据和服务器登录信息不进入 GitHub。所有计算在云端完成，Mac 仅作 SSH 与结果查看/发布客户端。
 
-```bash
-bash scripts/run_cpu.sh generate --backend opt --out results/opt-v2
-bash scripts/run_cpu.sh evaluate --run results/opt-v2
-bash scripts/run_model.sh generate --backend hf --model qwen --out results/qwen-v2
-bash scripts/run_cpu.sh evaluate --run results/qwen-v2
-bash scripts/run_model.sh feedback --parent results/qwen-v2 --out results/qwen-feedback-v2
-bash scripts/run_cpu.sh evaluate --run results/qwen-feedback-v2
-```
+## 历史记录
 
-运行目录拒绝覆盖。已有结果用独立新名称保存；本次对旧输出重评，没有重新调用 Qwen，也没有覆盖其 v2 记录。原官方基础模型的 `--model compiler` 配置仅保留用于历史追溯，不冒充已经运行。
+- [最初的 CPU 基线](results/published/baseline-v1/REPORT.md)
+- [Qwen v2 实验](results/published/experiment-v2/README.md)
+- [社区 FTD 首次接入及异常诊断](results/published/compiler-ftd-v1/README.md)
 
-## 评分与报告
+旧 FTD 的 0/24 是当时接口与准入条件下的零通过，不是测得语义正确率为零。它与新的 18 题不是同一协议/数据，不能写成模型能力提升率。旧记录完整保留，不追溯改分。
 
-顺序为：提取唯一 IR、LLVM verify、任务契约、Alive2 refinement、独立保留输入测试、预定优化目标。verify 只做语法检查和规范化打印，不用优化 pass 替模型修复答案。生成与 CPU 验证分开；候选在受 seccomp 和资源限制的子进程执行。
-
-`verified` 需要完整验证通过；`refuted` 是已发现反例；格式/IR/契约失败与未知、工具错误分别记录。有效优化只统计**验证通过且完成预定目标**的机会题。原样返回保持语义，但拿不到机会题优化分。静态指令数不等于运行速度。
-
-两种反馈都从同一个首次候选独立出发，各一次生成。反馈仅包含语法/契约/Alive2 与诊断集结果，不含保留输入集。额外的验证器选择与原程序回退是事后应用回放，不是模型准确率。
-
-```bash
-.venv/bin/python scripts/recheck_runs.py
-.venv/bin/python scripts/collect_comparison.py
-bash scripts/setup_reports.sh
-.venv-report/bin/python scripts/plot_comparison.py \
-  --analysis results/campaign-ftd-v1/analysis \
-  --out results/campaign-ftd-v1/figures
-```
-
-图表提供 PNG、可编辑 SVG/PDF 和源数据；逐题 CSV、JSON、HTML 报告与完整证据归档可审查。模型权重和凭据不进入 GitHub。公开原始输出保留模型来源与适用条款，不能将 Meta 输出当作无限制训练数据，见 [许可与来源](THIRD_PARTY_NOTICES.md)。
-
-## 主要来源
-
-- [LLM Compiler 论文](https://arxiv.org/abs/2407.02524)
-- [Meta FTD 模型卡与条款](https://huggingface.co/facebook/llm-compiler-7b-ftd)
-- [社区 FTD GGUF 转换](https://huggingface.co/second-state/llm-compiler-7b-ftd-GGUF)
-- [Qwen 官方模型](https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct)
-- [Alive2](https://github.com/AliveToolkit/alive2)
-- [LLVM 17.0.6](https://github.com/llvm/llvm-project/tree/llvmorg-17.0.6)
+本项目是固定小函数上的可审查实验，不是广泛模型排行榜。没有循环、浮点、外部调用、并发或跨函数优化结论；不以文本完全匹配作为语义 oracle，也不把静态 IR 指令数等同于运行速度。

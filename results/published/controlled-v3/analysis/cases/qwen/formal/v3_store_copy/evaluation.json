@@ -1,0 +1,323 @@
+{
+  "projection": "Full native arrays/logs are in the evidence archive.",
+  "full_path_in_archive": "results/campaign-v3/analysis/cases/qwen/formal/v3_store_copy/evaluation.json",
+  "full_sha256": "727aca9ad83dff68004c8d459e99d8735d82c3faeb66150c391f78b8e8250759",
+  "evaluation": {
+    "task_id": "v3_store_copy",
+    "level": "L2",
+    "role": "guard",
+    "syntax_valid": true,
+    "semantic_attempted": true,
+    "determinate": true,
+    "verified": false,
+    "effective_optimization": false,
+    "goal_met": false,
+    "extraction": [
+      "fence"
+    ],
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/irsem-inspect",
+        "/tmp/irsem-v3-bej2p5el/candidate.ll",
+        "/tmp/irsem-v3-bej2p5el/candidate.canonical.ll",
+        "/tmp/irsem-v3-bej2p5el/source.ll"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "seconds": 0.03301030024886131,
+      "timed_out": false,
+      "truncated": false
+    },
+    "source_structure": {
+      "abi_target_key": "x86_64/linux/gnu/3",
+      "aliases": 0,
+      "cycles": false,
+      "data_layout": "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128",
+      "declarations": 0,
+      "definitions": 1,
+      "functions": [
+        {
+          "address_space": 0,
+          "address_taken": false,
+          "calling_convention": 0,
+          "dso_local": true,
+          "function_attrs": [
+            "minsize",
+            "nounwind",
+            "optsize",
+            "uwtable",
+            "\"min-legal-vector-width\"=\"0\"",
+            "\"no-trapping-math\"=\"true\"",
+            "\"stack-protector-buffer-size\"=\"8\"",
+            "\"target-cpu\"=\"x86-64\"",
+            "\"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\"",
+            "\"tune-cpu\"=\"generic\""
+          ],
+          "gc": false,
+          "linkage": 0,
+          "name": "f",
+          "params": [
+            {
+              "attrs": [
+                "noundef"
+              ],
+              "type": "ptr"
+            },
+            {
+              "attrs": [
+                "noundef"
+              ],
+              "type": "ptr"
+            }
+          ],
+          "personality": false,
+          "prefix_data": false,
+          "prologue_data": false,
+          "return_attrs": [],
+          "return_type": "i32",
+          "unnamed_addr": 0,
+          "vararg": false,
+          "visibility": 0
+        }
+      ],
+      "globals": 0,
+      "ifuncs": 0,
+      "inherited_data_layout": false,
+      "inherited_target_triple": false,
+      "instruction_metadata": [],
+      "instructions": 3,
+      "layout_equivalent_for_used_types": true,
+      "memory_accesses": [
+        {
+          "op": "load",
+          "roots": 1
+        },
+        {
+          "op": "store",
+          "roots": 2
+        }
+      ],
+      "module_asm": false,
+      "module_flags": [
+        {
+          "behavior": 1,
+          "name": "wchar_size",
+          "value": 4
+        },
+        {
+          "behavior": 8,
+          "name": "PIC Level",
+          "value": 2
+        },
+        {
+          "behavior": 7,
+          "name": "PIE Level",
+          "value": 2
+        },
+        {
+          "behavior": 7,
+          "name": "uwtable",
+          "value": 2
+        }
+      ],
+      "named_metadata": [
+        "llvm.module.flags",
+        "llvm.ident"
+      ],
+      "opcodes": {
+        "load": 1,
+        "ret": 1,
+        "store": 1
+      },
+      "pointer_compare": false,
+      "raw_data_layout": "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128",
+      "raw_target_triple": "x86_64-unknown-linux-gnu",
+      "scope_errors": [],
+      "target_triple": "x86_64-unknown-linux-gnu",
+      "target_vendor": "unknown",
+      "used_types": [
+        "void",
+        "i32",
+        "ptr"
+      ]
+    },
+    "candidate_structure": {
+      "abi_target_key": "x86_64/linux/gnu/3",
+      "aliases": 0,
+      "cycles": false,
+      "data_layout": "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128",
+      "declarations": 0,
+      "definitions": 1,
+      "functions": [
+        {
+          "address_space": 0,
+          "address_taken": false,
+          "calling_convention": 0,
+          "dso_local": true,
+          "function_attrs": [
+            "minsize",
+            "nounwind",
+            "optsize",
+            "uwtable",
+            "\"min-legal-vector-width\"=\"0\"",
+            "\"no-trapping-math\"=\"true\"",
+            "\"stack-protector-buffer-size\"=\"8\"",
+            "\"target-cpu\"=\"x86-64\"",
+            "\"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\"",
+            "\"tune-cpu\"=\"generic\""
+          ],
+          "gc": false,
+          "linkage": 0,
+          "name": "f",
+          "params": [
+            {
+              "attrs": [
+                "noundef"
+              ],
+              "type": "ptr"
+            },
+            {
+              "attrs": [
+                "noundef"
+              ],
+              "type": "ptr"
+            }
+          ],
+          "personality": false,
+          "prefix_data": false,
+          "prologue_data": false,
+          "return_attrs": [],
+          "return_type": "i32",
+          "unnamed_addr": 0,
+          "vararg": false,
+          "visibility": 0
+        }
+      ],
+      "globals": 0,
+      "ifuncs": 0,
+      "inherited_data_layout": false,
+      "inherited_target_triple": false,
+      "instruction_metadata": [],
+      "instructions": 1,
+      "layout_equivalent_for_used_types": true,
+      "memory_accesses": [],
+      "module_asm": false,
+      "module_flags": [
+        {
+          "behavior": 1,
+          "name": "wchar_size",
+          "value": 4
+        },
+        {
+          "behavior": 8,
+          "name": "PIC Level",
+          "value": 2
+        },
+        {
+          "behavior": 7,
+          "name": "PIE Level",
+          "value": 2
+        },
+        {
+          "behavior": 7,
+          "name": "uwtable",
+          "value": 2
+        }
+      ],
+      "named_metadata": [
+        "llvm.module.flags",
+        "llvm.ident"
+      ],
+      "opcodes": {
+        "ret": 1
+      },
+      "pointer_compare": false,
+      "raw_data_layout": "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128",
+      "raw_target_triple": "x86_64-unknown-linux-gnu",
+      "scope_errors": [],
+      "target_triple": "x86_64-unknown-linux-gnu",
+      "target_vendor": "unknown",
+      "used_types": [
+        "void",
+        "i32",
+        "ptr"
+      ]
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-v3-bej2p5el/candidate.ll'\nsource_filename = \"irsem-v3.ll\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\n; Function Attrs: minsize nounwind optsize uwtable\ndefine dso_local i32 @f(ptr noundef %p, ptr noundef %q) #0 {\nentry:\n  ret i32 0\n}\n\nattributes #0 = { minsize nounwind optsize uwtable \"min-legal-vector-width\"=\"0\" \"no-trapping-math\"=\"true\" \"stack-protector-buffer-size\"=\"8\" \"target-cpu\"=\"x86-64\" \"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\" \"tune-cpu\"=\"generic\" }\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"irsem authored LLVM 17.0.6 tasks\"}\n",
+    "admission": {
+      "interface": [],
+      "unsupported": [],
+      "assumptions": []
+    },
+    "context_inheritance": {
+      "inherited_target_triple": false,
+      "inherited_data_layout": false
+    },
+    "canonical_ir_before_context_normalization": "; ModuleID = '/tmp/irsem-v3-bej2p5el/candidate.ll'\nsource_filename = \"irsem-v3.ll\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\n; Function Attrs: minsize nounwind optsize uwtable\ndefine dso_local i32 @f(ptr noundef %p, ptr noundef %q) #0 {\nentry:\n  ret i32 0\n}\n\nattributes #0 = { minsize nounwind optsize uwtable \"min-legal-vector-width\"=\"0\" \"no-trapping-math\"=\"true\" \"stack-protector-buffer-size\"=\"8\" \"target-cpu\"=\"x86-64\" \"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\" \"tune-cpu\"=\"generic\" }\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"irsem authored LLVM 17.0.6 tasks\"}\n",
+    "evaluation_ir": "; ModuleID = '/tmp/irsem-v3-bej2p5el/candidate.canonical.ll'\nsource_filename = \"irsem-v3.ll\"\ntarget datalayout = \"e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128\"\ntarget triple = \"x86_64-unknown-linux-gnu\"\n\n; Function Attrs: minsize nounwind optsize uwtable\ndefine dso_local i32 @f(ptr noundef %p, ptr noundef %q) #0 {\nentry:\n  ret i32 0\n}\n\nattributes #0 = { minsize nounwind optsize uwtable \"min-legal-vector-width\"=\"0\" \"no-trapping-math\"=\"true\" \"stack-protector-buffer-size\"=\"8\" \"target-cpu\"=\"x86-64\" \"target-features\"=\"+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87\" \"tune-cpu\"=\"generic\" }\n\n!llvm.module.flags = !{!0, !1, !2, !3}\n!llvm.ident = !{!4}\n\n!0 = !{i32 1, !\"wchar_size\", i32 4}\n!1 = !{i32 8, !\"PIC Level\", i32 2}\n!2 = !{i32 7, !\"PIE Level\", i32 2}\n!3 = !{i32 7, !\"uwtable\", i32 2}\n!4 = !{!\"irsem authored LLVM 17.0.6 tasks\"}\n",
+    "context_normalization": {
+      "equivalent_triple_canonicalized": false,
+      "equivalent_layout_canonicalized": false
+    },
+    "alive2_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+        "-always-verify",
+        "-smt-to=10000",
+        "-smt-max-mem=1024",
+        "-smt-random-seed=20261113",
+        "/tmp/irsem-v3-bej2p5el/source.canonical.ll",
+        "/tmp/irsem-v3-bej2p5el/candidate.proof.ll"
+      ],
+      "returncode": 0,
+      "stdout": "\n----------------------------------------\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  %a = load i32, ptr noundef %p, align 4\n  store i32 %a, ptr noundef %q, align 4\n  ret i32 %a\n}\n=>\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  ret i32 0\n}\nTransformation doesn't verify!\n\nERROR: Value mismatch\n\nExample:\nptr noundef %p = pointer(non-local, block_id=1, offset=0)\nptr noundef %q = pointer(non-local, block_id=1, offset=0)\n\nSource:\ni32 %a = #x00000001 (1)\n\nSOURCE MEMORY STATE\n===================\nNON-LOCAL BLOCKS:\nBlock 0 >\tsize: 0\talign: 4\talloc type: 0\talive: false\taddress: 0\nBlock 1 >\tsize: 4\talign: 1\talloc type: 0\talive: true\taddress: 4\nBlock 2 >\tsize: 0\talign: 1\talloc type: 0\talive: true\taddress: 1\n\nTarget:\nSource value: #x00000001 (1)\nTarget value: #x00000000 (0)\n\nSummary:\n  0 correct transformations\n  1 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+      "stderr": "",
+      "seconds": 0.1144208237528801,
+      "timed_out": false,
+      "truncated": false
+    },
+    "differential": {
+      "-O0": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 256,
+        "counterexample": {
+          "input": [
+            3189560444,
+            4105343568,
+            1
+          ],
+          "source": "3189560444 3189560444 4105343568",
+          "candidate": "0 3189560444 4105343568"
+        },
+        "optimization": "-O0"
+      },
+      "-O2": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 256,
+        "counterexample": {
+          "input": [
+            3189560444,
+            4105343568,
+            1
+          ],
+          "source": "3189560444 3189560444 4105343568",
+          "candidate": "0 3189560444 4105343568"
+        },
+        "optimization": "-O2"
+      }
+    },
+    "status": "refuted",
+    "key": "v3_store_copy__native",
+    "arm": "native",
+    "model": "qwen",
+    "phase": "formal",
+    "legacy_contract_errors": [
+      "Additional metadata is outside v1",
+      "Declarations, globals, inline asm or new attribute groups are outside v1"
+    ]
+  }
+}

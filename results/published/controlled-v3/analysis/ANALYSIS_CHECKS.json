@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "all_runs_evaluated": true,
+  "same_frozen_protocol": true,
+  "all_raw_and_prompt_hashes_match": true,
+  "same_18_primary_task_ids": true,
+  "identical_semantic_prompt_text_across_models": true,
+  "same_hint_information_when_run": true,
+  "empty_conditional_denominator_is_null": true
+}

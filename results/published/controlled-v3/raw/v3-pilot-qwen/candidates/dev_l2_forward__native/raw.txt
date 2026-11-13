@@ -1,0 +1,43 @@
+When the provided LLVM IR code is optimized using the `opt -p 'function(gvn)'` command, the Global Value Numbering (GVN) pass will attempt to eliminate redundant instructions and simplify the code. Here's the optimized LLVM IR:
+
+```llvm
+target datalayout = "e-p:64:64-i64:64-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+define i32 @f(ptr noundef %p, ptr noundef %q) {
+entry:
+  store i32 11, ptr %p, align 4
+  ret i32 11
+}
+```
+
+### Explanation:
+1. **Original Code**:
+   ```llvm
+   define i32 @f(ptr noundef %p, ptr noundef %q) {
+   entry:
+     store i32 11, ptr %p, align 4
+     %r = load i32, ptr %p, align 4
+     ret i32 %r
+   }
+   ```
+   - The function `@f` takes two pointers as arguments but does not use them.
+   - It stores the value `11` into the memory location pointed to by `%p`.
+   - It then loads the value from the same memory location into `%r`.
+   - Finally, it returns the value in `%r`.
+
+2. **Optimized Code**:
+   ```llvm
+   define i32 @f(ptr noundef %p, ptr noundef %q) {
+   entry:
+     store i32 11, ptr %p, align 4
+     ret i32 11
+   }
+   ```
+   - The GVN pass eliminates the redundant load instruction (`%r = load i32, ptr %p, align 4`).
+   - Since the value `11` is stored and then immediately loaded, the load is unnecessary.
+   - The function now directly returns the value `11`.
+
+### Instruction Count and Binary Size:
+- **Instruction Count**: The optimized code has 2 instructions (one store and one return).
+- **Binary Size**: The binary size of the optimized code is reduced compared to the original code, but the exact size depends on the specific LLVM IR representation and the target architecture.

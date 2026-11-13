@@ -1,0 +1,16 @@
+{
+  "compiler": {
+    "id": "facebook/llm-compiler-7b",
+    "revision": "310fe9a5b32e8270b8de734ca7503bc83b61a3db",
+    "template": "llama_inst",
+    "license": "LLM Compiler License Agreement",
+    "gated": true
+  },
+  "qwen": {
+    "id": "Qwen/Qwen2.5-Coder-7B-Instruct",
+    "revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+    "template": "chat",
+    "license": "Apache-2.0",
+    "gated": false
+  }
+}

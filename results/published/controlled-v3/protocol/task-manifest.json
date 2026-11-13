@@ -1,0 +1,318 @@
+{
+  "schema_version": 3,
+  "tasks": [
+    {
+      "id": "v3_mask_partition",
+      "level": "L0",
+      "pair_id": "mask_union",
+      "role": "opportunity",
+      "split": "test",
+      "directory": "tasks/v3/test/v3_mask_partition",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine,simplifycfg,early-cse,gvn,dse,instcombine,simplifycfg)",
+      "goal": {
+        "instruction_max": 1
+      },
+      "description": "Complementary masks cover all bits.",
+      "input_domain": "Source LLVM-defined executions; differential tests sample initialized aligned cells and both alias patterns.",
+      "provenance": "Newly authored v3 program; not selected from model outputs. Reference and mutant are authored oracle fixtures."
+    },
+    {
+      "id": "v3_mask_gap",
+      "level": "L0",
+      "pair_id": "mask_union",
+      "role": "guard",
+      "split": "test",
+      "directory": "tasks/v3/test/v3_mask_gap",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine,simplifycfg,early-cse,gvn,dse,instcombine,simplifycfg)",
+      "goal": {},
+      "description": "Bit 8 is excluded; do not replace by identity.",
+      "input_domain": "Source LLVM-defined executions; differential tests sample initialized aligned cells and both alias patterns.",
+      "provenance": "Newly authored v3 program; not selected from model outputs. Reference and mutant are authored oracle fixtures."
+    },
+    {
+      "id": "v3_xor_cancel",
+      "level": "L0",
+      "pair_id": "xor_operands",
+      "role": "opportunity",
+      "split": "test",
+      "directory": "tasks/v3/test/v3_xor_cancel",
+      "abi": "binary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine,simplifycfg,early-cse,gvn,dse,instcombine,simplifycfg)",
+      "goal": {
+        "instruction_max": 1
+      },
+      "description": "",
+      "input_domain": "Source LLVM-defined executions; differential tests sample initialized aligned cells and both alias patterns.",
+      "provenance": "Newly authored v3 program; not selected from model outputs. Reference and mutant are authored oracle fixtures."
+    },
+    {
+      "id": "v3_xor_changed",
+      "level": "L0",
+      "pair_id": "xor_operands",
+      "role": "guard",
+      "split": "test",
+      "directory": "tasks/v3/test/v3_xor_changed",
+      "abi": "binary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine,simplifycfg,early-cse,gvn,dse,instcombine,simplifycfg)",
+      "goal": {},
+      "description": "",
+      "input_domain": "Source LLVM-defined executions; differential tests sample initialized aligned cells and both alias patterns.",
+      "provenance": "Newly authored v3 program; not selected from model outputs. Reference and mutant are authored oracle fixtures."
+    },
+    {
+      "id": "v3_mask_bound",
+      "level": "L0",
+      "pair_id": "bounded_value",
+      "role": "opportunity",
+      "split": "test",
+      "directory": "tasks/v3/test/v3_mask_bound",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine,simplifycfg,early-cse,gvn,dse,instcombine,simplifycfg)",
+      "goal": {
+        "instruction_max": 1
+      },
+      "description": "",
+      "input_domain": "Source LLVM-defined executions; differential tests sample initialized aligned cells and both alias patterns.",
+      "provenance": "Newly authored v3 program; not selected from model outputs. Reference and mutant are authored oracle fixtures."
+    },
+    {
+      "id": "v3_mask_boundary",
+      "level": "L0",
+      "pair_id": "bounded_value",
+      "role": "guard",
+      "split": "test",
+      "directory": "tasks/v3/test/v3_mask_boundary",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine,simplifycfg,early-cse,gvn,dse,instcombine,simplifycfg)",
+      "goal": {},
+      "description": "",
+      "input_domain": "Source LLVM-defined executions; differential tests sample initialized aligned cells and both alias patterns.",
+      "provenance": "Newly authored v3 program; not selected from model outputs. Reference and mutant are authored oracle fixtures."
+    },
+    {
+      "id": "v3_select_correlated",
+      "level": "L1",
+      "pair_id": "select_path_fact",
+      "role": "opportunity",
+      "split": "test",
+      "directory": "tasks/v3/test/v3_select_correlated",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine,simplifycfg,early-cse,gvn,dse,instcombine,simplifycfg)",
+      "goal": {
+        "instruction_max": 1
+      },
+      "description": "",
+      "input_domain": "Source LLVM-defined executions; differential tests sample initialized aligned cells and both alias patterns.",
+      "provenance": "Newly authored v3 program; not selected from model outputs. Reference and mutant are authored oracle fixtures."
+    },
+    {
+      "id": "v3_select_changed",
+      "level": "L1",
+      "pair_id": "select_path_fact",
+      "role": "guard",
+      "split": "test",
+      "directory": "tasks/v3/test/v3_select_changed",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine,simplifycfg,early-cse,gvn,dse,instcombine,simplifycfg)",
+      "goal": {},
+      "description": "",
+      "input_domain": "Source LLVM-defined executions; differential tests sample initialized aligned cells and both alias patterns.",
+      "provenance": "Newly authored v3 program; not selected from model outputs. Reference and mutant are authored oracle fixtures."
+    },
+    {
+      "id": "v3_branch_fact",
+      "level": "L1",
+      "pair_id": "correlated_predicates",
+      "role": "opportunity",
+      "split": "test",
+      "directory": "tasks/v3/test/v3_branch_fact",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine,simplifycfg,early-cse,gvn,dse,instcombine,simplifycfg)",
+      "goal": {
+        "instruction_max": 3
+      },
+      "description": "",
+      "input_domain": "Source LLVM-defined executions; differential tests sample initialized aligned cells and both alias patterns.",
+      "provenance": "Newly authored v3 program; not selected from model outputs. Reference and mutant are authored oracle fixtures."
+    },
+    {
+      "id": "v3_branch_stricter",
+      "level": "L1",
+      "pair_id": "correlated_predicates",
+      "role": "guard",
+      "split": "test",
+      "directory": "tasks/v3/test/v3_branch_stricter",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine,simplifycfg,early-cse,gvn,dse,instcombine,simplifycfg)",
+      "goal": {},
+      "description": "",
+      "input_domain": "Source LLVM-defined executions; differential tests sample initialized aligned cells and both alias patterns.",
+      "provenance": "Newly authored v3 program; not selected from model outputs. Reference and mutant are authored oracle fixtures."
+    },
+    {
+      "id": "v3_phi_arithmetic",
+      "level": "L1",
+      "pair_id": "phi_expression_equivalence",
+      "role": "opportunity",
+      "split": "test",
+      "directory": "tasks/v3/test/v3_phi_arithmetic",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine,simplifycfg,early-cse,gvn,dse,instcombine,simplifycfg)",
+      "goal": {
+        "instruction_max": 2
+      },
+      "description": "",
+      "input_domain": "Source LLVM-defined executions; differential tests sample initialized aligned cells and both alias patterns.",
+      "provenance": "Newly authored v3 program; not selected from model outputs. Reference and mutant are authored oracle fixtures."
+    },
+    {
+      "id": "v3_phi_changed",
+      "level": "L1",
+      "pair_id": "phi_expression_equivalence",
+      "role": "guard",
+      "split": "test",
+      "directory": "tasks/v3/test/v3_phi_changed",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine,simplifycfg,early-cse,gvn,dse,instcombine,simplifycfg)",
+      "goal": {},
+      "description": "",
+      "input_domain": "Source LLVM-defined executions; differential tests sample initialized aligned cells and both alias patterns.",
+      "provenance": "Newly authored v3 program; not selected from model outputs. Reference and mutant are authored oracle fixtures."
+    },
+    {
+      "id": "v3_write_forward",
+      "level": "L2",
+      "pair_id": "read_after_second_write",
+      "role": "opportunity",
+      "split": "test",
+      "directory": "tasks/v3/test/v3_write_forward",
+      "abi": "memory",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine,simplifycfg,early-cse,gvn,dse,instcombine,simplifycfg)",
+      "goal": {
+        "opcode_max": {
+          "load": 0,
+          "store": 1
+        }
+      },
+      "description": "",
+      "input_domain": "Source LLVM-defined executions; differential tests sample initialized aligned cells and both alias patterns.",
+      "provenance": "Newly authored v3 program; not selected from model outputs. Reference and mutant are authored oracle fixtures."
+    },
+    {
+      "id": "v3_write_alias",
+      "level": "L2",
+      "pair_id": "read_after_second_write",
+      "role": "guard",
+      "split": "test",
+      "directory": "tasks/v3/test/v3_write_alias",
+      "abi": "memory",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine,simplifycfg,early-cse,gvn,dse,instcombine,simplifycfg)",
+      "goal": {},
+      "description": "",
+      "input_domain": "Source LLVM-defined executions; differential tests sample initialized aligned cells and both alias patterns.",
+      "provenance": "Newly authored v3 program; not selected from model outputs. Reference and mutant are authored oracle fixtures."
+    },
+    {
+      "id": "v3_narrow_forward",
+      "level": "L2",
+      "pair_id": "narrow_load_alias",
+      "role": "opportunity",
+      "split": "test",
+      "directory": "tasks/v3/test/v3_narrow_forward",
+      "abi": "memory",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine,simplifycfg,early-cse,gvn,dse,instcombine,simplifycfg)",
+      "goal": {
+        "opcode_max": {
+          "load": 0
+        }
+      },
+      "description": "",
+      "input_domain": "Source LLVM-defined executions; differential tests sample initialized aligned cells and both alias patterns.",
+      "provenance": "Newly authored v3 program; not selected from model outputs. Reference and mutant are authored oracle fixtures."
+    },
+    {
+      "id": "v3_narrow_alias",
+      "level": "L2",
+      "pair_id": "narrow_load_alias",
+      "role": "guard",
+      "split": "test",
+      "directory": "tasks/v3/test/v3_narrow_alias",
+      "abi": "memory",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine,simplifycfg,early-cse,gvn,dse,instcombine,simplifycfg)",
+      "goal": {},
+      "description": "",
+      "input_domain": "Source LLVM-defined executions; differential tests sample initialized aligned cells and both alias patterns.",
+      "provenance": "Newly authored v3 program; not selected from model outputs. Reference and mutant are authored oracle fixtures."
+    },
+    {
+      "id": "v3_store_back",
+      "level": "L2",
+      "pair_id": "store_loaded_value",
+      "role": "opportunity",
+      "split": "test",
+      "directory": "tasks/v3/test/v3_store_back",
+      "abi": "memory",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine,simplifycfg,early-cse,gvn,dse,instcombine,simplifycfg)",
+      "goal": {
+        "opcode_max": {
+          "store": 0
+        }
+      },
+      "description": "",
+      "input_domain": "Source LLVM-defined executions; differential tests sample initialized aligned cells and both alias patterns.",
+      "provenance": "Newly authored v3 program; not selected from model outputs. Reference and mutant are authored oracle fixtures."
+    },
+    {
+      "id": "v3_store_copy",
+      "level": "L2",
+      "pair_id": "store_loaded_value",
+      "role": "guard",
+      "split": "test",
+      "directory": "tasks/v3/test/v3_store_copy",
+      "abi": "memory",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine,simplifycfg,early-cse,gvn,dse,instcombine,simplifycfg)",
+      "goal": {},
+      "description": "",
+      "input_domain": "Source LLVM-defined executions; differential tests sample initialized aligned cells and both alias patterns.",
+      "provenance": "Newly authored v3 program; not selected from model outputs. Reference and mutant are authored oracle fixtures."
+    }
+  ]
+}
