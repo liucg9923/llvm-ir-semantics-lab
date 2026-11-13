@@ -1,0 +1,785 @@
+[
+  {
+    "task_id": "l0_add_fold",
+    "level": "L0",
+    "role": "opportunity",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": true,
+    "effective_optimization": true,
+    "unchanged": false,
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "add": 2,
+        "ret": 1
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "add": 1,
+        "ret": 1
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 270,
+      "mismatch_count": 0
+    }
+  },
+  {
+    "task_id": "l0_add_variable",
+    "level": "L0",
+    "role": "guard",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": null,
+    "effective_optimization": false,
+    "unchanged": false,
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "add": 2,
+        "ret": 1
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "shl": 1,
+        "add": 1,
+        "ret": 1
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 270,
+      "mismatch_count": 0
+    }
+  },
+  {
+    "task_id": "l0_widened",
+    "level": "L0",
+    "role": "opportunity",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": true,
+    "effective_optimization": true,
+    "unchanged": false,
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "trunc": 1,
+        "zext": 2,
+        "add": 1,
+        "icmp": 1,
+        "ret": 1
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 511,
+      "mismatch_count": 0
+    }
+  },
+  {
+    "task_id": "l0_wrap",
+    "level": "L0",
+    "role": "guard",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": null,
+    "effective_optimization": false,
+    "unchanged": false,
+    "source_metrics": {
+      "instruction_count": 5,
+      "opcodes": {
+        "trunc": 1,
+        "add": 1,
+        "icmp": 1,
+        "zext": 1,
+        "ret": 1
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 4,
+      "opcodes": {
+        "and": 1,
+        "icmp": 1,
+        "zext": 1,
+        "ret": 1
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 511,
+      "mismatch_count": 0
+    }
+  },
+  {
+    "task_id": "l0_udiv",
+    "level": "L0",
+    "role": "opportunity",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": true,
+    "effective_optimization": true,
+    "unchanged": false,
+    "source_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "udiv": 1,
+        "ret": 1
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "lshr": 1,
+        "ret": 1
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 270,
+      "mismatch_count": 0
+    }
+  },
+  {
+    "task_id": "l0_sdiv",
+    "level": "L0",
+    "role": "guard",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": null,
+    "effective_optimization": false,
+    "unchanged": true,
+    "source_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "sdiv": 1,
+        "ret": 1
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "sdiv": 1,
+        "ret": 1
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 270,
+      "mismatch_count": 0
+    }
+  },
+  {
+    "task_id": "l0_unsigned_cmp",
+    "level": "L0",
+    "role": "opportunity",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": true,
+    "effective_optimization": true,
+    "unchanged": false,
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "icmp": 1,
+        "zext": 1,
+        "ret": 1
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 270,
+      "mismatch_count": 0
+    }
+  },
+  {
+    "task_id": "l0_signed_cmp",
+    "level": "L0",
+    "role": "guard",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": null,
+    "effective_optimization": false,
+    "unchanged": false,
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "icmp": 1,
+        "zext": 1,
+        "ret": 1
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "icmp": 1,
+        "zext": 1,
+        "ret": 1
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 270,
+      "mismatch_count": 0
+    }
+  },
+  {
+    "task_id": "l1_const_branch",
+    "level": "L1",
+    "role": "opportunity",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": true,
+    "effective_optimization": true,
+    "unchanged": false,
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "icmp": 1,
+        "br": 1,
+        "add": 1,
+        "ret": 2,
+        "sub": 1
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "add": 1,
+        "ret": 1
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 270,
+      "mismatch_count": 0
+    }
+  },
+  {
+    "task_id": "l1_variable_branch",
+    "level": "L1",
+    "role": "guard",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": null,
+    "effective_optimization": false,
+    "unchanged": false,
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "icmp": 1,
+        "br": 1,
+        "add": 1,
+        "ret": 2,
+        "sub": 1
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 5,
+      "opcodes": {
+        "icmp": 1,
+        "add": 1,
+        "sub": 1,
+        "select": 1,
+        "ret": 1
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 270,
+      "mismatch_count": 0
+    }
+  },
+  {
+    "task_id": "l1_phi_equal",
+    "level": "L1",
+    "role": "opportunity",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": true,
+    "effective_optimization": true,
+    "unchanged": false,
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "icmp": 1,
+        "br": 3,
+        "phi": 1,
+        "ret": 1
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 270,
+      "mismatch_count": 0
+    }
+  },
+  {
+    "task_id": "l1_phi_different",
+    "level": "L1",
+    "role": "guard",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": null,
+    "effective_optimization": false,
+    "unchanged": false,
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "icmp": 1,
+        "br": 3,
+        "phi": 1,
+        "ret": 1
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "icmp": 1,
+        "select": 1,
+        "ret": 1
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 270,
+      "mismatch_count": 0
+    }
+  },
+  {
+    "task_id": "l1_dead_value",
+    "level": "L1",
+    "role": "opportunity",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": true,
+    "effective_optimization": true,
+    "unchanged": false,
+    "source_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "mul": 1,
+        "ret": 1
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 270,
+      "mismatch_count": 0
+    }
+  },
+  {
+    "task_id": "l1_live_on_path",
+    "level": "L1",
+    "role": "guard",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": null,
+    "effective_optimization": false,
+    "unchanged": true,
+    "source_metrics": {
+      "instruction_count": 5,
+      "opcodes": {
+        "mul": 1,
+        "icmp": 1,
+        "br": 1,
+        "ret": 2
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 5,
+      "opcodes": {
+        "mul": 1,
+        "icmp": 1,
+        "br": 1,
+        "ret": 2
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 270,
+      "mismatch_count": 0
+    }
+  },
+  {
+    "task_id": "l1_cse_equal",
+    "level": "L1",
+    "role": "opportunity",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": true,
+    "effective_optimization": true,
+    "unchanged": false,
+    "source_metrics": {
+      "instruction_count": 4,
+      "opcodes": {
+        "add": 3,
+        "ret": 1
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "add": 1,
+        "shl": 1,
+        "ret": 1
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 256,
+      "mismatch_count": 0
+    }
+  },
+  {
+    "task_id": "l1_cse_different",
+    "level": "L1",
+    "role": "guard",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": null,
+    "effective_optimization": false,
+    "unchanged": true,
+    "source_metrics": {
+      "instruction_count": 4,
+      "opcodes": {
+        "add": 3,
+        "ret": 1
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 4,
+      "opcodes": {
+        "add": 3,
+        "ret": 1
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 256,
+      "mismatch_count": 0
+    }
+  },
+  {
+    "task_id": "l2_disjoint",
+    "level": "L2",
+    "role": "opportunity",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": true,
+    "effective_optimization": true,
+    "unchanged": false,
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "getelementptr": 1,
+        "load": 2,
+        "store": 1,
+        "add": 1,
+        "ret": 1
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 5,
+      "opcodes": {
+        "getelementptr": 1,
+        "load": 1,
+        "store": 1,
+        "add": 1,
+        "ret": 1
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 256,
+      "mismatch_count": 0
+    }
+  },
+  {
+    "task_id": "l2_mayalias",
+    "level": "L2",
+    "role": "guard",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": null,
+    "effective_optimization": false,
+    "unchanged": true,
+    "source_metrics": {
+      "instruction_count": 5,
+      "opcodes": {
+        "load": 2,
+        "store": 1,
+        "add": 1,
+        "ret": 1
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 5,
+      "opcodes": {
+        "load": 2,
+        "store": 1,
+        "add": 1,
+        "ret": 1
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 256,
+      "mismatch_count": 0
+    }
+  },
+  {
+    "task_id": "l2_store_overwritten",
+    "level": "L2",
+    "role": "opportunity",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": true,
+    "effective_optimization": true,
+    "unchanged": false,
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "store": 2,
+        "ret": 1
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "store": 1,
+        "ret": 1
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 256,
+      "mismatch_count": 0
+    }
+  },
+  {
+    "task_id": "l2_store_observed",
+    "level": "L2",
+    "role": "guard",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": null,
+    "effective_optimization": false,
+    "unchanged": true,
+    "source_metrics": {
+      "instruction_count": 4,
+      "opcodes": {
+        "store": 2,
+        "load": 1,
+        "ret": 1
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 4,
+      "opcodes": {
+        "store": 2,
+        "load": 1,
+        "ret": 1
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 256,
+      "mismatch_count": 0
+    }
+  },
+  {
+    "task_id": "l2_local_store",
+    "level": "L2",
+    "role": "opportunity",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": true,
+    "effective_optimization": true,
+    "unchanged": false,
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "alloca": 1,
+        "store": 1,
+        "ret": 1
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 256,
+      "mismatch_count": 0
+    }
+  },
+  {
+    "task_id": "l2_escaped_store",
+    "level": "L2",
+    "role": "guard",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": null,
+    "effective_optimization": false,
+    "unchanged": true,
+    "source_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "store": 1,
+        "ret": 1
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "store": 1,
+        "ret": 1
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 256,
+      "mismatch_count": 0
+    }
+  },
+  {
+    "task_id": "l2_duplicate_store",
+    "level": "L2",
+    "role": "opportunity",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": true,
+    "effective_optimization": true,
+    "unchanged": false,
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "store": 2,
+        "ret": 1
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "store": 1,
+        "ret": 1
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 256,
+      "mismatch_count": 0
+    }
+  },
+  {
+    "task_id": "l2_distinct_store",
+    "level": "L2",
+    "role": "guard",
+    "arm": "initial",
+    "status": "verified",
+    "syntax_valid": true,
+    "goal_met": null,
+    "effective_optimization": false,
+    "unchanged": true,
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "store": 2,
+        "ret": 1
+      }
+    },
+    "candidate_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "store": 2,
+        "ret": 1
+      }
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 256,
+      "mismatch_count": 0
+    }
+  }
+]

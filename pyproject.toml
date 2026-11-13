@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llvm-ir-semantics-lab"
+version = "0.1.0"
+description = "A small, auditable experiment on semantics-preserving LLVM IR transformations"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest==8.3.5"]
+inference = ["torch==2.6.0", "transformers==4.51.3", "accelerate==1.6.0", "safetensors==0.5.3"]
+
+[project.scripts]
+irsem = "irsem.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = ["native: requires clang/opt and executes authored fixture programs"]

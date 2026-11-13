@@ -1,0 +1,9 @@
+.git
+.venv*
+.toolchain
+.build
+.cache
+results
+reports/generated
+models
+.env*

@@ -1,0 +1,26 @@
+
+----------------------------------------
+define i32 @f(i32 noundef %x) {
+entry:
+  %v = trunc i32 noundef %x to i8
+  %a = add i8 %v, 1
+  %c = icmp ugt i8 %a, %v
+  %r = zext i1 %c to i32
+  ret i32 %r
+}
+=>
+define i32 @f(i32 noundef %x) {
+entry:
+  %v = trunc i32 noundef %x to i8
+  %a = add i8 %v, 1
+  %c = icmp ugt i8 %a, %v
+  %r = zext i1 %c to i32
+  ret i32 %r
+}
+Transformation seems to be correct!
+
+Summary:
+  1 correct transformations
+  0 incorrect transformations
+  0 failed-to-prove transformations
+  0 Alive2 errors

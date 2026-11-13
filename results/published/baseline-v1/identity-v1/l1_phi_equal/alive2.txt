@@ -1,0 +1,40 @@
+
+----------------------------------------
+define i32 @f(i32 noundef %x) {
+entry:
+  %c = icmp eq i32 noundef %x, 0
+  br i1 %c, label %a, label %b
+
+b:
+  br label %merge
+
+a:
+  br label %merge
+
+merge:
+  %r = phi i32 [ 7, %a ], [ 7, %b ]
+  ret i32 %r
+}
+=>
+define i32 @f(i32 noundef %x) {
+entry:
+  %c = icmp eq i32 noundef %x, 0
+  br i1 %c, label %a, label %b
+
+b:
+  br label %merge
+
+a:
+  br label %merge
+
+merge:
+  %r = phi i32 [ 7, %a ], [ 7, %b ]
+  ret i32 %r
+}
+Transformation seems to be correct!
+
+Summary:
+  1 correct transformations
+  0 incorrect transformations
+  0 failed-to-prove transformations
+  0 Alive2 errors

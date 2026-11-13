@@ -1,0 +1,34 @@
+
+----------------------------------------
+define i32 @f(i32 noundef %x) {
+entry:
+  br i1 1, label %a, label %b
+
+b:
+  %v = sub i32 noundef %x, 1
+  ret i32 %v
+
+a:
+  %u = add i32 noundef %x, 1
+  ret i32 %u
+}
+=>
+define i32 @f(i32 noundef %x) {
+entry:
+  br i1 1, label %a, label %b
+
+b:
+  %v = sub i32 noundef %x, 1
+  ret i32 %v
+
+a:
+  %u = add i32 noundef %x, 1
+  ret i32 %u
+}
+Transformation seems to be correct!
+
+Summary:
+  1 correct transformations
+  0 incorrect transformations
+  0 failed-to-prove transformations
+  0 Alive2 errors

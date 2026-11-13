@@ -1,0 +1,1407 @@
+{
+  "passed": true,
+  "count": 90,
+  "provenance": "Authored validation fixtures; not model-generated examples.",
+  "records": [
+    {
+      "task_id": "l0_add_fold",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l0_add_fold",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l0_add_fold",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 270,
+        "counterexample": {
+          "input": [
+            31
+          ],
+          "source": "40",
+          "candidate": "31"
+        }
+      }
+    },
+    {
+      "task_id": "l0_add_variable",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l0_add_variable",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l0_add_variable",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 270,
+        "counterexample": {
+          "input": [
+            31
+          ],
+          "source": "67",
+          "candidate": "40"
+        }
+      }
+    },
+    {
+      "task_id": "l0_widened",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 511,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l0_widened",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 511,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l0_widened",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 511,
+        "mismatch_count": 511,
+        "counterexample": {
+          "input": [
+            31
+          ],
+          "source": "1",
+          "candidate": "0"
+        }
+      }
+    },
+    {
+      "task_id": "l0_wrap",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 511,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l0_wrap",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 511,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l0_wrap",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 511,
+        "mismatch_count": 4,
+        "counterexample": {
+          "input": [
+            255
+          ],
+          "source": "0",
+          "candidate": "1"
+        }
+      }
+    },
+    {
+      "task_id": "l0_udiv",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l0_udiv",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l0_udiv",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 131,
+        "counterexample": {
+          "input": [
+            2147483648
+          ],
+          "source": "536870912",
+          "candidate": "3758096384"
+        }
+      }
+    },
+    {
+      "task_id": "l0_sdiv",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l0_sdiv",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l0_sdiv",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 107,
+        "counterexample": {
+          "input": [
+            4294967291
+          ],
+          "source": "4294967295",
+          "candidate": "4294967294"
+        }
+      }
+    },
+    {
+      "task_id": "l0_unsigned_cmp",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l0_unsigned_cmp",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l0_unsigned_cmp",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 270,
+        "counterexample": {
+          "input": [
+            31
+          ],
+          "source": "1",
+          "candidate": "0"
+        }
+      }
+    },
+    {
+      "task_id": "l0_signed_cmp",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l0_signed_cmp",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l0_signed_cmp",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 122,
+        "counterexample": {
+          "input": [
+            2147483648
+          ],
+          "source": "0",
+          "candidate": "1"
+        }
+      }
+    },
+    {
+      "task_id": "l1_const_branch",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l1_const_branch",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l1_const_branch",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 270,
+        "counterexample": {
+          "input": [
+            31
+          ],
+          "source": "32",
+          "candidate": "30"
+        }
+      }
+    },
+    {
+      "task_id": "l1_variable_branch",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l1_variable_branch",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l1_variable_branch",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 270,
+        "counterexample": {
+          "input": [
+            31
+          ],
+          "source": "30",
+          "candidate": "32"
+        }
+      }
+    },
+    {
+      "task_id": "l1_phi_equal",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l1_phi_equal",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l1_phi_equal",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 270,
+        "counterexample": {
+          "input": [
+            31
+          ],
+          "source": "7",
+          "candidate": "9"
+        }
+      }
+    },
+    {
+      "task_id": "l1_phi_different",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l1_phi_different",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l1_phi_different",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 270,
+        "counterexample": {
+          "input": [
+            31
+          ],
+          "source": "9",
+          "candidate": "7"
+        }
+      }
+    },
+    {
+      "task_id": "l1_dead_value",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l1_dead_value",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l1_dead_value",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 270,
+        "counterexample": {
+          "input": [
+            31
+          ],
+          "source": "31",
+          "candidate": "0"
+        }
+      }
+    },
+    {
+      "task_id": "l1_live_on_path",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l1_live_on_path",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l1_live_on_path",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 269,
+        "counterexample": {
+          "input": [
+            31
+          ],
+          "source": "527",
+          "candidate": "31"
+        }
+      }
+    },
+    {
+      "task_id": "l1_cse_equal",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l1_cse_equal",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l1_cse_equal",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 256,
+        "counterexample": {
+          "input": [
+            2164747278,
+            3707497651
+          ],
+          "source": "3154555266",
+          "candidate": "1577277633"
+        }
+      }
+    },
+    {
+      "task_id": "l1_cse_different",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l1_cse_different",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l1_cse_different",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 256,
+        "counterexample": {
+          "input": [
+            2234404108,
+            41572372
+          ],
+          "source": "215413293",
+          "candidate": "256985664"
+        }
+      }
+    },
+    {
+      "task_id": "l2_disjoint",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l2_disjoint",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l2_disjoint",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 256,
+        "counterexample": {
+          "input": [
+            3347846599,
+            2054967615,
+            0
+          ],
+          "source": "2400725902 3347846599 7",
+          "candidate": "2400725902 3347846599 2054967615"
+        }
+      }
+    },
+    {
+      "task_id": "l2_mayalias",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l2_mayalias",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l2_mayalias",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 118,
+        "counterexample": {
+          "input": [
+            1450164,
+            2122097720,
+            1
+          ],
+          "source": "1450171 7 2122097720",
+          "candidate": "2900328 7 2122097720"
+        }
+      }
+    },
+    {
+      "task_id": "l2_store_overwritten",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l2_store_overwritten",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l2_store_overwritten",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 256,
+        "counterexample": {
+          "input": [
+            1326614973,
+            4216125212,
+            0
+          ],
+          "source": "0 7 4216125212",
+          "candidate": "0 1326614973 4216125212"
+        }
+      }
+    },
+    {
+      "task_id": "l2_store_observed",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l2_store_observed",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l2_store_observed",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 256,
+        "counterexample": {
+          "input": [
+            3589519492,
+            1635752807,
+            1
+          ],
+          "source": "3 7 1635752807",
+          "candidate": "3589519492 7 1635752807"
+        }
+      }
+    },
+    {
+      "task_id": "l2_local_store",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l2_local_store",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l2_local_store",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 256,
+        "counterexample": {
+          "input": [
+            1931259969,
+            3281237811,
+            0
+          ],
+          "source": "0 1931259969 3281237811",
+          "candidate": "0 7 3281237811"
+        }
+      }
+    },
+    {
+      "task_id": "l2_escaped_store",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l2_escaped_store",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l2_escaped_store",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 256,
+        "counterexample": {
+          "input": [
+            822231772,
+            1545497527,
+            1
+          ],
+          "source": "0 7 1545497527",
+          "candidate": "0 822231772 1545497527"
+        }
+      }
+    },
+    {
+      "task_id": "l2_duplicate_store",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l2_duplicate_store",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l2_duplicate_store",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 256,
+        "counterexample": {
+          "input": [
+            526327493,
+            457038068,
+            1
+          ],
+          "source": "0 7 457038068",
+          "candidate": "0 526327493 457038068"
+        }
+      }
+    },
+    {
+      "task_id": "l2_distinct_store",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l2_distinct_store",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "l2_distinct_store",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 138,
+        "counterexample": {
+          "input": [
+            513746781,
+            3413821547,
+            0
+          ],
+          "source": "0 7 7",
+          "candidate": "0 7 3413821547"
+        }
+      }
+    },
+    {
+      "task_id": "dev_l0_xor_self",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "dev_l0_xor_self",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "dev_l0_xor_self",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 270,
+        "counterexample": {
+          "input": [
+            31
+          ],
+          "source": "0",
+          "candidate": "31"
+        }
+      }
+    },
+    {
+      "task_id": "dev_l0_and_all",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "dev_l0_and_all",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "dev_l0_and_all",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 270,
+        "counterexample": {
+          "input": [
+            31
+          ],
+          "source": "31",
+          "candidate": "0"
+        }
+      }
+    },
+    {
+      "task_id": "dev_l1_select_equal",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "dev_l1_select_equal",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "dev_l1_select_equal",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 270,
+        "counterexample": {
+          "input": [
+            31
+          ],
+          "source": "11",
+          "candidate": "12"
+        }
+      }
+    },
+    {
+      "task_id": "dev_l1_unreachable",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "dev_l1_unreachable",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "dev_l1_unreachable",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 270,
+        "counterexample": {
+          "input": [
+            31
+          ],
+          "source": "31",
+          "candidate": "99"
+        }
+      }
+    },
+    {
+      "task_id": "dev_l2_forward",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "dev_l2_forward",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "dev_l2_forward",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 256,
+        "mismatch_count": 256,
+        "counterexample": {
+          "input": [
+            2257689789,
+            2116530344,
+            0
+          ],
+          "source": "11 11 2116530344",
+          "candidate": "11 2257689789 2116530344"
+        }
+      }
+    },
+    {
+      "task_id": "dev_l2_alloca",
+      "variant": "source",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "dev_l2_alloca",
+      "variant": "reference",
+      "expected": "verified",
+      "passed": true,
+      "status": "verified",
+      "differential": {
+        "status": "match",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "task_id": "dev_l2_alloca",
+      "variant": "mutant",
+      "expected": "refuted",
+      "passed": true,
+      "status": "refuted",
+      "differential": {
+        "status": "mismatch",
+        "input_kind": "holdout",
+        "case_count": 270,
+        "mismatch_count": 270,
+        "counterexample": {
+          "input": [
+            31
+          ],
+          "source": "13",
+          "candidate": "12"
+        }
+      }
+    }
+  ]
+}

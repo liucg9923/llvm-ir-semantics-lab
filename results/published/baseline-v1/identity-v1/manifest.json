@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-13T03:12:55.127776+00:00",
+  "backend": "identity",
+  "model": null,
+  "split": "test",
+  "mode": "fixture",
+  "dataset_sha256": "b7e6848a37598f527eace2dc83560b5c28b01db5a8b1bda35569b00c12266de2",
+  "config": {
+    "schema_version": 1,
+    "seed": 20261112,
+    "dtype": "float16",
+    "do_sample": false,
+    "max_input_tokens": 4096,
+    "max_new_tokens": 2048,
+    "max_generation_seconds": 120,
+    "tool_timeout_seconds": 60,
+    "execution_timeout_seconds": 5,
+    "random_inputs": 256,
+    "few_shot_ids": [
+      "dev_l0_xor_self",
+      "dev_l1_select_equal"
+    ],
+    "feedback_ids": [
+      "l0_add_fold",
+      "l0_wrap",
+      "l0_udiv",
+      "l0_signed_cmp",
+      "l1_const_branch",
+      "l1_phi_different",
+      "l1_dead_value",
+      "l1_cse_different",
+      "l2_disjoint",
+      "l2_store_observed",
+      "l2_local_store",
+      "l2_distinct_store"
+    ],
+    "alive2_args": [
+      "-always-verify",
+      "-smt-to=10000",
+      "-smt-max-mem=1024",
+      "-smt-random-seed=20261112"
+    ]
+  },
+  "items": [
+    {
+      "key": "l0_add_fold",
+      "task_id": "l0_add_fold",
+      "arm": "initial"
+    },
+    {
+      "key": "l0_add_variable",
+      "task_id": "l0_add_variable",
+      "arm": "initial"
+    },
+    {
+      "key": "l0_widened",
+      "task_id": "l0_widened",
+      "arm": "initial"
+    },
+    {
+      "key": "l0_wrap",
+      "task_id": "l0_wrap",
+      "arm": "initial"
+    },
+    {
+      "key": "l0_udiv",
+      "task_id": "l0_udiv",
+      "arm": "initial"
+    },
+    {
+      "key": "l0_sdiv",
+      "task_id": "l0_sdiv",
+      "arm": "initial"
+    },
+    {
+      "key": "l0_unsigned_cmp",
+      "task_id": "l0_unsigned_cmp",
+      "arm": "initial"
+    },
+    {
+      "key": "l0_signed_cmp",
+      "task_id": "l0_signed_cmp",
+      "arm": "initial"
+    },
+    {
+      "key": "l1_const_branch",
+      "task_id": "l1_const_branch",
+      "arm": "initial"
+    },
+    {
+      "key": "l1_variable_branch",
+      "task_id": "l1_variable_branch",
+      "arm": "initial"
+    },
+    {
+      "key": "l1_phi_equal",
+      "task_id": "l1_phi_equal",
+      "arm": "initial"
+    },
+    {
+      "key": "l1_phi_different",
+      "task_id": "l1_phi_different",
+      "arm": "initial"
+    },
+    {
+      "key": "l1_dead_value",
+      "task_id": "l1_dead_value",
+      "arm": "initial"
+    },
+    {
+      "key": "l1_live_on_path",
+      "task_id": "l1_live_on_path",
+      "arm": "initial"
+    },
+    {
+      "key": "l1_cse_equal",
+      "task_id": "l1_cse_equal",
+      "arm": "initial"
+    },
+    {
+      "key": "l1_cse_different",
+      "task_id": "l1_cse_different",
+      "arm": "initial"
+    },
+    {
+      "key": "l2_disjoint",
+      "task_id": "l2_disjoint",
+      "arm": "initial"
+    },
+    {
+      "key": "l2_mayalias",
+      "task_id": "l2_mayalias",
+      "arm": "initial"
+    },
+    {
+      "key": "l2_store_overwritten",
+      "task_id": "l2_store_overwritten",
+      "arm": "initial"
+    },
+    {
+      "key": "l2_store_observed",
+      "task_id": "l2_store_observed",
+      "arm": "initial"
+    },
+    {
+      "key": "l2_local_store",
+      "task_id": "l2_local_store",
+      "arm": "initial"
+    },
+    {
+      "key": "l2_escaped_store",
+      "task_id": "l2_escaped_store",
+      "arm": "initial"
+    },
+    {
+      "key": "l2_duplicate_store",
+      "task_id": "l2_duplicate_store",
+      "arm": "initial"
+    },
+    {
+      "key": "l2_distinct_store",
+      "task_id": "l2_distinct_store",
+      "arm": "initial"
+    }
+  ],
+  "status": "evaluated",
+  "source_code_sha256": "ca23c0e9f60e835db087a7b14e4d692c9b749a90c2de00329db0fb42bd9de954",
+  "evaluation_code_sha256": "ca23c0e9f60e835db087a7b14e4d692c9b749a90c2de00329db0fb42bd9de954"
+}

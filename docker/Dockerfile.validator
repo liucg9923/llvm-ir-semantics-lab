@@ -1,0 +1,9 @@
+FROM ubuntu:22.04
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-venv ca-certificates curl git
+WORKDIR /workspace
+COPY . /workspace
+RUN bash scripts/bootstrap_validator.sh || { code=$?; [ "$code" -eq 4 ] && bash scripts/build_llvm_source.sh; }
+RUN bash scripts/setup_python.sh
+ENV LLVM_BIN=/workspace/.toolchain/bin ALIVE_TV=/workspace/.toolchain/bin/alive-tv
+ENTRYPOINT ["/workspace/.venv/bin/irsem"]

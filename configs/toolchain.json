@@ -1,0 +1,13 @@
+{
+  "llvm_version": "17.0.6",
+  "llvm_ref": "llvmorg-17.0.6",
+  "alive2_revision": "e031ebd9c18be1a4fc7f37ab193b4b158b92dd9a",
+  "alive2_revision_status": "validated_with_llvm_17_0_6_on_v1_supported_subset",
+  "note": "The historical Alive2 revision is a deployment candidate, not a claimed validated LLVM 17 combination. Formal runs require an acceptance receipt bound to the actual binaries and dataset.",
+  "z3_policy": "Exact installed package version and library hash must be recorded by deployment acceptance.",
+  "llvm_commit": "6009708b4367171ccdbf4b5905cb6a803753fe18",
+  "z3_package_version": "4.8.12-1",
+  "known_limitations": [
+    "This Alive2 revision does not support parameter noalias; the original sample is excluded and documented."
+  ]
+}

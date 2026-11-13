@@ -1,0 +1,22 @@
+
+----------------------------------------
+define i32 @f(ptr noundef %p, ptr noundef %q) {
+entry:
+  %local = alloca i64 4, align 4
+  store i32 7, ptr %local, align 4
+  ret i32 0
+}
+=>
+define i32 @f(ptr noundef %p, ptr noundef %q) {
+entry:
+  %local = alloca i64 4, align 4
+  store i32 7, ptr %local, align 4
+  ret i32 0
+}
+Transformation seems to be correct!
+
+Summary:
+  1 correct transformations
+  0 incorrect transformations
+  0 failed-to-prove transformations
+  0 Alive2 errors

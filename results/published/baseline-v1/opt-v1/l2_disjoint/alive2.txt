@@ -1,0 +1,27 @@
+
+----------------------------------------
+define i32 @f(ptr noundef %p, ptr noundef %q) {
+entry:
+  %separate = gep ptr noundef %p, 4 x i64 1
+  %a = load i32, ptr noundef %p, align 4
+  store i32 7, ptr %separate, align 4
+  %b = load i32, ptr noundef %p, align 4
+  %r = add i32 %a, %b
+  ret i32 %r
+}
+=>
+define i32 @f(ptr noundef %p, ptr noundef %q) {
+entry:
+  %separate = gep ptr noundef %p, 4 x i64 1
+  %a = load i32, ptr noundef %p, align 4
+  store i32 7, ptr %separate, align 4
+  %r = add i32 %a, %a
+  ret i32 %r
+}
+Transformation seems to be correct!
+
+Summary:
+  1 correct transformations
+  0 incorrect transformations
+  0 failed-to-prove transformations
+  0 Alive2 errors

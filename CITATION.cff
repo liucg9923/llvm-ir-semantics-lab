@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this educational benchmark, cite its repository commit and dataset lock hash."
+title: "LLVM IR Semantics Lab"
+type: software
+version: 0.1.0
+license: Apache-2.0
+authors:
+  - name: "LLVM IR Semantics Lab contributors"

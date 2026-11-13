@@ -1,0 +1,22 @@
+
+----------------------------------------
+define i32 @f(i32 noundef %x) {
+entry:
+  %c = icmp sge i32 noundef %x, 0
+  %r = zext i1 %c to i32
+  ret i32 %r
+}
+=>
+define i32 @f(i32 noundef %x) {
+entry:
+  %c = icmp sgt i32 noundef %x, 4294967295
+  %r = zext i1 %c to i32
+  ret i32 %r
+}
+Transformation seems to be correct!
+
+Summary:
+  1 correct transformations
+  0 incorrect transformations
+  0 failed-to-prove transformations
+  0 Alive2 errors

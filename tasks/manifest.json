@@ -1,0 +1,543 @@
+{
+  "schema_version": 1,
+  "tasks": [
+    {
+      "id": "l0_add_fold",
+      "level": "L0",
+      "pair_id": "add_constant",
+      "role": "opportunity",
+      "split": "test",
+      "directory": "tasks/test/l0_add_fold",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine)",
+      "goal": {
+        "opcode_max": {
+          "add": 1
+        }
+      },
+      "description": "Fold a constant expression without deleting its contribution.",
+      "input_domain": "All i32 bit patterns; integer operations use LLVM semantics.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "l0_add_variable",
+      "level": "L0",
+      "pair_id": "add_constant",
+      "role": "guard",
+      "split": "test",
+      "directory": "tasks/test/l0_add_variable",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine)",
+      "goal": {},
+      "description": "The apparent constant now depends on an input.",
+      "input_domain": "All i32 bit patterns; integer operations use LLVM semantics.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "l0_widened",
+      "level": "L0",
+      "pair_id": "increment_width",
+      "role": "opportunity",
+      "split": "test",
+      "directory": "tasks/test/l0_widened",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": true,
+      "pipeline": "function(instcombine)",
+      "goal": {
+        "instruction_max": 1
+      },
+      "description": "Increment after widening cannot wrap in this range.",
+      "input_domain": "All i32 bit patterns; integer operations use LLVM semantics.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "l0_wrap",
+      "level": "L0",
+      "pair_id": "increment_width",
+      "role": "guard",
+      "split": "test",
+      "directory": "tasks/test/l0_wrap",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": true,
+      "pipeline": "function(instcombine)",
+      "goal": {},
+      "description": "i8 wraps at 255; the comparison is not always true.",
+      "input_domain": "All i32 bit patterns; integer operations use LLVM semantics.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "l0_udiv",
+      "level": "L0",
+      "pair_id": "division_sign",
+      "role": "opportunity",
+      "split": "test",
+      "directory": "tasks/test/l0_udiv",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine)",
+      "goal": {
+        "opcode_max": {
+          "udiv": 0
+        }
+      },
+      "description": "Unsigned division by four can use logical shift.",
+      "input_domain": "All i32 bit patterns; integer operations use LLVM semantics.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "l0_sdiv",
+      "level": "L0",
+      "pair_id": "division_sign",
+      "role": "guard",
+      "split": "test",
+      "directory": "tasks/test/l0_sdiv",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine)",
+      "goal": {},
+      "description": "Signed division rounds toward zero, not toward negative infinity.",
+      "input_domain": "All i32 bit patterns; integer operations use LLVM semantics.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "l0_unsigned_cmp",
+      "level": "L0",
+      "pair_id": "comparison_sign",
+      "role": "opportunity",
+      "split": "test",
+      "directory": "tasks/test/l0_unsigned_cmp",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine)",
+      "goal": {
+        "instruction_max": 1
+      },
+      "description": "Unsigned values are always at least zero.",
+      "input_domain": "All i32 bit patterns; integer operations use LLVM semantics.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "l0_signed_cmp",
+      "level": "L0",
+      "pair_id": "comparison_sign",
+      "role": "guard",
+      "split": "test",
+      "directory": "tasks/test/l0_signed_cmp",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine)",
+      "goal": {},
+      "description": "The signed comparison depends on the sign bit.",
+      "input_domain": "All i32 bit patterns; integer operations use LLVM semantics.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "l1_const_branch",
+      "level": "L1",
+      "pair_id": "branch_condition",
+      "role": "opportunity",
+      "split": "test",
+      "directory": "tasks/test/l1_const_branch",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(sccp,simplifycfg,dce)",
+      "goal": {
+        "opcode_max": {
+          "br": 0
+        }
+      },
+      "description": "Only one branch is reachable.",
+      "input_domain": "All i32 bit patterns; integer operations use LLVM semantics.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "l1_variable_branch",
+      "level": "L1",
+      "pair_id": "branch_condition",
+      "role": "guard",
+      "split": "test",
+      "directory": "tasks/test/l1_variable_branch",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(sccp,simplifycfg,dce)",
+      "goal": {},
+      "description": "A variable condition cannot be replaced by a constant.",
+      "input_domain": "All i32 bit patterns; integer operations use LLVM semantics.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "l1_phi_equal",
+      "level": "L1",
+      "pair_id": "phi_values",
+      "role": "opportunity",
+      "split": "test",
+      "directory": "tasks/test/l1_phi_equal",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(simplifycfg,instcombine,dce)",
+      "goal": {
+        "instruction_max": 1
+      },
+      "description": "All incoming phi values agree.",
+      "input_domain": "All i32 bit patterns; integer operations use LLVM semantics.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "l1_phi_different",
+      "level": "L1",
+      "pair_id": "phi_values",
+      "role": "guard",
+      "split": "test",
+      "directory": "tasks/test/l1_phi_different",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(simplifycfg,instcombine,dce)",
+      "goal": {},
+      "description": "Different incoming values carry observable information.",
+      "input_domain": "All i32 bit patterns; integer operations use LLVM semantics.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "l1_dead_value",
+      "level": "L1",
+      "pair_id": "value_liveness",
+      "role": "opportunity",
+      "split": "test",
+      "directory": "tasks/test/l1_dead_value",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(dce)",
+      "goal": {
+        "opcode_max": {
+          "mul": 0
+        }
+      },
+      "description": "An unused pure computation can be removed.",
+      "input_domain": "All i32 bit patterns; integer operations use LLVM semantics.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "l1_live_on_path",
+      "level": "L1",
+      "pair_id": "value_liveness",
+      "role": "guard",
+      "split": "test",
+      "directory": "tasks/test/l1_live_on_path",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(dce)",
+      "goal": {},
+      "description": "A value used on one reachable path is live.",
+      "input_domain": "All i32 bit patterns; integer operations use LLVM semantics.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "l1_cse_equal",
+      "level": "L1",
+      "pair_id": "expression_operands",
+      "role": "opportunity",
+      "split": "test",
+      "directory": "tasks/test/l1_cse_equal",
+      "abi": "binary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(gvn,instcombine)",
+      "goal": {
+        "instruction_max": 3
+      },
+      "description": "Equivalent expressions can share a computed value.",
+      "input_domain": "All i32 bit patterns; integer operations use LLVM semantics.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "l1_cse_different",
+      "level": "L1",
+      "pair_id": "expression_operands",
+      "role": "guard",
+      "split": "test",
+      "directory": "tasks/test/l1_cse_different",
+      "abi": "binary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(gvn,instcombine)",
+      "goal": {},
+      "description": "Similar-looking expressions have different operands.",
+      "input_domain": "All i32 bit patterns; integer operations use LLVM semantics.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "l2_disjoint",
+      "level": "L2",
+      "pair_id": "pointer_alias",
+      "role": "opportunity",
+      "split": "test",
+      "directory": "tasks/test/l2_disjoint",
+      "abi": "memory",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(gvn)",
+      "goal": {
+        "opcode_max": {
+          "load": 1
+        }
+      },
+      "description": "Adjacent aligned i32 locations cannot overlap; the store remains observable.",
+      "input_domain": "p points to the first of two adjacent valid aligned uint32 locations; q is valid and may equal p.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "l2_mayalias",
+      "level": "L2",
+      "pair_id": "pointer_alias",
+      "role": "guard",
+      "split": "test",
+      "directory": "tasks/test/l2_mayalias",
+      "abi": "memory",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(gvn)",
+      "goal": {},
+      "description": "With p==q and initial 3, source returns 10, mutant returns 6.",
+      "input_domain": "Two valid aligned uint32 locations; alias allowed.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "l2_store_overwritten",
+      "level": "L2",
+      "pair_id": "store_observation",
+      "role": "opportunity",
+      "split": "test",
+      "directory": "tasks/test/l2_store_overwritten",
+      "abi": "memory",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(dse)",
+      "goal": {
+        "opcode_max": {
+          "store": 1
+        }
+      },
+      "description": "An overwritten store without an intervening observation can disappear.",
+      "input_domain": "Two valid aligned uint32 locations; alias allowed.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "l2_store_observed",
+      "level": "L2",
+      "pair_id": "store_observation",
+      "role": "guard",
+      "split": "test",
+      "directory": "tasks/test/l2_store_observed",
+      "abi": "memory",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(dse)",
+      "goal": {},
+      "description": "A load observes the first store; deleting just that store is unsafe.",
+      "input_domain": "Two valid aligned uint32 locations; alias allowed.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "l2_local_store",
+      "level": "L2",
+      "pair_id": "store_escape",
+      "role": "opportunity",
+      "split": "test",
+      "directory": "tasks/test/l2_local_store",
+      "abi": "memory",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(dse,dce)",
+      "goal": {
+        "opcode_max": {
+          "store": 0
+        }
+      },
+      "description": "A nonescaping local store is unobservable.",
+      "input_domain": "Two valid aligned uint32 locations; alias allowed.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "l2_escaped_store",
+      "level": "L2",
+      "pair_id": "store_escape",
+      "role": "guard",
+      "split": "test",
+      "directory": "tasks/test/l2_escaped_store",
+      "abi": "memory",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(dse,dce)",
+      "goal": {},
+      "description": "A store through a caller-provided pointer is observable.",
+      "input_domain": "Two valid aligned uint32 locations; alias allowed.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "l2_duplicate_store",
+      "level": "L2",
+      "pair_id": "store_destination",
+      "role": "opportunity",
+      "split": "test",
+      "directory": "tasks/test/l2_duplicate_store",
+      "abi": "memory",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(dse)",
+      "goal": {
+        "opcode_max": {
+          "store": 1
+        }
+      },
+      "description": "Repeated stores to the same location are redundant.",
+      "input_domain": "Two valid aligned uint32 locations; alias allowed.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "l2_distinct_store",
+      "level": "L2",
+      "pair_id": "store_destination",
+      "role": "guard",
+      "split": "test",
+      "directory": "tasks/test/l2_distinct_store",
+      "abi": "memory",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(dse)",
+      "goal": {},
+      "description": "Both locations may be observed, so one store cannot simply be deleted.",
+      "input_domain": "Two valid aligned uint32 locations; alias allowed.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "dev_l0_xor_self",
+      "level": "L0",
+      "pair_id": "dev_l0_xor_self",
+      "role": "opportunity",
+      "split": "dev",
+      "directory": "tasks/dev/dev_l0_xor_self",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine)",
+      "goal": {
+        "opcode_max": {
+          "xor": 0
+        }
+      },
+      "description": "Development-only fixture; excluded from benchmark scores.",
+      "input_domain": "All i32 bit patterns; integer operations use LLVM semantics.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "dev_l0_and_all",
+      "level": "L0",
+      "pair_id": "dev_l0_and_all",
+      "role": "opportunity",
+      "split": "dev",
+      "directory": "tasks/dev/dev_l0_and_all",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine)",
+      "goal": {
+        "opcode_max": {
+          "and": 0
+        }
+      },
+      "description": "Development-only fixture; excluded from benchmark scores.",
+      "input_domain": "All i32 bit patterns; integer operations use LLVM semantics.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "dev_l1_select_equal",
+      "level": "L1",
+      "pair_id": "dev_l1_select_equal",
+      "role": "opportunity",
+      "split": "dev",
+      "directory": "tasks/dev/dev_l1_select_equal",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(instcombine)",
+      "goal": {
+        "instruction_max": 1
+      },
+      "description": "Development-only fixture; excluded from benchmark scores.",
+      "input_domain": "All i32 bit patterns; integer operations use LLVM semantics.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "dev_l1_unreachable",
+      "level": "L1",
+      "pair_id": "dev_l1_unreachable",
+      "role": "opportunity",
+      "split": "dev",
+      "directory": "tasks/dev/dev_l1_unreachable",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(simplifycfg)",
+      "goal": {
+        "instruction_max": 1
+      },
+      "description": "Development-only fixture; excluded from benchmark scores.",
+      "input_domain": "All i32 bit patterns; integer operations use LLVM semantics.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "dev_l2_forward",
+      "level": "L2",
+      "pair_id": "dev_l2_forward",
+      "role": "opportunity",
+      "split": "dev",
+      "directory": "tasks/dev/dev_l2_forward",
+      "abi": "memory",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(gvn)",
+      "goal": {
+        "opcode_max": {
+          "load": 0
+        }
+      },
+      "description": "Development-only fixture; excluded from benchmark scores.",
+      "input_domain": "Two valid aligned uint32 locations; alias allowed.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    },
+    {
+      "id": "dev_l2_alloca",
+      "level": "L2",
+      "pair_id": "dev_l2_alloca",
+      "role": "opportunity",
+      "split": "dev",
+      "directory": "tasks/dev/dev_l2_alloca",
+      "abi": "unary",
+      "noalias": false,
+      "exhaustive_low_byte": false,
+      "pipeline": "function(sroa,instcombine)",
+      "goal": {
+        "instruction_max": 1
+      },
+      "description": "Development-only fixture; excluded from benchmark scores.",
+      "input_domain": "All i32 bit patterns; integer operations use LLVM semantics.",
+      "provenance": "Original educational example, authored for this project; mutant is manually constructed."
+    }
+  ]
+}

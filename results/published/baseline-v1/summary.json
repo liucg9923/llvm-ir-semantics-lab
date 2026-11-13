@@ -1,0 +1,107 @@
+{
+  "dataset_sha256": "b7e6848a37598f527eace2dc83560b5c28b01db5a8b1bda35569b00c12266de2",
+  "groups": [
+    {
+      "level": "L0",
+      "arm": "initial",
+      "n": 8,
+      "statuses": {
+        "verified": 8
+      },
+      "syntax_valid": 8,
+      "verified": 8,
+      "refuted": 0,
+      "unchanged": 1,
+      "opportunities": 4,
+      "effective_optimizations": 4,
+      "run": "opt-v1",
+      "label": "opt",
+      "mode": "formal"
+    },
+    {
+      "level": "L1",
+      "arm": "initial",
+      "n": 8,
+      "statuses": {
+        "verified": 8
+      },
+      "syntax_valid": 8,
+      "verified": 8,
+      "refuted": 0,
+      "unchanged": 2,
+      "opportunities": 4,
+      "effective_optimizations": 4,
+      "run": "opt-v1",
+      "label": "opt",
+      "mode": "formal"
+    },
+    {
+      "level": "L2",
+      "arm": "initial",
+      "n": 8,
+      "statuses": {
+        "verified": 8
+      },
+      "syntax_valid": 8,
+      "verified": 8,
+      "refuted": 0,
+      "unchanged": 4,
+      "opportunities": 4,
+      "effective_optimizations": 4,
+      "run": "opt-v1",
+      "label": "opt",
+      "mode": "formal"
+    },
+    {
+      "level": "L0",
+      "arm": "initial",
+      "n": 8,
+      "statuses": {
+        "verified": 8
+      },
+      "syntax_valid": 8,
+      "verified": 8,
+      "refuted": 0,
+      "unchanged": 8,
+      "opportunities": 4,
+      "effective_optimizations": 0,
+      "run": "identity-v1",
+      "label": "identity",
+      "mode": "fixture"
+    },
+    {
+      "level": "L1",
+      "arm": "initial",
+      "n": 8,
+      "statuses": {
+        "verified": 8
+      },
+      "syntax_valid": 8,
+      "verified": 8,
+      "refuted": 0,
+      "unchanged": 8,
+      "opportunities": 4,
+      "effective_optimizations": 0,
+      "run": "identity-v1",
+      "label": "identity",
+      "mode": "fixture"
+    },
+    {
+      "level": "L2",
+      "arm": "initial",
+      "n": 8,
+      "statuses": {
+        "verified": 8
+      },
+      "syntax_valid": 8,
+      "verified": 8,
+      "refuted": 0,
+      "unchanged": 8,
+      "opportunities": 4,
+      "effective_optimizations": 0,
+      "run": "identity-v1",
+      "label": "identity",
+      "mode": "fixture"
+    }
+  ]
+}
