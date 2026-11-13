@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "seed": 20261112,
+  "dtype": "float16",
+  "do_sample": false,
+  "max_input_tokens": 4096,
+  "max_new_tokens": 2048,
+  "max_generation_seconds": 120,
+  "tool_timeout_seconds": 60,
+  "execution_timeout_seconds": 5,
+  "random_inputs": 256,
+  "few_shot_ids": [
+    "dev_l0_xor_self",
+    "dev_l1_select_equal"
+  ],
+  "feedback_ids": [
+    "l0_add_fold",
+    "l0_wrap",
+    "l0_udiv",
+    "l0_signed_cmp",
+    "l1_const_branch",
+    "l1_phi_different",
+    "l1_dead_value",
+    "l1_cse_different",
+    "l2_disjoint",
+    "l2_store_observed",
+    "l2_local_store",
+    "l2_distinct_store"
+  ],
+  "alive2_args": [
+    "-always-verify",
+    "-smt-to=10000",
+    "-smt-max-mem=1024",
+    "-smt-random-seed=20261112"
+  ],
+  "protocol_revision": 2,
+  "num_beams": 1,
+  "repetition_penalty": 1.0,
+  "no_repeat_ngram_size": 0,
+  "generation_config_policy": "Fresh explicit GenerationConfig; do not inherit checkpoint sampling or repetition defaults."
+}

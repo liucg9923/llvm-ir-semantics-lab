@@ -10,7 +10,7 @@ class HFModel:
         if config['dtype']!='float16' or config['do_sample'] is not False:
             raise ValueError('v1 supports only the declared FP16 greedy profile')
         import torch
-        from transformers import AutoTokenizer,AutoModelForCausalLM
+        from transformers import AutoTokenizer,AutoModelForCausalLM,GenerationConfig
         if not torch.cuda.is_available(): raise ValueError('CUDA is required for this FP16 inference profile')
         if torch.cuda.get_device_properties(0).total_memory < 22*1024**3:
             raise ValueError('FP16 profile requires >=22 GiB reported VRAM. Do not silently change quantization.')
@@ -26,7 +26,13 @@ class HFModel:
         resolved=getattr(self.model.config,'_commit_hash',None)
         if resolved and resolved!=spec['revision']: raise ValueError('Resolved model revision differs from lock')
         driver=run_process(['nvidia-smi','--query-gpu=driver_version','--format=csv,noheader'],10).stdout.strip()
-        self.info={'model':spec,'dtype':'float16','quantization':None,'torch':torch.__version__,
+        eos=self.model.generation_config.eos_token_id or self.tokenizer.eos_token_id
+        pad=self.tokenizer.pad_token_id if self.tokenizer.pad_token_id is not None else (eos[0] if isinstance(eos,list) else eos)
+        self.generation_config=GenerationConfig(do_sample=False,num_beams=config['num_beams'],
+            repetition_penalty=config['repetition_penalty'],no_repeat_ngram_size=config['no_repeat_ngram_size'],
+            max_new_tokens=config['max_new_tokens'],bos_token_id=self.model.generation_config.bos_token_id,
+            eos_token_id=eos,pad_token_id=pad,use_cache=True)
+        self.info={'effective_generation_config':self.generation_config.to_dict(),'model':spec,'dtype':'float16','quantization':None,'torch':torch.__version__,
                    'transformers':version('transformers'),'cuda':torch.version.cuda,
                    'gpu':torch.cuda.get_device_name(0),'driver':driver,'resolved_revision':resolved,'python':platform.python_version()}
 
@@ -38,13 +44,11 @@ class HFModel:
         inputs=tok(wire,return_tensors='pt',add_special_tokens=False).to('cuda:0')
         n=inputs['input_ids'].shape[1]
         if n>cfg['max_input_tokens']: raise ValueError('Prompt exceeds frozen token budget')
-        eos=self.model.generation_config.eos_token_id or tok.eos_token_id
-        pad=tok.pad_token_id if tok.pad_token_id is not None else (eos[0] if isinstance(eos,list) else eos)
+        eos=self.generation_config.eos_token_id
         torch.cuda.synchronize(); start=time.monotonic()
         with torch.inference_mode():
-            output=self.model.generate(**inputs,do_sample=False,max_new_tokens=cfg['max_new_tokens'],
-                max_time=cfg['max_generation_seconds'],pad_token_id=pad,
-                eos_token_id=eos,use_cache=True)
+            output=self.model.generate(**inputs,generation_config=self.generation_config,
+                max_time=cfg['max_generation_seconds'])
         torch.cuda.synchronize(); elapsed=time.monotonic()-start
         ids=output[0,n:].tolist()
         text=tok.decode(ids,skip_special_tokens=True)

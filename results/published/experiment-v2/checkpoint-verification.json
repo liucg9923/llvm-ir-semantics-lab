@@ -1,0 +1,93 @@
+{
+  "status": "complete",
+  "model": {
+    "id": "Qwen/Qwen2.5-Coder-7B-Instruct",
+    "revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+    "template": "chat",
+    "license": "Apache-2.0",
+    "gated": false
+  },
+  "endpoint": "https://hf-mirror.com",
+  "finished_utc": "2026-11-13T05:05:14.605415+00:00",
+  "seconds": 27.423284348100424,
+  "files": [
+    {
+      "path": "config.json",
+      "size": 663,
+      "lfs_sha256": null,
+      "git_blob_id": "1a2ea88621f4248fccfb575beaf64c1ea5d9587f",
+      "verified_hash": "1a2ea88621f4248fccfb575beaf64c1ea5d9587f"
+    },
+    {
+      "path": "generation_config.json",
+      "size": 242,
+      "lfs_sha256": null,
+      "git_blob_id": "b7849b3dad857bc1e227afd6ca21d1e4cb3f8f82",
+      "verified_hash": "b7849b3dad857bc1e227afd6ca21d1e4cb3f8f82"
+    },
+    {
+      "path": "merges.txt",
+      "size": 1671839,
+      "lfs_sha256": null,
+      "git_blob_id": "20024bfe7c83998e9aeaf98a0cd6a2ce6306c2f0",
+      "verified_hash": "20024bfe7c83998e9aeaf98a0cd6a2ce6306c2f0"
+    },
+    {
+      "path": "model-00001-of-00004.safetensors",
+      "size": 4877660776,
+      "lfs_sha256": "0b6f069918b07c064cbba8ae4f00f529aa9bbf84b7cdfcb7fc2694a40f6aa8ef",
+      "git_blob_id": "0bdac2c748c298a520c6e91dc4194dc2984349a8",
+      "verified_hash": "0b6f069918b07c064cbba8ae4f00f529aa9bbf84b7cdfcb7fc2694a40f6aa8ef"
+    },
+    {
+      "path": "model-00002-of-00004.safetensors",
+      "size": 4932751008,
+      "lfs_sha256": "c3d46733e7aa054ea7b063fbccd0a5a08446e7bd1814bef26936c5aa1331da62",
+      "git_blob_id": "03c643b956c343266860a4a037c56d1f81d9dfca",
+      "verified_hash": "c3d46733e7aa054ea7b063fbccd0a5a08446e7bd1814bef26936c5aa1331da62"
+    },
+    {
+      "path": "model-00003-of-00004.safetensors",
+      "size": 4330865200,
+      "lfs_sha256": "9fe45dacee087385b3d2d6dd27a7413a8a56d95f145772facc148fa86fc73446",
+      "git_blob_id": "d50d253b55e5d97e0e277e97a38d92b6d95dc359",
+      "verified_hash": "9fe45dacee087385b3d2d6dd27a7413a8a56d95f145772facc148fa86fc73446"
+    },
+    {
+      "path": "model-00004-of-00004.safetensors",
+      "size": 1089994880,
+      "lfs_sha256": "5aa6e5cbe642377fd441fb4e60e83cca96b2bcd9820e245b9ea06d94653f17f2",
+      "git_blob_id": "eb75c022771ad104dd0432cb85f0fc2b1550554f",
+      "verified_hash": "5aa6e5cbe642377fd441fb4e60e83cca96b2bcd9820e245b9ea06d94653f17f2"
+    },
+    {
+      "path": "model.safetensors.index.json",
+      "size": 27752,
+      "lfs_sha256": null,
+      "git_blob_id": "6ca5084b88f1a95fef37f1b94c6e87ff69422bb7",
+      "verified_hash": "6ca5084b88f1a95fef37f1b94c6e87ff69422bb7"
+    },
+    {
+      "path": "tokenizer.json",
+      "size": 7031645,
+      "lfs_sha256": null,
+      "git_blob_id": "443909a61d429dff23010e5bddd28ff530edda00",
+      "verified_hash": "443909a61d429dff23010e5bddd28ff530edda00"
+    },
+    {
+      "path": "tokenizer_config.json",
+      "size": 7305,
+      "lfs_sha256": null,
+      "git_blob_id": "acee076f49bf3c0298e15de0909d1da7b392f0c3",
+      "verified_hash": "acee076f49bf3c0298e15de0909d1da7b392f0c3"
+    },
+    {
+      "path": "vocab.json",
+      "size": 2776833,
+      "lfs_sha256": null,
+      "git_blob_id": "4783fe10ac3adce15ac8f358ef5462739852c569",
+      "verified_hash": "4783fe10ac3adce15ac8f358ef5462739852c569"
+    }
+  ],
+  "weights_uploaded_to_git": false
+}

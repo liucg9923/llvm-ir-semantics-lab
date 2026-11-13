@@ -1,0 +1,40 @@
+
+----------------------------------------
+define i32 @f(ptr noundef %p, ptr noundef %q) {
+entry:
+  store i32 7, ptr noundef %p, align 4
+  ret i32 0
+}
+=>
+define i32 @f(ptr noundef %p, ptr noundef %q) {
+entry:
+  ret i32 0
+}
+Transformation doesn't verify!
+
+ERROR: Mismatch in memory
+
+Example:
+ptr noundef %p = pointer(non-local, block_id=1, offset=0)
+ptr noundef %q = null
+
+Source:
+
+SOURCE MEMORY STATE
+===================
+NON-LOCAL BLOCKS:
+Block 0 >	size: 0	align: 4	alloc type: 0	alive: false	address: 0
+Block 1 >	size: 4	align: 1	alloc type: 0	alive: true	address: 4
+Block 2 >	size: 0	align: 1	alloc type: 0	alive: true	address: 9
+
+Target:
+
+Mismatch in pointer(non-local, block_id=1, offset=0)
+Source value: #x00000007
+Target value: poison
+
+Summary:
+  0 correct transformations
+  1 incorrect transformations
+  0 failed-to-prove transformations
+  0 Alive2 errors

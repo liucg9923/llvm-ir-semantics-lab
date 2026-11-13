@@ -1,0 +1,45 @@
+{
+  "task_id": "l0_signed_cmp",
+  "level": "L0",
+  "role": "guard",
+  "source_metrics": {
+    "instruction_count": 3,
+    "opcodes": {
+      "icmp": 1,
+      "zext": 1,
+      "ret": 1
+    }
+  },
+  "syntax_valid": false,
+  "goal_met": false,
+  "effective_optimization": false,
+  "unchanged": false,
+  "candidate_metrics": {
+    "instruction_count": 2,
+    "opcodes": {
+      "icmp": 1,
+      "ret": 1
+    }
+  },
+  "syntax_log": {
+    "command": [
+      "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+      "-passes=verify",
+      "-S",
+      "/tmp/irsem-verify-i3_egalj/candidate.ll",
+      "-o",
+      "/tmp/irsem-verify-i3_egalj/canonical.ll"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt: /tmp/irsem-verify-i3_egalj/candidate.ll:7:11: error: '%c' defined with type 'i1' but expected 'i32'\n  ret i32 %c\n          ^\n",
+    "seconds": 0.016462836414575577,
+    "timed_out": false,
+    "truncated": false
+  },
+  "status": "invalid_ir",
+  "key": "l0_signed_cmp__self_review",
+  "arm": "self_review",
+  "mode": "formal",
+  "backend": "hf"
+}

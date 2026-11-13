@@ -1,0 +1,79 @@
+{
+  "task_id": "l1_variable_branch",
+  "level": "L1",
+  "role": "guard",
+  "source_metrics": {
+    "instruction_count": 6,
+    "opcodes": {
+      "icmp": 1,
+      "br": 1,
+      "add": 1,
+      "ret": 2,
+      "sub": 1
+    }
+  },
+  "syntax_valid": true,
+  "goal_met": null,
+  "effective_optimization": false,
+  "unchanged": false,
+  "candidate_metrics": {
+    "instruction_count": 4,
+    "opcodes": {
+      "icmp": 1,
+      "br": 1,
+      "ret": 2
+    }
+  },
+  "syntax_log": {
+    "command": [
+      "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+      "-passes=verify",
+      "-S",
+      "/tmp/irsem-verify-isv60sbc/candidate.ll",
+      "-o",
+      "/tmp/irsem-verify-isv60sbc/canonical.ll"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "seconds": 0.016826137900352478,
+    "timed_out": false,
+    "truncated": false
+  },
+  "canonical_ir": "; ModuleID = '/tmp/irsem-verify-isv60sbc/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-isv60sbc/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = icmp eq i32 %x, 0\n  br i1 %c, label %a, label %b\n\na:                                                ; preds = %entry\n  ret i32 1\n\nb:                                                ; preds = %entry\n  ret i32 -1\n}\n",
+  "alive2_log": {
+    "command": [
+      "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+      "-always-verify",
+      "-smt-to=10000",
+      "-smt-max-mem=1024",
+      "-smt-random-seed=20261112",
+      "/tmp/irsem-verify-isv60sbc/source.ll",
+      "/tmp/irsem-verify-isv60sbc/canonical.ll"
+    ],
+    "returncode": 0,
+    "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = icmp eq i32 noundef %x, 0\n  br i1 %c, label %a, label %b\n\nb:\n  %v = sub i32 noundef %x, 1\n  ret i32 %v\n\na:\n  %u = add i32 noundef %x, 1\n  ret i32 %u\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = icmp eq i32 noundef %x, 0\n  br i1 %c, label %a, label %b\n\nb:\n  ret i32 4294967295\n\na:\n  ret i32 1\n}\nTransformation doesn't verify!\n\nERROR: Value mismatch\n\nExample:\ni32 noundef %x = #x00000008 (8)\n\nSource:\ni1 %c = #x0 (0)\n  >> Jump to %b\ni32 %v = #x00000007 (7)\n\nTarget:\ni1 %c = #x0 (0)\n  >> Jump to %b\nSource value: #x00000007 (7)\nTarget value: #xffffffff (4294967295, -1)\n\nSummary:\n  0 correct transformations\n  1 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+    "stderr": "",
+    "seconds": 0.06519751064479351,
+    "timed_out": false,
+    "truncated": false
+  },
+  "differential": {
+    "status": "mismatch",
+    "input_kind": "holdout",
+    "case_count": 270,
+    "mismatch_count": 270,
+    "counterexample": {
+      "input": [
+        31
+      ],
+      "source": "30",
+      "candidate": "4294967295"
+    }
+  },
+  "status": "refuted",
+  "key": "l1_variable_branch",
+  "arm": "initial",
+  "mode": "formal",
+  "backend": "hf"
+}

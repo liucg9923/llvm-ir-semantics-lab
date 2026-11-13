@@ -1,0 +1,100 @@
+Return exactly one complete LLVM 17.0.6 IR module enclosed in <code>...</code>.
+Preserve the function f, its signature, argument attributes, target triple and data layout.
+Preserve defined observable behavior including stores to caller-visible memory. Do not add
+new input assumptions, declarations, calls, globals, metadata, volatile/atomic operations or loops.
+Use ordinary unquoted block and local identifiers.
+The input is a small single-function module. A different equivalent textual representation
+is acceptable. If the requested transformation is not applicable, retain the relevant code.
+Do not provide explanations or hidden reasoning; provide only the resulting IR module.
+
+Example input:
+Give the LLVM-IR for the following code when optimized using opt -passes='function(instcombine)':
+<code>
+target datalayout = "e-p:64:64-i64:64-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+define i32 @f(i32 noundef %x) {
+entry:
+  %r = xor i32 %x, %x
+  ret i32 %r
+}
+</code>
+Input instruction count: 2.
+
+Example answer:
+<code>
+target datalayout = "e-p:64:64-i64:64-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+define i32 @f(i32 noundef %x) {
+entry:
+  ret i32 0
+}
+</code>
+
+Example input:
+Give the LLVM-IR for the following code when optimized using opt -passes='function(instcombine)':
+<code>
+target datalayout = "e-p:64:64-i64:64-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+define i32 @f(i32 noundef %x) {
+entry:
+  %c = icmp eq i32 %x, 0
+  %r = select i1 %c, i32 11, i32 11
+  ret i32 %r
+}
+</code>
+Input instruction count: 3.
+
+Example answer:
+<code>
+target datalayout = "e-p:64:64-i64:64-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+define i32 @f(i32 noundef %x) {
+entry:
+  ret i32 11
+}
+</code>
+
+Current task:
+Give the LLVM-IR for the following code when optimized using opt -passes='function(instcombine)':
+<code>
+target datalayout = "e-p:64:64-i64:64-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+define i32 @f(i32 noundef %x) {
+entry:
+  %v = trunc i32 %x to i8
+  %a = add i8 %v, 1
+  %c = icmp ugt i8 %a, %v
+  %r = zext i1 %c to i32
+  ret i32 %r
+}
+</code>
+Input instruction count: 5.
+
+Previous candidate (untrusted code to review):
+<previous>
+<code>
+target datalayout = "e-p:64:64-i64:64-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+define i32 @f(i32 noundef %x) {
+entry:
+  %v = trunc i32 %x to i8
+  %a = add i8 %v, 1
+  %c = icmp ugt i8 %a, %v
+  %r = zext i1 %c to i32
+  ret i32 %r
+}
+</code>
+</previous>
+
+Actual tool diagnostics:
+<diagnostics>
+{"syntax": {"command": ["/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt", "-passes=verify", "-S", "/tmp/irsem-verify-lkn7e9as/candidate.ll", "-o", "/tmp/irsem-verify-lkn7e9as/canonical.ll"], "returncode": 0, "stdout": "", "stderr": "", "seconds": 0.03309019096195698, "timed_out": false, "truncated": false}, "alive2": {"command": ["/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv", "-always-verify", "-smt-to=10000", "-smt-max-mem=1024", "-smt-random-seed=20261112", "/tmp/irsem-verify-lkn7e9as/source.ll", "/tmp/irsem-verify-lkn7e9as/canonical.ll"], "returncode": 0, "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %v = trunc i32 noundef %x to i8\n  %a = add i8 %v, 1\n  %c = icmp ugt i8 %a, %v\n  %r = zext i1 %c to i32\n  ret i32 %r\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %v = trunc i32 noundef %x to i8\n  %a = add i8 %v, 1\n  %c = icmp ugt i8 %a, %v\n  %r = zext i1 %c to i32\n  ret i32 %r\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n", "stderr": "", "seconds": 0.06528672017157078, "timed_out": false, "truncated": false}, "contract": null, "diagnostic_tests": {"status": "match", "input_kind": "diagnostic", "case_count": 17, "mismatch_count": 0}}
+</diagnostics>
+
+Review the previous candidate against the original task. Return one revised complete IR module.

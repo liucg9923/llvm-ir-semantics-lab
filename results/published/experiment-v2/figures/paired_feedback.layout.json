@@ -1,0 +1,13 @@
+{
+  "boxes": [
+    {
+      "left_pt": 259.2,
+      "bottom_pt": 115.20000000000005,
+      "width_pt": 561.5999999999999,
+      "height_pt": 380.15999999999997,
+      "top_pt": 495.36
+    }
+  ],
+  "tolerance_pt": 1.5,
+  "status": "not_applicable"
+}

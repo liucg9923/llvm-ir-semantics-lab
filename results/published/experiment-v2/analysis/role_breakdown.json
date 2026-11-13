@@ -1,0 +1,50 @@
+[
+  {
+    "level": "L0",
+    "role": "opportunity",
+    "n": 4,
+    "verified": 3,
+    "refuted": 0,
+    "invalid_ir": 1
+  },
+  {
+    "level": "L0",
+    "role": "guard",
+    "n": 4,
+    "verified": 3,
+    "refuted": 0,
+    "invalid_ir": 1
+  },
+  {
+    "level": "L1",
+    "role": "opportunity",
+    "n": 4,
+    "verified": 3,
+    "refuted": 1,
+    "invalid_ir": 0
+  },
+  {
+    "level": "L1",
+    "role": "guard",
+    "n": 4,
+    "verified": 2,
+    "refuted": 2,
+    "invalid_ir": 0
+  },
+  {
+    "level": "L2",
+    "role": "opportunity",
+    "n": 4,
+    "verified": 4,
+    "refuted": 0,
+    "invalid_ir": 0
+  },
+  {
+    "level": "L2",
+    "role": "guard",
+    "n": 4,
+    "verified": 0,
+    "refuted": 4,
+    "invalid_ir": 0
+  }
+]

@@ -32,5 +32,10 @@
     "-smt-to=10000",
     "-smt-max-mem=1024",
     "-smt-random-seed=20261112"
-  ]
+  ],
+  "protocol_revision": 2,
+  "num_beams": 1,
+  "repetition_penalty": 1.0,
+  "no_repeat_ngram_size": 0,
+  "generation_config_policy": "Fresh explicit GenerationConfig; do not inherit checkpoint sampling or repetition defaults."
 }

@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.png -text
+*.pdf -text
+*.pptx -text
+*.gz -text
+results/published/**/raw.txt -text
+results/published/**/prompt.txt -text

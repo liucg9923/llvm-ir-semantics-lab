@@ -1,0 +1,72 @@
+{
+  "task_id": "l1_live_on_path",
+  "level": "L1",
+  "role": "guard",
+  "source_metrics": {
+    "instruction_count": 5,
+    "opcodes": {
+      "mul": 1,
+      "icmp": 1,
+      "br": 1,
+      "ret": 2
+    }
+  },
+  "syntax_valid": true,
+  "goal_met": null,
+  "effective_optimization": false,
+  "unchanged": true,
+  "candidate_metrics": {
+    "instruction_count": 5,
+    "opcodes": {
+      "mul": 1,
+      "icmp": 1,
+      "br": 1,
+      "ret": 2
+    }
+  },
+  "syntax_log": {
+    "command": [
+      "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+      "-passes=verify",
+      "-S",
+      "/tmp/irsem-verify-y8j49jo2/candidate.ll",
+      "-o",
+      "/tmp/irsem-verify-y8j49jo2/canonical.ll"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "seconds": 0.01679525151848793,
+    "timed_out": false,
+    "truncated": false
+  },
+  "canonical_ir": "; ModuleID = '/tmp/irsem-verify-y8j49jo2/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-y8j49jo2/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %v = mul i32 %x, 17\n  %c = icmp eq i32 %x, 0\n  br i1 %c, label %a, label %b\n\na:                                                ; preds = %entry\n  ret i32 %x\n\nb:                                                ; preds = %entry\n  ret i32 %v\n}\n",
+  "alive2_log": {
+    "command": [
+      "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+      "-always-verify",
+      "-smt-to=10000",
+      "-smt-max-mem=1024",
+      "-smt-random-seed=20261112",
+      "/tmp/irsem-verify-y8j49jo2/source.ll",
+      "/tmp/irsem-verify-y8j49jo2/canonical.ll"
+    ],
+    "returncode": 0,
+    "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %v = mul i32 noundef %x, 17\n  %c = icmp eq i32 noundef %x, 0\n  br i1 %c, label %a, label %b\n\nb:\n  ret i32 %v\n\na:\n  ret i32 noundef %x\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %v = mul i32 noundef %x, 17\n  %c = icmp eq i32 noundef %x, 0\n  br i1 %c, label %a, label %b\n\nb:\n  ret i32 %v\n\na:\n  ret i32 noundef %x\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+    "stderr": "",
+    "seconds": 0.06531936302781105,
+    "timed_out": false,
+    "truncated": false
+  },
+  "differential": {
+    "status": "match",
+    "input_kind": "holdout",
+    "case_count": 270,
+    "mismatch_count": 0
+  },
+  "status": "verified",
+  "key": "l1_live_on_path",
+  "arm": "initial",
+  "mode": "formal",
+  "backend": "hf"
+}

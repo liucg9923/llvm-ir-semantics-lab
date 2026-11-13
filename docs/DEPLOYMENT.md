@@ -37,3 +37,11 @@ LLVM 镜像仍使用 LLVM 官方签名密钥验证软件包。AutoDL 的可选 G
 `IRSEM_USE_PROVIDER_PROXY=1` 启用已有 `/etc/network_turbo`，只影响 Alive2 构建脚本的进程环境，不保存代理地址或认证信息。
 
 网络和镜像的可用性不是实验结果。安装失败时应排除环境问题，不能把它记为模型错误。
+
+## 当前实验与数据归档入口
+
+已验证模型下载入口为 scripts/download_checkpoint.py；Qwen 允许使用无凭据公共镜像，但文件必须匹配官方固定提交的哈希。Meta 模型只使用官方端点与已获批的账号权限。权重保存在忽略的缓存目录，不进入 Git。
+
+阶段执行使用 scripts/run_stage.py，保存状态、标准输出、耗时以及可选的 GPU 设备级采样。采集和配对分析使用 scripts/collect_campaign.py；它保留失败记录，并区分开发数据、正式题和配对题。
+
+绘图环境：运行 scripts/setup_reports.sh，它会准备已固定校验和的开放字体，然后运行 scripts/plot_campaign.py。图形数据和完整导出格式与报告一起保存。

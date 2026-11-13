@@ -1,0 +1,29 @@
+{
+  "started_utc": "2026-11-13T04:45:47.467615+00:00",
+  "status": "available_work_completed_meta_pending",
+  "compiler": {
+    "status": "awaiting_model_owner_approval",
+    "evidence": "User submitted the official gated-model access request; screenshot shows awaiting review.",
+    "scored": false
+  },
+  "qwen": {
+    "status": "model_experiments_completed",
+    "protocol_revision": 2,
+    "development_runs": [
+      "qwen-dev-v1",
+      "qwen-dev-v2"
+    ],
+    "formal_run": "qwen-v2",
+    "feedback_run": "qwen-feedback-v2",
+    "formal_generations": 48,
+    "development_generations": 12,
+    "scored": true
+  },
+  "baseline": "results/opt-v2",
+  "identity_control": "results/identity-v2",
+  "dataset_lock": "12c07607aa754471f2cf49ce71919b62f38744e9f9ec7c1667bf92ec3776d7b8",
+  "results_policy": "Preserve all outputs, including invalid, refuted, unknown and failed generations. No gated model is assigned zero for lack of access.",
+  "updated_utc": "2026-11-13T05:43:59.905714+00:00",
+  "completed_available_scope_utc": "2026-11-13T05:53:44.711673+00:00",
+  "model_weights_in_evidence_bundle": false
+}

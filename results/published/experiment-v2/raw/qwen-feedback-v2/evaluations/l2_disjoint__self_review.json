@@ -1,0 +1,83 @@
+{
+  "task_id": "l2_disjoint",
+  "level": "L2",
+  "role": "opportunity",
+  "source_metrics": {
+    "instruction_count": 6,
+    "opcodes": {
+      "getelementptr": 1,
+      "load": 2,
+      "store": 1,
+      "add": 1,
+      "ret": 1
+    }
+  },
+  "syntax_valid": true,
+  "goal_met": true,
+  "effective_optimization": false,
+  "unchanged": false,
+  "candidate_metrics": {
+    "instruction_count": 5,
+    "opcodes": {
+      "getelementptr": 1,
+      "store": 1,
+      "load": 1,
+      "add": 1,
+      "ret": 1
+    }
+  },
+  "syntax_log": {
+    "command": [
+      "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+      "-passes=verify",
+      "-S",
+      "/tmp/irsem-verify-27y2xbrl/candidate.ll",
+      "-o",
+      "/tmp/irsem-verify-27y2xbrl/canonical.ll"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "seconds": 0.016377191990613937,
+    "timed_out": false,
+    "truncated": false
+  },
+  "canonical_ir": "; ModuleID = '/tmp/irsem-verify-27y2xbrl/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-27y2xbrl/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  %separate = getelementptr i32, ptr %p, i64 1\n  store i32 7, ptr %separate, align 4\n  %a = load i32, ptr %p, align 4\n  %r = add i32 %a, 7\n  ret i32 %r\n}\n",
+  "alive2_log": {
+    "command": [
+      "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+      "-always-verify",
+      "-smt-to=10000",
+      "-smt-max-mem=1024",
+      "-smt-random-seed=20261112",
+      "/tmp/irsem-verify-27y2xbrl/source.ll",
+      "/tmp/irsem-verify-27y2xbrl/canonical.ll"
+    ],
+    "returncode": 0,
+    "stdout": "\n----------------------------------------\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  %separate = gep ptr noundef %p, 4 x i64 1\n  %a = load i32, ptr noundef %p, align 4\n  store i32 7, ptr %separate, align 4\n  %b = load i32, ptr noundef %p, align 4\n  %r = add i32 %a, %b\n  ret i32 %r\n}\n=>\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  %separate = gep ptr noundef %p, 4 x i64 1\n  store i32 7, ptr %separate, align 4\n  %a = load i32, ptr noundef %p, align 4\n  %r = add i32 %a, 7\n  ret i32 %r\n}\nTransformation doesn't verify!\n\nERROR: Value mismatch\n\nExample:\nptr noundef %p = pointer(non-local, block_id=1, offset=0)\nptr noundef %q = null\n\nSource:\nptr %separate = pointer(non-local, block_id=1, offset=4)\ni32 %a = #x00000000 (0)\ni32 %b = #x00000000 (0)\ni32 %r = #x00000000 (0)\n\nSOURCE MEMORY STATE\n===================\nNON-LOCAL BLOCKS:\nBlock 0 >\tsize: 0\talign: 4\talloc type: 0\talive: false\taddress: 0\nBlock 1 >\tsize: 8\talign: 1\talloc type: 0\talive: true\taddress: 4\nBlock 2 >\tsize: 0\talign: 1\talloc type: 0\talive: true\taddress: 1\n\nTarget:\nptr %separate = pointer(non-local, block_id=1, offset=4)\ni32 %a = #x00000000 (0)\ni32 %r = #x00000007 (7)\nSource value: #x00000000 (0)\nTarget value: #x00000007 (7)\n\nSummary:\n  0 correct transformations\n  1 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+    "stderr": "",
+    "seconds": 0.11461835913360119,
+    "timed_out": false,
+    "truncated": false
+  },
+  "differential": {
+    "status": "mismatch",
+    "input_kind": "holdout",
+    "case_count": 256,
+    "mismatch_count": 256,
+    "counterexample": {
+      "input": [
+        3347846599,
+        2054967615,
+        0
+      ],
+      "source": "2400725902 3347846599 7",
+      "candidate": "3347846606 3347846599 7"
+    }
+  },
+  "status": "refuted",
+  "key": "l2_disjoint__self_review",
+  "arm": "self_review",
+  "mode": "formal",
+  "backend": "hf"
+}

@@ -1,0 +1,38 @@
+{
+  "status": "pass",
+  "checked_runs": [
+    {
+      "run": "opt-v2",
+      "record_count": 24,
+      "integrity": "pass"
+    },
+    {
+      "run": "identity-v2",
+      "record_count": 24,
+      "integrity": "pass"
+    },
+    {
+      "run": "qwen-v2",
+      "record_count": 24,
+      "integrity": "pass"
+    },
+    {
+      "run": "qwen-feedback-v2",
+      "record_count": 24,
+      "integrity": "pass"
+    },
+    {
+      "run": "qwen-dev-v1",
+      "record_count": 6,
+      "integrity": "pass"
+    },
+    {
+      "run": "qwen-dev-v2",
+      "record_count": 6,
+      "integrity": "pass"
+    }
+  ],
+  "formal_model_generations": 48,
+  "development_generations": 12,
+  "no_records_dropped": true
+}

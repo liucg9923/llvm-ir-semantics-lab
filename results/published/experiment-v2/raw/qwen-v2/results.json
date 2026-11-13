@@ -1,0 +1,1682 @@
+[
+  {
+    "task_id": "l0_add_fold",
+    "level": "L0",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "add": 2,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": true,
+    "effective_optimization": true,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "add": 1,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-c9k26rh6/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-c9k26rh6/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.032586103305220604,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-c9k26rh6/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-c9k26rh6/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %r = add i32 %x, 9\n  ret i32 %r\n}\n",
+    "alive2_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+        "-always-verify",
+        "-smt-to=10000",
+        "-smt-max-mem=1024",
+        "-smt-random-seed=20261112",
+        "/tmp/irsem-verify-c9k26rh6/source.ll",
+        "/tmp/irsem-verify-c9k26rh6/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = add i32 4, 5\n  %r = add i32 noundef %x, %c\n  ret i32 %r\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %r = add i32 noundef %x, 9\n  ret i32 %r\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+      "stderr": "",
+      "seconds": 0.0649005938321352,
+      "timed_out": false,
+      "truncated": false
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 270,
+      "mismatch_count": 0
+    },
+    "status": "verified",
+    "key": "l0_add_fold",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  },
+  {
+    "task_id": "l0_add_variable",
+    "level": "L0",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "add": 2,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": null,
+    "effective_optimization": false,
+    "unchanged": true,
+    "candidate_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "add": 2,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-fuqol_an/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-fuqol_an/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.01682896912097931,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-fuqol_an/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-fuqol_an/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = add i32 %x, 5\n  %r = add i32 %x, %c\n  ret i32 %r\n}\n",
+    "alive2_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+        "-always-verify",
+        "-smt-to=10000",
+        "-smt-max-mem=1024",
+        "-smt-random-seed=20261112",
+        "/tmp/irsem-verify-fuqol_an/source.ll",
+        "/tmp/irsem-verify-fuqol_an/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = add i32 noundef %x, 5\n  %r = add i32 noundef %x, %c\n  ret i32 %r\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = add i32 noundef %x, 5\n  %r = add i32 noundef %x, %c\n  ret i32 %r\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+      "stderr": "",
+      "seconds": 0.033016614615917206,
+      "timed_out": false,
+      "truncated": false
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 270,
+      "mismatch_count": 0
+    },
+    "status": "verified",
+    "key": "l0_add_variable",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  },
+  {
+    "task_id": "l0_widened",
+    "level": "L0",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "trunc": 1,
+        "zext": 2,
+        "add": 1,
+        "icmp": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": true,
+    "candidate_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "trunc": 1,
+        "zext": 2,
+        "add": 1,
+        "icmp": 1,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-53xk6okr/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-53xk6okr/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.016871970146894455,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-53xk6okr/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-53xk6okr/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %v = trunc i32 %x to i8\n  %w = zext i8 %v to i16\n  %a = add i16 %w, 1\n  %c = icmp ugt i16 %a, %w\n  %r = zext i1 %c to i32\n  ret i32 %r\n}\n",
+    "alive2_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+        "-always-verify",
+        "-smt-to=10000",
+        "-smt-max-mem=1024",
+        "-smt-random-seed=20261112",
+        "/tmp/irsem-verify-53xk6okr/source.ll",
+        "/tmp/irsem-verify-53xk6okr/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %v = trunc i32 noundef %x to i8\n  %w = zext i8 %v to i16\n  %a = add i16 %w, 1\n  %c = icmp ugt i16 %a, %w\n  %r = zext i1 %c to i32\n  ret i32 %r\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %v = trunc i32 noundef %x to i8\n  %w = zext i8 %v to i16\n  %a = add i16 %w, 1\n  %c = icmp ugt i16 %a, %w\n  %r = zext i1 %c to i32\n  ret i32 %r\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+      "stderr": "",
+      "seconds": 0.06514032930135727,
+      "timed_out": false,
+      "truncated": false
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 511,
+      "mismatch_count": 0
+    },
+    "status": "verified",
+    "key": "l0_widened",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  },
+  {
+    "task_id": "l0_wrap",
+    "level": "L0",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 5,
+      "opcodes": {
+        "trunc": 1,
+        "add": 1,
+        "icmp": 1,
+        "zext": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": null,
+    "effective_optimization": false,
+    "unchanged": true,
+    "candidate_metrics": {
+      "instruction_count": 5,
+      "opcodes": {
+        "trunc": 1,
+        "add": 1,
+        "icmp": 1,
+        "zext": 1,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-lkn7e9as/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-lkn7e9as/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.03309019096195698,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-lkn7e9as/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-lkn7e9as/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %v = trunc i32 %x to i8\n  %a = add i8 %v, 1\n  %c = icmp ugt i8 %a, %v\n  %r = zext i1 %c to i32\n  ret i32 %r\n}\n",
+    "alive2_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+        "-always-verify",
+        "-smt-to=10000",
+        "-smt-max-mem=1024",
+        "-smt-random-seed=20261112",
+        "/tmp/irsem-verify-lkn7e9as/source.ll",
+        "/tmp/irsem-verify-lkn7e9as/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %v = trunc i32 noundef %x to i8\n  %a = add i8 %v, 1\n  %c = icmp ugt i8 %a, %v\n  %r = zext i1 %c to i32\n  ret i32 %r\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %v = trunc i32 noundef %x to i8\n  %a = add i8 %v, 1\n  %c = icmp ugt i8 %a, %v\n  %r = zext i1 %c to i32\n  ret i32 %r\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+      "stderr": "",
+      "seconds": 0.06528672017157078,
+      "timed_out": false,
+      "truncated": false
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 511,
+      "mismatch_count": 0
+    },
+    "status": "verified",
+    "key": "l0_wrap",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  },
+  {
+    "task_id": "l0_udiv",
+    "level": "L0",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "udiv": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": true,
+    "effective_optimization": true,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "lshr": 1,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-i68scmcv/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-i68scmcv/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.016841020435094833,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-i68scmcv/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-i68scmcv/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %r = lshr i32 %x, 2\n  ret i32 %r\n}\n",
+    "alive2_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+        "-always-verify",
+        "-smt-to=10000",
+        "-smt-max-mem=1024",
+        "-smt-random-seed=20261112",
+        "/tmp/irsem-verify-i68scmcv/source.ll",
+        "/tmp/irsem-verify-i68scmcv/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %r = udiv i32 noundef %x, 4\n  ret i32 %r\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %r = lshr i32 noundef %x, 2\n  ret i32 %r\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+      "stderr": "",
+      "seconds": 0.06525467336177826,
+      "timed_out": false,
+      "truncated": false
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 270,
+      "mismatch_count": 0
+    },
+    "status": "verified",
+    "key": "l0_udiv",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  },
+  {
+    "task_id": "l0_sdiv",
+    "level": "L0",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "sdiv": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": null,
+    "effective_optimization": false,
+    "unchanged": true,
+    "candidate_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "sdiv": 1,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-ae00595p/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-ae00595p/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.01682111993432045,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-ae00595p/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-ae00595p/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %r = sdiv i32 %x, 4\n  ret i32 %r\n}\n",
+    "alive2_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+        "-always-verify",
+        "-smt-to=10000",
+        "-smt-max-mem=1024",
+        "-smt-random-seed=20261112",
+        "/tmp/irsem-verify-ae00595p/source.ll",
+        "/tmp/irsem-verify-ae00595p/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %r = sdiv i32 noundef %x, 4\n  ret i32 %r\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %r = sdiv i32 noundef %x, 4\n  ret i32 %r\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+      "stderr": "",
+      "seconds": 0.0650962982326746,
+      "timed_out": false,
+      "truncated": false
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 270,
+      "mismatch_count": 0
+    },
+    "status": "verified",
+    "key": "l0_sdiv",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  },
+  {
+    "task_id": "l0_unsigned_cmp",
+    "level": "L0",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "icmp": 1,
+        "zext": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "icmp": 1,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-0ppom39j/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-0ppom39j/canonical.ll"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt: /tmp/irsem-verify-0ppom39j/candidate.ll:7:11: error: '%c' defined with type 'i1' but expected 'i32'\n  ret i32 %c\n          ^\n",
+      "seconds": 0.016848376020789146,
+      "timed_out": false,
+      "truncated": false
+    },
+    "status": "invalid_ir",
+    "key": "l0_unsigned_cmp",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  },
+  {
+    "task_id": "l0_signed_cmp",
+    "level": "L0",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "icmp": 1,
+        "zext": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": false,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "icmp": 1,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-tkgt0y1t/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-tkgt0y1t/canonical.ll"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt: /tmp/irsem-verify-tkgt0y1t/candidate.ll:7:11: error: '%c' defined with type 'i1' but expected 'i32'\n  ret i32 %c\n          ^\n",
+      "seconds": 0.01688428781926632,
+      "timed_out": false,
+      "truncated": false
+    },
+    "status": "invalid_ir",
+    "key": "l0_signed_cmp",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  },
+  {
+    "task_id": "l1_const_branch",
+    "level": "L1",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "icmp": 1,
+        "br": 1,
+        "add": 1,
+        "ret": 2,
+        "sub": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": true,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-0tjr5boj/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-0tjr5boj/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.03307745233178139,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-0tjr5boj/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-0tjr5boj/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 -1\n}\n",
+    "alive2_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+        "-always-verify",
+        "-smt-to=10000",
+        "-smt-max-mem=1024",
+        "-smt-random-seed=20261112",
+        "/tmp/irsem-verify-0tjr5boj/source.ll",
+        "/tmp/irsem-verify-0tjr5boj/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  br i1 1, label %a, label %b\n\nb:\n  %v = sub i32 noundef %x, 1\n  ret i32 %v\n\na:\n  %u = add i32 noundef %x, 1\n  ret i32 %u\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 4294967295\n}\nTransformation doesn't verify!\n\nERROR: Value mismatch\n\nExample:\ni32 noundef %x = #x00000000 (0)\n\nSource:\n  >> Jump to %a\ni32 %u = #x00000001 (1)\n\nTarget:\nSource value: #x00000001 (1)\nTarget value: #xffffffff (4294967295, -1)\n\nSummary:\n  0 correct transformations\n  1 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+      "stderr": "",
+      "seconds": 0.06528403423726559,
+      "timed_out": false,
+      "truncated": false
+    },
+    "differential": {
+      "status": "mismatch",
+      "input_kind": "holdout",
+      "case_count": 270,
+      "mismatch_count": 269,
+      "counterexample": {
+        "input": [
+          31
+        ],
+        "source": "32",
+        "candidate": "4294967295"
+      }
+    },
+    "status": "refuted",
+    "key": "l1_const_branch",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  },
+  {
+    "task_id": "l1_variable_branch",
+    "level": "L1",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "icmp": 1,
+        "br": 1,
+        "add": 1,
+        "ret": 2,
+        "sub": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": null,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 4,
+      "opcodes": {
+        "icmp": 1,
+        "br": 1,
+        "ret": 2
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-isv60sbc/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-isv60sbc/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.016826137900352478,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-isv60sbc/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-isv60sbc/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = icmp eq i32 %x, 0\n  br i1 %c, label %a, label %b\n\na:                                                ; preds = %entry\n  ret i32 1\n\nb:                                                ; preds = %entry\n  ret i32 -1\n}\n",
+    "alive2_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+        "-always-verify",
+        "-smt-to=10000",
+        "-smt-max-mem=1024",
+        "-smt-random-seed=20261112",
+        "/tmp/irsem-verify-isv60sbc/source.ll",
+        "/tmp/irsem-verify-isv60sbc/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = icmp eq i32 noundef %x, 0\n  br i1 %c, label %a, label %b\n\nb:\n  %v = sub i32 noundef %x, 1\n  ret i32 %v\n\na:\n  %u = add i32 noundef %x, 1\n  ret i32 %u\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = icmp eq i32 noundef %x, 0\n  br i1 %c, label %a, label %b\n\nb:\n  ret i32 4294967295\n\na:\n  ret i32 1\n}\nTransformation doesn't verify!\n\nERROR: Value mismatch\n\nExample:\ni32 noundef %x = #x00000008 (8)\n\nSource:\ni1 %c = #x0 (0)\n  >> Jump to %b\ni32 %v = #x00000007 (7)\n\nTarget:\ni1 %c = #x0 (0)\n  >> Jump to %b\nSource value: #x00000007 (7)\nTarget value: #xffffffff (4294967295, -1)\n\nSummary:\n  0 correct transformations\n  1 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+      "stderr": "",
+      "seconds": 0.06519751064479351,
+      "timed_out": false,
+      "truncated": false
+    },
+    "differential": {
+      "status": "mismatch",
+      "input_kind": "holdout",
+      "case_count": 270,
+      "mismatch_count": 270,
+      "counterexample": {
+        "input": [
+          31
+        ],
+        "source": "30",
+        "candidate": "4294967295"
+      }
+    },
+    "status": "refuted",
+    "key": "l1_variable_branch",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  },
+  {
+    "task_id": "l1_phi_equal",
+    "level": "L1",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "icmp": 1,
+        "br": 3,
+        "phi": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "icmp": 1,
+        "br": 1,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-nsv3_q5k/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-nsv3_q5k/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.01679760217666626,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-nsv3_q5k/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-nsv3_q5k/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = icmp eq i32 %x, 0\n  br i1 %c, label %merge, label %merge\n\nmerge:                                            ; preds = %entry, %entry\n  ret i32 7\n}\n",
+    "alive2_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+        "-always-verify",
+        "-smt-to=10000",
+        "-smt-max-mem=1024",
+        "-smt-random-seed=20261112",
+        "/tmp/irsem-verify-nsv3_q5k/source.ll",
+        "/tmp/irsem-verify-nsv3_q5k/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = icmp eq i32 noundef %x, 0\n  br i1 %c, label %a, label %b\n\nb:\n  br label %merge\n\na:\n  br label %merge\n\nmerge:\n  %r = phi i32 [ 7, %a ], [ 7, %b ]\n  ret i32 %r\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = icmp eq i32 noundef %x, 0\n  br i1 %c, label %merge, label %merge\n\nmerge:\n  ret i32 7\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+      "stderr": "",
+      "seconds": 0.06529806181788445,
+      "timed_out": false,
+      "truncated": false
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 270,
+      "mismatch_count": 0
+    },
+    "status": "verified",
+    "key": "l1_phi_equal",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  },
+  {
+    "task_id": "l1_phi_different",
+    "level": "L1",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "icmp": 1,
+        "br": 3,
+        "phi": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": null,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "icmp": 1,
+        "br": 1,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-wvsbukzb/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-wvsbukzb/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.01695460081100464,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-wvsbukzb/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-wvsbukzb/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = icmp eq i32 %x, 0\n  br i1 %c, label %merge, label %merge\n\nmerge:                                            ; preds = %entry, %entry\n  ret i32 7\n}\n",
+    "alive2_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+        "-always-verify",
+        "-smt-to=10000",
+        "-smt-max-mem=1024",
+        "-smt-random-seed=20261112",
+        "/tmp/irsem-verify-wvsbukzb/source.ll",
+        "/tmp/irsem-verify-wvsbukzb/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = icmp eq i32 noundef %x, 0\n  br i1 %c, label %a, label %b\n\nb:\n  br label %merge\n\na:\n  br label %merge\n\nmerge:\n  %r = phi i32 [ 7, %a ], [ 9, %b ]\n  ret i32 %r\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = icmp eq i32 noundef %x, 0\n  br i1 %c, label %merge, label %merge\n\nmerge:\n  ret i32 7\n}\nTransformation doesn't verify!\n\nERROR: Value mismatch\n\nExample:\ni32 noundef %x = #x00000001 (1)\n\nSource:\ni1 %c = #x0 (0)\n  >> Jump to %b\n  >> Jump to %merge\ni32 %r = #x00000009 (9)\n\nTarget:\ni1 %c = #x0 (0)\n  >> Jump to %merge\nSource value: #x00000009 (9)\nTarget value: #x00000007 (7)\n\nSummary:\n  0 correct transformations\n  1 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+      "stderr": "",
+      "seconds": 0.06510143540799618,
+      "timed_out": false,
+      "truncated": false
+    },
+    "differential": {
+      "status": "mismatch",
+      "input_kind": "holdout",
+      "case_count": 270,
+      "mismatch_count": 270,
+      "counterexample": {
+        "input": [
+          31
+        ],
+        "source": "9",
+        "candidate": "7"
+      }
+    },
+    "status": "refuted",
+    "key": "l1_phi_different",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  },
+  {
+    "task_id": "l1_dead_value",
+    "level": "L1",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "mul": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": true,
+    "effective_optimization": true,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-s5fp3zmb/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-s5fp3zmb/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.01686624251306057,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-s5fp3zmb/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-s5fp3zmb/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 %x\n}\n",
+    "alive2_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+        "-always-verify",
+        "-smt-to=10000",
+        "-smt-max-mem=1024",
+        "-smt-random-seed=20261112",
+        "/tmp/irsem-verify-s5fp3zmb/source.ll",
+        "/tmp/irsem-verify-s5fp3zmb/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 noundef %x\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  ret i32 noundef %x\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+      "stderr": "",
+      "seconds": 0.06529703550040722,
+      "timed_out": false,
+      "truncated": false
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 270,
+      "mismatch_count": 0
+    },
+    "status": "verified",
+    "key": "l1_dead_value",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  },
+  {
+    "task_id": "l1_live_on_path",
+    "level": "L1",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 5,
+      "opcodes": {
+        "mul": 1,
+        "icmp": 1,
+        "br": 1,
+        "ret": 2
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": null,
+    "effective_optimization": false,
+    "unchanged": true,
+    "candidate_metrics": {
+      "instruction_count": 5,
+      "opcodes": {
+        "mul": 1,
+        "icmp": 1,
+        "br": 1,
+        "ret": 2
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-y8j49jo2/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-y8j49jo2/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.01679525151848793,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-y8j49jo2/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-y8j49jo2/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %v = mul i32 %x, 17\n  %c = icmp eq i32 %x, 0\n  br i1 %c, label %a, label %b\n\na:                                                ; preds = %entry\n  ret i32 %x\n\nb:                                                ; preds = %entry\n  ret i32 %v\n}\n",
+    "alive2_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+        "-always-verify",
+        "-smt-to=10000",
+        "-smt-max-mem=1024",
+        "-smt-random-seed=20261112",
+        "/tmp/irsem-verify-y8j49jo2/source.ll",
+        "/tmp/irsem-verify-y8j49jo2/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %v = mul i32 noundef %x, 17\n  %c = icmp eq i32 noundef %x, 0\n  br i1 %c, label %a, label %b\n\nb:\n  ret i32 %v\n\na:\n  ret i32 noundef %x\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %v = mul i32 noundef %x, 17\n  %c = icmp eq i32 noundef %x, 0\n  br i1 %c, label %a, label %b\n\nb:\n  ret i32 %v\n\na:\n  ret i32 noundef %x\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+      "stderr": "",
+      "seconds": 0.06531936302781105,
+      "timed_out": false,
+      "truncated": false
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 270,
+      "mismatch_count": 0
+    },
+    "status": "verified",
+    "key": "l1_live_on_path",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  },
+  {
+    "task_id": "l1_cse_equal",
+    "level": "L1",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 4,
+      "opcodes": {
+        "add": 3,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": true,
+    "effective_optimization": true,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "add": 2,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-5ad622jd/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-5ad622jd/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.016822699457406998,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-5ad622jd/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-5ad622jd/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x, i32 noundef %y) {\nentry:\n  %a = add i32 %x, %y\n  %r = add i32 %a, %a\n  ret i32 %r\n}\n",
+    "alive2_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+        "-always-verify",
+        "-smt-to=10000",
+        "-smt-max-mem=1024",
+        "-smt-random-seed=20261112",
+        "/tmp/irsem-verify-5ad622jd/source.ll",
+        "/tmp/irsem-verify-5ad622jd/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x, i32 noundef %y) {\nentry:\n  %a = add i32 noundef %x, noundef %y\n  %b = add i32 noundef %x, noundef %y\n  %r = add i32 %a, %b\n  ret i32 %r\n}\n=>\ndefine i32 @f(i32 noundef %x, i32 noundef %y) {\nentry:\n  %a = add i32 noundef %x, noundef %y\n  %r = add i32 %a, %a\n  ret i32 %r\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+      "stderr": "",
+      "seconds": 0.06522246450185776,
+      "timed_out": false,
+      "truncated": false
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 256,
+      "mismatch_count": 0
+    },
+    "status": "verified",
+    "key": "l1_cse_equal",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  },
+  {
+    "task_id": "l1_cse_different",
+    "level": "L1",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 4,
+      "opcodes": {
+        "add": 3,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": null,
+    "effective_optimization": false,
+    "unchanged": true,
+    "candidate_metrics": {
+      "instruction_count": 4,
+      "opcodes": {
+        "add": 3,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-8niizosq/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-8niizosq/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.01687486842274666,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-8niizosq/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-8niizosq/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x, i32 noundef %y) {\nentry:\n  %a = add i32 %x, %y\n  %b = add i32 %x, 1\n  %r = add i32 %a, %b\n  ret i32 %r\n}\n",
+    "alive2_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+        "-always-verify",
+        "-smt-to=10000",
+        "-smt-max-mem=1024",
+        "-smt-random-seed=20261112",
+        "/tmp/irsem-verify-8niizosq/source.ll",
+        "/tmp/irsem-verify-8niizosq/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x, i32 noundef %y) {\nentry:\n  %a = add i32 noundef %x, noundef %y\n  %b = add i32 noundef %x, 1\n  %r = add i32 %a, %b\n  ret i32 %r\n}\n=>\ndefine i32 @f(i32 noundef %x, i32 noundef %y) {\nentry:\n  %a = add i32 noundef %x, noundef %y\n  %b = add i32 noundef %x, 1\n  %r = add i32 %a, %b\n  ret i32 %r\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+      "stderr": "",
+      "seconds": 0.06531423702836037,
+      "timed_out": false,
+      "truncated": false
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 256,
+      "mismatch_count": 0
+    },
+    "status": "verified",
+    "key": "l1_cse_different",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  },
+  {
+    "task_id": "l2_disjoint",
+    "level": "L2",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "getelementptr": 1,
+        "load": 2,
+        "store": 1,
+        "add": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": false,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 6,
+      "opcodes": {
+        "getelementptr": 1,
+        "store": 1,
+        "load": 2,
+        "add": 1,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-93_utued/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-93_utued/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.03291903808712959,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-93_utued/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-93_utued/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  %separate = getelementptr i32, ptr %p, i64 1\n  store i32 7, ptr %separate, align 4\n  %a = load i32, ptr %p, align 4\n  %b = load i32, ptr %p, align 4\n  %r = add i32 %a, %b\n  ret i32 %r\n}\n",
+    "alive2_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+        "-always-verify",
+        "-smt-to=10000",
+        "-smt-max-mem=1024",
+        "-smt-random-seed=20261112",
+        "/tmp/irsem-verify-93_utued/source.ll",
+        "/tmp/irsem-verify-93_utued/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "\n----------------------------------------\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  %separate = gep ptr noundef %p, 4 x i64 1\n  %a = load i32, ptr noundef %p, align 4\n  store i32 7, ptr %separate, align 4\n  %b = load i32, ptr noundef %p, align 4\n  %r = add i32 %a, %b\n  ret i32 %r\n}\n=>\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  %separate = gep ptr noundef %p, 4 x i64 1\n  store i32 7, ptr %separate, align 4\n  %a = load i32, ptr noundef %p, align 4\n  %b = load i32, ptr noundef %p, align 4\n  %r = add i32 %a, %b\n  ret i32 %r\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+      "stderr": "",
+      "seconds": 0.06542708538472652,
+      "timed_out": false,
+      "truncated": false
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 256,
+      "mismatch_count": 0
+    },
+    "status": "verified",
+    "key": "l2_disjoint",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  },
+  {
+    "task_id": "l2_mayalias",
+    "level": "L2",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 5,
+      "opcodes": {
+        "load": 2,
+        "store": 1,
+        "add": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": null,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 4,
+      "opcodes": {
+        "load": 1,
+        "store": 1,
+        "add": 1,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-62k15gt7/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-62k15gt7/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.016966043040156364,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-62k15gt7/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-62k15gt7/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  %a = load i32, ptr %p, align 4\n  store i32 7, ptr %q, align 4\n  %r = add i32 %a, %a\n  ret i32 %r\n}\n",
+    "alive2_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+        "-always-verify",
+        "-smt-to=10000",
+        "-smt-max-mem=1024",
+        "-smt-random-seed=20261112",
+        "/tmp/irsem-verify-62k15gt7/source.ll",
+        "/tmp/irsem-verify-62k15gt7/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "\n----------------------------------------\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  %a = load i32, ptr noundef %p, align 4\n  store i32 7, ptr noundef %q, align 4\n  %b = load i32, ptr noundef %p, align 4\n  %r = add i32 %a, %b\n  ret i32 %r\n}\n=>\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  %a = load i32, ptr noundef %p, align 4\n  store i32 7, ptr noundef %q, align 4\n  %r = add i32 %a, %a\n  ret i32 %r\n}\nTransformation doesn't verify!\n\nERROR: Value mismatch\n\nExample:\nptr noundef %p = pointer(non-local, block_id=1, offset=0)\nptr noundef %q = pointer(non-local, block_id=1, offset=0)\n\nSource:\ni32 %a = #x00000000 (0)\ni32 %b = #x00000007 (7)\ni32 %r = #x00000007 (7)\n\nSOURCE MEMORY STATE\n===================\nNON-LOCAL BLOCKS:\nBlock 0 >\tsize: 0\talign: 4\talloc type: 0\talive: false\taddress: 0\nBlock 1 >\tsize: 4\talign: 4\talloc type: 0\talive: true\taddress: 8\nBlock 2 >\tsize: 0\talign: 524288\talloc type: 0\talive: true\taddress: 8\n\nTarget:\ni32 %a = #x00000000 (0)\ni32 %r = #x00000000 (0)\nSource value: #x00000007 (7)\nTarget value: #x00000000 (0)\n\nSummary:\n  0 correct transformations\n  1 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+      "stderr": "",
+      "seconds": 0.11535118333995342,
+      "timed_out": false,
+      "truncated": false
+    },
+    "differential": {
+      "status": "mismatch",
+      "input_kind": "holdout",
+      "case_count": 256,
+      "mismatch_count": 118,
+      "counterexample": {
+        "input": [
+          1450164,
+          2122097720,
+          1
+        ],
+        "source": "1450171 7 2122097720",
+        "candidate": "2900328 7 2122097720"
+      }
+    },
+    "status": "refuted",
+    "key": "l2_mayalias",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  },
+  {
+    "task_id": "l2_store_overwritten",
+    "level": "L2",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "store": 2,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": true,
+    "effective_optimization": true,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "store": 1,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-d_vrj6uc/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-d_vrj6uc/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.033213384449481964,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-d_vrj6uc/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-d_vrj6uc/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  store i32 7, ptr %p, align 4\n  ret i32 0\n}\n",
+    "alive2_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+        "-always-verify",
+        "-smt-to=10000",
+        "-smt-max-mem=1024",
+        "-smt-random-seed=20261112",
+        "/tmp/irsem-verify-d_vrj6uc/source.ll",
+        "/tmp/irsem-verify-d_vrj6uc/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "\n----------------------------------------\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  store i32 3, ptr noundef %p, align 4\n  store i32 7, ptr noundef %p, align 4\n  ret i32 0\n}\n=>\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  store i32 7, ptr noundef %p, align 4\n  ret i32 0\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+      "stderr": "",
+      "seconds": 0.06540899723768234,
+      "timed_out": false,
+      "truncated": false
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 256,
+      "mismatch_count": 0
+    },
+    "status": "verified",
+    "key": "l2_store_overwritten",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  },
+  {
+    "task_id": "l2_store_observed",
+    "level": "L2",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 4,
+      "opcodes": {
+        "store": 2,
+        "load": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": null,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "store": 2,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-mt57grw5/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-mt57grw5/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.016905231401324272,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-mt57grw5/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-mt57grw5/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  store i32 3, ptr %p, align 4\n  store i32 7, ptr %p, align 4\n  ret i32 7\n}\n",
+    "alive2_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+        "-always-verify",
+        "-smt-to=10000",
+        "-smt-max-mem=1024",
+        "-smt-random-seed=20261112",
+        "/tmp/irsem-verify-mt57grw5/source.ll",
+        "/tmp/irsem-verify-mt57grw5/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "\n----------------------------------------\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  store i32 3, ptr noundef %p, align 4\n  %v = load i32, ptr noundef %p, align 4\n  store i32 7, ptr noundef %p, align 4\n  ret i32 %v\n}\n=>\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  store i32 3, ptr noundef %p, align 4\n  store i32 7, ptr noundef %p, align 4\n  ret i32 7\n}\nTransformation doesn't verify!\n\nERROR: Value mismatch\n\nExample:\nptr noundef %p = pointer(non-local, block_id=1, offset=0)\nptr noundef %q = null\n\nSource:\ni32 %v = #x00000003 (3)\n\nSOURCE MEMORY STATE\n===================\nNON-LOCAL BLOCKS:\nBlock 0 >\tsize: 0\talign: 4\talloc type: 0\talive: false\taddress: 0\nBlock 1 >\tsize: 4\talign: 1\talloc type: 0\talive: true\taddress: 4\nBlock 2 >\tsize: 0\talign: 1\talloc type: 0\talive: true\taddress: 1\n\nTarget:\nSource value: #x00000003 (3)\nTarget value: #x00000007 (7)\n\nSummary:\n  0 correct transformations\n  1 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+      "stderr": "",
+      "seconds": 0.11546297557651997,
+      "timed_out": false,
+      "truncated": false
+    },
+    "differential": {
+      "status": "mismatch",
+      "input_kind": "holdout",
+      "case_count": 256,
+      "mismatch_count": 256,
+      "counterexample": {
+        "input": [
+          3589519492,
+          1635752807,
+          1
+        ],
+        "source": "3 7 1635752807",
+        "candidate": "7 7 1635752807"
+      }
+    },
+    "status": "refuted",
+    "key": "l2_store_observed",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  },
+  {
+    "task_id": "l2_local_store",
+    "level": "L2",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "alloca": 1,
+        "store": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": true,
+    "effective_optimization": true,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-mw_14m37/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-mw_14m37/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.033046893775463104,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-mw_14m37/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-mw_14m37/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  ret i32 0\n}\n",
+    "alive2_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+        "-always-verify",
+        "-smt-to=10000",
+        "-smt-max-mem=1024",
+        "-smt-random-seed=20261112",
+        "/tmp/irsem-verify-mw_14m37/source.ll",
+        "/tmp/irsem-verify-mw_14m37/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "\n----------------------------------------\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  %local = alloca i64 4, align 4\n  store i32 7, ptr %local, align 4\n  ret i32 0\n}\n=>\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  ret i32 0\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+      "stderr": "",
+      "seconds": 0.065296471118927,
+      "timed_out": false,
+      "truncated": false
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 256,
+      "mismatch_count": 0
+    },
+    "status": "verified",
+    "key": "l2_local_store",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  },
+  {
+    "task_id": "l2_escaped_store",
+    "level": "L2",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "store": 1,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": null,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 1,
+      "opcodes": {
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-l619ocql/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-l619ocql/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.033094897866249084,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-l619ocql/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-l619ocql/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  ret i32 0\n}\n",
+    "alive2_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+        "-always-verify",
+        "-smt-to=10000",
+        "-smt-max-mem=1024",
+        "-smt-random-seed=20261112",
+        "/tmp/irsem-verify-l619ocql/source.ll",
+        "/tmp/irsem-verify-l619ocql/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "\n----------------------------------------\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  store i32 7, ptr noundef %p, align 4\n  ret i32 0\n}\n=>\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  ret i32 0\n}\nTransformation doesn't verify!\n\nERROR: Mismatch in memory\n\nExample:\nptr noundef %p = pointer(non-local, block_id=1, offset=0)\nptr noundef %q = null\n\nSource:\n\nSOURCE MEMORY STATE\n===================\nNON-LOCAL BLOCKS:\nBlock 0 >\tsize: 0\talign: 4\talloc type: 0\talive: false\taddress: 0\nBlock 1 >\tsize: 4\talign: 1\talloc type: 0\talive: true\taddress: 4\nBlock 2 >\tsize: 0\talign: 1\talloc type: 0\talive: true\taddress: 9\n\nTarget:\n\nMismatch in pointer(non-local, block_id=1, offset=0)\nSource value: #x00000007\nTarget value: poison\n\nSummary:\n  0 correct transformations\n  1 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+      "stderr": "",
+      "seconds": 0.11537973023951054,
+      "timed_out": false,
+      "truncated": false
+    },
+    "differential": {
+      "status": "mismatch",
+      "input_kind": "holdout",
+      "case_count": 256,
+      "mismatch_count": 256,
+      "counterexample": {
+        "input": [
+          822231772,
+          1545497527,
+          1
+        ],
+        "source": "0 7 1545497527",
+        "candidate": "0 822231772 1545497527"
+      }
+    },
+    "status": "refuted",
+    "key": "l2_escaped_store",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  },
+  {
+    "task_id": "l2_duplicate_store",
+    "level": "L2",
+    "role": "opportunity",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "store": 2,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": true,
+    "effective_optimization": true,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "store": 1,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-nj7lss9v/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-nj7lss9v/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.016841089352965355,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-nj7lss9v/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-nj7lss9v/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  store i32 7, ptr %p, align 4\n  ret i32 0\n}\n",
+    "alive2_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+        "-always-verify",
+        "-smt-to=10000",
+        "-smt-max-mem=1024",
+        "-smt-random-seed=20261112",
+        "/tmp/irsem-verify-nj7lss9v/source.ll",
+        "/tmp/irsem-verify-nj7lss9v/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "\n----------------------------------------\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  store i32 7, ptr noundef %p, align 4\n  store i32 7, ptr noundef %p, align 4\n  ret i32 0\n}\n=>\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  store i32 7, ptr noundef %p, align 4\n  ret i32 0\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+      "stderr": "",
+      "seconds": 0.06511996686458588,
+      "timed_out": false,
+      "truncated": false
+    },
+    "differential": {
+      "status": "match",
+      "input_kind": "holdout",
+      "case_count": 256,
+      "mismatch_count": 0
+    },
+    "status": "verified",
+    "key": "l2_duplicate_store",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  },
+  {
+    "task_id": "l2_distinct_store",
+    "level": "L2",
+    "role": "guard",
+    "source_metrics": {
+      "instruction_count": 3,
+      "opcodes": {
+        "store": 2,
+        "ret": 1
+      }
+    },
+    "syntax_valid": true,
+    "goal_met": null,
+    "effective_optimization": false,
+    "unchanged": false,
+    "candidate_metrics": {
+      "instruction_count": 2,
+      "opcodes": {
+        "store": 1,
+        "ret": 1
+      }
+    },
+    "syntax_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+        "-passes=verify",
+        "-S",
+        "/tmp/irsem-verify-j7tvop7v/candidate.ll",
+        "-o",
+        "/tmp/irsem-verify-j7tvop7v/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.016865495592355728,
+      "timed_out": false,
+      "truncated": false
+    },
+    "canonical_ir": "; ModuleID = '/tmp/irsem-verify-j7tvop7v/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-j7tvop7v/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  store i32 7, ptr %p, align 4\n  ret i32 0\n}\n",
+    "alive2_log": {
+      "command": [
+        "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+        "-always-verify",
+        "-smt-to=10000",
+        "-smt-max-mem=1024",
+        "-smt-random-seed=20261112",
+        "/tmp/irsem-verify-j7tvop7v/source.ll",
+        "/tmp/irsem-verify-j7tvop7v/canonical.ll"
+      ],
+      "returncode": 0,
+      "stdout": "\n----------------------------------------\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  store i32 7, ptr noundef %p, align 4\n  store i32 7, ptr noundef %q, align 4\n  ret i32 0\n}\n=>\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  store i32 7, ptr noundef %p, align 4\n  ret i32 0\n}\nTransformation doesn't verify!\n\nERROR: Mismatch in memory\n\nExample:\nptr noundef %p = pointer(non-local, block_id=1, offset=0)\nptr noundef %q = pointer(non-local, block_id=2, offset=0)\n\nSource:\n\nSOURCE MEMORY STATE\n===================\nNON-LOCAL BLOCKS:\nBlock 0 >\tsize: 0\talign: 4\talloc type: 0\talive: false\taddress: 0\nBlock 1 >\tsize: 5\talign: 65536\talloc type: 0\talive: true\taddress: 8\nBlock 2 >\tsize: 4\talign: 1\talloc type: 0\talive: true\taddress: 4\n\nTarget:\n\nMismatch in pointer(non-local, block_id=2, offset=0)\nSource value: #x00000007\nTarget value: poison\n\nSummary:\n  0 correct transformations\n  1 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+      "stderr": "",
+      "seconds": 5.8288528230041265,
+      "timed_out": false,
+      "truncated": false
+    },
+    "differential": {
+      "status": "mismatch",
+      "input_kind": "holdout",
+      "case_count": 256,
+      "mismatch_count": 138,
+      "counterexample": {
+        "input": [
+          513746781,
+          3413821547,
+          0
+        ],
+        "source": "0 7 7",
+        "candidate": "0 7 3413821547"
+      }
+    },
+    "status": "refuted",
+    "key": "l2_distinct_store",
+    "arm": "initial",
+    "mode": "formal",
+    "backend": "hf"
+  }
+]

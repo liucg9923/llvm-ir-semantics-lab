@@ -1,0 +1,218 @@
+[
+  {
+    "task_id": "l0_add_fold",
+    "condition": 0,
+    "status": "verified",
+    "effective": true
+  },
+  {
+    "task_id": "l0_add_fold",
+    "condition": 1,
+    "status": "verified",
+    "effective": true
+  },
+  {
+    "task_id": "l0_add_fold",
+    "condition": 2,
+    "status": "verified",
+    "effective": false
+  },
+  {
+    "task_id": "l0_wrap",
+    "condition": 0,
+    "status": "verified",
+    "effective": false
+  },
+  {
+    "task_id": "l0_wrap",
+    "condition": 1,
+    "status": "verified",
+    "effective": false
+  },
+  {
+    "task_id": "l0_wrap",
+    "condition": 2,
+    "status": "verified",
+    "effective": false
+  },
+  {
+    "task_id": "l0_udiv",
+    "condition": 0,
+    "status": "verified",
+    "effective": true
+  },
+  {
+    "task_id": "l0_udiv",
+    "condition": 1,
+    "status": "verified",
+    "effective": false
+  },
+  {
+    "task_id": "l0_udiv",
+    "condition": 2,
+    "status": "verified",
+    "effective": false
+  },
+  {
+    "task_id": "l0_signed_cmp",
+    "condition": 0,
+    "status": "invalid_ir",
+    "effective": false
+  },
+  {
+    "task_id": "l0_signed_cmp",
+    "condition": 1,
+    "status": "invalid_ir",
+    "effective": false
+  },
+  {
+    "task_id": "l0_signed_cmp",
+    "condition": 2,
+    "status": "verified",
+    "effective": false
+  },
+  {
+    "task_id": "l1_const_branch",
+    "condition": 0,
+    "status": "refuted",
+    "effective": false
+  },
+  {
+    "task_id": "l1_const_branch",
+    "condition": 1,
+    "status": "refuted",
+    "effective": false
+  },
+  {
+    "task_id": "l1_const_branch",
+    "condition": 2,
+    "status": "refuted",
+    "effective": false
+  },
+  {
+    "task_id": "l1_phi_different",
+    "condition": 0,
+    "status": "refuted",
+    "effective": false
+  },
+  {
+    "task_id": "l1_phi_different",
+    "condition": 1,
+    "status": "refuted",
+    "effective": false
+  },
+  {
+    "task_id": "l1_phi_different",
+    "condition": 2,
+    "status": "verified",
+    "effective": false
+  },
+  {
+    "task_id": "l1_dead_value",
+    "condition": 0,
+    "status": "verified",
+    "effective": true
+  },
+  {
+    "task_id": "l1_dead_value",
+    "condition": 1,
+    "status": "verified",
+    "effective": true
+  },
+  {
+    "task_id": "l1_dead_value",
+    "condition": 2,
+    "status": "verified",
+    "effective": true
+  },
+  {
+    "task_id": "l1_cse_different",
+    "condition": 0,
+    "status": "verified",
+    "effective": false
+  },
+  {
+    "task_id": "l1_cse_different",
+    "condition": 1,
+    "status": "verified",
+    "effective": false
+  },
+  {
+    "task_id": "l1_cse_different",
+    "condition": 2,
+    "status": "verified",
+    "effective": false
+  },
+  {
+    "task_id": "l2_disjoint",
+    "condition": 0,
+    "status": "verified",
+    "effective": false
+  },
+  {
+    "task_id": "l2_disjoint",
+    "condition": 1,
+    "status": "refuted",
+    "effective": false
+  },
+  {
+    "task_id": "l2_disjoint",
+    "condition": 2,
+    "status": "verified",
+    "effective": false
+  },
+  {
+    "task_id": "l2_store_observed",
+    "condition": 0,
+    "status": "refuted",
+    "effective": false
+  },
+  {
+    "task_id": "l2_store_observed",
+    "condition": 1,
+    "status": "refuted",
+    "effective": false
+  },
+  {
+    "task_id": "l2_store_observed",
+    "condition": 2,
+    "status": "verified",
+    "effective": false
+  },
+  {
+    "task_id": "l2_local_store",
+    "condition": 0,
+    "status": "verified",
+    "effective": true
+  },
+  {
+    "task_id": "l2_local_store",
+    "condition": 1,
+    "status": "verified",
+    "effective": true
+  },
+  {
+    "task_id": "l2_local_store",
+    "condition": 2,
+    "status": "verified",
+    "effective": true
+  },
+  {
+    "task_id": "l2_distinct_store",
+    "condition": 0,
+    "status": "refuted",
+    "effective": false
+  },
+  {
+    "task_id": "l2_distinct_store",
+    "condition": 1,
+    "status": "refuted",
+    "effective": false
+  },
+  {
+    "task_id": "l2_distinct_store",
+    "condition": 2,
+    "status": "refuted",
+    "effective": false
+  }
+]

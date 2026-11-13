@@ -1,0 +1,97 @@
+{
+  "kind": "posthoc_application_replay_not_model_accuracy",
+  "task_n": 12,
+  "candidate_acceptances": 10,
+  "original_fallbacks": 2,
+  "verified": 12,
+  "effective_optimizations": 4,
+  "opportunity_n": 6,
+  "policy": "Reject candidates without a valid supported-domain Alive2 proof; prefer goal completion, then fewer IR instructions, then initial candidate; fall back to original if no candidate is accepted. Selection does not inspect holdout test outputs.",
+  "boundary": "This combines a deterministic verifier/selector with existing model outputs. It is not a new Qwen success rate and is not evidence that tool feedback alone guarantees correctness.",
+  "rows": [
+    {
+      "task_id": "l0_add_fold",
+      "selected_from": "initial",
+      "status": "verified",
+      "role": "opportunity",
+      "effective_optimization": true
+    },
+    {
+      "task_id": "l0_wrap",
+      "selected_from": "initial",
+      "status": "verified",
+      "role": "guard",
+      "effective_optimization": false
+    },
+    {
+      "task_id": "l0_udiv",
+      "selected_from": "initial",
+      "status": "verified",
+      "role": "opportunity",
+      "effective_optimization": true
+    },
+    {
+      "task_id": "l0_signed_cmp",
+      "selected_from": "tool_feedback",
+      "status": "verified",
+      "role": "guard",
+      "effective_optimization": false
+    },
+    {
+      "task_id": "l1_const_branch",
+      "selected_from": "original_fallback",
+      "status": "verified",
+      "role": "opportunity",
+      "effective_optimization": false
+    },
+    {
+      "task_id": "l1_phi_different",
+      "selected_from": "tool_feedback",
+      "status": "verified",
+      "role": "guard",
+      "effective_optimization": false
+    },
+    {
+      "task_id": "l1_dead_value",
+      "selected_from": "initial",
+      "status": "verified",
+      "role": "opportunity",
+      "effective_optimization": true
+    },
+    {
+      "task_id": "l1_cse_different",
+      "selected_from": "initial",
+      "status": "verified",
+      "role": "guard",
+      "effective_optimization": false
+    },
+    {
+      "task_id": "l2_disjoint",
+      "selected_from": "initial",
+      "status": "verified",
+      "role": "opportunity",
+      "effective_optimization": false
+    },
+    {
+      "task_id": "l2_store_observed",
+      "selected_from": "tool_feedback",
+      "status": "verified",
+      "role": "guard",
+      "effective_optimization": false
+    },
+    {
+      "task_id": "l2_local_store",
+      "selected_from": "initial",
+      "status": "verified",
+      "role": "opportunity",
+      "effective_optimization": true
+    },
+    {
+      "task_id": "l2_distinct_store",
+      "selected_from": "original_fallback",
+      "status": "verified",
+      "role": "guard",
+      "effective_optimization": false
+    }
+  ]
+}

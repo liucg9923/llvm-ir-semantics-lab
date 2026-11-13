@@ -1,0 +1,16 @@
+{
+  "source": "google/fonts",
+  "revision": "2894aab31764f10f29c421bdfd2340d3b382d384",
+  "source_url": "https://raw.githubusercontent.com/google/fonts/2894aab31764f10f29c421bdfd2340d3b382d384/ofl/notosanssc/NotoSansSC%5Bwght%5D.ttf",
+  "variable_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+  "license": "SIL Open Font License 1.1",
+  "instantiated_weights": [
+    400,
+    700
+  ],
+  "files": {
+    "NotoSansSC-variable.ttf": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+    "NotoSansSC-Regular.ttf": "a3aa02b217f0ced4ec3f4f359b0bbf51f966ff445e9555c0dda300b9bc6722b4",
+    "NotoSansSC-Bold.ttf": "fa4cc6912110663737a6e64168a13af4f5c001b3c4863435225397e0762d93f4"
+  }
+}

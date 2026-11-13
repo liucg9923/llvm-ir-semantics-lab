@@ -1,0 +1,71 @@
+{
+  "task_id": "l1_phi_equal",
+  "level": "L1",
+  "role": "opportunity",
+  "source_metrics": {
+    "instruction_count": 6,
+    "opcodes": {
+      "icmp": 1,
+      "br": 3,
+      "phi": 1,
+      "ret": 1
+    }
+  },
+  "syntax_valid": true,
+  "goal_met": false,
+  "effective_optimization": false,
+  "unchanged": false,
+  "candidate_metrics": {
+    "instruction_count": 3,
+    "opcodes": {
+      "icmp": 1,
+      "br": 1,
+      "ret": 1
+    }
+  },
+  "syntax_log": {
+    "command": [
+      "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+      "-passes=verify",
+      "-S",
+      "/tmp/irsem-verify-nsv3_q5k/candidate.ll",
+      "-o",
+      "/tmp/irsem-verify-nsv3_q5k/canonical.ll"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "seconds": 0.01679760217666626,
+    "timed_out": false,
+    "truncated": false
+  },
+  "canonical_ir": "; ModuleID = '/tmp/irsem-verify-nsv3_q5k/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-nsv3_q5k/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = icmp eq i32 %x, 0\n  br i1 %c, label %merge, label %merge\n\nmerge:                                            ; preds = %entry, %entry\n  ret i32 7\n}\n",
+  "alive2_log": {
+    "command": [
+      "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+      "-always-verify",
+      "-smt-to=10000",
+      "-smt-max-mem=1024",
+      "-smt-random-seed=20261112",
+      "/tmp/irsem-verify-nsv3_q5k/source.ll",
+      "/tmp/irsem-verify-nsv3_q5k/canonical.ll"
+    ],
+    "returncode": 0,
+    "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = icmp eq i32 noundef %x, 0\n  br i1 %c, label %a, label %b\n\nb:\n  br label %merge\n\na:\n  br label %merge\n\nmerge:\n  %r = phi i32 [ 7, %a ], [ 7, %b ]\n  ret i32 %r\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = icmp eq i32 noundef %x, 0\n  br i1 %c, label %merge, label %merge\n\nmerge:\n  ret i32 7\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+    "stderr": "",
+    "seconds": 0.06529806181788445,
+    "timed_out": false,
+    "truncated": false
+  },
+  "differential": {
+    "status": "match",
+    "input_kind": "holdout",
+    "case_count": 270,
+    "mismatch_count": 0
+  },
+  "status": "verified",
+  "key": "l1_phi_equal",
+  "arm": "initial",
+  "mode": "formal",
+  "backend": "hf"
+}

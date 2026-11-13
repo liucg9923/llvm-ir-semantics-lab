@@ -1,12 +1,6 @@
-# Published experiment artifacts
+# 已公开的实验材料
 
-Only reviewed, credential-free CPU baseline and authored-fixture results are published here.
+- [当前实验：协议 v2](experiment-v2/README.md)
+- [历史框架基线：v1](baseline-v1/REPORT.md)
 
-- [Baseline v1 report](baseline-v1/REPORT.md)
-- [Per-task CSV](baseline-v1/cases.csv)
-- [Validator fixture outcomes](baseline-v1/fixture-outcomes.json)
-- [Toolchain hashes](baseline-v1/toolchain.json)
-
-The opt and identity folders contain exact candidate IR and Alive2 output. Paths appearing in LLVM's source_filename metadata refer to generic experiment files, not credentials. The identity control and manually incorrect fixtures are not LLM outputs.
-
-No LLM measurements have been performed yet. Future model outputs require separate provenance and license review before publication.
+当前公开了 Qwen 的实际原始回答、提示词、逐题验证数据和完整证据包。Meta 模型尚未运行。两个版本的配置哈希不同，不应跨版本混合统计。第三方模型许可与数据来源见仓库说明。

@@ -1,0 +1,416 @@
+{
+  "created_utc": "2026-11-13T06:01:04.377851+00:00",
+  "dataset_sha256": "12c07607aa754471f2cf49ce71919b62f38744e9f9ec7c1667bf92ec3776d7b8",
+  "run_roles": {
+    "baseline": "opt-v2",
+    "identity": "identity-v2",
+    "qwen": "qwen-v2",
+    "feedback": "qwen-feedback-v2"
+  },
+  "evaluation_code_sha256": "634b94943bec4087eae431a8557e1afa7a4a8708100e044446b508c66b2a94db",
+  "summary": [
+    {
+      "run": "opt-v2",
+      "arm": "initial",
+      "level": "ALL",
+      "n": 24,
+      "opportunity_n": 12,
+      "syntax_valid": 24,
+      "verified": 24,
+      "effective": 12,
+      "refuted": 0,
+      "unchanged": 7,
+      "statuses": {
+        "verified": 24
+      }
+    },
+    {
+      "run": "opt-v2",
+      "arm": "initial",
+      "level": "L0",
+      "n": 8,
+      "opportunity_n": 4,
+      "syntax_valid": 8,
+      "verified": 8,
+      "effective": 4,
+      "refuted": 0,
+      "unchanged": 1,
+      "statuses": {
+        "verified": 8
+      }
+    },
+    {
+      "run": "opt-v2",
+      "arm": "initial",
+      "level": "L1",
+      "n": 8,
+      "opportunity_n": 4,
+      "syntax_valid": 8,
+      "verified": 8,
+      "effective": 4,
+      "refuted": 0,
+      "unchanged": 2,
+      "statuses": {
+        "verified": 8
+      }
+    },
+    {
+      "run": "opt-v2",
+      "arm": "initial",
+      "level": "L2",
+      "n": 8,
+      "opportunity_n": 4,
+      "syntax_valid": 8,
+      "verified": 8,
+      "effective": 4,
+      "refuted": 0,
+      "unchanged": 4,
+      "statuses": {
+        "verified": 8
+      }
+    },
+    {
+      "run": "identity-v2",
+      "arm": "initial",
+      "level": "ALL",
+      "n": 24,
+      "opportunity_n": 12,
+      "syntax_valid": 24,
+      "verified": 24,
+      "effective": 0,
+      "refuted": 0,
+      "unchanged": 24,
+      "statuses": {
+        "verified": 24
+      }
+    },
+    {
+      "run": "identity-v2",
+      "arm": "initial",
+      "level": "L0",
+      "n": 8,
+      "opportunity_n": 4,
+      "syntax_valid": 8,
+      "verified": 8,
+      "effective": 0,
+      "refuted": 0,
+      "unchanged": 8,
+      "statuses": {
+        "verified": 8
+      }
+    },
+    {
+      "run": "identity-v2",
+      "arm": "initial",
+      "level": "L1",
+      "n": 8,
+      "opportunity_n": 4,
+      "syntax_valid": 8,
+      "verified": 8,
+      "effective": 0,
+      "refuted": 0,
+      "unchanged": 8,
+      "statuses": {
+        "verified": 8
+      }
+    },
+    {
+      "run": "identity-v2",
+      "arm": "initial",
+      "level": "L2",
+      "n": 8,
+      "opportunity_n": 4,
+      "syntax_valid": 8,
+      "verified": 8,
+      "effective": 0,
+      "refuted": 0,
+      "unchanged": 8,
+      "statuses": {
+        "verified": 8
+      }
+    },
+    {
+      "run": "qwen-v2",
+      "arm": "initial",
+      "level": "ALL",
+      "n": 24,
+      "opportunity_n": 12,
+      "syntax_valid": 22,
+      "verified": 15,
+      "effective": 7,
+      "refuted": 7,
+      "unchanged": 6,
+      "statuses": {
+        "verified": 15,
+        "invalid_ir": 2,
+        "refuted": 7
+      }
+    },
+    {
+      "run": "qwen-v2",
+      "arm": "initial",
+      "level": "L0",
+      "n": 8,
+      "opportunity_n": 4,
+      "syntax_valid": 6,
+      "verified": 6,
+      "effective": 2,
+      "refuted": 0,
+      "unchanged": 4,
+      "statuses": {
+        "verified": 6,
+        "invalid_ir": 2
+      }
+    },
+    {
+      "run": "qwen-v2",
+      "arm": "initial",
+      "level": "L1",
+      "n": 8,
+      "opportunity_n": 4,
+      "syntax_valid": 8,
+      "verified": 5,
+      "effective": 2,
+      "refuted": 3,
+      "unchanged": 2,
+      "statuses": {
+        "refuted": 3,
+        "verified": 5
+      }
+    },
+    {
+      "run": "qwen-v2",
+      "arm": "initial",
+      "level": "L2",
+      "n": 8,
+      "opportunity_n": 4,
+      "syntax_valid": 8,
+      "verified": 4,
+      "effective": 3,
+      "refuted": 4,
+      "unchanged": 0,
+      "statuses": {
+        "verified": 4,
+        "refuted": 4
+      }
+    },
+    {
+      "run": "qwen-feedback-v2",
+      "arm": "self_review",
+      "level": "ALL",
+      "n": 12,
+      "opportunity_n": 6,
+      "syntax_valid": 11,
+      "verified": 6,
+      "effective": 3,
+      "refuted": 5,
+      "unchanged": 3,
+      "statuses": {
+        "verified": 6,
+        "invalid_ir": 1,
+        "refuted": 5
+      }
+    },
+    {
+      "run": "qwen-feedback-v2",
+      "arm": "self_review",
+      "level": "L0",
+      "n": 4,
+      "opportunity_n": 2,
+      "syntax_valid": 3,
+      "verified": 3,
+      "effective": 1,
+      "refuted": 0,
+      "unchanged": 2,
+      "statuses": {
+        "verified": 3,
+        "invalid_ir": 1
+      }
+    },
+    {
+      "run": "qwen-feedback-v2",
+      "arm": "self_review",
+      "level": "L1",
+      "n": 4,
+      "opportunity_n": 2,
+      "syntax_valid": 4,
+      "verified": 2,
+      "effective": 1,
+      "refuted": 2,
+      "unchanged": 1,
+      "statuses": {
+        "refuted": 2,
+        "verified": 2
+      }
+    },
+    {
+      "run": "qwen-feedback-v2",
+      "arm": "self_review",
+      "level": "L2",
+      "n": 4,
+      "opportunity_n": 2,
+      "syntax_valid": 4,
+      "verified": 1,
+      "effective": 1,
+      "refuted": 3,
+      "unchanged": 0,
+      "statuses": {
+        "refuted": 3,
+        "verified": 1
+      }
+    },
+    {
+      "run": "qwen-feedback-v2",
+      "arm": "tool_feedback",
+      "level": "ALL",
+      "n": 12,
+      "opportunity_n": 6,
+      "syntax_valid": 12,
+      "verified": 10,
+      "effective": 2,
+      "refuted": 2,
+      "unchanged": 7,
+      "statuses": {
+        "verified": 10,
+        "refuted": 2
+      }
+    },
+    {
+      "run": "qwen-feedback-v2",
+      "arm": "tool_feedback",
+      "level": "L0",
+      "n": 4,
+      "opportunity_n": 2,
+      "syntax_valid": 4,
+      "verified": 4,
+      "effective": 0,
+      "refuted": 0,
+      "unchanged": 4,
+      "statuses": {
+        "verified": 4
+      }
+    },
+    {
+      "run": "qwen-feedback-v2",
+      "arm": "tool_feedback",
+      "level": "L1",
+      "n": 4,
+      "opportunity_n": 2,
+      "syntax_valid": 4,
+      "verified": 3,
+      "effective": 1,
+      "refuted": 1,
+      "unchanged": 2,
+      "statuses": {
+        "refuted": 1,
+        "verified": 3
+      }
+    },
+    {
+      "run": "qwen-feedback-v2",
+      "arm": "tool_feedback",
+      "level": "L2",
+      "n": 4,
+      "opportunity_n": 2,
+      "syntax_valid": 4,
+      "verified": 3,
+      "effective": 1,
+      "refuted": 1,
+      "unchanged": 1,
+      "statuses": {
+        "verified": 3,
+        "refuted": 1
+      }
+    }
+  ],
+  "paired_feedback": [
+    {
+      "arm": "initial_matched",
+      "n": 12,
+      "opportunity_n": 6,
+      "verified": 7,
+      "effective": 4,
+      "refuted": 4,
+      "gained_verification": 0,
+      "lost_verification": 0,
+      "new_proven_error": 0
+    },
+    {
+      "arm": "self_review",
+      "n": 12,
+      "opportunity_n": 6,
+      "verified": 6,
+      "effective": 3,
+      "refuted": 5,
+      "gained_verification": 0,
+      "lost_verification": 1,
+      "new_proven_error": 1
+    },
+    {
+      "arm": "tool_feedback",
+      "n": 12,
+      "opportunity_n": 6,
+      "verified": 10,
+      "effective": 2,
+      "refuted": 2,
+      "gained_verification": 3,
+      "lost_verification": 0,
+      "new_proven_error": 0
+    }
+  ],
+  "timing": [
+    {
+      "run": "opt-v2",
+      "arm": "initial",
+      "n": 24,
+      "timed_n": 24,
+      "median_generation_seconds": 0.03262204211205244,
+      "total_generation_seconds": 0.7830688394606113,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "run": "qwen-v2",
+      "arm": "initial",
+      "n": 24,
+      "timed_n": 24,
+      "median_generation_seconds": 4.833885904401541,
+      "total_generation_seconds": 119.67889113165438,
+      "input_tokens": 18712,
+      "output_tokens": 2780
+    },
+    {
+      "run": "qwen-feedback-v2",
+      "arm": "self_review",
+      "n": 12,
+      "timed_n": 12,
+      "median_generation_seconds": 4.511881695128977,
+      "total_generation_seconds": 58.674096789211035,
+      "input_tokens": 11073,
+      "output_tokens": 1359
+    },
+    {
+      "run": "qwen-feedback-v2",
+      "arm": "tool_feedback",
+      "n": 12,
+      "timed_n": 12,
+      "median_generation_seconds": 4.851996995508671,
+      "total_generation_seconds": 63.04348681867123,
+      "input_tokens": 17999,
+      "output_tokens": 1442
+    }
+  ],
+  "compiler_model": {
+    "status": "awaiting_authorization",
+    "scored": false,
+    "reason": "Official request is awaiting model-owner review."
+  },
+  "limits": [
+    "24 authored cases, not a broad model leaderboard.",
+    "Meta LLM Compiler has no measurements yet.",
+    "Feedback comparisons use the same 12 cases, not the entire 24-case initial set.",
+    "Only verified outputs that meet the declared goal count as effective optimizations.",
+    "Static IR instruction count is not a runtime speed measurement.",
+    "Generation latency excludes model loading and subsequent verification."
+  ]
+}

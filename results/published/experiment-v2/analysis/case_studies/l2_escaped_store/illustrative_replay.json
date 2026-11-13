@@ -1,0 +1,18 @@
+{
+  "purpose": "Illustrative replay of an already-refuted actual model output; does not change formal denominators or feed a new prompt.",
+  "result": {
+    "status": "mismatch",
+    "input_kind": "diagnostic",
+    "case_count": 136,
+    "mismatch_count": 120,
+    "counterexample": {
+      "input": [
+        0,
+        0,
+        0
+      ],
+      "source": "0 7 0",
+      "candidate": "0 0 0"
+    }
+  }
+}

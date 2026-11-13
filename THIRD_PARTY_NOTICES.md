@@ -27,3 +27,9 @@ All shared few-shot answers here were authored as development fixtures.
 ## Presentation draft
 
 The classroom PPTX includes cited third-party research figures in its older background slides. Those materials retain their original rights and are not relicensed under this project's Apache-2.0 license. See slides/README.md and the slide notes for context.
+
+## Report fonts and current model outputs
+
+Report fonts are derived from Google Fonts Noto Sans SC, distributed under SIL Open Font License 1.1. Source revision and hashes are recorded in configs/report-fonts.json. Font software is not relicensed as Apache-2.0; documents generated using the fonts are not subject to the font-license inheritance requirement.
+
+The current published LLM records are Qwen outputs on the project's authored IR examples, with exact prompts and model revision retained for evaluation provenance. Qwen's upstream model license is Apache-2.0. No Meta model outputs or model weights are included in this release.

@@ -37,3 +37,9 @@ CPU/GPU 任务耗时分开记录，模型加载不计单题生成延迟。FP16�
 Alive2 显式使用 always-verify、10 秒单次 SMT 查询限制、1GiB SMT 内存预算和固定 solver seed。工具验收也绑定评测代码哈希；修改 src/ 下的代码后需要重新验收。
 
 预检修订：历史 Alive2 不支持 noalias 参数属性，因此在模型运行前把该题改为显式相邻不重叠地址；原样例保留在 tasks/excluded/noalias_attribute，不计主分母，没有忽略属性后继续评分。
+
+## 协议 v2 的执行修正
+
+开发阶段检查发现 Qwen 的检查点自带 repetition_penalty=1.1。正式模型实验开始前，改用独立 GenerationConfig，显式固定 num_beams=1、repetition_penalty=1.0、no_repeat_ngram_size=0 和 do_sample=False；BOS/EOS/Pad 按各模型定义。任务、提示词文本和优化目标未调整。原开发记录保留且不计入正式成绩，重新冻结配置并完成工具链验收后才运行 v2 正式组。
+
+本轮完成的修订实验仍采用同一批预先指定的 12 题。候选筛选与原程序回退另列为事后应用回放，不能作为模型原始正确率或额外独立实验来计分。

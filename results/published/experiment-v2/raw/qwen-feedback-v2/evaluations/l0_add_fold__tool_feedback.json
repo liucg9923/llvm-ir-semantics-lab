@@ -1,0 +1,68 @@
+{
+  "task_id": "l0_add_fold",
+  "level": "L0",
+  "role": "opportunity",
+  "source_metrics": {
+    "instruction_count": 3,
+    "opcodes": {
+      "add": 2,
+      "ret": 1
+    }
+  },
+  "syntax_valid": true,
+  "goal_met": false,
+  "effective_optimization": false,
+  "unchanged": true,
+  "candidate_metrics": {
+    "instruction_count": 3,
+    "opcodes": {
+      "add": 2,
+      "ret": 1
+    }
+  },
+  "syntax_log": {
+    "command": [
+      "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+      "-passes=verify",
+      "-S",
+      "/tmp/irsem-verify-oszvq0r5/candidate.ll",
+      "-o",
+      "/tmp/irsem-verify-oszvq0r5/canonical.ll"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "seconds": 0.016995063051581383,
+    "timed_out": false,
+    "truncated": false
+  },
+  "canonical_ir": "; ModuleID = '/tmp/irsem-verify-oszvq0r5/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-oszvq0r5/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = add i32 4, 5\n  %r = add i32 %x, %c\n  ret i32 %r\n}\n",
+  "alive2_log": {
+    "command": [
+      "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+      "-always-verify",
+      "-smt-to=10000",
+      "-smt-max-mem=1024",
+      "-smt-random-seed=20261112",
+      "/tmp/irsem-verify-oszvq0r5/source.ll",
+      "/tmp/irsem-verify-oszvq0r5/canonical.ll"
+    ],
+    "returncode": 0,
+    "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = add i32 4, 5\n  %r = add i32 noundef %x, %c\n  ret i32 %r\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = add i32 4, 5\n  %r = add i32 noundef %x, %c\n  ret i32 %r\n}\nTransformation seems to be correct!\n\nSummary:\n  1 correct transformations\n  0 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+    "stderr": "",
+    "seconds": 0.06519224122166634,
+    "timed_out": false,
+    "truncated": false
+  },
+  "differential": {
+    "status": "match",
+    "input_kind": "holdout",
+    "case_count": 270,
+    "mismatch_count": 0
+  },
+  "status": "verified",
+  "key": "l0_add_fold__tool_feedback",
+  "arm": "tool_feedback",
+  "mode": "formal",
+  "backend": "hf"
+}

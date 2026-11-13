@@ -26,3 +26,5 @@ core
 # Curated, reviewed CPU baseline artifacts only. Raw future model runs remain ignored.
 !results/published/
 !results/published/**
+
+.venv-report/

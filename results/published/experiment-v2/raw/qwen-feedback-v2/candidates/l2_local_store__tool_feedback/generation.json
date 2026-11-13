@@ -1,0 +1,9 @@
+{
+  "prompt_tokens": 1389,
+  "output_tokens": 90,
+  "seconds": 4.257446272298694,
+  "error": null,
+  "note": "Generation max_time is a soft per-step limit; token limit is also enforced.",
+  "prompt_sha256": "c10dddc37a8e00bfb270ff0279d70dc395b8e53a6f2b8ba34872c4d0da39a0a1",
+  "raw_sha256": "af346dcdc633f496190575cadef367ab25fdd2bcf87fcd7eb0a8a046decf662f"
+}

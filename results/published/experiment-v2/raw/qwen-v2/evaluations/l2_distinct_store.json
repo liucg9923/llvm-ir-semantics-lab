@@ -1,0 +1,77 @@
+{
+  "task_id": "l2_distinct_store",
+  "level": "L2",
+  "role": "guard",
+  "source_metrics": {
+    "instruction_count": 3,
+    "opcodes": {
+      "store": 2,
+      "ret": 1
+    }
+  },
+  "syntax_valid": true,
+  "goal_met": null,
+  "effective_optimization": false,
+  "unchanged": false,
+  "candidate_metrics": {
+    "instruction_count": 2,
+    "opcodes": {
+      "store": 1,
+      "ret": 1
+    }
+  },
+  "syntax_log": {
+    "command": [
+      "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+      "-passes=verify",
+      "-S",
+      "/tmp/irsem-verify-j7tvop7v/candidate.ll",
+      "-o",
+      "/tmp/irsem-verify-j7tvop7v/canonical.ll"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "seconds": 0.016865495592355728,
+    "timed_out": false,
+    "truncated": false
+  },
+  "canonical_ir": "; ModuleID = '/tmp/irsem-verify-j7tvop7v/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-j7tvop7v/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  store i32 7, ptr %p, align 4\n  ret i32 0\n}\n",
+  "alive2_log": {
+    "command": [
+      "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+      "-always-verify",
+      "-smt-to=10000",
+      "-smt-max-mem=1024",
+      "-smt-random-seed=20261112",
+      "/tmp/irsem-verify-j7tvop7v/source.ll",
+      "/tmp/irsem-verify-j7tvop7v/canonical.ll"
+    ],
+    "returncode": 0,
+    "stdout": "\n----------------------------------------\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  store i32 7, ptr noundef %p, align 4\n  store i32 7, ptr noundef %q, align 4\n  ret i32 0\n}\n=>\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  store i32 7, ptr noundef %p, align 4\n  ret i32 0\n}\nTransformation doesn't verify!\n\nERROR: Mismatch in memory\n\nExample:\nptr noundef %p = pointer(non-local, block_id=1, offset=0)\nptr noundef %q = pointer(non-local, block_id=2, offset=0)\n\nSource:\n\nSOURCE MEMORY STATE\n===================\nNON-LOCAL BLOCKS:\nBlock 0 >\tsize: 0\talign: 4\talloc type: 0\talive: false\taddress: 0\nBlock 1 >\tsize: 5\talign: 65536\talloc type: 0\talive: true\taddress: 8\nBlock 2 >\tsize: 4\talign: 1\talloc type: 0\talive: true\taddress: 4\n\nTarget:\n\nMismatch in pointer(non-local, block_id=2, offset=0)\nSource value: #x00000007\nTarget value: poison\n\nSummary:\n  0 correct transformations\n  1 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+    "stderr": "",
+    "seconds": 5.8288528230041265,
+    "timed_out": false,
+    "truncated": false
+  },
+  "differential": {
+    "status": "mismatch",
+    "input_kind": "holdout",
+    "case_count": 256,
+    "mismatch_count": 138,
+    "counterexample": {
+      "input": [
+        513746781,
+        3413821547,
+        0
+      ],
+      "source": "0 7 7",
+      "candidate": "0 7 3413821547"
+    }
+  },
+  "status": "refuted",
+  "key": "l2_distinct_store",
+  "arm": "initial",
+  "mode": "formal",
+  "backend": "hf"
+}

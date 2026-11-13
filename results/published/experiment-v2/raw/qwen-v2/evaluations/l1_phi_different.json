@@ -1,0 +1,78 @@
+{
+  "task_id": "l1_phi_different",
+  "level": "L1",
+  "role": "guard",
+  "source_metrics": {
+    "instruction_count": 6,
+    "opcodes": {
+      "icmp": 1,
+      "br": 3,
+      "phi": 1,
+      "ret": 1
+    }
+  },
+  "syntax_valid": true,
+  "goal_met": null,
+  "effective_optimization": false,
+  "unchanged": false,
+  "candidate_metrics": {
+    "instruction_count": 3,
+    "opcodes": {
+      "icmp": 1,
+      "br": 1,
+      "ret": 1
+    }
+  },
+  "syntax_log": {
+    "command": [
+      "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt",
+      "-passes=verify",
+      "-S",
+      "/tmp/irsem-verify-wvsbukzb/candidate.ll",
+      "-o",
+      "/tmp/irsem-verify-wvsbukzb/canonical.ll"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "seconds": 0.01695460081100464,
+    "timed_out": false,
+    "truncated": false
+  },
+  "canonical_ir": "; ModuleID = '/tmp/irsem-verify-wvsbukzb/candidate.ll'\nsource_filename = \"/tmp/irsem-verify-wvsbukzb/candidate.ll\"\ntarget datalayout = \"e-p:64:64-i64:64-n8:16:32:64-S128\"\ntarget triple = \"x86_64-pc-linux-gnu\"\n\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = icmp eq i32 %x, 0\n  br i1 %c, label %merge, label %merge\n\nmerge:                                            ; preds = %entry, %entry\n  ret i32 7\n}\n",
+  "alive2_log": {
+    "command": [
+      "/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv",
+      "-always-verify",
+      "-smt-to=10000",
+      "-smt-max-mem=1024",
+      "-smt-random-seed=20261112",
+      "/tmp/irsem-verify-wvsbukzb/source.ll",
+      "/tmp/irsem-verify-wvsbukzb/canonical.ll"
+    ],
+    "returncode": 0,
+    "stdout": "\n----------------------------------------\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = icmp eq i32 noundef %x, 0\n  br i1 %c, label %a, label %b\n\nb:\n  br label %merge\n\na:\n  br label %merge\n\nmerge:\n  %r = phi i32 [ 7, %a ], [ 9, %b ]\n  ret i32 %r\n}\n=>\ndefine i32 @f(i32 noundef %x) {\nentry:\n  %c = icmp eq i32 noundef %x, 0\n  br i1 %c, label %merge, label %merge\n\nmerge:\n  ret i32 7\n}\nTransformation doesn't verify!\n\nERROR: Value mismatch\n\nExample:\ni32 noundef %x = #x00000001 (1)\n\nSource:\ni1 %c = #x0 (0)\n  >> Jump to %b\n  >> Jump to %merge\ni32 %r = #x00000009 (9)\n\nTarget:\ni1 %c = #x0 (0)\n  >> Jump to %merge\nSource value: #x00000009 (9)\nTarget value: #x00000007 (7)\n\nSummary:\n  0 correct transformations\n  1 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n",
+    "stderr": "",
+    "seconds": 0.06510143540799618,
+    "timed_out": false,
+    "truncated": false
+  },
+  "differential": {
+    "status": "mismatch",
+    "input_kind": "holdout",
+    "case_count": 270,
+    "mismatch_count": 270,
+    "counterexample": {
+      "input": [
+        31
+      ],
+      "source": "9",
+      "candidate": "7"
+    }
+  },
+  "status": "refuted",
+  "key": "l1_phi_different",
+  "arm": "initial",
+  "mode": "formal",
+  "backend": "hf"
+}

@@ -15,7 +15,7 @@
 - [课堂展示 PPT 草稿](slides/README.md)
 - [参考文献与阅读用途](docs/REFERENCES.md)
 
-目前公开的是项目框架、原始任务、已验证的 CPU 基线与控制组。两款模型尚未运行，不存在可报告的模型排名。
+当前已完成 LLVM opt 与 Qwen 的首轮、同题修订实验及数据归档；Meta LLM Compiler 的官方访问申请仍待审核，未运行、未计分。详见 [当前实验结果](results/published/experiment-v2/README.md)。
 
 ## 当前范围
 
@@ -49,21 +49,21 @@ bash scripts/run_cpu.sh accept-toolchain
 
 任务修改后，先检查和验证，再显式运行 `irsem freeze`，重新验收工具链。不能将两个数据集版本的结果混在一张表里。
 
-## 三组首轮实验
+## 三组首轮实验（当前固定协议 v2）
 
 ```bash
 # CPU baseline
-bash scripts/run_cpu.sh generate --backend opt --out results/opt-v1
-bash scripts/run_cpu.sh evaluate --run results/opt-v1
+bash scripts/run_cpu.sh generate --backend opt --out results/opt-v2
+bash scripts/run_cpu.sh evaluate --run results/opt-v2
 
 # 单独准备 GPU 依赖；不会下载权重，也不会替用户接受模型许可。
 bash scripts/setup_inference.sh
 
 # 按官方说明在云端配置 Hugging Face 访问权限；不要将凭据写入代码/Git。
-bash scripts/run_model.sh generate --backend hf --model compiler --out results/compiler-v1
-bash scripts/run_cpu.sh evaluate --run results/compiler-v1
-bash scripts/run_model.sh generate --backend hf --model qwen --out results/qwen-v1
-bash scripts/run_cpu.sh evaluate --run results/qwen-v1
+bash scripts/run_model.sh generate --backend hf --model compiler --out results/compiler-v2
+bash scripts/run_cpu.sh evaluate --run results/compiler-v2
+bash scripts/run_model.sh generate --backend hf --model qwen --out results/qwen-v2
+bash scripts/run_cpu.sh evaluate --run results/qwen-v2
 ```
 
 两个模型顺序加载，FP16、batch size 1、贪心解码。当前配置要求 GPU 报告至少 22GiB 显存；不能为让某个模型跑通而悄悄改变其量化精度。首次下载按模型官方访问条款进行。
@@ -71,12 +71,12 @@ bash scripts/run_cpu.sh evaluate --run results/qwen-v1
 ## 反馈对照与报告
 
 ```bash
-bash scripts/run_model.sh feedback --parent results/compiler-v1 --out results/compiler-feedback-v1
-bash scripts/run_cpu.sh evaluate --run results/compiler-feedback-v1
-bash scripts/run_model.sh feedback --parent results/qwen-v1 --out results/qwen-feedback-v1
-bash scripts/run_cpu.sh evaluate --run results/qwen-feedback-v1
-bash scripts/run_cpu.sh report --runs results/opt-v1 results/compiler-v1 results/qwen-v1 \
-  results/compiler-feedback-v1 results/qwen-feedback-v1 --out reports/generated/v1
+bash scripts/run_model.sh feedback --parent results/compiler-v2 --out results/compiler-feedback-v2
+bash scripts/run_cpu.sh evaluate --run results/compiler-feedback-v2
+bash scripts/run_model.sh feedback --parent results/qwen-v2 --out results/qwen-feedback-v2
+bash scripts/run_cpu.sh evaluate --run results/qwen-feedback-v2
+bash scripts/run_cpu.sh report --runs results/opt-v2 results/compiler-v2 results/qwen-v2 \
+  results/compiler-feedback-v2 results/qwen-feedback-v2 --out reports/generated/v1
 ```
 
 反馈题是预先指定的 12 题。每题从同一个首次候选分成“自行复查”和“工具反馈”两支，每支一次生成。工具反馈只包含语法/约束诊断、Alive2 信息及诊断输入集结果，不包含保留输入集结果。
@@ -110,3 +110,14 @@ bash scripts/run_cpu.sh report --runs results/opt-v1 results/compiler-v1 results
 - LLVM 17: https://github.com/llvm/llvm-project/tree/llvmorg-17.0.6
 
 本实验比较具体版本、具体任务上的表现，不代表所有 LLM 的能力上限；两个模型的比较也不是对“专用训练收益”的严格因果消融。
+
+## 本轮结果简表
+
+| 对象 | 合法 IR | 语义验证通过 | 有效优化 |
+|---|---:|---:|---:|
+| LLVM opt | 24/24 | 24/24 | 12/12 |
+| Qwen2.5-Coder-7B-Instruct | 22/24 | 15/24 | 7/12 |
+| 原样返回控制 | 24/24 | 24/24 | 0/12 |
+| LLM Compiler 7B | 待授权 | 未运行 | 未运行 |
+
+在预选的同一批 12 题中，自行复查的验证通过数为 6/12，工具反馈为 10/12；相应有效优化为 3/6 和 2/6。完整数据与边界说明见当前实验报告。不要将不同分母、人工验收样例或事后应用回放混成模型正确率。

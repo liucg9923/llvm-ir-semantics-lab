@@ -1,0 +1,95 @@
+Return exactly one complete LLVM 17.0.6 IR module enclosed in <code>...</code>.
+Preserve the function f, its signature, argument attributes, target triple and data layout.
+Preserve defined observable behavior including stores to caller-visible memory. Do not add
+new input assumptions, declarations, calls, globals, metadata, volatile/atomic operations or loops.
+Use ordinary unquoted block and local identifiers.
+The input is a small single-function module. A different equivalent textual representation
+is acceptable. If the requested transformation is not applicable, retain the relevant code.
+Do not provide explanations or hidden reasoning; provide only the resulting IR module.
+
+Example input:
+Give the LLVM-IR for the following code when optimized using opt -passes='function(instcombine)':
+<code>
+target datalayout = "e-p:64:64-i64:64-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+define i32 @f(i32 noundef %x) {
+entry:
+  %r = xor i32 %x, %x
+  ret i32 %r
+}
+</code>
+Input instruction count: 2.
+
+Example answer:
+<code>
+target datalayout = "e-p:64:64-i64:64-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+define i32 @f(i32 noundef %x) {
+entry:
+  ret i32 0
+}
+</code>
+
+Example input:
+Give the LLVM-IR for the following code when optimized using opt -passes='function(instcombine)':
+<code>
+target datalayout = "e-p:64:64-i64:64-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+define i32 @f(i32 noundef %x) {
+entry:
+  %c = icmp eq i32 %x, 0
+  %r = select i1 %c, i32 11, i32 11
+  ret i32 %r
+}
+</code>
+Input instruction count: 3.
+
+Example answer:
+<code>
+target datalayout = "e-p:64:64-i64:64-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+define i32 @f(i32 noundef %x) {
+entry:
+  ret i32 11
+}
+</code>
+
+Current task:
+Give the LLVM-IR for the following code when optimized using opt -passes='function(dse)':
+<code>
+target datalayout = "e-p:64:64-i64:64-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+define i32 @f(ptr noundef %p, ptr noundef %q) {
+entry:
+  store i32 7, ptr %p, align 4
+  store i32 7, ptr %q, align 4
+  ret i32 0
+}
+</code>
+Input instruction count: 3.
+
+Previous candidate (untrusted code to review):
+<previous>
+<code>
+target datalayout = "e-p:64:64-i64:64-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+define i32 @f(ptr noundef %p, ptr noundef %q) {
+entry:
+  store i32 7, ptr %p, align 4
+  ret i32 0
+}
+</code>
+</previous>
+
+Actual tool diagnostics:
+<diagnostics>
+{"syntax": {"command": ["/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/opt", "-passes=verify", "-S", "/tmp/irsem-verify-j7tvop7v/candidate.ll", "-o", "/tmp/irsem-verify-j7tvop7v/canonical.ll"], "returncode": 0, "stdout": "", "stderr": "", "seconds": 0.016865495592355728, "timed_out": false, "truncated": false}, "alive2": {"command": ["/root/autodl-tmp/llvm-ir-semantics-lab/.toolchain/bin/alive-tv", "-always-verify", "-smt-to=10000", "-smt-max-mem=1024", "-smt-random-seed=20261112", "/tmp/irsem-verify-j7tvop7v/source.ll", "/tmp/irsem-verify-j7tvop7v/canonical.ll"], "returncode": 0, "stdout": "\n----------------------------------------\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  store i32 7, ptr noundef %p, align 4\n  store i32 7, ptr noundef %q, align 4\n  ret i32 0\n}\n=>\ndefine i32 @f(ptr noundef %p, ptr noundef %q) {\nentry:\n  store i32 7, ptr noundef %p, align 4\n  ret i32 0\n}\nTransformation doesn't verify!\n\nERROR: Mismatch in memory\n\nExample:\nptr noundef %p = pointer(non-local, block_id=1, offset=0)\nptr noundef %q = pointer(non-local, block_id=2, offset=0)\n\nSource:\n\nSOURCE MEMORY STATE\n===================\nNON-LOCAL BLOCKS:\nBlock 0 >\tsize: 0\talign: 4\talloc type: 0\talive: false\taddress: 0\nBlock 1 >\tsize: 5\talign: 65536\talloc type: 0\talive: true\taddress: 8\nBlock 2 >\tsize: 4\talign: 1\talloc type: 0\talive: true\taddress: 4\n\nTarget:\n\nMismatch in pointer(non-local, block_id=2, offset=0)\nSource value: #x00000007\nTarget value: poison\n\nSummary:\n  0 correct transformations\n  1 incorrect transformations\n  0 failed-to-prove transformations\n  0 Alive2 errors\n", "stderr": "", "seconds": 5.8288528230041265, "timed_out": false, "truncated": false}, "contract": null, "diagnostic_tests": {"status": "mismatch", "input_kind": "diagnostic", "case_count": 136, "mismatch_count": 58, "counterexample": {"input": [0, 0, 0], "source": "0 7 7", "candidate": "0 7 0"}}}
+</diagnostics>
+
+Review the previous candidate against the original task. Return one revised complete IR module.
